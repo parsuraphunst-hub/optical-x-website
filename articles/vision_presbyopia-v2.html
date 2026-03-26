@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สายตายาว (Presbyopia) คืออะไร? — Optical X Vision Care Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #FBF7F2;
+    --bg-secondary: #F5EDE3;
+    --bg-card: #FFFFFF;
+    --bg-glossary: #EDE7DD;
+    --text-primary: #3A322A;
+    --text-secondary: #6B5E52;
+    --text-muted: #8C7E72;
+    --accent: #C17F4E;
+    --accent-light: #E8CDB5;
+    --accent-dark: #A0603A;
+    --border: #DDD3C7;
+    --border-light: #EDE7DD;
+    --highlight: #FFF3E0;
+    --qa-bg: #F0EBE3;
+    --tooltip-bg: #3A322A;
+    --tooltip-text: #FBF7F2;
+    --research-bg: #F7F3ED;
+    --research-border: #D4C5B3;
+    --shadow-sm: 0 1px 3px rgba(58,50,42,0.06);
+    --shadow-md: 0 4px 16px rgba(58,50,42,0.08);
+    --shadow-lg: 0 8px 32px rgba(58,50,42,0.10);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.85;
+    font-size: 17px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(165deg, #F5EDE3 0%, #FBF7F2 40%, #FFF8F0 100%);
+    padding: 56px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+    opacity: 0.45;
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+    opacity: 0.3;
+    border-radius: 50%;
+  }
+
+  .hero-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+  .hero-brand .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5.5vw, 44px);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent-dark); }
+
+  .hero-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative; z-index: 1;
+    font-style: italic;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 6px 18px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-radius: 24px;
+    position: relative; z-index: 1;
+  }
+
+  /* ─── CONTAINER ─── */
+  .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+  /* ─── ARTICLE ─── */
+  .article-body { padding: 48px 0 32px; }
+  .article-body p { margin-bottom: 22px; }
+
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 48px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-light);
+    line-height: 1.35;
+  }
+  .article-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin: 36px 0 14px;
+  }
+
+  /* ─── HIGHLIGHT BOX ─── */
+  .highlight-box {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .highlight-box p { margin-bottom: 0; font-weight: 500; color: var(--accent-dark); font-size: 16.5px; }
+
+  /* ─── ANALOGY CARD ─── */
+  .analogy-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    margin: 32px 0;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  .analogy-card::before { content: attr(data-icon); font-size: 36px; position: absolute; top: -18px; left: 28px; }
+  .analogy-card .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 14px;
+    padding-top: 8px;
+  }
+  .analogy-card p { margin-bottom: 14px; font-size: 16.5px; }
+  .analogy-card p:last-child { margin-bottom: 0; }
+
+  /* ─── TRY-IT BOX ─── */
+  .try-it {
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFF3E0 100%);
+    border: 2px dashed var(--accent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .try-it .icon { font-size: 28px; margin-bottom: 8px; }
+  .try-it .label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+  }
+  .try-it p { margin-bottom: 0; color: var(--text-secondary); font-size: 16px; }
+
+  /* ─── TIMELINE ─── */
+  .zoom-timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0;
+    position: relative;
+    padding-left: 36px;
+  }
+  .zoom-timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px; top: 8px; bottom: 8px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent-light), var(--border));
+    border-radius: 2px;
+  }
+  .zoom-step { position: relative; padding: 14px 0; }
+  .zoom-step::before {
+    content: '';
+    position: absolute;
+    left: -27px; top: 20px;
+    width: 11px; height: 11px;
+    background: var(--accent);
+    border: 3px solid var(--bg-primary);
+    border-radius: 50%;
+  }
+  .zoom-step .age { font-size: 13px; font-weight: 700; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .zoom-step .desc { font-size: 15.5px; color: var(--text-secondary); }
+  .zoom-step .zoom-label {
+    display: inline-block;
+    background: var(--bg-glossary);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin-top: 6px;
+  }
+
+  /* ─── RESEARCH CARD ─── */
+  .research-card {
+    background: var(--research-bg);
+    border: 1px solid var(--research-border);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .research-card::before {
+    content: '📊';
+    font-size: 24px;
+    position: absolute;
+    top: -12px; left: 20px;
+    background: var(--research-bg);
+    padding: 0 6px;
+  }
+  .research-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    padding-top: 4px;
+  }
+  .research-card p { font-size: 15.5px; color: var(--text-secondary); margin-bottom: 12px; }
+  .research-card p:last-child { margin-bottom: 0; }
+  .research-source {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+  }
+  .research-source a { color: var(--accent-dark); text-decoration: none; }
+  .research-source a:hover { text-decoration: underline; }
+
+  /* ─── STAT GRID ─── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border-top: 3px solid var(--accent);
+  }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    line-height: 1.1;
+  }
+  .stat-unit { font-size: 14px; color: var(--accent); font-weight: 600; }
+  .stat-desc { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+  /* ─── DIOPTER TABLE ─── */
+  .diopter-table-wrap {
+    overflow-x: auto;
+    margin: 28px 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .diopter-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    font-size: 15px;
+  }
+  .diopter-table thead { background: var(--accent); color: #fff; }
+  .diopter-table th {
+    padding: 12px 16px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13.5px;
+    letter-spacing: 0.5px;
+  }
+  .diopter-table td {
+    padding: 11px 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+  }
+  .diopter-table tbody tr:nth-child(even) { background: #FAF6F1; }
+  .diopter-table tbody tr:hover { background: var(--highlight); }
+  .diopter-table .highlight-row { background: var(--highlight) !important; font-weight: 600; color: var(--accent-dark); }
+  .diopter-table .table-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: left;
+    padding: 10px 16px;
+    border-top: 1px solid var(--border-light);
+    background: #FAF6F1;
+  }
+
+  /* ─── VIDEO ─── */
+  .video-section { margin: 40px 0; text-align: center; }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: #000;
+  }
+  .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .video-caption { margin-top: 12px; font-size: 13px; color: var(--text-muted); font-style: italic; }
+
+  /* ─── TOOLTIP ─── */
+  .term {
+    position: relative;
+    color: var(--accent-dark);
+    font-weight: 600;
+    cursor: help;
+    border-bottom: 1.5px dotted var(--accent);
+    transition: color 0.2s;
+  }
+  .term:hover { color: var(--accent); }
+  .term .tip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.6;
+    width: 280px;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+  }
+  .term .tip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--tooltip-bg);
+  }
+  .term:hover .tip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ─── GLOSSARY ─── */
+  .glossary-section {
+    background: var(--bg-glossary);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    margin: 48px 0;
+  }
+  .glossary-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding: 0; border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .glossary-section h2 .icon { font-size: 22px; }
+  .glossary-grid { display: grid; gap: 16px; }
+  .glossary-item {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid var(--accent);
+  }
+  .glossary-item dt { font-weight: 700; color: var(--accent-dark); font-size: 15.5px; margin-bottom: 4px; }
+  .glossary-item dt .en { font-family: 'Source Serif 4', serif; font-style: italic; font-weight: 400; color: var(--text-muted); margin-left: 6px; font-size: 14px; }
+  .glossary-item dd { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+
+  /* ─── Q&A ─── */
+  .qa-section { margin: 48px 0; }
+  .qa-section > h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .qa-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s;
+  }
+  .qa-item:hover { box-shadow: var(--shadow-md); }
+  .qa-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .qa-question:hover { background: var(--bg-secondary); }
+  .qa-icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 1px;
+  }
+  .qa-q-text { font-weight: 600; font-size: 16.5px; flex: 1; }
+  .qa-toggle {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 20px;
+    transition: transform 0.3s;
+    margin-top: 2px;
+  }
+  .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .qa-answer-inner { padding: 0 24px 20px 66px; font-size: 15.5px; color: var(--text-secondary); line-height: 1.8; }
+  .qa-item.open .qa-answer { max-height: 600px; }
+  .qa-item.open .qa-toggle { transform: rotate(45deg); }
+
+  @media (max-width: 600px) {
+    .qa-answer-inner { padding-left: 24px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    margin: 48px 0;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 12px; border: none; padding: 0; color: #fff; }
+  .cta-section p { font-size: 15.5px; opacity: 0.92; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--accent-dark);
+    padding: 14px 36px;
+    border-radius: 32px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
+
+  /* ─── FOOTER ─── */
+  .article-footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  .article-footer a { color: var(--accent-dark); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    .container { padding: 0 18px; }
+    .analogy-card { padding: 24px 20px; }
+    .glossary-section { padding: 24px 18px; }
+    .cta-section { padding: 32px 20px; }
+    .term .tip { width: 220px; font-size: 12.5px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .article-body h2, .analogy-card, .try-it, .research-card, .glossary-section, .qa-section, .cta-section, .stat-grid {
+    animation: fadeUp 0.6s ease both;
+  }
+
+/* ── OX NAV ── */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.ox-mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 890;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(12px);
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px;
+  padding: 80px 24px 40px;
+  overflow-y: auto;
+}
+.ox-mobile-nav.open { display: flex; }
+.ox-mobile-nav a {
+  font-size: 1.1rem; color: #2C2416; text-decoration: none;
+  padding: 10px 0; font-weight: 500;
+}
+.ox-mobile-nav a.sub { font-size: 0.9rem; color: #8B7355; padding: 6px 0; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: inline-block; margin-top: 16px;
+  background: #C8A96E; color: #fff !important;
+  padding: 14px 32px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── OX FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+.ox-footer-top > div:last-child { text-align: right; }
+.ox-footer-top > div:last-child .ox-f-hours-row { justify-content: flex-end; }
+.ox-footer-top > div:last-child .ox-f-contact-val a { justify-content: flex-end; }
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+
+/* ── MOBILE OVERFLOW FIX ── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; padding-top: 64px; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; }
+pre, code { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { min-width: 80px; white-space: nowrap; font-size: 0.85rem; padding: 8px 10px; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  section, .section, .page-wrap, .content, .article-body, article,
+  [class*="wrap"], [class*="container"], [class*="content"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero, .hero-inner, [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem !important; word-break: keep-all; }
+  h2 { font-size: 1.1rem !important; }
+  .ox-footer-top { padding: 32px 16px 24px !important; }
+}
+
+
+/* ── Universal QA Accordion Fix ── */
+.qa-q, .qa-question { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qa-a, .qa-answer { max-height: 0 !important; overflow: hidden !important; display: block !important; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px !important; }
+.qa-item.open > .qa-a,
+.qa-item.open > .qa-answer,
+.qa-item.open .qa-a,
+.qa-item.open .qa-answer { max-height: 3000px !important; padding: 4px 24px 20px 66px !important; }
+.qa-item.open .qa-toggle,
+.qa-item.open .qa-icon { transform: rotate(45deg); }
+.qa-item.open .chevron { transform: rotate(180deg); }
+@media (max-width: 600px) {
+  .qa-item.open > .qa-a,
+  .qa-item.open > .qa-answer,
+  .qa-item.open .qa-a,
+  .qa-item.open .qa-answer { padding: 4px 16px 16px 16px !important; }
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+
+
+<nav class="ox-nav" id="oxNav">
+
+  <a href="../index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+
+    <li>
+      <a href="../services.html">บริการ</a>
+    </li>
+
+    <li>
+      <a href="../programs.html">โปรแกรม</a>
+    </li>
+
+    <li>
+      <a href="../articles.html">สาระสายตา</a>
+    </li>
+
+    <li>
+      <a href="../about.html">รู้จักเรา</a>
+    </li>
+
+    <li>
+      <a href="../services.html">Promotion</a>
+    </li>
+
+    <li>
+      <a href="../tourist.html">For Visitors</a>
+    </li>
+
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="../services.html">บริการ</a>
+  <a href="../programs.html">โปรแกรม</a>
+  <a href="../articles.html">สาระสายตา</a>
+  <a href="../about.html">รู้จักเรา</a>
+  <a href="../services.html">Promotion</a>
+  <a href="../tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+<!-- ═══════ HERO ═══════ -->
+<header class="hero">
+  <div class="hero-brand">
+    <span class="dot"></span> Optical X Vision Care Center <span class="dot"></span>
+  </div>
+  <h1>สายตายาว (Presbyopia)<br><em>คืออะไร? ทำไมใครๆ ก็เป็น</em></h1>
+  <p class="hero-subtitle">เข้าใจง่ายๆ ว่าทำไมพอหลัง 40 ถึงอ่านหนังสือไม่ชัด — พร้อมข้อมูลวิชาการและวิธีแก้ไขที่ถูกต้อง</p>
+  <div class="hero-tag">✍️ Suraphun Parsuraphun — Optician Lens Specialist &nbsp;|&nbsp; Ploychompoo Parsuraphun — Optometrist</div>
+</header>
+
+<!-- ═══════ ARTICLE ═══════ -->
+<article class="container article-body">
+
+  <p>
+    หลายๆ คนมาที่ร้าน Optical X แล้วบอกว่า <strong>"พี่ไม่เข้าใจเลย หลังๆ ปวดตาเป็นบ้า แล้วปวดหัวด้วย กินยาก็ไม่หาย อ่านอะไรก็ไม่ทน"</strong> — วันนี้ผมจะอธิบายให้เข้าใจง่ายๆ ด้วยตัวอย่างที่ทุกคนรู้จัก พร้อมข้อมูลทางวิชาการและงานวิจัยประกอบครับ
+  </p>
+
+  <!-- ═══ DICTIONARY CARD ═══ -->
+  <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:28px 32px; margin:2rem 0; box-shadow:var(--shadow-sm);">
+    <div style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px;">คำจำกัดความจาก <strong>Oxford Languages</strong></div>
+    <div style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">pres·by·o·pi·a</div>
+    <div style="font-size:14px; color:var(--text-muted); margin-bottom:12px;">/ˌprezbēˈōpēə/ &nbsp;·&nbsp; <em>noun</em></div>
+    <div style="font-size:16px; color:var(--text-primary); line-height:1.7; padding-left:16px; border-left:3px solid var(--accent);">
+      <strong>Farsightedness</strong> caused by loss of <strong>elasticity</strong> of the lens of the eye, occurring typically in <strong>middle and old age</strong>.
+    </div>
+    <div style="margin-top:14px; font-size:13.5px; color:var(--accent-dark); line-height:1.7;">
+      💡 แปลง่ายๆ: <strong>สายตายาวตามอายุ</strong> — เลนส์แก้วตาสูญเสียความยืดหยุ่น ทำให้โฟกัสระยะใกล้ไม่ได้ มักเริ่มเป็นช่วงวัยกลางคน
+    </div>
+  </div>
+
+  <!-- ═══ SECTION: Academic Explanation ═══ -->
+  <h2>🔬 Presbyopia ในทางวิชาการ คืออะไร?</h2>
+
+  <p>
+    <span class="term">Presbyopia<span class="tip">มาจากภาษากรีก presbys (ชรา) + ops (ตา) แปลตรงตัวว่า "ตาแก่" เป็นภาวะที่ระบบปรับโฟกัสระยะใกล้ของดวงตาเสื่อมลงตามวัย</span></span>
+    หรือ "สายตายาวตามอายุ" เป็นภาวะทางสรีรวิทยาที่เกิดกับ <strong>ทุกคน</strong> ไม่ใช่โรค ไม่ใช่ความผิดปกติ แต่เป็นการเปลี่ยนแปลงตามธรรมชาติของร่างกายเมื่อเราอายุมากขึ้นครับ
+  </p>
+
+  <p>
+    ทางการแพทย์ Presbyopia ถูกนิยามว่าเป็นการสูญเสียความสามารถในการ
+    <span class="term">Accommodation<span class="tip">การเพ่ง (Accommodation) — กระบวนการที่ดวงตาเพิ่มกำลังหักเหเพื่อให้สามารถโฟกัสวัตถุระยะใกล้ได้ชัดเจน โดยอาศัยการเปลี่ยนรูปร่างของเลนส์แก้วตา</span></span>
+    (การเพ่ง) อย่างถาวร ซึ่งเกิดจากการเปลี่ยนแปลงทางชีวกลศาสตร์ 2 ปัจจัยหลัก:
+  </p>
+
+  <div class="analogy-card" data-icon="🔬">
+    <div class="card-title">สาเหตุหลักทางวิชาการ</div>
+    <p>
+      <strong>1. เลนส์ตาสูญเสียความยืดหยุ่น</strong> — เมื่ออายุมากขึ้น โปรตีนในเลนส์ตา (Crystallin Proteins) จะรวมตัวกัน (aggregate) ทำให้เลนส์แข็งตัวขึ้นเรื่อยๆ กระบวนการนี้เรียกว่า
+      <span class="term">Nuclear Sclerosis<span class="tip">ภาวะเลนส์ตาแข็งตัว — กระบวนการที่โปรตีนในเลนส์ตาค่อยๆ เกาะตัวกันจนเลนส์หนาและแข็งขึ้น เปลี่ยนรูปร่างได้ยาก</span></span>
+    </p>
+    <p>
+      <strong>2. กล้ามเนื้อซิลิอารีทำงานลดลง</strong> — กล้ามเนื้อ
+      <span class="term">Ciliary Muscle<span class="tip">กล้ามเนื้อซิลิอารี — กล้ามเนื้อวงแหวนรอบเลนส์ตาที่ทำหน้าที่บีบและคลายเลนส์ เพื่อปรับโฟกัสระหว่างระยะไกลและใกล้</span></span>
+      ที่ทำหน้าที่บีบเลนส์ จะอ่อนแรงลงตามอายุ ทำให้แรงที่ส่งผ่าน
+      <span class="term">Zonular Fibers<span class="tip">เส้นใยโซนูลาร์ — เส้นเอ็นขนาดเล็กจำนวนมากที่เชื่อมต่อกล้ามเนื้อซิลิอารีกับเลนส์ตา ทำหน้าที่ถ่ายทอดแรงบีบ/คลายเพื่อเปลี่ยนรูปร่างเลนส์</span></span>
+      ไปยังเลนส์ลดน้อยลง
+    </p>
+  </div>
+
+  <p>
+    ทฤษฎีที่ได้รับการยอมรับมากที่สุดในปัจจุบันคือ <span class="term">Helmholtz's Theory<span class="tip">ทฤษฎีของเฮล์มโฮลทซ์ — อธิบายว่าเมื่อกล้ามเนื้อซิลิอารีหดตัว เส้นใยโซนูลาร์จะคลายตัว ทำให้เลนส์ตาโป่งนูนขึ้นเพื่อโฟกัสระยะใกล้ เมื่อคลาย ก็จะกลับไปโฟกัสระยะไกล</span></span> ซึ่งอธิบายว่าเมื่อกล้ามเนื้อซิลิอารีหดตัว จะทำให้เลนส์ตานูนขึ้น กำลังหักเหเพิ่ม ทำให้โฟกัสระยะใกล้ได้ แต่เมื่อเลนส์แข็งตัวตามอายุ การเปลี่ยนรูปร่างจะทำได้ยากขึ้นจนทำไม่ได้เลยครับ
+  </p>
+
+  <div class="highlight-box">
+    <p>💡 Presbyopia ไม่ใช่โรค ไม่ใช่สายตาสั้น-ยาว ไม่ได้เกิดจากใช้ตามาก แต่เป็นกระบวนการตามธรรมชาติที่เกิดกับทุกคนที่มีอายุมากขึ้น เหมือนผมหงอกหรือผิวเหี่ยวย่น — หลีกเลี่ยงไม่ได้ครับ</p>
+  </div>
+
+  <!-- ═══ SECTION: Camera Analogy ═══ -->
+  <h2>👁️ เข้าใจง่ายๆ — ดวงตาเหมือนกล้อง</h2>
+
+  <p>ถ้าเรื่องวิชาการฟังยาก ลองนึกภาพแบบนี้ครับ: <strong>ดวงตาของเราเป็นกล้องถ่ายรูป</strong></p>
+
+  <div class="analogy-card" data-icon="📷">
+    <div class="card-title">เปรียบเทียบ: ตา vs กล้อง</div>
+    <p>
+      <strong>🔹 เลนส์ตา
+        <span class="term">Crystalline Lens<span class="tip">เลนส์แก้วตา — เลนส์ใสๆ ที่อยู่ด้านในดวงตา ทำหน้าที่หักเหแสงเพื่อให้ภาพตกบน Retina (จอประสาทตา) พอดี</span></span>
+      </strong>
+      = เลนส์ของกล้อง ทำหน้าที่ปรับโฟกัสให้ภาพชัด
+    </p>
+    <p>
+      <strong>🔹 กล้ามเนื้อตา
+        <span class="term">Ciliary Muscle<span class="tip">กล้ามเนื้อซิลิอารี — กล้ามเนื้อรอบเลนส์ตาที่ทำหน้าที่บีบและคลายเลนส์ เพื่อปรับโฟกัสระหว่างระยะไกลและใกล้</span></span>
+      </strong>
+      = มอเตอร์ออโต้โฟกัสของกล้อง ทำให้ระบบซูมทำงานได้
+    </p>
+    <p>
+      ทั้งเลนส์ + กล้ามเนื้อ รวมกันเป็น <strong>"ระบบซูม"</strong> ของดวงตา ที่ช่วยให้เรามองไกลก็ชัด มองใกล้ก็ได้ — ความสามารถนี้เรียกว่า
+      <span class="term">Amplitude of Accommodation<span class="tip">ค่าแอมพลิจูดของการเพ่ง — ตัวเลข (หน่วย Diopter) ที่วัดว่าระบบซูมของตาปรับโฟกัสระยะใกล้ได้มากแค่ไหน ยิ่งสูง ยิ่งมองใกล้ได้ดี คนอายุ 20 ปีมีประมาณ 10D / คนอายุ 50 ปีเหลือแค่ 0.5D</span></span>
+    </p>
+  </div>
+
+  <!-- ═══ VIDEO: Ciliary Muscle Animation ═══ -->
+  <div style="margin:2.5rem 0; background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);">
+    <video controls playsinline preload="metadata" style="width:100%; display:block;" poster="">
+      <source src="../images/Biofinity%20Energys%20Patient%20Ciliary%20Muscle%20Animation%20MP4%20ONLY_%20720p.mp4" type="video/mp4">
+      เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+    </video>
+    <div style="padding:18px 24px; border-top:1px solid var(--border-light);">
+      <div style="font-size:15px; font-weight:600; color:var(--text-primary); margin-bottom:6px;">🎬 วิดีโอจำลองการทำงานของกล้ามเนื้อ Ciliary Muscle</div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin:0;">
+        วิดีโอ Animation คุณภาพสูงจากบริษัท <strong>CooperVision</strong> (ผู้ผลิตคอนแทคเลนส์ชั้นนำระดับโลก) แสดงให้เห็นชัดเจนว่ากล้ามเนื้อ Ciliary Muscle บีบและคลายเลนส์แก้วตาอย่างไรเมื่อเราเปลี่ยนระยะโฟกัสจากไกลเป็นใกล้ — นี่คือ "ระบบซูม" ที่เสื่อมลงตามอายุจนทำให้เกิดสายตายาวครับ
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION: Zoom Decline ═══ -->
+  <h2>📉 เมื่อระบบซูมเสื่อมลงตามอายุ</h2>
+
+  <p>
+    สมัยหนุ่มสาว ระบบซูมของดวงตายังแข็งแรง สมมติว่าซูมได้ <strong>5 เท่า</strong> ก็มองใกล้ได้สบายมาก แต่เมื่ออายุมากขึ้น เลนส์ตาแข็งตัว กล้ามเนื้อก็อ่อนแรง ทำให้ระบบซูมค่อยๆ ลดลง...
+  </p>
+
+  <div class="zoom-timeline">
+    <div class="zoom-step">
+      <div class="age">อายุ 20–30 ปี</div>
+      <div class="desc">มองใกล้ได้สบายมาก ระบบซูมทำงานเต็มที่</div>
+      <span class="zoom-label">🔍 ซูม ×5 (≈10 Diopters)</span>
+    </div>
+    <div class="zoom-step">
+      <div class="age">อายุ ~40 ปี</div>
+      <div class="desc">เริ่มรู้สึกว่าตัวหนังสือเล็กๆ อ่านยาก ต้องยืดแขนออก</div>
+      <span class="zoom-label">🔍 ซูม ×3 (≈6.5 Diopters)</span>
+    </div>
+    <div class="zoom-step">
+      <div class="age">อายุ ~50 ปี</div>
+      <div class="desc">อ่านหนังสือระยะ 40 ซม. ไม่ชัดแล้ว ต้องใช้แว่นช่วย</div>
+      <span class="zoom-label">🔍 ซูม ×1 (≈3 Diopters)</span>
+    </div>
+    <div class="zoom-step">
+      <div class="age">อายุ 60+ ปี</div>
+      <div class="desc">ระบบซูมเกือบไม่ทำงาน ต้องพึ่งแว่นสำหรับงานใกล้ทั้งหมด</div>
+      <span class="zoom-label">🔍 ซูม ×0 (≈0.5 Diopters)</span>
+    </div>
+  </div>
+
+  <figure style="margin:2rem 0;text-align:center">
+    <img src="../images/art-presbyopia-reading-difficulty.jpg" alt="บุคคลอ่านหนังสือที่ระยะไกลเพราะต้องยืดแขน" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+    <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">อาการพิสดารของ presbyopia — ต้องยืดแขนให้ไกลจึงจะมองข้อความได้ชัด</figcaption>
+  </figure>
+
+  <!-- ═══ DIOPTER TABLE ═══ -->
+  <h3>📐 ตารางค่า Accommodation ตามอายุ (Hofstetter's Formula)</h3>
+  <p>สูตรที่ทัศนมาตรใช้ในทางคลินิกเพื่อประเมินค่าการเพ่งตามอายุ:</p>
+
+  <div class="diopter-table-wrap">
+    <table class="diopter-table">
+      <thead>
+        <tr>
+          <th>อายุ (ปี)</th>
+          <th>ค่าเพ่งเฉลี่ย (D)</th>
+          <th>ค่าเพ่งต่ำสุด (D)</th>
+          <th>อาการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20</td>
+          <td>12.5</td>
+          <td>10.0</td>
+          <td>มองใกล้สบาย</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>9.5</td>
+          <td>7.5</td>
+          <td>ยังมองใกล้ได้ดี</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>40</td>
+          <td>6.5</td>
+          <td>5.0</td>
+          <td>⚠️ เริ่มอ่านยาก</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>45</td>
+          <td>5.0</td>
+          <td>3.75</td>
+          <td>⚠️ ต้องยืดแขน</td>
+        </tr>
+        <tr>
+          <td>50</td>
+          <td>3.5</td>
+          <td>2.5</td>
+          <td>ต้องใส่แว่น</td>
+        </tr>
+        <tr>
+          <td>60</td>
+          <td>0.5</td>
+          <td>0.0</td>
+          <td>ซูมไม่ได้เลย</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="table-note">
+            * สูตร Hofstetter: ค่าเฉลี่ย = 18.5 − (0.30 × อายุ) / ค่าต่ำสุด = 15 − (0.25 × อายุ) <br>
+            * คนปกติต้องการอย่างน้อย 2.5D เพื่ออ่านหนังสือที่ระยะ 40 ซม. ได้สบาย
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <figure style="margin:2rem 0;text-align:center">
+    <img src="../images/art-presbyopia-accommodation-curve.jpg" alt="กราฟแสดงการลดลงของความสามารถในการเพ่งตามอายุ" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+    <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">กราฟ Accommodation Decline Curve — แสดงว่าค่าการเพ่งลดลงเป็นเส้นโค้งตามอายุ จนเมื่ออายุประมาณ 60 ปี ระบบซูมเกือบไม่ทำงาน</figcaption>
+  </figure>
+
+  <div class="highlight-box">
+    <p>💡 กล้ามเนื้อตาไม่สามารถเปลี่ยนใหม่ได้ เมื่อระบบซูมเสื่อมลง สิ่งที่ช่วยได้คือ "แว่นสายตายาว" ซึ่งทำหน้าที่เหมือน <strong>แว่นขยาย</strong> ที่มาช่วยเสริมระบบซูมที่เสื่อมไปครับ</p>
+  </div>
+
+  <!-- ═══ SECTION: Try It ═══ -->
+  <h2>📱 ลองทำเองได้เลย!</h2>
+
+  <div class="try-it">
+    <div class="icon">📲</div>
+    <div class="label">ลองทำดูเลย</div>
+    <p>
+      หยิบมือถือขึ้นมา เปิดกล้องถ่ายรูป แล้วเอากล้องจ่อใกล้ๆ วัตถุ สังเกตมั้ยครับว่า<strong>กล้องจับโฟกัสไม่ได้</strong>? ต้องถอยออกมาถึงจะชัด — นี่แหละครับ เหมือนกับอาการ
+      <span class="term">Presbyopia<span class="tip">เพรสไบโอเปีย (สายตายาวตามอายุ) — ภาวะที่ระบบปรับโฟกัสระยะใกล้ของดวงตาเสื่อมลงตามอายุ ทำให้มองใกล้ไม่ชัด</span></span>
+      ที่ต้อง<strong>ยืดแขนออก</strong>เพื่อให้ตัวหนังสือชัด!
+    </p>
+  </div>
+
+  <p>
+    ดังนั้น ถ้าพูดเป็นภาษาคนไทยง่ายๆ ก็คือ: <strong>แว่นสายตายาว = แว่นขยาย ที่ช่วยเสริมระบบซูมของร่างกายที่เสื่อมไป</strong> ครับ
+  </p>
+
+  <div class="highlight-box" style="border-left-color: #D35400; background: #FDF0E8;">
+    <p>🎯 <strong>พูดสั้นๆ ให้เข้าใจเลย:</strong> สายตายาว Presbyopia คือภาวะที่ <strong>"ระบบ Auto Focus ของดวงตาเราพัง"</strong> — ตาไม่สามารถปรับโฟกัสระยะใกล้ได้ด้วยตัวเองอีกต่อไป จึงต้องพึ่ง<strong>ตัวช่วยจากเลนส์แว่นตา</strong>เข้ามาทำหน้าที่แทนระบบ Auto Focus ที่เสียไปครับ</p>
+  </div>
+
+  <!-- ═══ SECTION: How to Measure ═══ -->
+  <h2>🩺 ตรวจหาค่าสายตายาว (Addition) ได้อย่างไร?</h2>
+
+  <p>
+    หลายคนสงสัยว่าทัศนมาตรวัดค่าสายตายาวยังไง ผมจะอธิบายกระบวนการให้ฟังครับ เพราะเรื่องนี้สำคัญมาก — ถ้าวัดผิดวิธี ค่าที่ได้จะไม่แม่นยำ
+  </p>
+
+  <div class="analogy-card" data-icon="🔢">
+    <div class="card-title">ขั้นตอนการตรวจค่า Presbyopia Addition</div>
+    <p>
+      <strong>ขั้นตอนที่ 1: ตรวจสายตาระยะไกลก่อนเสมอ</strong><br>
+      ก่อนจะวัดค่าสายตายาว ต้องตรวจหา
+      <span class="term">ค่าสายตาระยะไกล<span class="tip">Distance Refraction — ค่าสายตาพื้นฐานที่วัดจากการอ่านชาร์ตที่ระยะ 6 เมตร (หรือเทียบเท่า) เพื่อหาค่าสายตาสั้น/ยาว/เอียงก่อน ค่านี้เป็น "ฐาน" ที่จะนำไปคำนวณค่า Addition สำหรับระยะใกล้</span></span>
+      ให้เรียบร้อยก่อน โดยให้ผู้รับการตรวจอ่านชาร์ตสายตาที่ระยะ <strong>6 เมตร</strong> เพื่อหาค่าสายตาสั้น ยาว หรือเอียง (ถ้ามี) — ค่านี้คือ "ฐาน" ที่จะนำไปต่อยอด
+    </p>
+    <p>
+      <strong>ขั้นตอนที่ 2: วัดค่า Addition สำหรับระยะใกล้</strong><br>
+      เมื่อได้ค่าสายตาระยะไกลที่ถูกต้องแล้ว จึงเพิ่มเลนส์บวก (Plus Lens) ขึ้นไปทีละขั้นจนกว่าผู้รับการตรวจจะอ่านตัวหนังสือระยะใกล้ (ประมาณ 40 ซม.) ได้ชัดเจนสบายตา ค่าเลนส์ที่เพิ่มขึ้นมานี้เรียกว่า
+      <span class="term">Addition (Add)<span class="tip">ค่า Addition — กำลังเลนส์บวกที่เพิ่มเข้าไปเหนือค่าสายตาระยะไกล เพื่อชดเชยระบบ Accommodation ที่เสื่อมลง ทำให้อ่านระยะใกล้ได้ชัด เช่น Add +2.00 หมายความว่าเพิ่มเลนส์บวก 2.00 Diopters สำหรับระยะใกล้</span></span>
+    </p>
+    <p style="font-size: 15px; color: var(--text-muted); margin-top: 6px;">
+      📌 <em>สำคัญ: ถ้าไม่ตรวจระยะไกลก่อน ค่า Addition ที่ได้จะ <strong>ไม่แม่นยำ</strong> เพราะอาจมีสายตาสั้น/ยาว/เอียงซ่อนอยู่ ทำให้แว่นที่ตัดออกมาใส่ไม่สบาย</em>
+    </p>
+  </div>
+
+  <h3>⚠️ เครื่อง Auto Refraction วัด Presbyopia ได้ไหม?</h3>
+
+  <div class="analogy-card" data-icon="🖥️">
+    <div class="card-title">ข้อจำกัดของเครื่อง Auto Refraction</div>
+    <p>
+      เครื่อง
+      <span class="term">Auto Refraction<span class="tip">Auto Refractometer / Auto Refraction Computer — เครื่องวัดสายตาอัตโนมัติที่พบตามร้านแว่นทั่วไป ใช้แสงอินฟราเรดวัดค่าสายตาระยะไกลเบื้องต้นแบบคร่าวๆ แต่ไม่ได้ออกแบบมาเพื่อวัดค่า Addition สำหรับ Presbyopia โดยเฉพาะ</span></span>
+      (เครื่องคอมพิวเตอร์วัดสายตา) ที่เห็นตามร้านแว่นทั่วไปนั้น ออกแบบมาเพื่อวัด<strong>ค่าสายตาระยะไกลเบื้องต้น</strong>เท่านั้นครับ — <strong>ไม่สามารถวัดค่า Addition สำหรับสายตายาว Presbyopia ได้</strong>
+    </p>
+    <p>
+      แม้เครื่องรุ่นราคาสูงบางรุ่นจะมีฟังก์ชันประเมินค่า Addition ได้ แต่ก็<strong>ไม่แม่นยำเท่ากับการวัดมือ</strong> (Manual Refraction) โดยทัศนมาตร ซึ่งจะทดสอบจริงกับชาร์ตอ่านระยะใกล้ ปรับเลนส์ทีละขั้น และให้ผู้รับการตรวจลองอ่านจริงจนได้ค่าที่ชัดและสบายตาที่สุด
+    </p>
+    <p>
+      <strong>ทำไมการวัดมือถึงดีกว่า?</strong><br>
+      เพราะค่า Addition ที่เหมาะสมนั้นไม่ได้ขึ้นอยู่กับสูตรคำนวณอย่างเดียว แต่ยังขึ้นกับ<strong>พฤติกรรมการใช้สายตา</strong>ของแต่ละคน — ระยะทำงาน ระยะอ่านหนังสือ ขนาดตัวหนังสือที่ต้องอ่าน ท่านั่งทำงาน — สิ่งเหล่านี้เครื่องคอมพิวเตอร์วัดไม่ได้ ต้องอาศัยทัศนมาตรสัมภาษณ์และทดสอบจริงครับ
+    </p>
+  </div>
+
+  <div class="highlight-box">
+    <p>💡 <strong>ที่ Optical X</strong> เราตรวจสายตาด้วย Manual Refraction ในห้องตรวจมาตรฐาน 6 เมตร จากนั้นทดสอบค่า Addition ด้วยเลนส์ทดลองจริง พร้อมให้ลองเลนส์โปรเกรสซีฟกว่า 60 แบบ เพื่อให้ได้ค่าที่แม่นยำและเหมาะกับไลฟ์สไตล์ของคุณจริงๆ ครับ</p>
+  </div>
+
+  <!-- ═══ SECTION: Research ═══ -->
+  <h2>📊 งานวิจัยบอกว่าอะไร?</h2>
+
+  <p>Presbyopia ไม่ใช่เรื่องเล็กๆ ครับ — ข้อมูลจากงานวิจัยทั่วโลกชี้ว่านี่เป็นปัญหาสายตาที่พบมากที่สุดในผู้ใหญ่:</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-number">1.8</div>
+      <div class="stat-unit">พันล้านคน</div>
+      <div class="stat-desc">ทั่วโลกมีภาวะ Presbyopia</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">826</div>
+      <div class="stat-unit">ล้านคน</div>
+      <div class="stat-desc">มองใกล้ไม่ชัดเพราะไม่มีแว่น</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">45%</div>
+      <div class="stat-unit">ยังไม่ได้รับการแก้ไข</div>
+      <div class="stat-desc">ขาดการเข้าถึงแว่นตาที่เหมาะสม</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">2.1</div>
+      <div class="stat-unit">พันล้านคน (ปี 2030)</div>
+      <div class="stat-desc">ตัวเลขที่คาดว่าจะเพิ่มขึ้น</div>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-label">งานวิจัย #1 — ขนาดของปัญหาระดับโลก</div>
+    <p>
+      การศึกษาเชิง meta-analysis ที่ตีพิมพ์ในวารสาร <em>Ophthalmology</em> ของ American Academy of Ophthalmology ประเมินว่าในปี 2015 มีผู้มีภาวะ Presbyopia ทั่วโลกราว 1.8 พันล้านคน คิดเป็นประมาณ 25% ของประชากรโลก ในจำนวนนี้ราว 826 ล้านคนมองใกล้ไม่ชัดเพราะไม่มีแว่นหรือมีแว่นที่ไม่เหมาะสม คิดเป็น unmet need ราว 45%
+    </p>
+    <div class="research-source">
+      📄 Fricke et al. (2018). "Global Prevalence of Presbyopia and Vision Impairment from Uncorrected Presbyopia." <em>Ophthalmology</em>, 125(10), 1492–1499.
+      <a href="https://www.aaojournal.org/article/S0161-6420(17)33797-1/fulltext" target="_blank">→ อ่านเพิ่มเติม</a>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-label">งานวิจัย #2 — ผลกระทบต่อคุณภาพชีวิตและเศรษฐกิจ</div>
+    <p>
+      บทความรีวิวจาก BCLA CLEAR (2024) รวบรวมหลักฐานว่า Presbyopia มีผลกระทบอย่างกว้างขวาง ทั้งด้านคุณภาพการมองเห็น ผลิตภาพในการทำงาน ภาระทางการเงิน สุขภาพจิต ความเป็นอยู่ทางสังคม และสุขภาพกาย WHO ประเมินว่าปัญหาการมองเห็นที่ไม่ได้รับการแก้ไข (รวม presbyopia) ก่อให้เกิดการสูญเสียผลิตภาพทั่วโลกสูงราว 411 พันล้านดอลลาร์ต่อปี
+    </p>
+    <div class="research-source">
+      📄 Wolffsohn et al. (2024). "BCLA CLEAR Presbyopia: Epidemiology and impact." <em>Contact Lens and Anterior Eye</em>.
+      <a href="https://www.contactlensjournal.com/article/S1367-0484(24)00049-3/fulltext" target="_blank">→ อ่านเพิ่มเติม</a>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-label">งานวิจัย #3 — Accommodation ลดลงอย่างชัดเจนตามอายุ</div>
+    <p>
+      งานวิจัยด้าน accommodative amplitude จาก EyeWiki (American Academy of Ophthalmology) ระบุว่าในช่วง 20 ปีแรกของชีวิต ค่า accommodation จะค่อนข้างคงที่อยู่ที่ราว 7–10 Diopters แต่เมื่ออายุถึง 50 ปี ค่าจะลดลงเหลือเพียงราว 0.5 Diopter ซึ่งแทบจะไม่มีความสามารถในการโฟกัสใกล้เลย
+    </p>
+    <div class="research-source">
+      📄 American Academy of Ophthalmology — EyeWiki: Presbyopia.
+      <a href="https://eyewiki.org/Presbyopia" target="_blank">→ อ่านเพิ่มเติม</a>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-label">งานวิจัย #4 — สำคัญกับคนเอเชียตะวันออกเฉียงใต้อย่างไร?</div>
+    <p>
+      ข้อมูลจาก WHO Southeast Asia Region Action Plan (2022) ชี้ว่าประชากรเกือบ 30% ของผู้มีปัญหาสายตาทั่วโลกอยู่ในภูมิภาคเอเชียตะวันออกเฉียงใต้ (รวมประเทศไทย) สาเหตุหลักคือสายตาผิดปกติที่ไม่ได้รับการแก้ไข โดย presbyopia ที่ไม่ได้รับการดูแลคือปัญหาอันดับต้นๆ ในภูมิภาคนี้ นอกจากนี้ ปัจจัยเสี่ยงที่ทำให้เป็น presbyopia เร็วกว่าปกติรวมถึงภูมิอากาศร้อนใกล้เส้นศูนย์สูตร ซึ่งรังสี UV สูงอาจเร่งให้เลนส์ตาแข็งตัวเร็วขึ้น
+    </p>
+    <div class="research-source">
+      📄 WHO SEARO (2022). "Action plan for integrated people-centred eye care in South-East Asia 2022–2030."
+      <a href="https://www.who.int/publications/i/item/9789290210078" target="_blank">→ อ่านเพิ่มเติม</a>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-label">งานวิจัย #5 — แว่นตาช่วยให้คุณภาพชีวิตดีขึ้นจริง</div>
+    <p>
+      การศึกษาในแทนซาเนียที่ตีพิมพ์ใน PMC พบว่า 80% ของผู้ที่มี presbyopia รายงานว่ามีปัญหาการมองใกล้ และ 71% ไม่พอใจกับความสามารถในการทำงานใกล้ของตัวเอง หลังได้รับแว่นสายตายาวที่เหมาะสม 92% ของผู้เข้าร่วมยังคงใช้แว่นอย่างสม่ำเสมอ และรายงานว่าคุณภาพชีวิตโดยรวมดีขึ้นอย่างมีนัยสำคัญ นอกจากนี้งานวิจัยจากอินเดียยังพบว่าคนงานในโรงงานที่มี presbyopia ได้รับแว่นแล้วมีผลิตภาพเพิ่มขึ้นอย่างชัดเจน
+    </p>
+    <div class="research-source">
+      📄 Patel & West. "Presbyopia: prevalence, impact, and interventions." <em>Community Eye Health Journal</em>, PMC.
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2040246/" target="_blank">→ อ่านเพิ่มเติม</a>
+    </div>
+  </div>
+
+
+</article>
+
+<!-- ═══════ GLOSSARY SECTION ═══════ -->
+<div class="container">
+  <section class="glossary-section">
+    <h2><span class="icon">📖</span> คำศัพท์น่ารู้ (Glossary)</h2>
+    <div class="glossary-grid">
+      <dl class="glossary-item">
+        <dt>สายตายาวตามอายุ<span class="en">Presbyopia</span></dt>
+        <dd>ภาวะที่ดวงตาสูญเสียความสามารถในการปรับโฟกัสระยะใกล้ตามอายุ มาจากภาษากรีก <em>presbys</em> (ชรา) + <em>ops</em> (ตา) เกิดจากเลนส์ตาแข็งตัวและกล้ามเนื้อซิลิอารีทำงานน้อยลง มักเริ่มสังเกตได้เมื่ออายุราว 40 ปี ทุกคนจะเป็นเมื่ออายุมากขึ้น</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>เลนส์แก้วตา<span class="en">Crystalline Lens</span></dt>
+        <dd>เลนส์โปร่งใสภายในดวงตาที่เปลี่ยนรูปร่างได้เพื่อปรับโฟกัส สมัยหนุ่มสาวเลนส์จะยืดหยุ่นดี แต่จะค่อยๆ แข็งตัวเมื่ออายุมากขึ้นจากกระบวนการ Nuclear Sclerosis</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>กล้ามเนื้อซิลิอารี<span class="en">Ciliary Muscle</span></dt>
+        <dd>กล้ามเนื้อวงแหวนที่อยู่รอบเลนส์ตา ทำหน้าที่บีบและคลายเลนส์เพื่อปรับโฟกัส เปรียบเสมือนมอเตอร์ออโต้โฟกัสของกล้อง ทำงานร่วมกับ Zonular Fibers</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>เส้นใยโซนูลาร์<span class="en">Zonular Fibers (Zonules)</span></dt>
+        <dd>เส้นเอ็นขนาดเล็กจำนวนมากที่เชื่อมต่อระหว่างกล้ามเนื้อซิลิอารีกับเลนส์ตา ทำหน้าที่ถ่ายทอดแรง (tension) เพื่อเปลี่ยนรูปร่างเลนส์ระหว่างโฟกัสใกล้-ไกล</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>แอมพลิจูดของการเพ่ง<span class="en">Amplitude of Accommodation</span></dt>
+        <dd>ค่า (หน่วย Diopter) ที่วัดว่าระบบปรับโฟกัสของดวงตาทำงานได้มากน้อยเพียงใด คำนวณได้จากสูตร Hofstetter: ค่าเฉลี่ย = 18.5 − (0.30 × อายุ) ยิ่งค่าสูง ยิ่งมองใกล้ได้ดี</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>การเพ่ง<span class="en">Accommodation</span></dt>
+        <dd>กระบวนการที่ดวงตาปรับเพิ่มกำลังหักเหแสง เพื่อให้สามารถโฟกัสภาพวัตถุที่อยู่ใกล้ได้ชัดเจนบนจอประสาทตา (Retina) โดยอาศัยการเปลี่ยนรูปร่างของเลนส์แก้วตา</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>ภาวะเลนส์ตาแข็งตัว<span class="en">Nuclear Sclerosis</span></dt>
+        <dd>กระบวนการที่โปรตีน Crystallin ในเลนส์ตาค่อยๆ สะสมและเกาะตัวกัน (aggregate) ทำให้เลนส์หนาขึ้น แข็งขึ้น และสูญเสียความยืดหยุ่นในการเปลี่ยนรูปร่าง</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>ทฤษฎีเฮล์มโฮลทซ์<span class="en">Helmholtz's Theory</span></dt>
+        <dd>ทฤษฎีกลไกการเพ่งที่ได้รับการยอมรับมากที่สุด: เมื่อ Ciliary Muscle หดตัว → Zonular Fibers คลาย → เลนส์นูนขึ้น → โฟกัสใกล้ เมื่อ Ciliary Muscle คลาย → Zonules ตึง → เลนส์แบน → โฟกัสไกล</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>เลนส์โปรเกรสซีฟ<span class="en">Progressive Lens</span></dt>
+        <dd>เลนส์แว่นตาชนิดพิเศษที่มีค่าสายตาไล่ระดับ สามารถมองไกล กลาง และใกล้ได้ในเลนส์เดียว โดยไม่มีเส้นแบ่งให้เห็น เหมาะสำหรับผู้ที่มีสายตายาว Presbyopia</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>ไดออปเตอร์<span class="en">Diopter (D)</span></dt>
+        <dd>หน่วยวัดกำลังหักเหของเลนส์ ใช้ในทางทัศนมาตรศาสตร์ ค่า 1D หมายความว่าเลนส์สามารถโฟกัสที่ระยะ 1 เมตร (100/ระยะโฟกัสเป็นซม.) ค่า +2.5D ในแว่นอ่านหนังสือหมายถึงช่วยโฟกัสที่ระยะ 40 ซม.</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>ค่า Addition<span class="en">Near Addition (Add)</span></dt>
+        <dd>กำลังเลนส์บวก (+) ที่เพิ่มเข้าไปเหนือค่าสายตาระยะไกล เพื่อชดเชยระบบ Accommodation ที่เสื่อมลง ค่า Add จะถูกตรวจวัดหลังจากได้ค่าสายตาระยะไกลที่ถูกต้องแล้ว เช่น Add +2.00D หมายถึงเพิ่มกำลังเลนส์ 2.00 Diopters สำหรับมองใกล้</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>ค่าสายตาระยะไกล<span class="en">Distance Refraction</span></dt>
+        <dd>ค่าสายตาพื้นฐานที่ได้จากการอ่านชาร์ตสายตาที่ระยะ 6 เมตร (หรือเทียบเท่า) เป็น "ฐาน" สำคัญที่ต้องตรวจก่อนจึงจะวัดค่า Addition ได้อย่างแม่นยำ หากไม่ตรวจระยะไกลก่อน ค่า Addition จะผิดพลาด</dd>
+      </dl>
+      <dl class="glossary-item">
+        <dt>เครื่องวัดสายตาอัตโนมัติ<span class="en">Auto Refractometer</span></dt>
+        <dd>เครื่องคอมพิวเตอร์ที่ใช้แสงอินฟราเรดวัดค่าสายตาระยะไกลเบื้องต้นแบบอัตโนมัติ มีข้อจำกัดสำคัญคือไม่สามารถวัดค่า Addition สำหรับ Presbyopia ได้อย่างแม่นยำ และไม่สามารถประเมินพฤติกรรมการใช้สายตาของแต่ละบุคคลได้ ต้องอาศัยการวัดมือ (Manual Refraction) โดยทัศนมาตรเสริม</dd>
+      </dl>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════ Q&A SECTION ═══════ -->
+<div class="container">
+  <section class="qa-section">
+    <h2>❓ คำถามที่พบบ่อย</h2>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">สายตายาวตามอายุ (Presbyopia) กับสายตายาวแต่กำเนิด (Hyperopia) ต่างกันยังไง?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          <strong>Presbyopia</strong> — เกิดจาก "ระบบซูม" ของตาเสื่อมตามวัย (เลนส์แข็งตัว + กล้ามเนื้ออ่อนแรง) ทำให้มองใกล้ไม่ชัด <strong>ทุกคนจะเป็นเมื่ออายุมากขึ้น</strong><br><br>
+          <strong>Hyperopia (สายตายาวแต่กำเนิด)</strong> — เกิดจากลูกตาสั้นกว่าปกติหรือกำลังหักเหของกระจกตาไม่เพียงพอตั้งแต่เกิด ทำให้ภาพตกหลังจอประสาทตา อาจมีตั้งแต่เด็กก็ได้ครับ<br><br>
+          ⚡ <strong>สรุป:</strong> Presbyopia = ระบบซูมเสื่อมตามอายุ / Hyperopia = ลูกตาสั้นตั้งแต่กำเนิด — คนละสาเหตุกันเลย!
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">สายตายาว Presbyopia เริ่มเป็นตอนอายุเท่าไหร่?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          ส่วนใหญ่จะเริ่มสังเกตอาการเมื่ออายุประมาณ <strong>40–45 ปี</strong> ครับ ตามสูตร Hofstetter เมื่ออายุ 40 ปี ค่าเฉลี่ยของ Amplitude of Accommodation จะเหลือราว 6.5D ซึ่งเริ่มไม่เพียงพอสำหรับการอ่านใกล้ได้สบาย<br><br>
+          อย่างไรก็ตาม มีปัจจัยเสี่ยงที่ทำให้เป็นเร็วกว่าปกติ ได้แก่ สายตายาวแต่กำเนิด ยาบางชนิด (แอนตี้ฮิสตามีน แอนตี้ดีเพรสแซนท์) โรคเบาหวาน รวมถึงภูมิอากาศร้อนใกล้เส้นศูนย์สูตรซึ่งรังสี UV สูงอาจเร่งให้เลนส์ตาแข็งตัวเร็วขึ้น
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">ถ้าไม่ใส่แว่น จะทำให้สายตาแย่ลงมั้ย?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          การไม่ใส่แว่นไม่ได้ทำให้ตา "เสีย" มากขึ้นครับ เพราะ Presbyopia จะดำเนินไปตามธรรมชาติไม่ว่าจะใส่แว่นหรือไม่ แต่จะทำให้ <strong>เมื่อยตา ปวดหัว เมื่อยคอ</strong> จากการพยายามเพ่งมองตลอดเวลา<br><br>
+          งานวิจัยในแทนซาเนียพบว่า 80% ของคนที่มี Presbyopia มีปัญหากับการมองใกล้ และ 71% ไม่พอใจกับความสามารถในการทำงานใกล้ แต่เมื่อได้แว่นที่เหมาะสม คุณภาพชีวิตดีขึ้นอย่างชัดเจน!
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">เลนส์โปรเกรสซีฟ กับ แว่นอ่านหนังสือ อันไหนดีกว่า?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          <strong>แว่นอ่านหนังสือ (Reading Glasses)</strong> — ใช้ได้แค่ระยะใกล้เท่านั้น ต้องถอดเข้าถอดออก<br><br>
+          <strong>เลนส์โปรเกรสซีฟ (Progressive Lens)</strong> — มองได้ทุกระยะในเลนส์เดียว ไกล-กลาง-ใกล้ ไม่มีเส้นแบ่ง ไม่ต้องถอดเข้าถอดออก สะดวกมากสำหรับชีวิตประจำวันที่ต้องสลับมองจอ มองคน มองมือถือ<br><br>
+          📌 ที่ Optical X เรามี<strong>เลนส์โปรเกรสซีฟทดลองให้ลองใส่กว่า 60 แบบ</strong> เพื่อให้คุณได้ลองจริงก่อนตัดสินใจ — ซึ่งหาไม่ได้ง่ายๆ ที่ร้านแว่นทั่วไปครับ
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">สายตายาวรักษาให้หายขาดได้ไหม?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          ปัจจุบัน <strong>ไม่สามารถรักษาให้หายขาดได้</strong>ครับ เพราะเป็นกระบวนการทางธรรมชาติที่เกิดกับทุกคน เปรียบเหมือนผมหงอก — ป้องกันไม่ได้ ย้อนกลับไม่ได้<br><br>
+          แต่สามารถ <strong>"จัดการ"</strong> ได้ด้วย: แว่นสายตา, เลนส์โปรเกรสซีฟ, คอนแทคเลนส์มัลติโฟคัล หรือในบางกรณีอาจพิจารณาทำ LASIK แบบ Monovision ครับ ปรึกษาทัศนมาตรเพื่อหาทางเลือกที่เหมาะสมที่สุด
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">ทำไมคนไทยอาจเป็นสายตายาวเร็วกว่าคนยุโรป?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          มีงานวิจัยที่เสนอว่าคนที่อาศัยในภูมิภาค<strong>ใกล้เส้นศูนย์สูตร</strong>อาจมีความเสี่ยงที่จะเป็น Presbyopia เร็วกว่า เนื่องจากได้รับรังสีอัลตราไวโอเลต (UV) สูง และอุณหภูมิสูง ซึ่งอาจเร่งกระบวนการแข็งตัวของเลนส์ นอกจากนี้ ผู้ที่มีเม็ดสีเมลานินสูง (melanin) ในภูมิภาคเหล่านี้ยังมีแนวโน้มเกิด presbyopia เร็วกว่าด้วย<br><br>
+          🕶️ <strong>Tip:</strong> การสวมแว่นกันแดดที่กรอง UV ได้ตั้งแต่เด็กๆ อาจช่วยชะลอการเสื่อมของเลนส์ตาได้ในระดับหนึ่งครับ
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">สายตาสั้น (Myopia) ช่วยชดเชยสายตายาวได้จริงมั้ย?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          มีความเข้าใจผิดที่พบบ่อยว่า "สายตาสั้นกับยาวหักล้างกัน" — ความจริงคือ <strong>ไม่ได้หักล้างกันครับ</strong> แต่คนสายตาสั้นเมื่อ<strong>ถอดแว่น</strong>จะยังมองใกล้ได้ดีกว่าคนสายตาปกติ เพราะจุดโฟกัสธรรมชาติอยู่ใกล้อยู่แล้ว<br><br>
+          อย่างไรก็ตาม เมื่อ<strong>ใส่แว่นสายตาสั้น</strong>อยู่ ก็ยังต้องเจอ Presbyopia เหมือนทุกคนครับ จะต้องใช้เลนส์โปรเกรสซีฟหรือแว่นเสริมสำหรับระยะใกล้เช่นกัน
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">Presbyopia กี่ระดับ? ผมต้องใส่แว่นกี่ค่า?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          ทางคลินิก Presbyopia แบ่งเป็น 3 ระดับครับ:<br><br>
+          <strong>🟢 ระดับเบา (อายุ ~40–45)</strong> — ค่า Add +0.75 ถึง +1.25D อ่านหนังสือเล็กๆ เริ่มยาก<br>
+          <strong>🟡 ระดับปานกลาง (อายุ ~46–55)</strong> — ค่า Add +1.50 ถึง +2.25D ต้องยืดแขนออกเวลาอ่าน<br>
+          <strong>🔴 ระดับมาก (อายุ 55+)</strong> — ค่า Add +2.50 ขึ้นไป ต้องพึ่งแว่นสำหรับงานใกล้ทั้งหมด<br><br>
+          📌 ค่า "Add" จะถูกตรวจวัดโดยทัศนมาตรจากการตรวจสายตา ไม่แนะนำให้ซื้อแว่นอ่านหนังสือสำเร็จรูปโดยไม่ได้ตรวจ เพราะค่าสายตาแต่ละข้างอาจไม่เท่ากันครับ
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">ทำไมต้องวัดสายตาระยะไกลก่อน ถึงจะวัดค่าสายตายาวได้?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          เพราะค่า Addition (ค่าเลนส์สำหรับมองใกล้) เป็นค่าที่ <strong>"เพิ่มขึ้นมา"</strong> จากค่าสายตาระยะไกล ถ้าค่าระยะไกลผิด ค่า Addition ก็จะผิดตามไปด้วยครับ<br><br>
+          ลองนึกภาพแบบนี้: ถ้าจะสร้างชั้น 2 ของตึก แต่ชั้น 1 (ฐาน) สร้างเอียง ชั้น 2 ก็จะเอียงตาม — เช่นเดียวกัน ถ้ามีสายตาสั้น/ยาว/เอียงซ่อนอยู่แต่ไม่ได้แก้ก่อน แว่นที่ตัดออกมาจะใส่ไม่สบาย มึนหัว หรืออ่านไม่ชัดเท่าที่ควร<br><br>
+          📌 ดังนั้นกระบวนการที่ถูกต้องคือ: <strong>ตรวจระยะไกล (อ่านชาร์ต 6 เมตร) → ได้ค่าฐาน → จากนั้นจึงทดสอบระยะใกล้ → ได้ค่า Addition</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">เครื่องคอมพิวเตอร์วัดสายตา (Auto Refraction) วัดค่าสายตายาวได้ไหม?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          เครื่อง Auto Refraction ที่เห็นตามร้านแว่นทั่วไป <strong>ไม่สามารถวัดค่า Addition สำหรับ Presbyopia ได้</strong>ครับ เครื่องเหล่านี้ออกแบบมาเพื่อวัดค่าสายตาระยะไกลเบื้องต้นเท่านั้น<br><br>
+          แม้เครื่องรุ่นราคาแพงบางรุ่นจะมีฟังก์ชันประเมินค่า Addition ได้ แต่ก็<strong>ไม่แม่นยำเท่ากับการวัดมือ</strong> (Manual Refraction) เพราะค่า Addition ที่ดีนั้นต้องคำนึงถึงพฤติกรรมการใช้สายตาของแต่ละคนด้วย เช่น ระยะทำงาน ขนาดตัวหนังสือ ท่านั่ง — สิ่งเหล่านี้เครื่องจักรวัดไม่ได้ครับ<br><br>
+          ⚡ <strong>สรุป:</strong> เครื่องคอมพิวเตอร์ = ตรวจเบื้องต้น / ทัศนมาตร + Manual Refraction = ตรวจจริงได้ค่าที่แม่นยำ
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-icon">Q</span>
+        <span class="qa-q-text">ซื้อแว่นอ่านหนังสือสำเร็จรูปตามร้านได้เลยมั้ย?</span>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+        <div class="qa-answer-inner">
+          แว่นอ่านหนังสือสำเร็จรูป (Ready-made Readers) <strong>ไม่แนะนำครับ</strong> เพราะ:<br><br>
+          🔸 ค่าสายตาทั้ง 2 ข้างเท่ากัน ซึ่งในความเป็นจริงคนส่วนใหญ่มีค่าสายตาแต่ละข้างไม่เท่ากัน<br>
+          🔸 ไม่มีค่าสายตาเอียง (Astigmatism) ซึ่งพบได้บ่อยมาก<br>
+          🔸 ค่าระยะห่างระหว่างรูม่านตา (PD) เป็นค่ากลาง ไม่ตรงกับแต่ละคน<br>
+          🔸 ไม่ได้ตรวจสายตาระยะไกลก่อน จึงไม่รู้ว่ามีสายตาสั้น/ยาวซ่อนอยู่หรือไม่<br><br>
+          ใส่ได้ชั่วคราวในยามจำเป็น แต่สำหรับการใช้งานระยะยาว ควรตรวจสายตากับทัศนมาตรและตัดแว่นตามค่าที่แม่นยำครับ
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- ═══════ CTA ═══════ -->
+<div class="container">
+  <section class="cta-section">
+    <h2>อ่านหนังสือไม่ชัด? มาเช็คสายตากัน</h2>
+    <p>ที่ Optical X เรามีห้องตรวจสายตามาตรฐาน 6 เมตร พร้อมเลนส์โปรเกรสซีฟทดลองกว่า 60 แบบ ให้คุณได้ลองจริงก่อนตัดสินใจ</p>
+    <a href="https://opticalxvision.com" class="cta-btn">นัดตรวจสายตา →</a>
+  </section>
+</div>
+
+<!-- ═══════ FOOTER ═══════ -->
+
+
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+
+    <div>
+      <a href="../index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">
+        ศูนย์เลนส์โปรเกรสซีฟเฉพาะทาง<br>
+        ตรวจวัดสายตาโดยทัศนมาตร<br>
+        Riverside Plaza · ชั้น 2 · กรุงเทพฯ
+      </p>
+      <div class="ox-f-social">
+        <a href="https://lin.ee/E4GHWdJ" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.instagram.com/opticalxvision" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ที่ตั้ง</p>
+        <p class="ox-f-contact-val">
+          Riverside Plaza ชั้น 2<br>
+          257/6 ถ.เจริญนคร<br>
+          แขวงสำเหร่ เขตธนบุรี กทม. 10600
+        </p>
+      </div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ติดต่อ</p>
+        <p class="ox-f-contact-val">
+          <a href="tel:0929897447">092 989 7447</a><br>
+          <a href="https://lin.ee/E4GHWdJ">LINE: @opxrv</a><br>
+          <a href="mailto:opticalx.rv@gmail.com">opticalx.rv@gmail.com</a>
+        </p>
+      </div>
+      <div class="ox-f-hours">
+        <div class="ox-f-hours-row"><span>จ – อา</span><span>11:00 – 20:00</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ox-footer-bottom">
+    <p class="ox-f-copy">© 2025 Optical X Vision Care Center · All Rights Reserved</p>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>5.0 Google Rating</span>
+    </div>
+    <p class="ox-f-cert">Licensed Optometrist · Bangkok</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+function toggleQA(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.qa-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+
+
+<script>
+/* ── Universal QA/FAQ Toggle v2 ── */
+(function(){
+  // Toggle function used by all patterns
+  function toggleItem(item){
+    if(!item) return;
+    var wasOpen = item.classList.contains('open');
+    // Close all siblings in same parent
+    var parent = item.parentElement;
+    if(parent){
+      parent.querySelectorAll('.qa-item.open').forEach(function(el){ el.classList.remove('open'); });
+    }
+    if(!wasOpen) item.classList.add('open');
+  }
+
+  // Pattern 1: Click on .qa-q or .qa-question
+  document.querySelectorAll('.qa-q, .qa-question').forEach(function(btn){
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleItem(btn.closest('.qa-item'));
+    });
+  });
+
+  // Pattern 2: Click on .qa-item itself (for items with onclick on the item)
+  document.querySelectorAll('.qa-item').forEach(function(item){
+    // Only add if no qa-q/qa-question child handles it
+    var hasQChild = item.querySelector('.qa-q, .qa-question');
+    if(!hasQChild){
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function(e){
+        toggleItem(item);
+      });
+    }
+  });
+
+  // Global fallback for  window.toggleQA = function(el){
+    var item = el.closest ? el.closest('.qa-item') : el.parentElement;
+    toggleItem(item);
+  };
+})();
+</script>
+
+</body>
+</html>

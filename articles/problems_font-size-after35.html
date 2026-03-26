@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>หลัง 35 ปรับฟอนต์โทรศัพท์ให้ใหญ่ขึ้น ช่วยสายตาได้จริงไหม? | Optical X</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1d35;
+    --blue: #1a3a6e;
+    --accent: #e8a020;
+    --accent-light: #fdf3e0;
+    --teal: #0e7e7a;
+    --teal-light: #e6f7f6;
+    --text: #1c1c2e;
+    --muted: #6b7280;
+    --bg: #fafaf8;
+    --white: #ffffff;
+    --card-bg: #f5f5f0;
+    --border: #e5e5e0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 17px;
+    padding-bottom: 72px;
+  }
+
+  /* ===== PROGRESS BAR ===== */
+  .progress-bar {
+    position: fixed; top: 0; left: 0;
+    height: 3px; background: var(--accent);
+    width: 0%; z-index: 300;
+    transition: width 0.1s linear;
+  }
+
+  /* ===== BOTTOM NAV (mobile only) ===== */
+  .bottom-nav {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--navy); z-index: 200;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.25);
+  }
+  .bottom-nav-inner { display: flex; justify-content: space-around; }
+  .bnav-btn {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 9px 4px 12px; gap: 3px;
+    color: rgba(255,255,255,0.65); font-size: 10px;
+    font-weight: 600; letter-spacing: 0.3px;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  .bnav-btn:active { color: var(--accent); }
+  .bnav-btn .bi { font-size: 20px; line-height: 1; }
+  .bnav-btn.cta { background: var(--accent); color: var(--navy); font-weight: 700; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--navy); color: white;
+    padding: clamp(36px,8vw,60px) clamp(18px,5vw,32px) clamp(28px,6vw,48px);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 260px; height: 260px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,160,32,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block; background: var(--accent); color: var(--navy);
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(23px, 6vw, 40px); line-height: 1.3; margin-bottom: 14px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    font-size: clamp(14px, 3.5vw, 16px); color: rgba(255,255,255,0.75);
+    max-width: 580px; margin-bottom: 22px; line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex; align-items: flex-start; gap: 12px 20px; flex-wrap: wrap;
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px;
+  }
+  .hero-meta .author { color: rgba(255,255,255,0.9); font-weight: 600; }
+  .read-time { display: flex; align-items: center; gap: 5px; }
+  .read-time::before { content: '⏱'; font-size: 14px; }
+
+  /* ===== LAYOUT ===== */
+  .layout {
+    max-width: 1100px; margin: 0 auto;
+    padding: clamp(22px,5vw,48px) clamp(16px,5vw,24px);
+    display: grid; grid-template-columns: 280px 1fr;
+    gap: 36px; align-items: start;
+  }
+
+  /* ===== ARTICLE ===== */
+  .article h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(19px, 4.5vw, 24px); color: var(--blue);
+    margin: clamp(26px,6vw,40px) 0 12px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+    display: inline-block; line-height: 1.35;
+  }
+  .article h3 { font-size: clamp(15px,3.5vw,18px); font-weight: 700; color: var(--navy); margin: 22px 0 10px; }
+  .article p { margin-bottom: 16px; color: #2d2d3d; font-size: clamp(15px,3vw,17px); }
+  .section-sub {
+    display: block;
+    font-family: 'Sarabun', sans-serif;
+    font-size: clamp(14px, 3vw, 16px);
+    font-weight: 500;
+    font-style: normal;
+    color: var(--muted);
+    margin-top: 6px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+    padding-left: 2px;
+  }
+
+  /* ===== TOOLTIP GLOSSARY ===== */
+  .gloss {
+    border-bottom: 2px dotted var(--teal);
+    cursor: pointer; color: var(--teal); font-weight: 600; position: relative;
+  }
+  .gloss .tip {
+    display: none; position: absolute; bottom: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%); background: var(--navy); color: white;
+    font-size: 13px; font-weight: 400; line-height: 1.55; padding: 12px 16px;
+    border-radius: 10px; width: min(260px, 88vw); white-space: normal;
+    z-index: 150; box-shadow: 0 6px 24px rgba(0,0,0,0.35); pointer-events: none;
+  }
+  .gloss .tip::after {
+    content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: var(--navy);
+  }
+  @media (hover: hover) { .gloss:hover .tip { display: block; } }
+
+  /* ===== CALLOUT BOXES ===== */
+  .callout {
+    background: var(--accent-light); border-left: 4px solid var(--accent);
+    padding: 16px 18px; border-radius: 0 10px 10px 0; margin: 22px 0;
+  }
+  .callout.teal { background: var(--teal-light); border-left-color: var(--teal); }
+  .callout p { margin-bottom: 0; font-size: clamp(14px,3vw,16px); }
+  .callout strong { color: var(--navy); }
+
+  .research-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-top: 3px solid var(--blue); padding: 18px 20px;
+    border-radius: 0 0 10px 10px; margin: 22px 0;
+  }
+  .research-card .rc-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
+  }
+  .research-card p { margin: 0; font-size: clamp(13px,2.8vw,15px); color: #3a3a4a; line-height: 1.75; }
+
+  .myth-box { background: #fff5f5; border: 1px solid #fca5a5; border-radius: 10px; padding: 18px 20px; margin: 22px 0; }
+  .myth-box .myth-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #dc2626; margin-bottom: 6px; }
+  .truth-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 10px; padding: 18px 20px; margin: 22px 0; }
+  .truth-box .truth-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #16a34a; margin-bottom: 6px; }
+
+  .pull-quote {
+    font-family: 'Playfair Display', serif; font-size: clamp(17px,4vw,22px);
+    font-style: italic; color: var(--blue); border-left: 4px solid var(--accent);
+    padding: 14px 20px; margin: 28px 0;
+    background: linear-gradient(135deg, #f8f9ff, white); border-radius: 0 10px 10px 0; line-height: 1.5;
+  }
+
+  /* ===== VISUAL DIOPTER BOX ===== */
+  .visual-box {
+    background: #fdf8ef;
+    color: var(--text); border-radius: 14px; border: 1px solid #e8d9b8;
+    padding: clamp(18px,5vw,28px) clamp(14px,4vw,24px); margin: 26px 0; text-align: center;
+  }
+  .visual-box h3 { color: var(--navy); margin-bottom: 12px; font-size: clamp(14px,3.5vw,17px); }
+  .dial-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 14px 0; }
+  .dial { background: #fff; border: 1px solid #e5ddd0; border-radius: 10px; padding: 14px 10px; }
+  .dial .d-val { font-size: clamp(22px,5vw,28px); font-weight: 700; color: var(--accent); line-height: 1; }
+  .dial .d-lab { font-size: clamp(10px,2.2vw,13px); color: var(--muted); margin-top: 5px; line-height: 1.5; }
+
+  /* ===== FONT DEMO ===== */
+  .font-demo { background: white; border: 1px solid var(--border); border-radius: 12px; padding: clamp(16px,4vw,24px); margin: 22px 0; }
+  .font-demo h3 { margin: 0 0 14px; font-size: 15px; color: var(--muted); }
+  .size-row { display: flex; flex-direction: column; gap: 12px; }
+  .size-item { display: flex; align-items: center; gap: 10px; }
+  .size-label { font-size: 10px; font-weight: 600; color: var(--muted); width: 70px; flex-shrink: 0; text-align: right; }
+  .size-text { line-height: 1.4; flex: 1; }
+  .size-bar { width: 5px; border-radius: 3px; flex-shrink: 0; align-self: stretch; min-height: 20px; }
+
+  /* ===== TIPS GRID ===== */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 22px 0; }
+  .tip-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 16px 14px; }
+  .tip-card .tc-icon { font-size: 26px; margin-bottom: 8px; }
+  .tip-card .tc-title { font-size: clamp(13px,3vw,15px); font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .tip-card p { font-size: clamp(12px,2.6vw,14px); color: var(--muted); margin: 0; line-height: 1.6; }
+
+  /* ===== Q&A ===== */
+  .qa-section { margin-top: 44px; padding-top: 28px; border-top: 2px solid var(--border); }
+  .qa-section > h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(19px,4.5vw,26px);
+    color: var(--navy); margin-bottom: 18px; border-bottom: none; display: block;
+  }
+  .qa-item { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 10px; background: white; }
+  .qa-q {
+    padding: 16px 18px; display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; font-weight: 600; color: var(--navy); user-select: none; gap: 12px;
+    font-size: clamp(14px,3.2vw,16px); min-height: 56px; -webkit-tap-highlight-color: transparent;
+  }
+  .qa-q:active { background: #f8f8f5; }
+  .qa-q .q-icon {
+    flex-shrink: 0; width: 28px; height: 28px; background: var(--navy); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700; transition: transform 0.3s, background 0.3s;
+  }
+  .qa-item.open .q-icon { transform: rotate(45deg); background: var(--accent); color: var(--navy); }
+  .qa-a { display: none; padding: 16px 18px 18px; color: #3a3a4a; font-size: clamp(14px,3vw,15px); line-height: 1.85; border-top: 1px solid var(--border); }
+  .qa-item.open .qa-a { display: block; }
+
+  /* ===== REFERENCES ===== */
+  .references { margin-top: 36px; padding: clamp(16px,4vw,24px); background: var(--card-bg); border-radius: 12px; font-size: 13px; color: var(--muted); }
+  .references h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .references ol { padding-left: 18px; line-height: 1.9; }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar { position: sticky; top: 24px; }
+  .sidebar-widget { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+  .sw-head {
+    background: var(--navy); color: white; padding: 13px 18px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
+  }
+  .sw-head.teal { background: var(--teal); }
+  .sw-head .sw-toggle { font-size: 18px; font-weight: 700; transition: transform 0.3s; }
+  .sidebar-widget.sw-open .sw-toggle { transform: rotate(45deg); }
+  .sw-body { display: block; }
+
+  .glossary-list { list-style: none; }
+  .glossary-list li { padding: 12px 18px; border-bottom: 1px solid var(--border); min-height: 48px; }
+  .glossary-list li:last-child { border-bottom: none; }
+  .gl-term { font-weight: 700; color: var(--teal); font-size: 13px; margin-bottom: 3px; }
+  .gl-def { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  .toc-list { list-style: none; }
+  .toc-list li a {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px 18px; border-bottom: 1px solid var(--border);
+    text-decoration: none; font-size: 14px; color: var(--text);
+    min-height: 48px; transition: all 0.2s; -webkit-tap-highlight-color: transparent;
+  }
+  .toc-list li:last-child a { border-bottom: none; }
+  .toc-list li a::before { content: '→'; color: var(--accent); font-size: 13px; flex-shrink: 0; }
+  @media (hover: hover) { .toc-list li a:hover { color: var(--teal); padding-left: 24px; background: var(--teal-light); } }
+
+  .author-card { padding: 16px 18px; }
+  .author-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; flex-shrink: 0; }
+  .author-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .author-role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .author-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+  .cta-btn { display: block; background: var(--accent); color: var(--navy); text-align: center; padding: 13px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; -webkit-tap-highlight-color: transparent; }
+  .cta-btn:active { opacity: 0.85; }
+
+  /* ===== MOBILE GLOSSARY DRAWER ===== */
+  .gloss-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 250; }
+  .gloss-overlay.vis { display: block; }
+  .gloss-drawer {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: white; border-radius: 20px 20px 0 0;
+    padding: 20px 22px 48px; z-index: 260;
+    transform: translateY(100%); transition: transform 0.32s cubic-bezier(0.32,0.72,0,1);
+    max-height: 60vh; overflow-y: auto;
+  }
+  .gloss-drawer.vis { transform: translateY(0); }
+  .drawer-handle { width: 40px; height: 4px; background: #d1d5db; border-radius: 2px; margin: 0 auto 18px; }
+  .drawer-term { font-size: 18px; font-weight: 700; color: var(--teal); margin-bottom: 10px; }
+  .drawer-def { font-size: 16px; color: var(--text); line-height: 1.8; }
+
+  /* ===== FOOTER ===== */
+  .article-footer { background: var(--navy); color: white; text-align: center; padding: clamp(32px,8vw,48px) clamp(18px,5vw,24px); }
+  .article-footer h3 { font-family: 'Playfair Display', serif; font-size: clamp(18px,4.5vw,22px); color: var(--accent); margin-bottom: 10px; line-height: 1.35; }
+  .article-footer p { font-size: clamp(13px,3vw,15px); color: rgba(255,255,255,0.75); margin-bottom: 20px; line-height: 1.7; }
+  .footer-btn { display: inline-block; background: var(--accent); color: var(--navy); padding: 14px 30px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 15px; }
+
+  /* ===== DESKTOP ===== */
+  @media (min-width: 861px) {
+    body { padding-bottom: 0; }
+    .bottom-nav { display: none !important; }
+    .layout { grid-template-columns: 280px 1fr; }
+    .sw-head { cursor: default; }
+    .sw-head .sw-toggle { display: none; }
+    .sw-body { display: block !important; }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 860px) {
+    .bottom-nav { display: block; }
+    .layout { grid-template-columns: 1fr; padding: 18px 16px 24px; gap: 0; }
+    .sidebar { position: static; order: -1; margin-bottom: 4px; }
+    .sidebar-widget { margin-bottom: 8px; border-radius: 10px; }
+    .sw-body { display: none; }
+    .sidebar-widget.sw-open .sw-body { display: block; }
+    .gloss .tip { display: none !important; }
+    .tips-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  }
+  @media (max-width: 400px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .size-label { width: 58px; font-size: 9px; }
+  }
+
+/* ── OX NAV ── */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.ox-mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 890;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(12px);
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px;
+  padding: 80px 24px 40px;
+  overflow-y: auto;
+}
+.ox-mobile-nav.open { display: flex; }
+.ox-mobile-nav a {
+  font-size: 1.1rem; color: #2C2416; text-decoration: none;
+  padding: 10px 0; font-weight: 500;
+}
+.ox-mobile-nav a.sub { font-size: 0.9rem; color: #8B7355; padding: 6px 0; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: inline-block; margin-top: 16px;
+  background: #C8A96E; color: #fff !important;
+  padding: 14px 32px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── OX FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top > div:last-child { text-align: right; }
+.ox-footer-top > div:last-child .ox-f-hours-row { justify-content: flex-end; }
+.ox-footer-top > div:last-child .ox-f-contact-val a { justify-content: flex-end; }
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+
+/* ── MOBILE OVERFLOW FIX ── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; padding-top: 64px; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; }
+pre, code { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { min-width: 80px; white-space: nowrap; font-size: 0.85rem; padding: 8px 10px; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  section, .section, .page-wrap, .content, .article-body, article,
+  [class*="wrap"], [class*="container"], [class*="content"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero, .hero-inner, [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem !important; word-break: keep-all; }
+  h2 { font-size: 1.1rem !important; }
+  .ox-footer-top { padding: 32px 16px 24px !important; }
+}
+
+
+/* ── Universal QA Accordion Fix ── */
+.qa-q, .qa-question { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qa-a, .qa-answer { max-height: 0 !important; overflow: hidden !important; display: block !important; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px !important; }
+.qa-item.open > .qa-a,
+.qa-item.open > .qa-answer,
+.qa-item.open .qa-a,
+.qa-item.open .qa-answer { max-height: 3000px !important; padding: 4px 24px 20px 66px !important; }
+.qa-item.open .qa-toggle,
+.qa-item.open .qa-icon { transform: rotate(45deg); }
+.qa-item.open .chevron { transform: rotate(180deg); }
+@media (max-width: 600px) {
+  .qa-item.open > .qa-a,
+  .qa-item.open > .qa-answer,
+  .qa-item.open .qa-a,
+  .qa-item.open .qa-answer { padding: 4px 16px 16px 16px !important; }
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="bnav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <span class="bi">⬆️</span>บนสุด
+    </button>
+    <button class="bnav-btn" onclick="scrollTo('#sec1')">
+      <span class="bi">👁</span>ตาเพ่ง
+    </button>
+    <button class="bnav-btn" onclick="scrollTo('#sec5')">
+      <span class="bi">✅</span>วิธีดูแล
+    </button>
+    <button class="bnav-btn" onclick="scrollTo('.qa-section')">
+      <span class="bi">🙋</span>Q&amp;A
+    </button>
+    <a class="bnav-btn cta" href="https://opticalxvision.com" target="_blank">
+      <span class="bi">👓</span>นัดตรวจ
+    </a>
+  </div>
+</nav>
+
+<!-- GLOSSARY DRAWER (mobile) -->
+<div class="gloss-overlay" id="gOverlay" onclick="closeDrawer()"></div>
+<div class="gloss-drawer" id="gDrawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-term" id="dTerm"></div>
+  <div class="drawer-def"  id="dDef"></div>
+</div>
+
+<!-- HERO -->
+
+
+<nav class="ox-nav" id="oxNav">
+
+  <a href="../index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+
+    <li>
+      <a href="../services.html">บริการ</a>
+    </li>
+
+    <li>
+      <a href="../programs.html">โปรแกรม</a>
+    </li>
+
+    <li>
+      <a href="../articles.html">สาระสายตา</a>
+    </li>
+
+    <li>
+      <a href="../about.html">รู้จักเรา</a>
+    </li>
+
+    <li>
+      <a href="../services.html">Promotion</a>
+    </li>
+
+    <li>
+      <a href="../tourist.html">For Visitors</a>
+    </li>
+
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="../services.html">บริการ</a>
+  <a href="../programs.html">โปรแกรม</a>
+  <a href="../articles.html">สาระสายตา</a>
+  <a href="../about.html">รู้จักเรา</a>
+  <a href="../services.html">Promotion</a>
+  <a href="../tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">ปัญหาสายตา · สาระน่ารู้</div>
+    <h1>หลัง 35 ปรับฟอนต์ให้ใหญ่ขึ้น<br><em>ช่วยสายตาได้จริงไหม?</em></h1>
+    <p class="hero-sub">ทำไมคนวัย 35+ ถึงเริ่มเพ่งหน้าจอลำบาก — ปรับฟอนต์ใหญ่ช่วยได้แค่ไหน แล้วเมื่อไหร่ควรพบผู้เชี่ยวชาญ</p>
+    <div class="hero-meta">
+      <span class="author">✍️ Suraphun Parsuraphun — Optician Lens Specialist &nbsp;|&nbsp; Ploychompoo Parsuraphun — Optometrist</span>
+      <span class="read-time">อ่าน ~6 นาที</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget sw-open" id="w-toc">
+      <div class="sw-head" onclick="toggleW('w-toc')">📋 สารบัญ <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <ul class="toc-list">
+          <li><a href="#sec1">ตาเพ่งทำงานยังไง?</a></li>
+          <li><a href="#sec2">Dr. Sheedy พิสูจน์อะไรไว้?</a></li>
+          <li><a href="#sec3">Pseudo Myopia คืออะไร?</a></li>
+          <li><a href="#sec4">Presbyopia คืออะไร?</a></li>
+          <li><a href="#sec5">ควรทำอะไรบ้าง?</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-widget" id="w-gloss">
+      <div class="sw-head teal" onclick="toggleW('w-gloss')">📖 คำศัพท์สำคัญ <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <ul class="glossary-list">
+          <li><div class="gl-term">Presbyopia</div><div class="gl-def">สายตายาวตามอายุ — เลนส์แก้วตาแข็งตัว โฟกัสใกล้ลำบาก เริ่มหลัง 40 ปี</div></li>
+          <li><div class="gl-term">Pseudo Myopia</div><div class="gl-def">สายตาสั้นชั่วคราว — กล้ามเนื้อตาเพ่งค้าง มองไกลพร่ามัวแต่หายเองได้</div></li>
+          <li><div class="gl-term">Accommodation</div><div class="gl-def">การปรับโฟกัสของตา — กล้ามเนื้อ Ciliary บีบให้เลนส์โป่งเพื่อมองใกล้</div></li>
+          <li><div class="gl-term">Ciliary Muscle</div><div class="gl-def">กล้ามเนื้อในลูกตาที่ควบคุมการโฟกัส — เพ่งนานก็ล้าได้เหมือนกล้ามเนื้อทั่วไป</div></li>
+          <li><div class="gl-term">Digital Eye Strain</div><div class="gl-def">กลุ่มอาการตาล้าจากหน้าจอ — ปวดหัว ตาพร่า ตาแห้ง</div></li>
+          <li><div class="gl-term">Progressive Lens</div><div class="gl-def">เลนส์รวมทุกระยะในอันเดียว — ไกล กลาง ใกล้ ไม่มีเส้นแบ่ง</div></li>
+          <li><div class="gl-term">Amplitude of Accommodation</div><div class="gl-def">ช่วงระยะที่ตาโฟกัสได้ — ลดลงทุกปีตามอายุ</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-widget" id="w-author">
+      <div class="sw-head" onclick="toggleW('w-author')">👤 ผู้เขียน <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <div class="author-card">
+          <div class="author-row">
+            <div class="author-avatar">👁</div>
+            <div><div class="author-name">Suraphun Parsuraphun</div><div class="author-role">Optician Lens Specialist · Optical X</div></div>
+          </div>
+          <div class="author-row">
+            <div class="author-avatar">🔬</div>
+            <div><div class="author-name">Ploychompoo Parsuraphun</div><div class="author-role">Optometrist · Optical X</div></div>
+          </div>
+          <hr class="author-divider">
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6;">Optical X Vision Care Center<br>ผู้เชี่ยวชาญ Progressive Lens<br>Riverside Plaza ชั้น 2 · Bangkok</p>
+          <a href="https://opticalxvision.com" class="cta-btn" target="_blank">🌐 เยี่ยมชมเว็บไซต์</a>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ARTICLE -->
+  <main class="article">
+
+    <div class="font-demo" style="margin-top:0;">
+      <h3>👁 ทดลองอ่านด้วยตาตัวเอง — ขนาดไหนสบายตาที่สุด?</h3>
+      <div class="size-row">
+        <div class="size-item">
+          <div class="size-label">12px เล็กมาก</div>
+          <div class="size-bar" style="background:#ef4444"></div>
+          <div class="size-text" style="font-size:12px;color:#666">ตาต้องเพ่งหนัก อ่านได้แต่ล้าเร็ว ไม่เหมาะหลัง 35</div>
+        </div>
+        <div class="size-item">
+          <div class="size-label">14px ปกติ</div>
+          <div class="size-bar" style="background:#f59e0b"></div>
+          <div class="size-text" style="font-size:14px;color:#555">โทรศัพท์ส่วนใหญ่ตั้งค่าเริ่มต้นไว้ที่นี่ — พอใช้แต่ยังไม่ดีพอ</div>
+        </div>
+        <div class="size-item">
+          <div class="size-label">17px แนะนำ</div>
+          <div class="size-bar" style="background:#22c55e"></div>
+          <div class="size-text" style="font-size:17px;color:#333">อ่านสบาย ตาไม่ล้า เหมาะกับหลัง 35 ปี</div>
+        </div>
+        <div class="size-item">
+          <div class="size-label">20px ใหญ่</div>
+          <div class="size-bar" style="background:#3b82f6"></div>
+          <div class="size-text" style="font-size:20px;color:#222">สบายตามาก เหมาะถ้าเริ่มมีสายตายาว</div>
+        </div>
+        <div class="size-item">
+          <div class="size-label">24px ใหญ่มาก</div>
+          <div class="size-bar" style="background:#8b5cf6"></div>
+          <div class="size-text" style="font-size:24px;color:#111">ถ้าขนาดนี้ยังอ่านไม่ชัด ควรพบผู้เชี่ยวชาญ</div>
+        </div>
+      </div>
+    </div>
+
+    <p>ลองจินตนาการว่าตาของคุณเป็นเหมือน <strong>กล้ามเนื้อ</strong> — ถ้าต้องเกร็งทำงานหนักทุกวัน ไม่ช้าก็เร็วมันก็ต้องล้า นั่นแหละคือสิ่งที่เกิดขึ้นกับดวงตาเวลาจ้องโทรศัพท์หน้าจอเล็กๆ เป็นชั่วโมงๆ</p>
+
+    <div class="callout">
+      <p><strong>สรุปสั้นๆ ก่อนเลย:</strong> การปรับฟอนต์ให้ใหญ่ขึ้น <em>ไม่ได้แก้สายตายาว</em> แต่ช่วย <em>ลดการทำงานหนักของตา</em> — ซึ่งช่วยชะลออาการ และลด Pseudo Myopia ในคนอายุน้อยได้จริง</p>
+    </div>
+
+    <h2 id="sec1">ก่อนอื่น — ตาเพ่งทำงานยังไง?</h2>
+    <span class="section-sub">แค่ปรับฟอนต์ให้ใหญ่ขึ้น กล้ามเนื้อตาก็ทำงานน้อยลงทันที — ปวดหัวน้อยลง ตาไม่ล้า ง่ายกว่าที่คิดมาก</span>
+
+    <p>เวลามองใกล้
+      <span class="gloss" data-term="Crystalline Lens (เลนส์แก้วตา)" data-def="เลนส์ยืดหยุ่นในลูกตา ทำหน้าที่โฟกัสภาพ — เหมือนเลนส์กล้องถ่ายรูปที่ปรับโฟกัสอัตโนมัติ แต่ใช้กล้ามเนื้อจริงๆ ในการปรับ" tabindex="0">เลนส์แก้วตา<span class="tip">🔍 <strong>Crystalline Lens</strong><br>เลนส์ยืดหยุ่นในลูกตา ทำหน้าที่โฟกัสภาพ เหมือนเลนส์กล้องที่ปรับโฟกัสอัตโนมัติ</span></span>
+      ต้องโป่งออกเพื่อเพิ่มกำลังรวมแสง กระบวนการนี้เรียกว่า
+      <span class="gloss" data-term="Accommodation (การปรับโฟกัส)" data-def="กล้ามเนื้อ Ciliary บีบตัวให้เลนส์โป่ง เพื่อโฟกัสภาพในระยะใกล้ — ยิ่งใกล้ยิ่งต้องออกแรงมาก" tabindex="0">Accommodation<span class="tip">🔍 <strong>Accommodation</strong><br>กล้ามเนื้อ Ciliary บีบให้เลนส์โป่ง เพื่อโฟกัสภาพใกล้</span></span>
+      — กล้ามเนื้อ Ciliary ต้องเกร็งค้างไว้ตลอดเวลา
+    </p>
+    <p>ยิ่งตัวอักษรเล็ก กล้ามเนื้อยิ่งทำงานหนักขึ้น พอทำนานๆ ก็เกิดอาการล้าตา ปวดหัว ตาพร่า — ที่เรียกรวมว่า
+      <span class="gloss" data-term="Digital Eye Strain" data-def="กลุ่มอาการที่เกิดจากการจ้องหน้าจอนาน ได้แก่ ตาล้า ปวดหัว ตาพร่า ตาแห้ง บางทีเรียกว่า Computer Vision Syndrome" tabindex="0">Digital Eye Strain<span class="tip">🔍 <strong>Digital Eye Strain</strong><br>ตาล้า ปวดหัว ตาพร่า ตาแห้ง จากการจ้องหน้าจอนาน</span></span>
+    </p>
+
+    <figure style="margin:2rem 0;text-align:center">
+      <img src="../images/art-accommodation-mechanism-near.jpg" alt="กล้ามเนื้อตาเพ่งตึง — กระบวนการปรับโฟกัสเมื่อมองใกล้" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+      <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">เมื่อมองใกล้ เลนส์โป่งออก กล้ามเนื้อ Ciliary หดตัว ทำให้ตาเพ่งได้ — แต่ต้องใช้พลังงานมาก</figcaption>
+    </figure>
+
+
+
+    <div class="visual-box">
+      <h3>⚡ ยิ่งใกล้ กล้ามเนื้อตายิ่งทำงานหนัก (หน่วย Diopters)</h3>
+      <div class="dial-row">
+        <div class="dial"><div class="d-val">5D</div><div class="d-lab">ระยะ 20 cm<br>ใกล้มาก ⚠️</div></div>
+        <div class="dial"><div class="d-val">3–4D</div><div class="d-lab">ระยะ 25–33 cm<br>ระยะที่หลายคนถือ</div></div>
+        <div class="dial"><div class="d-val">2.5D</div><div class="d-lab">ระยะ 40 cm<br>ระยะอ่านหนังสือ ✅</div></div>
+        <div class="dial"><div class="d-val">0D</div><div class="d-lab">ระยะไกล<br>กล้ามเนื้อพัก 😌</div></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">แค่ขยับโทรศัพท์ออกไป 10 ซม. กล้ามเนื้อตาทำงานน้อยลงชัดเจน</p>
+    </div>
+
+    <!-- เปรียบเทียบ: ตัวเล็ก=เพ่งมาก vs ตัวใหญ่=เพ่งน้อย -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2rem 0;">
+      <figure style="margin:0;text-align:center;">
+        <img src="../images/art-presbyopia-eye-anatomy-before-มีสายตายาว.jpg" alt="ตัวหนังสือเล็กมาก กล้ามเนื้อตาต้องเพ่งหนัก" style="width:100%;border-radius:12px;" loading="lazy">
+        <figcaption style="font-size:.85rem;color:#ef4444;font-weight:600;margin-top:10px;">⚠️ ตัวหนังสือเล็กมาก</figcaption>
+        <p style="font-size:.8rem;color:#666;margin-top:4px;line-height:1.5;">กล้ามเนื้อตาต้องทำงานหนัก</p>
+      </figure>
+      <figure style="margin:0;text-align:center;">
+        <img src="../images/art-presbyopia-eye-anatomy-after-เมื่อเริ่มมีสายตายาว.jpg" alt="ตัวหนังสือไม่เล็กมาก กล้ามเนื้อไม่ต้องทำงานหนัก" style="width:100%;border-radius:12px;" loading="lazy">
+        <figcaption style="font-size:.85rem;color:#22c55e;font-weight:600;margin-top:10px;">✅ ตัวหนังสือไม่เล็กมาก</figcaption>
+        <p style="font-size:.8rem;color:#666;margin-top:4px;line-height:1.5;">กล้ามเนื้อไม่ต้องทำงานหนัก</p>
+      </figure>
+    </div>
+
+    <figure style="margin:2rem 0;text-align:center">
+      <img src="../images/art-accommodation-diopters-chart.jpg" alt="Diopters — แสดงความสัมพันธ์ระหว่างระยะวิสัยและกำลังเพ่งของตา" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+      <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">ยิ่งเข้าใกล้ยิ่งต้องเพ่งหนัก — ระยะ 20 ซม. ต้องใช้กำลัง 5 Diopters แต่ระยะ 40 ซม. เพียง 2.5 Diopters เท่านั้น</figcaption>
+    </figure>
+
+    <h2 id="sec2">Dr. James Sheedy พิสูจน์อะไรไว้?</h2>
+    <span class="section-sub">งานวิจัยเมื่อ 20 ปีที่แล้วยังใช้ได้อยู่ เพราะตามนุษย์ไม่เคยอัปเดต version</span>
+
+    <p><strong>Dr. James Sheedy</strong> นักวิจัยจาก Pacific University ผู้บุกเบิกการศึกษา Computer Vision Syndrome ตั้งแต่ยุค 2000 พิสูจน์ว่า <strong>ขนาดตัวอักษรที่เล็กเกินไปเป็นตัวการสำคัญทำให้ตาล้า</strong></p>
+
+    <div class="research-card">
+      <div class="rc-label">🔬 งานวิจัย · Sheedy et al.</div>
+      <p>เมื่อลดขนาดตัวอักษรลง กล้ามเนื้อตาต้องออกแรงเพ่งมากขึ้นอย่างมีนัยสำคัญ และยิ่งใช้เวลานาน ความล้าสะสมก็ทวีคูณขึ้นเรื่อยๆ — แม้อยู่ที่ระยะเดิม<br><em style="font-size:12px;color:var(--muted);">(Sheedy et al., Optometry and Vision Science, 2003–2005)</em></p>
+    </div>
+
+    <div class="pull-quote">"ฟิสิกส์ของดวงตาไม่เคยเปลี่ยน — กล้ามเนื้อ Ciliary ทำงานแบบเดิมในปี 2005 เหมือนปี 2025"</div>
+
+    <p>งานวิจัยของ Sheedy ไม่ได้ขึ้นอยู่กับเทคโนโลยีหน้าจอ แต่ขึ้นอยู่กับ <strong>กายวิภาคของดวงตา</strong> — ซึ่งไม่มีการอัปเดต version ยิ่งกว่านั้น โทรศัพท์สมัยนี้ยังแย่กว่าจอคอมอีก เพราะระยะดูใกล้กว่า แสงไม่คงที่ และเราดูนานขึ้นมากในชีวิตประจำวัน</p>
+
+    <div class="research-card">
+      <div class="rc-label">🔬 งานวิจัยต่อยอด · Rosenfield (2016)</div>
+      <p>ยืนยันว่า Digital Eye Strain จากสมาร์ทโฟนมีกลไกเดียวกัน แต่รุนแรงกว่า เพราะระยะดูใกล้กว่า — เฉลี่ย 33 cm เทียบกับ 50–60 cm สำหรับจอคอม<br><em style="font-size:12px;color:var(--muted);">(Rosenfield, Work, 2016)</em></p>
+    </div>
+
+    <h2 id="sec3">Pseudo Myopia คืออะไร?</h2>
+    <span class="section-sub">สายตาสั้นชั่วคราวที่หายเองได้ — แต่ถ้าปล่อยไว้บ่อยๆ โดยเฉพาะในเด็ก อาจกลายเป็นถาวรได้</span>
+
+    <p><span class="gloss" data-term="Pseudo Myopia (สายตาสั้นชั่วคราว)" data-def="กล้ามเนื้อตาเพ่งค้างนานจนคลายตัวไม่ทัน ทำให้มองไกลพร่ามัว — แต่เมื่อพักตาจะหาย ไม่ใช่สายตาสั้นถาวร แต่ถ้าเกิดซ้ำๆ ในเด็ก อาจกระตุ้นให้ลูกตายืดยาวได้" tabindex="0">Pseudo Myopia<span class="tip">🔍 <strong>Pseudo Myopia</strong><br>สายตาสั้นชั่วคราว กล้ามเนื้อตาเพ่งค้างจนคลายไม่ทัน มองไกลพร่า แต่หายได้</span></span> หรือ "สายตาสั้นชั่วคราว" เกิดจากกล้ามเนื้อตาตึงค้างนานจนคลายตัวไม่ทัน ผลคือ หลังจ้องโทรศัพท์นานๆ มองออกไปไกลๆ จะพร่ามัวชั่วคราว</p>
+
+    <figure style="margin:2rem 0;text-align:center">
+      <img src="../images/art-pseudo-myopia-en-01.jpg" alt="Pseudo Myopia — กล้ามเนื้อตาเพ่งค้างนานจนหลังจ้องโทรศัพท์มองไกลพร่า" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+      <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">สายตาสั้นชั่วคราวจากการเพ่งค้าง — หายได้เมื่อพักตา แต่ถ้าเกิดบ่อยๆ ในเด็ก อาจกลายเป็นสายตาสั้นถาวร</figcaption>
+    </figure>
+
+    <div class="myth-box">
+      <div class="myth-label">⚠️ ความเข้าใจผิดที่พบบ่อย</div>
+      <p>"Pseudo Myopia ไม่เป็นไร เดี๋ยวก็หาย" — จริงอยู่ที่มันหายเอง แต่ถ้าเกิดซ้ำๆ บ่อยๆ ในวัยเด็กและวัยรุ่น งานวิจัยหลายชิ้นชี้ว่ามันอาจกระตุ้นให้ลูกตายืดยาวขึ้น กลายเป็นสายตาสั้นถาวรในที่สุด</p>
+    </div>
+
+    <div class="truth-box">
+      <div class="truth-label">✅ ฟอนต์ใหญ่ช่วยได้อย่างนี้</div>
+      <p>เมื่อตัวอักษรใหญ่ขึ้น ตาไม่ต้องเพ่งหนัก กล้ามเนื้อ Ciliary ผ่อนคลายมากขึ้น — โอกาสเกิด Pseudo Myopia สะสมก็ลดลง โดยเฉพาะในเด็กและวัยรุ่น</p>
+    </div>
+
+    <h2 id="sec4">Presbyopia — สายตายาวตามอายุ</h2>
+    <span class="section-sub">เลนส์ตาแข็งตัวตามอายุ ทุกคนเจอ — แต่ยิ่งดูแลตาดี อาการก็จะรุนแรงช้าลง</span>
+
+    <p>ถ้า Pseudo Myopia เปรียบเหมือนกล้ามเนื้อเป็นตะคริว
+      <span class="gloss" data-term="Presbyopia (สายตายาวตามอายุ)" data-def="เลนส์แก้วตาแข็งตัวตามอายุ ความยืดหยุ่นลดลง ไม่สามารถโฟกัสภาพใกล้ได้ดีเท่าเดิม — เริ่มสังเกตชัดหลัง 40 ปี เป็นกระบวนการธรรมชาติที่ทุกคนเจอ" tabindex="0">Presbyopia<span class="tip">🔍 <strong>Presbyopia</strong><br>เลนส์แก้วตาแข็งตัว โฟกัสใกล้ลำบาก เริ่มชัดหลัง 40 ปี</span></span>
+      เปรียบเหมือนทั้งกล้ามเนื้อและอุปกรณ์เสื่อมสภาพตามอายุจริงๆ</p>
+
+    <p>หลังอายุ 40 เลนส์แก้วตาเริ่มแข็งตัวทีละน้อย ความสามารถในการโฟกัสภาพใกล้ (
+      <span class="gloss" data-term="Amplitude of Accommodation" data-def="ช่วงระยะที่ตาสามารถโฟกัสได้ วัดเป็น Diopters — เด็กอาจมีสูงถึง 14D ผู้ใหญ่อายุ 50 ปีอาจเหลือแค่ 1–2D เท่านั้น" tabindex="0">Amplitude of Accommodation<span class="tip">🔍 <strong>Amplitude of Accommodation</strong><br>ช่วงระยะที่ตาโฟกัสได้ ลดลงทุกปีตามอายุ</span></span>)
+      ลดลงเรื่อยๆ</p>
+
+    <div class="research-card">
+      <div class="rc-label">🔬 ข้อมูล · Donders' Rule</div>
+      <p>
+        อายุ 40 ปี — Amplitude เหลือประมาณ 4–5 Diopters<br>
+        อายุ 48 ปี — เหลือประมาณ 2 Diopters<br>
+        อายุ 60 ปี — เหลือน้อยกว่า 1 Diopter<br>
+        <em style="font-size:12px;color:var(--muted);">(Donders FC, 1864 — ยังคงใช้อ้างอิงในคลินิกทั่วโลก)</em>
+      </p>
+    </div>
+
+    <div class="callout teal">
+      <p><strong>แล้วฟอนต์ใหญ่ช่วยยังไง?</strong><br>
+      เมื่อตัวอักษรใหญ่ขึ้น ตาสามารถอ่านได้ที่ระยะไกลขึ้นนิดนึง — ทำให้กล้ามเนื้อต้องเพ่งน้อยลง สำหรับคนที่ Amplitude of Accommodation เหลือน้อย นี่คือความแตกต่างระหว่าง "อ่านได้สบาย" กับ "ปวดหัวทุกครั้งที่ดูโทรศัพท์"</p>
+    </div>
+
+    <h2 id="sec5">แล้วควรทำอะไรบ้าง?</h2>
+    <span class="section-sub">6 วิธีที่ทำได้วันนี้เลย ไม่ต้องรอให้ตาพัง</span>
+
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tc-icon">🔠</div><div class="tc-title">ปรับฟอนต์โทรศัพท์</div><p>ตั้งขนาดตัวอักษรที่ "ใหญ่" หรือ "ใหญ่มาก" ในการตั้งค่าระบบ ลดภาระกล้ามเนื้อตาได้ทันที</p></div>
+      <div class="tip-card"><div class="tc-icon">📏</div><div class="tc-title">ถือโทรศัพท์ให้ห่างขึ้น</div><p>ระยะ 40–50 cm ดีกว่า 20–25 cm มาก ทุก 10 ซม. ที่ไกลขึ้น กล้ามเนื้อตาทำงานน้อยลงเห็นๆ</p></div>
+      <div class="tip-card"><div class="tc-icon">⏱</div><div class="tc-title">20-20-20 Rule</div><p>ทุก 20 นาที มองไกล 6 เมตร นาน 20 วินาที ให้กล้ามเนื้อตาคลายตัว</p></div>
+      <div class="tip-card"><div class="tc-icon">🌙</div><div class="tc-title">Dark Mode + Night Mode</div><p>ลดความแตกต่างของความสว่างระหว่างหน้าจอและสภาพแวดล้อม</p></div>
+      <div class="tip-card"><div class="tc-icon">👓</div><div class="tc-title">ตรวจสายตาทุกปี</div><p>โดยเฉพาะหลัง 40 ปี ค่าสายตาเปลี่ยนทุกปี Progressive lens อาจเป็นทางออกที่ดีที่สุด</p></div>
+      <div class="tip-card"><div class="tc-icon">💡</div><div class="tc-title">แสงสว่างเพียงพอ</div><p>อย่าดูโทรศัพท์ในที่มืด แสงหน้าจอต้องสมดุลกับแสงในห้อง</p></div>
+    </div>
+
+    <!-- Q&A -->
+    <div class="qa-section">
+      <h2>🙋 คำถามที่พบบ่อย</h2>
+      <span class="section-sub">ลูกค้าถามบ่อยที่สุด — ตอบตรงๆ ไม่อ้อมค้อม</span>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">ปรับฟอนต์ใหญ่ขึ้น ป้องกันสายตายาวได้จริงไหม?<span class="q-icon">+</span></div>
+        <div class="qa-a"><p>ไม่ได้ "ป้องกัน" แต่ "ชะลอ" และ "ลดอาการ" ได้ครับ Presbyopia เป็นกระบวนการธรรมชาติจากการแข็งตัวของเลนส์แก้วตา — ไม่มีอะไรหยุดได้ แต่การลดภาระการเพ่งทุกวันช่วยให้กล้ามเนื้อตาไม่ล้าเกินไป และชะลอการที่อาการจะรุนแรงขึ้นได้</p></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">ลูกหลานอายุ 15 ปี จ้องโทรศัพท์เยอะ ต้องกังวลไหม?<span class="q-icon">+</span></div>
+        <div class="qa-a"><p>กังวลได้ครับ — Pseudo Myopia ในเด็กน่าเป็นห่วงกว่า Presbyopia ในผู้ใหญ่เสียอีก เด็กลูกตายังเจริญเติบโต การกระตุ้นซ้ำๆ จากการเพ่งหน้าจออาจทำให้ลูกตายืดยาวขึ้น แนะนำให้ตรวจสายตาปีละครั้งและสมดุลกับกิจกรรมกลางแจ้ง</p></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">แว่น Blue Light Filter ช่วยได้ไหม?<span class="q-icon">+</span></div>
+        <div class="qa-a"><p>งานวิจัยล่าสุดยังไม่มีหลักฐานชัดเจนว่า Blue Light จากหน้าจอทำลายจอประสาทตา แต่มีผลต่อ Melatonin รบกวนการนอนหลับได้ ถ้าใช้โทรศัพท์ก่อนนอน แว่น Blue Light Filter อาจช่วยเรื่องการนอนได้ แต่สำหรับตาล้า — ต้นเหตุหลักคือการเพ่ง ไม่ใช่แสงสีฟ้า</p></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">อายุ 38 ปี เริ่มอ่านโทรศัพท์ไม่ค่อยชัด ต้องทำอะไร?<span class="q-icon">+</span></div>
+        <div class="qa-a"><p>ถือว่าปกติมากครับ — Presbyopia เริ่มตั้งแต่อายุกลาง 30 ปีกว่าๆ แล้ว ปรับฟอนต์โทรศัพท์ใหญ่ขึ้น, ถือโทรศัพท์ให้ห่างขึ้น, แสงสว่างให้เพียงพอ ถ้าอาการรบกวนชีวิตประจำวัน ควรมาตรวจสายตาเพื่อพิจารณา Progressive Lens ที่เหมาะสม</p></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">Progressive Lens คืออะไร?<span class="q-icon">+</span></div>
+        <div class="qa-a"><p><strong style="color:var(--teal);">Progressive Lens</strong> คือเลนส์ที่รวมค่าสายตาทั้งมองไกล กลาง และใกล้ในเลนส์อันเดียว — ไม่มีเส้นแบ่งให้เห็น เหมาะมากสำหรับผู้ที่เริ่มมี Presbyopia เพราะไม่ต้องถอดใส่แว่นหลายอัน ที่ Optical X มีเลนส์ทดลองกว่า 60 คู่ให้ลองก่อนตัดสินใจครับ</p></div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q" onclick="toggleQA(this)">Sheedy วิจัยสมัยคอมพิวเตอร์ ยังเชื่อถือได้ไหมในยุค 5G?<span class="q-icon">+</span></div>
+        <div class="qa-a"><p>เชื่อถือได้ครับ — เพราะ Sheedy ศึกษา <em>กายวิภาคของดวงตา</em> ไม่ใช่ศึกษาเทคโนโลยี กล้ามเนื้อ Ciliary ทำงานแบบเดิมมาตลอดวิวัฒนาการของมนุษย์ ต่อมา Rosenfield (2016) ยืนยันและต่อยอดกับสมาร์ทโฟนโดยเฉพาะ — หน้าจอจะเปลี่ยนไปยังไง แต่ตามนุษย์ยังเหมือนเดิม</p></div>
+      </div>
+    </div>
+
+    <div class="references">
+      <h3>📚 อ้างอิงงานวิจัย</h3>
+      <ol>
+        <li>Sheedy JE, et al. "Task variables and visual discomfort associated with computer use." <em>Optometry and Vision Science</em>, 2003.</li>
+        <li>Rosenfield M. "Computer vision syndrome (a.k.a. digital eye strain)." <em>Optometry in Practice</em>, 2016.</li>
+        <li>Donders FC. <em>On the Anomalies of Accommodation and Refraction of the Eye.</em> London, 1864.</li>
+        <li>Wolffsohn JS, et al. "Global trends in myopia management." <em>Contact Lens and Anterior Eye</em>, 2016.</li>
+        <li>American Optometric Association. "Computer Vision Syndrome." AOA Clinical Practice Guidelines, 2023.</li>
+      </ol>
+    </div>
+
+  </main>
+</div>
+
+
+
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+
+    <div>
+      <a href="../index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">
+        ศูนย์เลนส์โปรเกรสซีฟเฉพาะทาง<br>
+        ตรวจวัดสายตาโดยทัศนมาตร<br>
+        Riverside Plaza · ชั้น 2 · กรุงเทพฯ
+      </p>
+      <div class="ox-f-social">
+        <a href="https://lin.ee/E4GHWdJ" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.instagram.com/opticalxvision" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ที่ตั้ง</p>
+        <p class="ox-f-contact-val">
+          Riverside Plaza ชั้น 2<br>
+          257/6 ถ.เจริญนคร<br>
+          แขวงสำเหร่ เขตธนบุรี กทม. 10600
+        </p>
+      </div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ติดต่อ</p>
+        <p class="ox-f-contact-val">
+          <a href="tel:0929897447">092 989 7447</a><br>
+          <a href="https://lin.ee/E4GHWdJ">LINE: @opxrv</a><br>
+          <a href="mailto:opticalx.rv@gmail.com">opticalx.rv@gmail.com</a>
+        </p>
+      </div>
+      <div class="ox-f-hours">
+        <div class="ox-f-hours-row"><span>จ – อา</span><span>11:00 – 20:00</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ox-footer-bottom">
+    <p class="ox-f-copy">© 2025 Optical X Vision Care Center · All Rights Reserved</p>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>5.0 Google Rating</span>
+    </div>
+    <p class="ox-f-cert">Licensed Optometrist · Bangkok</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+  /* Progress bar */
+  const bar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
+
+  /* Smooth scroll helper */
+  function scrollTo(sel) {
+    const el = document.querySelector(sel);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* Q&A toggle */
+  function toggleQA(el) { el.parentElement.classList.toggle('open'); }
+
+  /* Sidebar accordion (mobile only) */
+  function toggleW(id) {
+    if (window.innerWidth > 860) return;
+    document.getElementById(id).classList.toggle('sw-open');
+  }
+
+  /* Glossary drawer */
+  const overlay = document.getElementById('gOverlay');
+  const drawer  = document.getElementById('gDrawer');
+  function closeDrawer() {
+    overlay.classList.remove('vis');
+    drawer.classList.remove('vis');
+  }
+  document.querySelectorAll('.gloss').forEach(el => {
+    el.addEventListener('click', e => {
+      if (window.innerWidth > 860) return;
+      e.stopPropagation();
+      document.getElementById('dTerm').textContent = el.dataset.term || el.textContent.trim();
+      document.getElementById('dDef').textContent  = el.dataset.def  || '';
+      overlay.classList.add('vis');
+      drawer.classList.add('vis');
+    });
+  });
+  /* Swipe down to close drawer */
+  let ty = 0;
+  drawer.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive: true });
+  drawer.addEventListener('touchend',   e => { if (e.changedTouches[0].clientY - ty > 60) closeDrawer(); }, { passive: true });
+
+  /* Smooth scroll for TOC links */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+<script>
+/* ── Universal QA/FAQ Toggle v2 ── */
+(function(){
+  // Toggle function used by all patterns
+  function toggleItem(item){
+    if(!item) return;
+    var wasOpen = item.classList.contains('open');
+    // Close all siblings in same parent
+    var parent = item.parentElement;
+    if(parent){
+      parent.querySelectorAll('.qa-item.open').forEach(function(el){ el.classList.remove('open'); });
+    }
+    if(!wasOpen) item.classList.add('open');
+  }
+
+  // Pattern 1: Click on .qa-q or .qa-question
+  document.querySelectorAll('.qa-q, .qa-question').forEach(function(btn){
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleItem(btn.closest('.qa-item'));
+    });
+  });
+
+  // Pattern 2: Click on .qa-item itself (for items with onclick on the item)
+  document.querySelectorAll('.qa-item').forEach(function(item){
+    // Only add if no qa-q/qa-question child handles it
+    var hasQChild = item.querySelector('.qa-q, .qa-question');
+    if(!hasQChild){
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function(e){
+        toggleItem(item);
+      });
+    }
+  });
+
+  // Global fallback for onclick="toggleQA(this)"
+  window.toggleQA = function(el){
+    var item = el.closest ? el.closest('.qa-item') : el.parentElement;
+    toggleItem(item);
+  };
+})();
+</script>
+
+</body>
+</html>

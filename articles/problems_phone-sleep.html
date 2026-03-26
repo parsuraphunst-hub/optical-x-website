@@ -1,0 +1,3525 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จะดีไหม ถ้ามีแว่นที่ทำให้คุณนอนหลับเร็วขึ้น 30 นาที? ผลวิจัยยืนยัน | Optical X</title>
+<meta name="description" content="งานวิจัยจาก Columbia University พบว่าแว่นเลนส์สีอำพันช่วยเพิ่มเมลาโทนิน 58% และหลับเร็วขึ้น 30 นาที — เรียนรู้วิทยาศาสตร์เบื้องหลังและเลือกเลนส์ที่เหมาะกับคุณ">
+<meta property="og:title" content="จะดีไหม ถ้ามีแว่นที่ทำให้คุณนอนหลับเร็วขึ้น 30 นาที?">
+<meta property="og:description" content="งานวิจัย RCT จาก Columbia University ยืนยัน — เลนส์สีอำพันช่วยหลับเร็วขึ้น 30 นาที เพิ่มเมลาโทนิน 58%">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --deep-blue: #1a2e44;
+    --midnight: #162032;
+    --amber: #e07b2a;
+    --amber-light: #f5a94e;
+    --amber-glow: #ffd48a;
+    --teal: #2abfbf;
+    --cream: #fdf6ee;
+    --text-main: #1e1e2e;
+    --text-muted: #5a6474;
+    --card-bg: #ffffff;
+    --border: #e8e2d9;
+    --sleep-purple: #6c5ce7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { overflow-x: hidden; }
+  body { overflow-x: hidden; }
+
+  body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background: var(--cream);
+    color: var(--text-main);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 50%, #1e3a5f 100%);
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(224,123,42,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 70%, rgba(42,191,191,0.10) 0%, transparent 50%);
+  }
+  .hero-stars {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 70%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 90% 40%, rgba(255,212,138,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.25) 0%, transparent 100%);
+  }
+
+  .brand-badge {
+    position: relative;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(26px, 5vw, 44px);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    position: relative;
+    max-width: 720px;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 span.highlight {
+    color: var(--amber-light);
+  }
+
+  .hero-subtitle {
+    color: rgba(255,255,255,0.65);
+    font-size: 15px;
+    max-width: 500px;
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-meta span {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-meta .dot { color: var(--amber); }
+
+  /* ===== IMAGE PLACEHOLDER ===== */
+  .img-placeholder {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 28px 0;
+    position: relative;
+  }
+  .img-box {
+    background: linear-gradient(135deg, #e8e2d9 0%, #d4cfc7 100%);
+    border: 2px dashed #c4bdb4;
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+    color: #8a7f74;
+  }
+  .img-box .img-icon { font-size: 36px; margin-bottom: 10px; }
+  .img-box strong { display: block; font-size: 14px; color: #5a4f44; margin-bottom: 4px; }
+  .img-box span { font-size: 12px; line-height: 1.5; }
+
+  /* ===== LAYOUT ===== */
+  .page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 0 80px;
+    align-items: start;
+    width: 100%;
+  }
+  @media (min-width: 860px) {
+    .content-grid {
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      padding: 52px 0 80px;
+    }
+  }
+
+  /* ===== MAIN ARTICLE ===== */
+  .article-main { min-width: 0; }
+
+  .read-time-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(to right, rgba(224,123,42,0.08), transparent);
+    border-left: 3px solid var(--amber);
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 32px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .read-time-bar strong { color: var(--amber); }
+
+  /* lead */
+  .lead-box {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .lead-box::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(224,123,42,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .lead-box p {
+    color: rgba(255,255,255,0.88);
+    font-size: 17px;
+    line-height: 1.9;
+    position: relative;
+  }
+  .lead-box p strong { color: var(--amber-light); }
+
+  /* sections */
+  h2.section-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin: 44px 0 16px;
+    padding-left: 16px;
+    border-left: 4px solid var(--amber);
+    line-height: 1.4;
+  }
+
+  h3.sub-title {
+    font-size: 17px;
+    color: var(--deep-blue);
+    margin: 28px 0 10px;
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: #2e2e3e;
+    line-height: 1.9;
+  }
+
+  /* ===== RESEARCH CALLOUT ===== */
+  .research-box {
+    background: #f0f7f7;
+    border: 1px solid #b2dfdf;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .research-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .research-box .research-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .research-box p { font-size: 14px; color: #2a4a4a; margin: 0; }
+  .research-box cite { font-size: 12px; color: #5a8080; font-style: italic; }
+
+  /* ===== EXPERIMENT CARD ===== */
+  .experiment-card {
+    background: linear-gradient(135deg, #fff9f2 0%, #fff4e6 100%);
+    border: 1px solid #f0d9b5;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 28px 0;
+  }
+  .experiment-card .exp-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .exp-badge {
+    background: var(--amber);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .experiment-card p { font-size: 15px; margin-bottom: 0; }
+
+  /* ===== COMPARISON TABLE ===== */
+  .table-section { margin: 36px 0; }
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 600px;
+  }
+  thead th {
+    background: var(--navy);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  thead th:first-child { border-radius: 16px 0 0 0; }
+  thead th:last-child { border-radius: 0 16px 0 0; }
+  tbody tr:nth-child(even) td { background: #fafaf8; }
+  tbody tr:nth-child(odd) td { background: #ffffff; }
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eeebe5;
+    vertical-align: top;
+    line-height: 1.6;
+    color: #2e2e3e;
+  }
+  .badge-recommended {
+    display: inline-block;
+    background: #e8f8f0;
+    color: #1a7a4a;
+    border: 1px solid #a3d9b8;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .badge-caution {
+    display: inline-block;
+    background: #fff3e0;
+    color: #b06000;
+    border: 1px solid #fcd28a;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .col-msl { background: #fff6ee !important; }
+  .col-header-msl { background: var(--amber) !important; }
+
+  /* ===== PRODUCT STACK (mobile-first) ===== */
+  .product-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (min-width: 600px) {
+    .product-stack {
+      flex-direction: row;
+    }
+    .product-stack .product-card {
+      flex: 1;
+    }
+  }
+
+  /* keep old .product-pair for any legacy refs */
+  .product-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  @media (min-width: 600px) {
+    .product-pair { flex-direction: row; }
+    .product-pair .product-card { flex: 1; }
+  }
+
+  .product-card {
+    border-radius: 16px;
+    padding: 24px;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+  .pc-msl {
+    background: linear-gradient(135deg, #1e1208 0%, #2d1f0a 100%);
+    border-color: var(--amber);
+  }
+  .pc-mes {
+    background: linear-gradient(135deg, #1a2632 0%, #243545 100%);
+    border-color: var(--teal);
+  }
+  .pc-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: 'DM Serif Display', serif;
+  }
+  .pc-msl .pc-title { color: var(--amber-light); }
+  .pc-mes .pc-title { color: #7ee8e8; }
+  .pc-sub { font-size: 12px; margin-bottom: 14px; }
+  .pc-msl .pc-sub { color: rgba(255,200,100,0.6); }
+  .pc-mes .pc-sub { color: rgba(100,220,220,0.6); }
+  .pc-feature {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .pc-msl .pc-feature { color: rgba(255,220,170,0.85); }
+  .pc-mes .pc-feature { color: rgba(180,240,240,0.85); }
+  .pc-dot { flex-shrink: 0; margin-top: 6px; width: 6px; height: 6px; border-radius: 50%; }
+  .pc-msl .pc-dot { background: var(--amber); }
+  .pc-mes .pc-dot { background: var(--teal); }
+
+  .lens-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+  .pc-msl .lens-pill { background: rgba(224,123,42,0.2); color: var(--amber-light); border: 1px solid rgba(224,123,42,0.4); }
+  .pc-mes .lens-pill { background: rgba(42,191,191,0.2); color: #7ee8e8; border: 1px solid rgba(42,191,191,0.4); }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials { margin: 36px 0; }
+  .testimonials h2 { font-family: 'Noto Serif Thai', serif; font-size: 20px; margin-bottom: 20px; }
+  .testimonial-row { display: flex; flex-direction: column; gap: 14px; }
+  .testimonial-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .testimonial-card::before {
+    content: '"';
+    font-size: 60px;
+    color: var(--amber-glow);
+    font-family: 'DM Serif Display', serif;
+    position: absolute;
+    top: 4px; left: 16px;
+    line-height: 1;
+    opacity: 0.5;
+  }
+  .testimonial-card p {
+    padding-left: 28px;
+    font-size: 14.5px;
+    margin: 0;
+    color: #2e2e3e;
+  }
+  .testimonial-name {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    padding-left: 28px;
+    font-weight: 600;
+  }
+
+  /* ===== WARNING BOX ===== */
+  .warning-box {
+    background: #fff3e0;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 14px;
+    color: #7a4400;
+  }
+  .warning-box strong { color: #5a3000; }
+
+  /* ===== Q&A ===== */
+  .qa-section { margin: 48px 0; }
+  .qa-section h2 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 22px;
+    margin-bottom: 24px;
+    color: var(--navy);
+  }
+  .qa-item {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: white;
+  }
+  .qa-question {
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    user-select: none;
+    justify-content: space-between;
+  }
+  .qa-question:hover { background: #fdf9f4; }
+  .qa-question-text { display: flex; gap: 12px; align-items: flex-start; }
+  .q-num {
+    background: var(--amber);
+    color: white;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .qa-chevron {
+    transition: transform 0.3s;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-size: 18px;
+  }
+  .qa-answer {
+    display: none;
+    padding: 0 20px 18px 58px;
+    font-size: 14.5px;
+    color: #2e2e3e;
+    border-top: 1px solid #f0ebe3;
+    background: #fffdf9;
+    line-height: 1.8;
+  }
+  .qa-item.open .qa-answer { display: block; }
+  .qa-item.open .qa-chevron { transform: rotate(180deg); }
+  .qa-answer p { margin: 10px 0 0; }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+
+  /* Glossary sidebar */
+  .glossary-card {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 24px;
+    color: white;
+  }
+  .glossary-card h3 {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .glossary-entry { margin-bottom: 16px; }
+  .glossary-term {
+    font-weight: 700;
+    color: var(--amber-glow);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .glossary-def {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+  .glossary-wavelength {
+    display: inline-block;
+    background: rgba(224,123,42,0.2);
+    color: var(--amber-light);
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 4px;
+    border: 1px solid rgba(224,123,42,0.3);
+  }
+
+  /* Tip card */
+  .tip-card {
+    background: #f0f9f5;
+    border: 1px solid #b2d8c2;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .tip-card h3 {
+    font-size: 14px;
+    color: #1a6b3c;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tip-steps { list-style: none; counter-reset: step-counter; }
+  .tip-steps li {
+    counter-increment: step-counter;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #2a4a38;
+    line-height: 1.5;
+  }
+  .tip-steps li::before {
+    content: counter(step-counter);
+    background: #1a6b3c;
+    color: white;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Author card */
+  .author-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+  .author-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
+    margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .author-name { font-weight: 700; font-size: 15px; color: var(--navy); }
+  .author-title { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+  .author-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f5f0ea;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    color: #6a4a1a;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  /* ===== TOOLTIP ===== */
+  .tooltip-word {
+    border-bottom: 1.5px dashed var(--amber);
+    cursor: help;
+    color: #7a4400;
+    font-weight: 500;
+    position: relative;
+  }
+  .tooltip-word .tooltip-popup {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy);
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    width: 230px;
+    line-height: 1.5;
+    z-index: 999;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    pointer-events: none;
+    font-weight: 400;
+  }
+  .tooltip-word .tooltip-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--navy);
+  }
+  .tooltip-word:hover .tooltip-popup { display: block; }
+
+  /* ===== PRICING ===== */
+  .pricing-callout {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-callout::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(224,123,42,0.25) 0%, transparent 70%);
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--amber-light);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .pricing-big {
+    font-size: 52px;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    font-family: 'DM Serif Display', serif;
+    position: relative;
+  }
+  .pricing-big span {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--amber-light);
+    margin-left: 4px;
+  }
+  .pricing-note {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    margin-top: 8px;
+    position: relative;
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  @media (max-width: 500px) {
+    .price-grid { grid-template-columns: 1fr; }
+  }
+
+  .price-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    position: relative;
+  }
+  .price-card-highlight {
+    border-color: var(--amber);
+    box-shadow: 0 4px 20px rgba(224,123,42,0.15);
+  }
+  .price-popular-tag {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--amber);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+  }
+  .price-index-badge {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+    font-family: 'DM Serif Display', serif;
+  }
+  .price-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .price-desc span { font-size: 12px; }
+  .price-breakdown { background: #fdf9f4; border-radius: 12px; padding: 14px; }
+  .price-row-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #4a4a5a;
+    padding: 4px 0;
+  }
+  .price-divider {
+    border-top: 1.5px dashed #e0d8cc;
+    margin: 8px 0;
+  }
+  .price-row-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    padding: 4px 0;
+  }
+  .price-card-highlight .price-row-total { color: var(--amber); }
+
+  .price-note-box {
+    background: #f0f7ff;
+    border: 1px solid #b8d4f0;
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    color: #1a3a5a;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 20px 0 32px;
+    line-height: 1.7;
+  }
+
+  /* ===== EVOLUTIONARY TIMELINE ===== */
+  .evo-timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin: 28px 0;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a2e44 100%);
+    border-radius: 20px;
+    padding: 28px 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .evo-timeline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(224,123,42,0.12) 0%, transparent 60%);
+  }
+  .evo-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+    position: relative;
+  }
+  .evo-step-highlight {
+    background: rgba(224,123,42,0.1);
+    border-radius: 14px;
+    padding: 14px 10px;
+    border: 1px solid rgba(224,123,42,0.25);
+  }
+  .evo-icon { font-size: 28px; margin-bottom: 8px; }
+  .evo-time {
+    font-size: 11px;
+    color: var(--amber-light);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .evo-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .evo-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .evo-arrow {
+    font-size: 22px;
+    color: rgba(255,255,255,0.2);
+    align-self: center;
+    flex-shrink: 0;
+    padding: 0 4px;
+  }
+  @media (max-width: 600px) {
+    .evo-timeline {
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px 16px;
+    }
+    .evo-arrow {
+      transform: rotate(90deg);
+      align-self: center;
+      font-size: 18px;
+    }
+    .evo-step { padding: 0; }
+  }
+
+  /* ===== PROBLEM BLOCK ===== */
+  .problem-block {
+    background: #fff8f2;
+    border: 2px solid #f0c090;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin: 8px 0 36px;
+  }
+  .problem-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .problem-icon { font-size: 32px; flex-shrink: 0; }
+  .problem-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #6a2a00;
+    line-height: 1.3;
+  }
+  .problem-sub {
+    font-size: 13px;
+    color: #b06030;
+    margin-top: 3px;
+  }
+  .problem-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
+  }
+  .pf-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid #f0dcc8;
+    font-size: 13.5px;
+    color: #2e2e3e;
+    line-height: 1.7;
+  }
+  .pf-step-bad {
+    background: #fff0ec;
+    border-color: #f0b0a0;
+  }
+  .pf-num {
+    background: var(--amber);
+    color: white;
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .pf-step-bad .pf-num { background: #d04030; }
+  .pf-text { flex: 1; }
+  .pf-arrow {
+    text-align: center;
+    font-size: 18px;
+    color: #c09070;
+    padding: 2px 0;
+  }
+  .problem-stat {
+    display: flex;
+    gap: 0;
+    background: var(--navy);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .ps-item {
+    flex: 1;
+    text-align: center;
+    padding: 18px 12px;
+  }
+  .ps-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: var(--amber-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .ps-num span { font-size: 14px; color: rgba(255,200,120,0.7); margin-left: 2px; }
+  .ps-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+  .ps-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 14px 0;
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .problem-block { padding: 20px 14px; }
+    .problem-title { font-size: 15px; }
+    .pf-step { font-size: 13px; padding: 12px 14px; }
+    .problem-stat { flex-direction: column; }
+    .ps-divider { width: auto; height: 1px; margin: 0 14px; }
+    .ps-item { padding: 14px 12px; }
+    .ps-num { font-size: 26px; }
+  }
+
+  /* ===== SCIENCE CARDS LIST ===== */
+  .science-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 20px 0 32px;
+  }
+  .science-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .science-card-badge {
+    color: white;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.3;
+    text-align: center;
+    min-width: 36px;
+  }
+  .science-card-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .science-card p {
+    font-size: 13.5px;
+    margin: 0;
+    color: #2e2e3e;
+  }
+  .science-card-ref {
+    font-size: 11px;
+    color: var(--teal);
+    margin-top: 6px !important;
+    font-style: italic;
+    display: block;
+  }
+  @media (max-width: 600px) {
+    .science-card { flex-direction: column; gap: 10px; }
+    .science-card-badge { align-self: flex-start; }
+  }
+
+  /* ===== CAUTION BLOCK ===== */
+  .caution-block {
+    background: #fffaf5;
+    border: 2px solid #f0b060;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin: 32px 0;
+  }
+  .caution-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .caution-icon { font-size: 26px; flex-shrink: 0; }
+  .caution-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #8a3a00;
+    margin: 0;
+    line-height: 1.4;
+    font-family: 'Noto Serif Thai', serif;
+  }
+  .caution-intro {
+    font-size: 14.5px;
+    color: #4a3a20;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .caution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .caution-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid #f0dcc0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .caution-card-icon { font-size: 22px; margin-bottom: 8px; }
+  .caution-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .caution-card-body {
+    font-size: 13px;
+    color: #3a3a4a;
+    line-height: 1.7;
+    margin: 0 0 8px;
+  }
+  .caution-cite {
+    font-size: 11px;
+    color: var(--teal);
+    font-style: italic;
+  }
+  .caution-who {
+    background: #fff4e8;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .caution-who-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .caution-who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 12px;
+  }
+  .caution-who-item {
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .caution-red { background: #fff0f0; border: 1px solid #f0c0c0; color: #4a1a1a; }
+  .caution-yellow { background: #fffce0; border: 1px solid #e0d060; color: #3a3a00; }
+  .caution-who-item ul { margin: 8px 0 0 16px; padding: 0; }
+  .caution-steps {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #e0d0b8;
+  }
+  .caution-steps-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .caution-step-list { display: flex; flex-direction: column; gap: 12px; }
+  .caution-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: #2e2e3e;
+    line-height: 1.7;
+  }
+  .step-num {
+    background: var(--amber);
+    color: white;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .caution-verdict {
+    background: #f8f4ff;
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid #d8c8f0;
+  }
+  .verdict-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 12px;
+  }
+  .verdict-yes, .verdict-no {
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .verdict-yes { background: #f0fff4; border: 1px solid #a0d8b0; color: #0a3a1a; }
+  .verdict-no { background: #fffce0; border: 1px solid #d8c860; color: #3a3a00; }
+  .verdict-label {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .verdict-yes ul, .verdict-no ul { margin: 0 0 0 16px; padding: 0; }
+
+  /* ===== FOOTER ===== */
+  .article-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    padding: 36px 24px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .article-footer a { color: var(--amber-light); text-decoration: none; }
+  .article-footer strong { color: white; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero .brand-badge { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero-subtitle { animation-delay: 0.3s; }
+  .hero-meta { animation-delay: 0.4s; }
+
+  /* ===== DR RECOMMENDATION ===== */
+  .dr-recommend {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #0d1b2a 0%, #162032 100%);
+    border: 2px solid rgba(224,123,42,0.35);
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin: 8px 0 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dr-recommend::before {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(224,123,42,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .dr-rec-avatar {
+    font-size: 40px;
+    flex-shrink: 0;
+    background: rgba(224,123,42,0.15);
+    border: 2px solid rgba(224,123,42,0.3);
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .dr-rec-body { position: relative; }
+  .dr-rec-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .dr-rec-quote {
+    font-size: 15px;
+    color: rgba(255,240,210,0.88);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 3px solid rgba(224,123,42,0.4);
+  }
+  .dr-rec-quote strong { color: var(--amber-light); }
+  .dr-rec-cite {
+    font-size: 11px;
+    color: rgba(42,191,191,0.6);
+    font-style: italic;
+    margin-top: 4px;
+  }
+  @media (max-width: 600px) {
+    .dr-recommend { flex-direction: column; gap: 14px; padding: 20px 16px; }
+    .dr-rec-avatar { width: 48px; height: 48px; font-size: 28px; }
+    .dr-rec-quote { font-size: 14px; }
+  }
+
+  /* ===== DARK MODE COMPARE ===== */
+  .darkmode-compare {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 20px 0 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .darkmode-header {
+    background: var(--navy);
+    color: white;
+    padding: 14px 20px;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .darkmode-table { min-width: 580px; }
+  .darkmode-table th { font-size: 12px; padding: 11px 14px; }
+  .darkmode-table td { font-size: 13px; padding: 12px 14px; line-height: 1.5; }
+
+  /* ===== DARK MODE TIPS ===== */
+  .darkmode-tips {
+    background: #f7f9fc;
+    border: 1px solid #d0dce8;
+    border-radius: 18px;
+    padding: 22px 20px;
+    margin: 0 0 36px;
+  }
+  .dt-title {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .dt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .dt-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #e4ecf4;
+    font-size: 13px;
+    color: #2e2e3e;
+    line-height: 1.6;
+  }
+  .dt-item span { color: var(--text-muted); font-size: 12px; }
+  .dt-item-highlight {
+    background: linear-gradient(135deg, #fff6ee 0%, #fff0e0 100%);
+    border-color: rgba(224,123,42,0.35);
+  }
+  .dt-num {
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .dt-num-gold { background: var(--amber); }
+  @media (max-width: 600px) {
+    .dt-grid { grid-template-columns: 1fr; }
+    .darkmode-tips { padding: 18px 14px; }
+  }
+
+  /* ===== MECHANISM CARD ===== */
+  .mechanism-card {
+    background: linear-gradient(135deg, #1a0e04 0%, #2a1808 100%);
+    border: 2px solid rgba(224,123,42,0.4);
+    border-radius: 20px;
+    padding: 26px 22px;
+    margin: 24px 0 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mechanism-card::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(224,123,42,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .mech-header {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .mech-icon { font-size: 32px; flex-shrink: 0; }
+  .mech-title {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--amber-light);
+    line-height: 1.4;
+  }
+  .mech-sub { font-size: 12px; color: rgba(255,200,120,0.5); margin-top: 3px; }
+  .mech-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .mech-step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: rgba(255,230,190,0.85);
+    line-height: 1.7;
+  }
+  .mech-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .mech-dot-block { background: #e04020; box-shadow: 0 0 6px rgba(224,64,32,0.6); }
+  .mech-dot-go { background: #40c870; box-shadow: 0 0 6px rgba(64,200,112,0.6); }
+  .mech-research {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: rgba(255,230,190,0.75);
+    line-height: 1.7;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .mech-research-icon { font-size: 18px; flex-shrink: 0; }
+  .mech-cite {
+    font-size: 11px;
+    color: rgba(42,191,191,0.7);
+    font-style: italic;
+    margin-top: 6px;
+  }
+  .mech-tip {
+    background: rgba(224,123,42,0.12);
+    border: 1px solid rgba(224,123,42,0.25);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--amber-light);
+    line-height: 1.6;
+    position: relative;
+  }
+  @media (max-width: 600px) {
+    .mechanism-card { padding: 20px 16px; }
+    .mech-step { font-size: 13px; }
+    .mech-research { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== LENS COMPARE TABLE ===== */
+  .lens-compare-wrap { margin: 20px 0 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-scroll-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .lens-compare-table th { white-space: nowrap; font-size: 12px; padding: 12px 14px; }
+  .lens-compare-table td { font-size: 13px; padding: 12px 14px; vertical-align: middle; }
+  .cell-bad  { color: #c03030; font-weight: 600; text-align: center; }
+  .cell-ok   { color: #806010; font-weight: 600; text-align: center; }
+  .cell-good { color: #1a7a40; font-weight: 700; text-align: center; }
+  .cell-best { color: #d44000; font-weight: 800; text-align: center; }
+  .row-best td { background: #fff6ee !important; }
+  .row-best td:first-child { border-left: 4px solid var(--amber); }
+  .compare-note {
+    background: #fff8f0;
+    border: 1px solid #f0c880;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: #4a3010;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 600px) {
+    .compare-note { flex-direction: column; gap: 8px; font-size: 13px; }
+    .lens-compare-table th, .lens-compare-table td { font-size: 12px; padding: 10px 10px; }
+  }
+
+  /* ===== INFO BOX (blue variant) ===== */
+  .info-box-blue {
+    background: #f0f7ff;
+    border: 1px solid #b8d4f0;
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 0 0 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: #1a3a5a;
+    line-height: 1.7;
+  }
+  .info-box-icon { font-size: 20px; flex-shrink: 0; }
+  @media (max-width: 600px) {
+    .info-box-blue { flex-direction: column; gap: 8px; font-size: 13px; }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 600px) {
+    /* Hero */
+    .hero { padding: 40px 16px 56px; min-height: auto; }
+    .hero h1 { font-size: 24px; }
+    .hero-subtitle { font-size: 14px; }
+    .hero-meta { flex-direction: column; gap: 6px; }
+    .hero-meta .dot { display: none; }
+
+    /* Layout */
+    .page-wrap { padding: 0 14px; }
+    .content-grid { padding: 24px 0 60px; gap: 24px; width: 100%; }
+    .article-main { min-width: 0; width: 100%; }
+    .sidebar { min-width: 0; width: 100%; }
+    .sidebar { order: -1; }
+
+    /* Typography */
+    body { font-size: 15px; }
+    h2.section-title { font-size: 18px; margin: 32px 0 12px; }
+    h3.sub-title { font-size: 15px; }
+    p { font-size: 14.5px; }
+
+    /* Lead box */
+    .lead-box { padding: 20px 18px; }
+    .lead-box p { font-size: 15px; }
+
+    /* Research box */
+    .research-box { flex-direction: column; gap: 8px; padding: 16px; }
+
+    /* Product cards */
+    .product-stack, .product-pair { flex-direction: column; }
+
+    /* Pricing */
+    .pricing-callout { padding: 22px 16px; }
+    .pricing-big { font-size: 38px; }
+    .price-grid { grid-template-columns: 1fr; gap: 24px; }
+    .price-note-box { flex-direction: column; gap: 8px; font-size: 13px; }
+
+    /* Q&A */
+    .qa-question { font-size: 13.5px; padding: 14px 16px; }
+    .qa-answer { padding: 0 16px 14px 16px; font-size: 13.5px; }
+
+    /* Caution block */
+    .caution-block { padding: 20px 16px; }
+    .caution-title { font-size: 16px; }
+    .caution-intro { font-size: 13.5px; }
+    .caution-grid { grid-template-columns: 1fr; }
+    .caution-who-grid { grid-template-columns: 1fr; }
+    .caution-step { font-size: 13px; }
+    .verdict-grid { grid-template-columns: 1fr; }
+
+    /* Table: force horizontal scroll */
+    .table-wrapper { -webkit-overflow-scrolling: touch; }
+
+    /* Sidebar compact */
+    .glossary-card { padding: 18px; }
+    .author-card { padding: 16px; }
+    .tip-card { padding: 16px; }
+    .contact-card { padding: 16px; }
+
+    /* Inline grid boxes — mDFD color comparison, research flex rows */
+    [style*="display:grid"], [style*="display: grid"] {
+      display: block !important;
+    }
+    [style*="grid-template-columns"] {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    /* Research science cards (flex rows) */
+    [style*="display:flex"][style*="gap:16px"] {
+      flex-wrap: wrap;
+    }
+    /* Key Finding card font */
+    [style*="font-size:22px"] { font-size: 18px !important; }
+    [style*="font-size:52px"] { font-size: 38px !important; }
+  }
+
+  /* ===== POWER BAR VISUALIZATION ===== */
+  .powerbar-section {
+    margin: 8px 0 32px;
+  }
+  .pb-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .pb-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .pb-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pb-legend-note {
+    font-size: 11.5px;
+    color: #9a9aaa;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* Card */
+  .pb-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border: 2px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .pb-clear  { border-color: #c0cce0; }
+  .pb-coating { border-color: #d4c060; }
+  .pb-amber  { border-color: #d4900a; background: #fffbf2; }
+  .pb-maxsleep { border-color: #c04020; background: #fff8f5; }
+
+  /* Card header */
+  .pb-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .pb-lens-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pb-lens-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .pb-lens-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .pb-badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pb-badge-bad  { background: #ffe8e8; color: #c03030; }
+  .pb-badge-ok   { background: #fff8e0; color: #8a6000; }
+  .pb-badge-good { background: #e8f8ee; color: #1a6b3c; }
+  .pb-badge-best { background: #fff0e8; color: #c04020; }
+
+  /* Bars */
+  .pb-bars { display: flex; flex-direction: column; gap: 10px; }
+  .pb-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pb-row-melatonin .pb-track {
+    background: rgba(224,123,42,0.08);
+    border: 1px solid rgba(224,123,42,0.2);
+  }
+  .pb-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    width: 110px;
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+  .pb-track {
+    flex: 1;
+    height: 18px;
+    background: #f0eee8;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .pb-fill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.6s ease;
+  }
+  .pb-maxsleep .pb-row-melatonin .pb-fill {
+    box-shadow: 0 0 8px rgba(224,123,42,0.5);
+  }
+  .pb-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 60%, rgba(255,212,138,0.4));
+    border-radius: 20px;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  .pb-pct {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .pb-pct-zero { color: #1a8a40; }
+  .pb-pct-low  { color: #c03030; }
+  .pb-pct-full { color: var(--amber); font-size: 13px; }
+
+  /* Verdict */
+  .pb-verdict {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .pb-verdict-bad  { background: #fff0f0; color: #8a2020; }
+  .pb-verdict-ok   { background: #fffae8; color: #6a4800; }
+  .pb-verdict-good { background: #eef8f2; color: #1a5a30; }
+  .pb-verdict-best { background: linear-gradient(135deg, #1e1208, #2d1a06); color: var(--amber-light); }
+
+  /* Source */
+  .pb-source {
+    font-size: 11.5px;
+    color: #9a9aaa;
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+    padding: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .pb-label { width: 90px; font-size: 11px; }
+    .pb-lens-name { font-size: 15px; }
+    .pb-card { padding: 16px 14px; }
+    .pb-legend { gap: 10px; }
+  }
+
+  /* ===== PULL QUOTE ===== */
+  .pull-quote {
+    margin: 28px 0;
+    padding: 28px 24px 28px 28px;
+    background: var(--navy);
+    border-radius: 20px;
+    border-left: 5px solid var(--amber);
+    position: relative;
+    overflow: hidden;
+  }
+  .pull-quote::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 120px;
+    color: rgba(224,123,42,0.12);
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .pull-quote-text {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.6;
+    position: relative;
+  }
+  .pull-quote-text em {
+    font-style: normal;
+    color: var(--amber-light);
+  }
+  .pull-quote-sub {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    position: relative;
+  }
+  @media (max-width: 600px) {
+    .pull-quote { padding: 22px 18px 22px 20px; }
+    .pull-quote-text { font-size: 17px; }
+    .pull-quote::before { font-size: 80px; }
+  }
+
+  /* ===== STAT CARD ===== */
+  .stat-card {
+    background: var(--navy);
+    border-radius: 24px;
+    padding: 36px 28px;
+    margin: 28px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(224,123,42,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: -30px;
+    width: 130px; height: 130px;
+    background: radial-gradient(circle, rgba(42,191,191,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 96px;
+    line-height: 1;
+    color: var(--amber-light);
+    position: relative;
+    letter-spacing: -2px;
+  }
+  .stat-number .stat-plus {
+    font-size: 56px;
+    vertical-align: top;
+    margin-top: 14px;
+    display: inline-block;
+    color: var(--amber);
+  }
+  .stat-unit {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 4px;
+    position: relative;
+  }
+  .stat-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 14px;
+    line-height: 1.7;
+    position: relative;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat-desc strong { color: rgba(255,220,170,0.9); }
+  .stat-source {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    margin-top: 16px;
+    font-style: italic;
+    position: relative;
+  }
+  @media (max-width: 600px) {
+    .stat-card { padding: 28px 20px; }
+    .stat-number { font-size: 72px; }
+    .stat-number .stat-plus { font-size: 42px; margin-top: 10px; }
+    .stat-unit { font-size: 18px; }
+    .stat-desc { font-size: 14px; }
+  }
+
+/* ── OX NAV ── */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.ox-mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 890;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(12px);
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px;
+  padding: 80px 24px 40px;
+  overflow-y: auto;
+}
+.ox-mobile-nav.open { display: flex; }
+.ox-mobile-nav a {
+  font-size: 1.1rem; color: #2C2416; text-decoration: none;
+  padding: 10px 0; font-weight: 500;
+}
+.ox-mobile-nav a.sub { font-size: 0.9rem; color: #8B7355; padding: 6px 0; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: inline-block; margin-top: 16px;
+  background: #C8A96E; color: #fff !important;
+  padding: 14px 32px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── OX FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+
+/* ── MOBILE OVERFLOW FIX ── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; padding-top: 64px; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; }
+pre, code { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { min-width: 80px; white-space: nowrap; font-size: 0.85rem; padding: 8px 10px; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  section, .section, .page-wrap, .content, .article-body, article,
+  [class*="wrap"], [class*="container"], [class*="content"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero, .hero-inner, [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem !important; word-break: keep-all; }
+  h2 { font-size: 1.1rem !important; }
+  .ox-footer-top { padding: 32px 16px 24px !important; }
+}
+
+
+/* ── Universal QA Accordion Fix ── */
+.qa-q, .qa-question { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qa-a, .qa-answer { max-height: 0 !important; overflow: hidden !important; display: block !important; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px !important; }
+.qa-item.open > .qa-a,
+.qa-item.open > .qa-answer,
+.qa-item.open .qa-a,
+.qa-item.open .qa-answer { max-height: 3000px !important; padding: 4px 24px 20px 66px !important; }
+.qa-item.open .qa-toggle,
+.qa-item.open .qa-icon { transform: rotate(45deg); }
+.qa-item.open .chevron { transform: rotate(180deg); }
+@media (max-width: 600px) {
+  .qa-item.open > .qa-a,
+  .qa-item.open > .qa-answer,
+  .qa-item.open .qa-a,
+  .qa-item.open .qa-answer { padding: 4px 16px 16px 16px !important; }
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+
+
+<nav class="ox-nav" id="oxNav">
+
+  <a href="index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+
+    <li>
+      <a href="services.html">บริการ</a>
+    </li>
+
+    <li>
+      <a href="programs.html">โปรแกรม</a>
+    </li>
+
+    <li>
+      <a href="articles.html">สาระสายตา</a>
+    </li>
+
+    <li>
+      <a href="about.html">รู้จักเรา</a>
+    </li>
+
+    <li>
+      <a href="services.html">Promotion</a>
+    </li>
+
+    <li>
+      <a href="tourist.html">For Visitors</a>
+    </li>
+
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="services.html">บริการ</a>
+  <a href="programs.html">โปรแกรม</a>
+  <a href="articles.html">สาระสายตา</a>
+  <a href="about.html">รู้จักเรา</a>
+  <a href="services.html">Promotion</a>
+  <a href="tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-stars"></div>
+  <div style="position:relative;z-index:1;text-align:center;">
+    <div class="brand-badge">สุขภาพตา · Sleep &amp; Blue Light</div>
+    <h1>จะดีไหม ถ้ามีแว่นที่ทำให้คุณ<br><span class="highlight">นอนหลับเร็วขึ้น 30 นาที?</span></h1>
+    <p class="hero-subtitle">งานวิจัยพบว่าแว่นกรองแสงสีน้ำเงินช่วยเพิ่มเมลาโทนิน 58% และหลับเร็วขึ้นครึ่งชั่วโมง — นี่คือวิทยาศาสตร์เบื้องหลัง</p>
+    <div class="hero-meta">
+      <span>✍️ Suraphun Parsuraphun — Optician Lens Specialist</span>
+      <span class="dot">·</span>
+      <span>Ploychompoo Parsuraphun — Optometrist</span>
+      <span class="dot">·</span>
+      <span>⏱ อ่าน ~10 นาที</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="page-wrap">
+  <div class="content-grid">
+
+    <!-- MAIN -->
+    <main class="article-main">
+
+      <div class="read-time-bar">
+        ⏱ <strong>10 นาที</strong> &nbsp;·&nbsp; บทความโดย <strong>Ploychompoo Parsuraphun</strong> (Optometrist) &amp; <strong>Suraphun Parsuraphun</strong> (Optician)
+      </div>
+
+      <!-- LEAD -->
+      <div class="lead-box">
+        <p>
+          เคยไหม? นอนบนเตียงแล้ว <strong>หลับตาไม่ลง</strong> ทั้งที่ก็ง่วงแล้ว... สาเหตุหนึ่งที่หลายคนไม่รู้คือ
+          <strong>แสงจากโทรศัพท์มือถือ</strong> กำลังหลอกสมองของคุณให้คิดว่า "ยังเป็นกลางวันอยู่" แม้จะตีสองแล้วก็ตาม
+        </p>
+      </div>
+
+      <!-- IMAGE 1 -->
+      <figure style="margin:2rem 0; text-align:center;">
+        <img src="../images/art-blue-light-devices.jpg" alt="แสงสีน้ำเงินจากหน้าจอมือถือและอุปกรณ์ดิจิทัล" style="max-width:100%; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+      </figure>
+
+      <!-- EVOLUTIONARY SLEEP SECTION -->
+      <h2 class="section-title">มนุษย์ถูก "โปรแกรม" มาให้นอนตามพระอาทิตย์</h2>
+
+      <p>
+        ก่อนจะเข้าใจว่าโทรศัพท์ทำลายการนอนได้อย่างไร ต้องเข้าใจก่อนว่า
+        <strong>ร่างกายของเราออกแบบมาสำหรับยุคที่ไม่มีไฟฟ้า</strong>
+        วิวัฒนาการกว่า 200,000 ปี สร้างระบบ Circadian Rhythm ให้เชื่อมโยงกับแสงธรรมชาติอย่างแม่นยำ
+      </p>
+
+      <!-- TIMELINE STRIP -->
+      <div class="evo-timeline">
+        <div class="evo-step">
+          <div class="evo-icon">☀️</div>
+          <div class="evo-time">06:00 – 18:00</div>
+          <div class="evo-label">แสงแดด</div>
+          <div class="evo-desc">ipRGCs รับแสงสีน้ำเงิน → สมองรู้ว่า "กลางวัน" → Cortisol สูง ตื่นตัว</div>
+        </div>
+        <div class="evo-arrow">→</div>
+        <div class="evo-step">
+          <div class="evo-icon">🌅</div>
+          <div class="evo-time">18:00 – 20:00</div>
+          <div class="evo-label">พระอาทิตย์ตก</div>
+          <div class="evo-desc">แสงสีน้ำเงินหายไป → สมองรับสัญญาณ "กลางคืนมาแล้ว" → Melatonin เริ่มหลั่ง</div>
+        </div>
+        <div class="evo-arrow">→</div>
+        <div class="evo-step evo-step-highlight">
+          <div class="evo-icon">🌙</div>
+          <div class="evo-time">21:00 – 22:00</div>
+          <div class="evo-label">เวลานอนธรรมชาติ</div>
+          <div class="evo-desc">Melatonin ถึงจุดสูงสุด → ง่วงเอง → หลับลึก → ซ่อมแซมร่างกาย</div>
+        </div>
+      </div>
+
+      <!-- THE PROBLEM BLOCK -->
+      <div class="problem-block">
+        <div class="problem-header">
+          <span class="problem-icon">📱</span>
+          <div>
+            <div class="problem-title">แต่แล้ว... โทรศัพท์เข้ามาในปี 2007</div>
+            <div class="problem-sub">และทุกอย่างก็เปลี่ยนไปตลอดกาล</div>
+          </div>
+        </div>
+
+        <!-- Steve Jobs iPhone -->
+        <figure style="margin:1.5rem 0; text-align:center;">
+          <img src="../images/steve%20jobs%20iphone.jpg" alt="Steve Jobs เปิดตัว iPhone ในปี 2007" style="max-width:100%; border-radius:14px; box-shadow:0 4px 16px rgba(0,0,0,0.15);" loading="lazy">
+        </figure>
+
+        <div class="problem-flow">
+          <div class="pf-step">
+            <div class="pf-num">1</div>
+            <div class="pf-text">
+              <strong>21:00 น. — เล่นโทรศัพท์ก่อนนอน</strong><br>
+              หน้าจอ LED ปล่อยแสงสีน้ำเงิน 455–490 nm ความเข้มข้นเทียบเท่าแสงกลางวัน
+            </div>
+          </div>
+          <div class="pf-arrow">↓</div>
+          <div class="pf-step">
+            <div class="pf-num">2</div>
+            <div class="pf-text">
+              <strong>สมองสับสน — "ยังเป็นกลางวันอยู่?"</strong><br>
+              ipRGCs ในจอตารับแสงสีน้ำเงิน → ส่งสัญญาณไปยัง SCN (นาฬิกาชีวิตหลัก) →
+              สมองสั่ง <em>หยุด</em> หลั่ง Melatonin ทันที
+            </div>
+          </div>
+          <div class="pf-arrow">↓</div>
+          <div class="pf-step pf-step-bad">
+            <div class="pf-num">3</div>
+            <div class="pf-text">
+              <strong>ผลที่ตามมา — นอนไม่มีคุณภาพ</strong><br>
+              ไม่ง่วง → หลับยาก → หลับไม่ลึก → ตื่นมาไม่สดชื่น → ง่วงสะสมทั้งวัน
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-stat">
+          <div class="ps-item">
+            <div class="ps-num">90<span>%</span></div>
+            <div class="ps-label">ของคนอเมริกันใช้อุปกรณ์หน้าจอภายใน 1 ชม. ก่อนนอน</div>
+          </div>
+          <div class="ps-divider"></div>
+          <div class="ps-item">
+            <div class="ps-num">2–3<span>ชม.</span></div>
+            <div class="ps-label">เป็นเวลาที่ Melatonin ถูกกดหลังรับแสงสีน้ำเงิน</div>
+          </div>
+          <div class="ps-divider"></div>
+          <div class="ps-item">
+            <div class="ps-num">200K<span>ปี</span></div>
+            <div class="ps-label">ที่มนุษย์วิวัฒน์มากับวงจรแสง-มืดตามธรรมชาติ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 1 -->
+      <h2 class="section-title">ทำไมแสงโทรศัพท์ถึงทำให้นอนไม่หลับ?</h2>
+
+      <p>
+        ร่างกายเราถูกออกแบบมาให้ตื่นเมื่อมีแสง และง่วงนอนเมื่อมืด ตัวกลางที่ทำหน้าที่นี้คือ
+        <span class="tooltip-word">ฮอร์โมนเมลาโทนิน<span class="tooltip-popup">🔬 เมลาโทนิน (Melatonin) คือฮอร์โมนง่วงนอนที่สมองส่วน Pineal Gland ผลิต จะหลั่งออกมาเมื่อไม่มีแสงสีน้ำเงินรบกวน ทำให้เรารู้สึกง่วงตามธรรมชาติ</span></span>
+        ซึ่งเป็น "ฮอร์โมนง่วงนอน" ที่สมองจะหลั่งออกมาเมื่อรู้สึกว่าพระอาทิตย์ตกแล้ว
+      </p>
+      <p>
+        แต่ปัญหาคือ <strong>แสงสีน้ำเงิน</strong> และ <strong>แสงสีเขียว</strong> ที่ออกมาจากหน้าจอโทรศัพท์ ทีวี และคอมพิวเตอร์
+        ทุกเครื่อง มีผลกด (suppress) การหลั่งเมลาโทนินโดยตรง ทำให้สมองยัง "ตื่น" อยู่ แม้จะดึกมากแล้ว
+      </p>
+
+
+      <div class="pull-quote">
+        <div class="pull-quote-text">
+          การเล่นโทรศัพท์ก่อนนอน<br>
+          ทำให้<em>สมองคิดว่าตอนนี้เป็นกลางวัน</em><br>
+          ฮอร์โมนง่วงนอนเลยไม่หลั่ง
+        </div>
+        <div class="pull-quote-sub">— กลไกที่อธิบายได้ด้วยวิทยาศาสตร์ ไม่ใช่แค่ความเชื่อ</div>
+      </div>
+
+      <!-- รูป Melatonin ถูกกด -->
+      <figure style="margin:2rem 0; text-align:center;">
+        <img src="../images/Melatoninถูกกดไม่ให้หลั่ง.png" alt="แสงสีฟ้ากด Melatonin ไม่ให้หลั่ง" style="max-width:100%; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+      </figure>
+
+      <div class="research-box">
+        <div class="research-icon">🔬</div>
+        <div>
+          <div class="research-label">งานวิจัยพื้นฐาน — Journal of Neuroscience</div>
+          <p>Brainard et al. พบว่าแสงสีน้ำเงินในช่วง <strong>446–477 nm</strong> กด melatonin ในมนุษย์แบบ dose-dependent และมีฤทธิ์กระตุ้นความตื่นตัวสูงกว่าแสงคลื่นอื่นๆ ทั้งหมด</p>
+          <cite>— Brainard et al., Journal of Neuroscience, 2001 / West et al., Journal of Applied Physiology, 2011</cite>
+        </div>
+      </div>
+
+      <div class="research-box">
+        <div class="research-icon">🧠</div>
+        <div>
+          <div class="research-label">กลไกในสมอง — Frontiers in Neurology (2025)</div>
+          <p>แสงสีน้ำเงิน 460–480 nm กระตุ้นเซลล์ <span class="tooltip-word">ipRGCs<span class="tooltip-popup">👁 ipRGCs (intrinsically photosensitive Retinal Ganglion Cells) คือเซลล์ในจอตาที่มี melanopsin ทำหน้าที่ส่งสัญญาณไปยังนาฬิกาชีวิตของสมอง ไวต่อแสงสีน้ำเงินเป็นพิเศษ</span></span> ในจอตา ส่งสัญญาณตรงไปยัง Suprachiasmatic Nucleus (SCN) หรือ "นาฬิกาชีวิตหลัก" เพื่อ <strong>สั่งหยุดการหลั่ง melatonin</strong> จากต่อมไพเนียลทันที</p>
+          <cite>— PMC / Frontiers in Neurology Meta-analysis, 2025</cite>
+        </div>
+      </div>
+
+      <div class="research-box">
+        <div class="research-icon">📱</div>
+        <div>
+          <div class="research-label">โทรศัพท์มือถือโดยตรง — Brain Communications (2024)</div>
+          <p>งานวิจัยจาก University of Salzburg วัด melatonin จริงในผู้ใหญ่ที่อ่านหนังสือบนสมาร์ทโฟน 90 นาทีก่อนนอน พบว่า <strong>ระดับ melatonin ยังต่ำอยู่จนถึงเวลาเข้านอน</strong> แตกต่างจากวัยรุ่นที่ฟื้นตัวได้เร็วกว่า — ผู้ใหญ่อายุ 40+ จึงได้รับผลกระทบมากกว่า</p>
+          <cite>— Schmid et al., Brain Communications, Oxford University Press, 2024</cite>
+        </div>
+      </div>
+
+      <div class="research-box">
+        <div class="research-icon">🌿</div>
+        <div>
+          <div class="research-label">ทำไมต้องตัดสีเขียวด้วย — Woelders et al.</div>
+          <p>แสงสีเขียวจากสมาร์ทโฟนรุ่นใหม่ทุกรุ่นมีผลกด melatonin ได้เช่นกัน โดยเฉพาะเมื่อใช้ในห้องสว่างตอนกลางคืน ค่า melatonin suppression พุ่งสูงขึ้นถึง <strong>15–36%</strong> เมื่อเทียบกับห้องมืด จึงจำเป็นต้องตัดทั้งสองคลื่น ไม่ใช่แค่สีน้ำเงิน</p>
+          <cite>— Woelders et al., Current Biology, 2018 / Scientific Reports (Nature), 2015</cite>
+        </div>
+      </div>
+
+      <!-- LENS COLOR RESEARCH -->
+      <h2 class="section-title">สีเลนส์ส่งผลต่อการนอนจริงไหม? งานวิจัยบอกว่า "ใช่"</h2>
+
+      <p>
+        คำถามที่ได้ยินบ่อยคือ <em>"แว่นสีส้มหรือสีอำพัน มันช่วยได้จริงๆ หรือแค่ placebo?"</em>
+        คำตอบอยู่ในงานวิจัยที่ทดสอบกับเลนส์สีเหล่านี้โดยตรง
+      </p>
+
+      <!-- STAT CARD -->
+      <div class="stat-card">
+        <div class="stat-number">
+          <span class="stat-plus">+</span>30
+        </div>
+        <div class="stat-unit">นาที ต่อคืน</div>
+        <div class="stat-desc">
+          แค่ <strong>ใส่เลนส์สีอำพัน 2 ชั่วโมงก่อนนอน</strong><br>
+          ไม่ต้องวางโทรศัพท์ ไม่ต้องกินยา ไม่ต้องเปลี่ยน routine
+        </div>
+        <div class="stat-source">Columbia University RCT · Shechter et al., Journal of Psychiatric Research, 2018</div>
+      </div>
+
+      <!-- KEY FINDING CARD -->
+      <div style="background:linear-gradient(135deg, #1e1208 0%, #2d1a06 100%); border-radius:20px; padding:28px; margin:24px 0; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-20px; right:-20px; width:120px; height:120px; background:radial-gradient(circle, rgba(224,123,42,0.3) 0%, transparent 70%); border-radius:50%;"></div>
+        <div style="font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--amber-light); margin-bottom:12px; position:relative;">🏆 งานวิจัย RCT — Columbia University (2018)</div>
+        <div style="font-size:22px; font-weight:700; color:white; margin-bottom:10px; position:relative; font-family:'Noto Serif Thai', serif;">ใส่แว่นเลนส์สีอำพัน 2 ชม. ก่อนนอน<br><span style="color:var(--amber-light);">หลับได้เพิ่มขึ้น ~30 นาที/คืน</span></div>
+        <p style="color:rgba(255,220,170,0.8); font-size:14px; position:relative; margin:0;">Shechter et al. ทดสอบกับผู้ป่วย insomnia 14 ราย โดยให้ใส่เลนส์สีอำพัน (Amber) แทนเลนส์ใส วัดผลด้วย actigraphy และแบบสอบถาม Pittsburgh Insomnia Rating Scale พบว่าคุณภาพการนอน ความลึก และระยะเวลาการนอนดีขึ้นอย่างมีนัยสำคัญ (p &lt; 0.05)</p>
+        <div style="font-size:11px; color:rgba(255,200,120,0.5); margin-top:10px; position:relative; font-style:italic;">— Journal of Psychiatric Research, 2018 · ClinicalTrials.gov: NCT02698800</div>
+      </div>
+
+      <!-- แว่น Max Sleep -->
+      <figure style="margin:2rem 0; text-align:center;">
+        <img src="../images/แว่นMax%20Sleep.png" alt="แว่น Max Sleep — เลนส์สีอำพันสำหรับใส่ก่อนนอน by Optical X" style="max-width:100%; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+        <figcaption style="margin-top:10px; font-size:13px; color:var(--text-muted); font-style:italic;">เลนส์สีอำพันออกแบบมาเพื่อกรองแสงสีน้ำเงินก่อนนอน</figcaption>
+      </figure>
+
+      <!-- COLOR COMPARISON -->
+      <h3 class="sub-title">เลนส์สีต่างกัน ผลต่างกันแค่ไหน?</h3>
+      <p>
+        งานวิจัยจาก TVST/ARVO Journals (2025) วัดประสิทธิภาพของเลนส์แต่ละสีด้วยค่า
+        <span class="tooltip-word">mDFD<span class="tooltip-popup">📐 mDFD (melanopic Daylight Factor Difference) คือค่าที่วัดว่าเลนส์ลดแสงที่กระตุ้น ipRGCs (เซลล์ควบคุมนาฬิกาชีวิต) ได้มากแค่ไหน ค่ายิ่งสูง ยิ่งช่วยการนอนได้มากกว่า</span></span>
+        ซึ่งวัดตรงๆ ว่าเลนส์แต่ละสีลดสัญญาณที่รบกวนนาฬิกาชีวิตได้แค่ไหน ผลที่ได้ชัดมาก:
+      </p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:14px; margin:20px 0 28px;">
+        <div style="background:white; border:2px solid #e8e2d9; border-radius:14px; padding:18px; text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">🟡</div>
+          <div style="font-size:13px; font-weight:700; color:#5a4a00; margin-bottom:4px;">เลนส์สีเหลือง<br>(Yellow/Clear)</div>
+          <div style="font-size:22px; font-weight:800; color:#b8a000;">0.28</div>
+          <div style="font-size:11px; color:#888; margin-top:4px;">mDFD ต่ำ</div>
+          <div style="margin-top:10px; font-size:12px; color:#666; line-height:1.5;">แทบไม่ลด melanopic input — สมองยังรับสัญญาณ "ตื่น" อยู่เกือบเต็ม</div>
+        </div>
+        <div style="background:#fff8f0; border:2px solid #f0d0a0; border-radius:14px; padding:18px; text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">🟠</div>
+          <div style="font-size:13px; font-weight:700; color:#7a4a00; margin-bottom:4px;">เลนส์สีอำพัน<br>(Amber)</div>
+          <div style="font-size:22px; font-weight:800; color:var(--amber);">1.04</div>
+          <div style="font-size:11px; color:#888; margin-top:4px;">mDFD ผ่านเกณฑ์</div>
+          <div style="margin-top:10px; font-size:12px; color:#666; line-height:1.5;">ลด melanopic input ได้ดี เหมาะหลังพระอาทิตย์ตก ยังมองเห็นชัด</div>
+        </div>
+        <div style="background:#fff4ec; border:2px solid var(--amber); border-radius:14px; padding:18px; text-align:center; box-shadow:0 4px 16px rgba(224,123,42,0.15);">
+          <div style="font-size:28px; margin-bottom:8px;">🔴</div>
+          <div style="font-size:13px; font-weight:700; color:#6a2000; margin-bottom:4px;">เลนส์สีส้มเข้ม<br>(Orange/Red)</div>
+          <div style="font-size:22px; font-weight:800; color:#d44000;">1.41</div>
+          <div style="font-size:11px; color:var(--amber); font-weight:600; margin-top:4px;">mDFD สูงสุด ✓</div>
+          <div style="margin-top:10px; font-size:12px; color:#666; line-height:1.5;">ลด melanopic input ได้สูงสุด เหมาะที่สุดก่อนนอน 2–3 ชม.</div>
+        </div>
+      </div>
+
+      <div class="research-box">
+        <div class="research-icon">🔴</div>
+        <div>
+          <div class="research-label">เลนส์สีอำพัน (Amber) vs ใส — Burkhart & Phelps (2009)</div>
+          <p>ผู้เข้าร่วม 20 คนที่ใส่เลนส์ Amber 3 ชั่วโมงก่อนนอนเป็นเวลา 2 สัปดาห์ รายงานว่า <strong>คุณภาพการนอนดีขึ้นอย่างมีนัยสำคัญ</strong> เมื่อเทียบกับกลุ่มที่ใส่เลนส์สีเหลือง (UV-only) ซึ่งไม่ได้ตัดแสงสีน้ำเงิน — ยืนยันว่าการตัดสีน้ำเงินโดยตรงคือกุญแจสำคัญ ไม่ใช่แค่การลด UV</p>
+          <cite>— Burkhart & Phelps, Chronobiology International, 2009</cite>
+        </div>
+      </div>
+
+      <div class="research-box">
+        <div class="research-icon">🟠</div>
+        <div>
+          <div class="research-label">เลนส์ Amber ลด Blood Pressure ด้วย — Columbia University</div>
+          <p>งานวิจัยชุดเดียวกันของ Shechter ยังพบผลพลอยได้ที่น่าสนใจ: การใส่เลนส์ Amber ก่อนนอนมีผลลด <strong>ความดันโลหิต</strong> ในผู้ที่นอนไม่หลับด้วย เนื่องจาก insomnia มักสัมพันธ์กับ hyperarousal ของระบบประสาท เมื่อร่างกายหลับได้ดีขึ้น ระบบหัวใจและหลอดเลือดก็ดีขึ้นตาม</p>
+          <cite>— Shechter et al., Sleep Medicine, Columbia University Irving Medical Center</cite>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <h2 class="section-title">เลนส์ 2 แบบ เหมาะกับใคร?</h2>
+      <p>เราออกแบบเลนส์ 2 รุ่นสำหรับใช้ในตอนกลางคืนโดยเฉพาะ ขึ้นอยู่กับไลฟ์สไตล์ของคุณ</p>
+
+      <!-- IMAGE 3: Max Evening & Max Sleep -->
+      <figure style="margin:2rem 0; text-align:center;">
+        <img src="../images/Max%20evening%20and%20max%20sleep.png" alt="เปรียบเทียบเลนส์ Max Evening (สีอำพัน) และ Max Sleep (สีส้มเข้ม) โดย Optical X" style="max-width:100%; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+        <figcaption style="margin-top:10px; font-size:13px; color:var(--text-muted); font-style:italic;">เปรียบเทียบเลนส์ Max Evening (ซ้าย) และ Max Sleep (ขวา)</figcaption>
+      </figure>
+
+      <!-- PRODUCT CARDS — stacked on mobile (ซ้าย=Evening, ขวา=Sleep ตามรูป) -->
+      <div class="product-stack">
+        <div class="product-card pc-mes">
+          <div class="pc-title">Max Evening Lenses</div>
+          <div class="pc-sub">MES — สำหรับยังต้องใช้ชีวิตหลังทุ่ม</div>
+          <div class="pc-feature"><div class="pc-dot"></div>ตัดแสงสีน้ำเงิน <strong style="color:#7ee8e8">100%</strong></div>
+          <div class="pc-feature"><div class="pc-dot"></div>ไม่ตัดสีเขียว ภาพจึงคมชัดกว่า</div>
+          <div class="pc-feature"><div class="pc-dot"></div>เหมาะใส่ดูทีวี ทำงาน หลังพระอาทิตย์ตก</div>
+          <div class="pc-feature"><div class="pc-dot"></div>ยังมองเห็นได้ดีในความมืด</div>
+          <div class="lens-pill">🟤 สีอำพัน Amber</div>
+        </div>
+        <div class="product-card pc-msl">
+          <div class="pc-title">Max Sleep Lenses</div>
+          <div class="pc-sub">MSL — สำหรับนอนหลับลึกจริงจัง</div>
+          <div class="pc-feature"><div class="pc-dot"></div>ตัดแสงสีน้ำเงิน + สีเขียว <strong style="color:var(--amber-light)">100%</strong></div>
+          <div class="pc-feature"><div class="pc-dot"></div>ช่วง 400–550 nm ไม่ผ่านเลนส์เลย</div>
+          <div class="pc-feature"><div class="pc-dot"></div>เมลาโทนินหลั่งเต็ม 100%</div>
+          <div class="pc-feature"><div class="pc-dot"></div>เหมาะ: ผู้มีปัญหา insomnia, นอนหลับยาก</div>
+          <div class="lens-pill">🟠 สีแดง/ส้มเข้ม</div>
+        </div>
+      </div>
+
+      <!-- WEAR WHILE USING PHONE SECTION -->
+      <h2 class="section-title">ใส่เลนส์สีแดงเข้ม แล้วเล่นโทรศัพท์ก่อนนอนได้เลยไหม?</h2>
+
+      <p>
+        คำตอบคือ <strong>ใช่ครับ</strong> — นั่นคือวิธีที่ถูกต้องในการใช้งานเลนส์ Max Sleep พอดีเลย
+        ไม่จำเป็นต้องวางโทรศัพท์ เพียงแค่สวมเลนส์ตัดแสงสีน้ำเงิน+เขียวก่อน แล้วเล่นโทรศัพท์ตามปกติ
+      </p>
+
+      <!-- MECHANISM CARD -->
+      <div class="mechanism-card">
+        <div class="mech-header">
+          <div class="mech-icon">🔴</div>
+          <div>
+            <div class="mech-title">กลไกที่เกิดขึ้นขณะใส่เลนส์แดงเข้มเล่นโทรศัพท์</div>
+            <div class="mech-sub">งานวิจัยยืนยันสิ่งที่เกิดขึ้นในร่างกาย</div>
+          </div>
+        </div>
+        <div class="mech-steps">
+          <div class="mech-step">
+            <div class="mech-dot mech-dot-block"></div>
+            <div><strong>แสงสีน้ำเงิน 455–490 nm ถูกตัด 100%</strong> — เลนส์ย้อมสีส้มเข้ม/แดง ดูดซับแสงช่วงนี้ไว้ทั้งหมด ก่อนที่จะถึงจอตา ipRGCs จึงไม่ได้รับสัญญาณ "กลางวัน"</div>
+          </div>
+          <div class="mech-step">
+            <div class="mech-dot mech-dot-block"></div>
+            <div><strong>แสงสีเขียว 490–550 nm ถูกตัดด้วย (Max Sleep)</strong> — ป้องกัน secondary suppression จาก green light ที่สมาร์ทโฟนรุ่นใหม่ปล่อยออกมาเพิ่มขึ้นเรื่อยๆ</div>
+          </div>
+          <div class="mech-step">
+            <div class="mech-dot mech-dot-go"></div>
+            <div><strong>Pineal Gland เริ่มหลั่ง Melatonin ตามปกติ</strong> — SCN ไม่ได้รับสัญญาณ "ตื่นตัว" จึงเปิดให้ต่อมไพเนียลทำงาน melatonin ขึ้นสู่ระดับสูงตามธรรมชาติ</div>
+          </div>
+          <div class="mech-step">
+            <div class="mech-dot mech-dot-go"></div>
+            <div><strong>เริ่มรู้สึกง่วงตามธรรมชาติ</strong> — เมื่อ melatonin ถึงระดับหนึ่ง ร่างกายจะส่งสัญญาณง่วงออกมาชัดเจน — นั่นคือสัญญาณให้วางโทรศัพท์และเข้านอนได้เลยครับ</div>
+          </div>
+        </div>
+
+        <!-- RESEARCH SUPPORT -->
+        <div class="mech-research">
+          <div class="mech-research-icon">📚</div>
+          <div>
+            <strong>งานวิจัยที่รองรับ:</strong> van der Lely et al. ทดสอบในวัยรุ่นที่ใช้หน้าจอ LED 3 ชั่วโมงก่อนนอน พบว่ากลุ่มที่สวมแว่น orange lens (BLA 98.2%) มี <strong>melatonin สูงกว่ากลุ่ม clear lens อย่างมีนัยสำคัญ</strong> และรู้สึกง่วงก่อนนอนเพิ่มขึ้นชัดเจน แม้จะยังเล่นหน้าจออยู่ก็ตาม
+            <div class="mech-cite">— van der Lely et al., SLEEP Advances / Oxford Academic (meta-analysis), 2020 · Ayaki et al. (referenced therein)</div>
+          </div>
+        </div>
+
+        <div class="mech-tip">
+          💡 <strong>เคล็ดลับ:</strong> พอเริ่มรู้สึกง่วง ให้วางโทรศัพท์และเข้านอนทันที อย่ารอให้ง่วงมาก เพราะ melatonin จะอยู่ในระดับสูงสุดช่วงนั้นพอดี หลับลึกได้เร็วกว่า
+        </div>
+      </div>
+
+      <!-- LENS COMPARISON TABLE -->
+      <h2 class="section-title">เลนส์แต่ละแบบ ตัดแสงได้แค่ไหน?</h2>
+      <p style="font-size:14.5px; color:var(--text-muted); margin-bottom:24px; line-height:1.7;">
+        แสงที่ผ่านเลนส์เข้าตายิ่งน้อย → สมองสั่งผลิตเมลาโทนินได้มากขึ้น → หลับง่ายขึ้น
+      </p>
+
+      <!-- POWER BAR VISUALIZATION -->
+      <div class="powerbar-section">
+
+        <!-- HEADER LEGEND -->
+        <div class="pb-legend">
+          <div class="pb-legend-item"><span class="pb-dot" style="background:#4a9eff;"></span>แสงน้ำเงินผ่านเลนส์</div>
+          <div class="pb-legend-item"><span class="pb-dot" style="background:#4dcc7a;"></span>แสงเขียวผ่านเลนส์</div>
+          <div class="pb-legend-item"><span class="pb-dot" style="background:#e07b2a;"></span>เมลาโทนินที่ร่างกายผลิตได้</div>
+        </div>
+        <p class="pb-legend-note">แถบซ้าย = น้อย · แถบขวา = มาก &nbsp;|&nbsp; 🎯 เป้าหมาย: แสงผ่านน้อย เมลาโทนินมาก</p>
+
+        <!-- CARD 1: Clear -->
+        <div class="pb-card pb-clear">
+          <div class="pb-card-header">
+            <div class="pb-lens-dot" style="background:rgba(200,220,255,0.3); border:2px solid #aac4ee;"></div>
+            <div>
+              <div class="pb-lens-name">เลนส์ใส (ไม่มี filter)</div>
+              <div class="pb-lens-sub">เลนส์ธรรมดาทั่วไป</div>
+            </div>
+            <div class="pb-badge pb-badge-bad">ไม่ช่วย</div>
+          </div>
+          <div class="pb-bars">
+            <div class="pb-row">
+              <div class="pb-label">💧 แสงน้ำเงินผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:100%; background:linear-gradient(90deg,#2a6eff,#6aaeff);"></div>
+              </div>
+              <div class="pb-pct">100%</div>
+            </div>
+            <div class="pb-row">
+              <div class="pb-label">🌿 แสงเขียวผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:100%; background:linear-gradient(90deg,#1a8a40,#4dcc7a);"></div>
+              </div>
+              <div class="pb-pct">100%</div>
+            </div>
+            <div class="pb-row pb-row-melatonin">
+              <div class="pb-label">🌙 เมลาโทนิน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:10%; background:linear-gradient(90deg,#b05010,#e07b2a);"></div>
+              </div>
+              <div class="pb-pct pb-pct-low">~10%</div>
+            </div>
+          </div>
+          <div class="pb-verdict pb-verdict-bad">❌ สมองคิดว่ายังเป็นกลางวัน — นอนไม่หลับ</div>
+        </div>
+
+        <!-- CARD 2: Blue Coating -->
+        <div class="pb-card pb-coating">
+          <div class="pb-card-header">
+            <div class="pb-lens-dot" style="background:rgba(255,235,100,0.25); border:2px solid #d4b840;"></div>
+            <div>
+              <div class="pb-lens-name">Blue Light Coating</div>
+              <div class="pb-lens-sub">เคลือบผิว / อมเหลืองนิดหน่อย</div>
+            </div>
+            <div class="pb-badge pb-badge-ok">ช่วยได้น้อย</div>
+          </div>
+          <div class="pb-bars">
+            <div class="pb-row">
+              <div class="pb-label">💧 แสงน้ำเงินผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:55%; background:linear-gradient(90deg,#2a6eff,#6aaeff);"></div>
+              </div>
+              <div class="pb-pct">~50%</div>
+            </div>
+            <div class="pb-row">
+              <div class="pb-label">🌿 แสงเขียวผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:100%; background:linear-gradient(90deg,#1a8a40,#4dcc7a);"></div>
+              </div>
+              <div class="pb-pct">100%</div>
+            </div>
+            <div class="pb-row pb-row-melatonin">
+              <div class="pb-label">🌙 เมลาโทนิน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:30%; background:linear-gradient(90deg,#b05010,#e07b2a);"></div>
+              </div>
+              <div class="pb-pct pb-pct-low">~30%</div>
+            </div>
+          </div>
+          <div class="pb-verdict pb-verdict-ok">⚠️ ตัดแสงได้บางส่วน แต่ยังไม่พอให้นอนหลับดีขึ้น</div>
+        </div>
+
+        <!-- CARD 3: Amber MES -->
+        <div class="pb-card pb-amber">
+          <div class="pb-card-header">
+            <div class="pb-lens-dot" style="background:rgba(224,150,30,0.35); border:2px solid #e09020;"></div>
+            <div>
+              <div class="pb-lens-name">Max Evening Lenses</div>
+              <div class="pb-lens-sub">สีอำพัน (Amber) · MES</div>
+            </div>
+            <div class="pb-badge pb-badge-good">ช่วยได้ดี</div>
+          </div>
+          <div class="pb-bars">
+            <div class="pb-row">
+              <div class="pb-label">💧 แสงน้ำเงินผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:3%; background:linear-gradient(90deg,#2a6eff,#6aaeff); min-width:4px;"></div>
+              </div>
+              <div class="pb-pct pb-pct-zero">0%</div>
+            </div>
+            <div class="pb-row">
+              <div class="pb-label">🌿 แสงเขียวผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:50%; background:linear-gradient(90deg,#1a8a40,#4dcc7a);"></div>
+              </div>
+              <div class="pb-pct">~50%</div>
+            </div>
+            <div class="pb-row pb-row-melatonin">
+              <div class="pb-label">🌙 เมลาโทนิน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:72%; background:linear-gradient(90deg,#b05010,#e07b2a);"></div>
+              </div>
+              <div class="pb-pct">~72%</div>
+            </div>
+          </div>
+          <div class="pb-verdict pb-verdict-good">✅ เมลาโทนินหลั่งได้ดี เหมาะดูทีวี/ทำงานหลังทุ่ม</div>
+        </div>
+
+        <!-- CARD 4: Max Sleep MSL -->
+        <div class="pb-card pb-maxsleep">
+          <div class="pb-card-header">
+            <div class="pb-lens-dot" style="background:rgba(200,60,0,0.35); border:2px solid #e05020;"></div>
+            <div>
+              <div class="pb-lens-name">Max Sleep Lenses</div>
+              <div class="pb-lens-sub">สีแดง/ส้มเข้ม · MSL</div>
+            </div>
+            <div class="pb-badge pb-badge-best">🏆 ดีที่สุด</div>
+          </div>
+          <div class="pb-bars">
+            <div class="pb-row">
+              <div class="pb-label">💧 แสงน้ำเงินผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:3%; background:linear-gradient(90deg,#2a6eff,#6aaeff); min-width:4px;"></div>
+              </div>
+              <div class="pb-pct pb-pct-zero">0%</div>
+            </div>
+            <div class="pb-row">
+              <div class="pb-label">🌿 แสงเขียวผ่าน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:3%; background:linear-gradient(90deg,#1a8a40,#4dcc7a); min-width:4px;"></div>
+              </div>
+              <div class="pb-pct pb-pct-zero">0%</div>
+            </div>
+            <div class="pb-row pb-row-melatonin">
+              <div class="pb-label">🌙 เมลาโทนิน</div>
+              <div class="pb-track">
+                <div class="pb-fill" style="width:100%; background:linear-gradient(90deg,#b05010,#ffd48a);"></div>
+                <div class="pb-glow"></div>
+              </div>
+              <div class="pb-pct pb-pct-full">100%</div>
+            </div>
+          </div>
+          <div class="pb-verdict pb-verdict-best">🌙 เมลาโทนินเต็ม 100% — เหมือนอยู่ในห้องมืดสนิท</div>
+        </div>
+
+        <!-- SOURCE NOTE -->
+        <div class="pb-source">
+          📚 อ้างอิง: Shechter et al. (2018), van der Lely et al. (2020), Glickman et al. TVST (2025)
+        </div>
+
+      </div><!-- /powerbar-section -->
+
+      <!-- BOTTOM NOTE -->
+      <div class="compare-note">
+        <div style="font-size:18px; flex-shrink:0;">⚠️</div>
+        <div>
+          <strong>ทำไม Blue Light Coating ทั่วไปถึงไม่พอ?</strong>
+          เลนส์ที่เคลือบสีเหลืองบนผิว (coating) ตัดได้แค่ 30–50% เท่านั้น
+          แต่ Shechter et al. (2018) พบว่าต้องการการตัดสีน้ำเงิน <strong>ใกล้ 100%</strong>
+          ถึงจะมีผลต่อ melatonin อย่างมีนัยสำคัญ
+        </div>
+      </div>
+
+            <!-- PRICING SECTION -->
+      <h2 class="section-title">ราคาเลนส์ Max Sleep / Max Evening</h2>
+      <p>เลนส์ทั้ง 2 รุ่นใช้เลนส์ Shamir RX คุณภาพสูง พร้อมการย้อมสีพิเศษเฉพาะสั่งทำที่ร้าน ไม่ใช่เลนส์สีสำเร็จรูป</p>
+
+      <!-- PRICING CALLOUT -->
+      <div class="pricing-callout">
+        <div class="pricing-badge">ราคาเริ่มต้น</div>
+        <div class="pricing-big">2,990 <span>บาท</span></div>
+        <div class="pricing-note">เฉพาะเลนส์ (ไม่รวมกรอบ) · ย้อมสีพิเศษเฉพาะสั่ง</div>
+      </div>
+
+      <!-- PRICING TABLE CARDS -->
+      <div class="price-grid">
+
+        <div class="price-card">
+          <div class="price-index-badge">Index 1.50</div>
+          <div class="price-desc">เลนส์บางมาตรฐาน<br><span>สายตา ±5.00 หรือน้อยกว่า</span></div>
+          <div class="price-breakdown">
+            <div class="price-row-item">
+              <span>เลนส์ Shamir Clear</span>
+              <span>2,700 ฿</span>
+            </div>
+            <div class="price-row-item">
+              <span>ย้อมสีพิเศษ</span>
+              <span>+ 450 ฿</span>
+            </div>
+            <div class="price-divider"></div>
+            <div class="price-row-total">
+              <span>รวม</span>
+              <span>3,150 ฿</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-card price-card-highlight">
+          <div class="price-popular-tag">แนะนำ</div>
+          <div class="price-index-badge">Index 1.60</div>
+          <div class="price-desc">เลนส์บางพิเศษ<br><span>สายตา ±6.00 หรือมากกว่า</span></div>
+          <div class="price-breakdown">
+            <div class="price-row-item">
+              <span>เลนส์ Shamir Clear</span>
+              <span>5,700 ฿</span>
+            </div>
+            <div class="price-row-item">
+              <span>ย้อมสีพิเศษ</span>
+              <span>+ 450 ฿</span>
+            </div>
+            <div class="price-divider"></div>
+            <div class="price-row-total">
+              <span>รวม</span>
+              <span>6,150 ฿</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="price-note-box">
+        <div style="font-size:16px; margin-bottom:6px;">📌</div>
+        <div>
+          <strong>หมายเหตุ:</strong> ราคาเริ่มต้น 2,990 บาท คือราคาพิเศษสำหรับเลนส์ย้อมสีสั่งทำ ราคาจริงขึ้นอยู่กับค่าสายตาและ Index ที่เหมาะสมกับคุณ ปรึกษานักทัศนมาตรก่อนสั่งทำได้ที่ร้านเลยครับ
+        </div>
+      </div>
+
+      <!-- PRESBYOPIA / COMPUTER LENS SECTION -->
+      <h2 class="section-title">สายตายาวตามอายุ? ก็ย้อมสีได้เช่นกัน</h2>
+      <p>
+        สำหรับผู้ที่มีค่า Add (สายตายาวตามอายุ) หรือต้องใช้แว่นอ่านหนังสือ ทำงานหน้าจอ
+        ทางร้านสามารถย้อมสีเลนส์ Max Sleep / Max Evening ลงบน
+        <strong>Shamir Computer / Workspace</strong> ได้เลย — เลนส์ออกแบบสำหรับระยะกลาง-ใกล้โดยเฉพาะ
+        มองจอ อ่านหนังสือ ประชุมออนไลน์ได้ชัด พร้อมช่วยการนอนในคืนนั้น
+      </p>
+
+      <div class="info-box-blue">
+        <div class="info-box-icon">👁️</div>
+        <div>
+          <strong>Shamir Computer™ vs Workspace™ ต่างกันอย่างไร?</strong><br>
+          <strong>Computer</strong> — โซนมองใกล้กว้าง เหมาะคนทำงานหน้าจอตลอดวัน ระยะ 40–100 ซม.<br>
+          <strong>Workspace</strong> — โซนกว้างขึ้น ครอบคลุมทั้งจอ โต๊ะ และระยะห้องประชุม ระยะ 40–400 ซม.
+        </div>
+      </div>
+
+      <h3 class="sub-title" style="margin-top:0;">ราคาเลนส์สายตายาว (Computer/Workspace) + ย้อมสี</h3>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="price-index-badge">Index 1.50</div>
+          <div class="price-desc">เลนส์ Computer/Workspace มาตรฐาน<br><span>Add +0.75 ถึง +3.50</span></div>
+          <div class="price-breakdown">
+            <div class="price-row-item">
+              <span>Shamir Computer/Workspace Clear</span>
+              <span>3,900 ฿</span>
+            </div>
+            <div class="price-row-item">
+              <span>ย้อมสีพิเศษ</span>
+              <span>+ 450 ฿</span>
+            </div>
+            <div class="price-divider"></div>
+            <div class="price-row-total">
+              <span>รวม</span>
+              <span>4,350 ฿</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-card price-card-highlight">
+          <div class="price-popular-tag">แนะนำ</div>
+          <div class="price-index-badge">Index 1.60</div>
+          <div class="price-desc">เลนส์ Computer/Workspace บางพิเศษ<br><span>Add +0.75 ถึง +3.50</span></div>
+          <div class="price-breakdown">
+            <div class="price-row-item">
+              <span>Shamir Computer/Workspace Clear</span>
+              <span>6,900 ฿</span>
+            </div>
+            <div class="price-row-item">
+              <span>ย้อมสีพิเศษ</span>
+              <span>+ 450 ฿</span>
+            </div>
+            <div class="price-divider"></div>
+            <div class="price-row-total">
+              <span>รวม</span>
+              <span>7,350 ฿</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-note-box">
+        <div style="font-size:16px; margin-bottom:6px;">💡</div>
+        <div>
+          <strong>เหมาะกับใคร:</strong> ผู้ที่อายุ 40+ มีค่า Add ต้องใช้แว่นอ่านหนังสือหรือทำงานหน้าจอ แต่ยังอยากได้ประโยชน์จากการตัดแสงสีน้ำเงินช่วงเย็น-กลางคืนด้วย สามารถย้อมสีได้ทั้ง Amber (Max Evening) หรือ ส้มเข้ม (Max Sleep) ตามความต้องการ
+        </div>
+      </div>
+
+      <!-- CAUTION SECTION -->
+      <div class="caution-block">
+        <div class="caution-header">
+          <span class="caution-icon">⚠️</span>
+          <h2 class="caution-title">คำเตือนสำคัญ: บางคนใส่แล้วปวดหัว ตาไม่สบาย — เพราะอะไร?</h2>
+        </div>
+        <p class="caution-intro">
+          เลนส์ย้อมสีส้ม/อำพันช่วยการนอนได้จริง แต่ไม่ใช่ทุกคนที่จะสวมใส่ได้สบายทันที
+          มีกลุ่มที่อาจรู้สึก <strong>ปวดหัว มึนตา หรือรู้สึกสีเพี้ยน</strong> โดยเฉพาะช่วงแรก
+          นี่คือเหตุผลที่งานวิจัยและ optometry อธิบายไว้
+        </p>
+
+        <!-- WHY CARDS -->
+        <div class="caution-grid">
+          <div class="caution-card">
+            <div class="caution-card-icon">🧠</div>
+            <div class="caution-card-title">สมองต้องปรับตัวกับสีใหม่</div>
+            <p class="caution-card-body">
+              เมื่อสวมเลนส์สีส้ม/อำพัน สมองส่วนประมวลผลสี (Visual Cortex) จะได้รับ input ที่ต่างจากปกติ
+              งานวิจัยจาก PMC (2023) พบว่าเลนส์ Yellow/Orange เปลี่ยน Color Vision
+              และ Contrast Sensitivity อย่างมีนัยสำคัญในช่วง 7–14 วันแรก
+              หลังจากนั้น <strong>สมองจะ adapt และความไม่สบายตาลดลงเอง</strong>
+            </p>
+            <div class="caution-cite">— PMC/NCBI, Impact of Tinted Lenses on Contrast Sensitivity & Color Vision, 2023</div>
+          </div>
+
+          <div class="caution-card">
+            <div class="caution-card-icon">👁️</div>
+            <div class="caution-card-title">Chromatic Aberration จากสีเข้มมาก</div>
+            <p class="caution-card-body">
+              เลนส์ที่ย้อมสีเข้มเกินไป หรือย้อมไม่สม่ำเสมอ อาจทำให้เกิด
+              <strong>ขอบสีรบกวน (Chromatic Fringing)</strong> บริเวณขอบวัตถุ
+              โดยเฉพาะในผู้ที่มีค่าสายตาสูง หรือ Astigmatism สูง
+              ทำให้รู้สึกภาพเบลอเล็กน้อย หรือปวดตาได้
+            </p>
+            <div class="caution-cite">— Optometry 411, Color-Tinted Lenses Review, 2025</div>
+          </div>
+
+          <div class="caution-card">
+            <div class="caution-card-icon">⚡</div>
+            <div class="caution-card-title">ระบบประสาทไวต่อแสงเป็นพิเศษ</div>
+            <p class="caution-card-body">
+              ในกลุ่มที่มี <strong>ไมเกรน, Visual Stress, หรือ Photophobia</strong>
+              งานวิจัยจาก Harvard และ University of Utah พบว่า
+              แสงสีแดง-ส้ม-อำพัน สามารถกระตุ้น ipRGC ในระดับต่างกันต่อบุคคล
+              บางคนรู้สึกสบายขึ้น แต่บางคนรู้สึกแย่ลงกับสีเฉพาะ
+              <strong>แสงสีเขียวเท่านั้นที่พิสูจน์แล้วว่าสงบประสาทได้ในกลุ่มไมเกรน</strong>
+            </p>
+            <div class="caution-cite">— Noseda et al., Brain/Harvard Medical School, 2010–2016</div>
+          </div>
+        </div>
+
+        <!-- WHO SHOULD BE CAREFUL -->
+        <div class="caution-who">
+          <div class="caution-who-title">🚦 กลุ่มที่ควรระวังเป็นพิเศษ</div>
+          <div class="caution-who-grid">
+            <div class="caution-who-item caution-red">
+              <strong>❌ ไม่แนะนำ / ต้องปรึกษาก่อน</strong>
+              <ul>
+                <li>มีประวัติไมเกรนที่กระตุ้นด้วยแสงสี</li>
+                <li>มี Photophobia รุนแรง</li>
+                <li>มี Astigmatism สูงมาก (Cyl สูงกว่า -3.00)</li>
+                <li>มีปัญหา Color Deficiency (ตาบอดสี)</li>
+              </ul>
+            </div>
+            <div class="caution-who-item caution-yellow">
+              <strong>⚠️ ต้องค่อยๆ ปรับตัว</strong>
+              <ul>
+                <li>ใส่แว่นครั้งแรก ปวดหัวเล็กน้อยช่วง 3–7 วันแรก</li>
+                <li>รู้สึกสีเพี้ยน มองเห็นทุกอย่างโทนส้ม</li>
+                <li>ตาล้าหลังใส่นานกว่า 3 ชั่วโมง</li>
+                <li>ใส่แล้วรู้สึกสีแยกยากในตอนกลางคืน</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WHAT TO DO -->
+        <div class="caution-steps">
+          <div class="caution-steps-title">✅ ถ้าใส่แล้วไม่สบาย ทำอย่างไรต่อ?</div>
+          <div class="caution-step-list">
+            <div class="caution-step">
+              <div class="step-num">1</div>
+              <div><strong>เริ่มสั้นๆ ก่อน</strong> — ช่วงแรกใส่แค่ 30–60 นาทีก่อนนอน แล้วค่อยๆ เพิ่มเป็น 2–3 ชั่วโมงใน 1–2 สัปดาห์</div>
+            </div>
+            <div class="caution-step">
+              <div class="step-num">2</div>
+              <div><strong>ลองสีอำพัน (Amber) แทนส้มเข้ม</strong> — Max Evening Lenses (สีอำพัน) มีการกรองสีน้อยกว่า สมองปรับตัวง่ายกว่า เหมาะสำหรับคนที่เริ่มต้น</div>
+            </div>
+            <div class="caution-step">
+              <div class="step-num">3</div>
+              <div><strong>ตรวจสอบค่าสายตาก่อน</strong> — ความไม่สบายตาอาจไม่ได้มาจากสีเลนส์ แต่มาจากค่าสายตาผิดหรือเก่า ควรตรวจตาก่อนสั่งทำเลนส์</div>
+            </div>
+            <div class="caution-step">
+              <div class="step-num">4</div>
+              <div><strong>ถ้าปวดหัวไม่ดีขึ้นใน 2 สัปดาห์</strong> — อาจเป็นกลุ่มที่มีความไวต่อสีพิเศษ ควรปรึกษานักทัศนมาตรเพื่อพิจารณาทางเลือกอื่น</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IS TINTED LENS RIGHT FOR YOU -->
+        <div class="caution-verdict">
+          <div class="verdict-title">🔬 แล้วเลนส์ย้อมสีเหมาะกับใครบ้าง?</div>
+          <div class="verdict-grid">
+            <div class="verdict-yes">
+              <div class="verdict-label">✅ เหมาะมาก</div>
+              <ul>
+                <li>ใช้โทรศัพท์/จอคอมก่อนนอนเป็นประจำ</li>
+                <li>นอนหลับยาก หรือนอนไม่หลับเรื้อรัง</li>
+                <li>ไม่มีประวัติไมเกรนจากแสงสี</li>
+                <li>ต้องการ Deep Sleep ดีขึ้น ไม่ต้องพึ่งยา</li>
+                <li>อยู่ในสภาพแวดล้อมไฟสว่างหลังทุ่ม</li>
+              </ul>
+            </div>
+            <div class="verdict-no">
+              <div class="verdict-label">⚠️ ควรปรึกษาก่อน</div>
+              <ul>
+                <li>มีไมเกรนหรือแพ้แสงรุนแรง</li>
+                <li>มีปัญหาการมองเห็นสีผิดปกติ</li>
+                <li>ต้องการความแม่นยำสีในงาน (ออกแบบ/ศิลปะ)</li>
+                <li>มีโรคทางตาที่ยังไม่ได้รับการรักษา</li>
+                <li>เคยปวดหัวจากการใส่แว่นสีมาก่อน</li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:13px; color:#5a5a6a; margin-top:14px; line-height:1.7;">
+            <em>Ploychompoo Parsuraphun (Optometrist) ยินดีให้คำปรึกษาก่อนสั่งทำเลนส์ทุกเคส เพื่อให้แน่ใจว่าเลนส์ที่คุณได้รับ
+            เหมาะกับสภาพตาและไลฟ์สไตล์จริงๆ ไม่ใช่แค่ตามกระแส</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- COMPARISON TABLE -->
+      <div class="table-section">
+        <h2 class="section-title">เปรียบเทียบ: แว่นตัดแสง vs แว่นกรองแสงทั่วไป</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">👈 เลื่อนดูได้บนมือถือ</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ประเภท</th>
+                <th>ช่วงเวลาใส่</th>
+                <th>กรอง/ตัดแสงสีน้ำเงิน</th>
+                <th>ตัดแสงสีเขียว</th>
+                <th>เหมาะสำหรับ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>เลนส์กรองแสงทั่วไป (Clear)</td>
+                <td>กลางวัน</td>
+                <td>~30–50%</td>
+                <td>❌</td>
+                <td>คนแพ้แสง, ทำงานหน้าจอกลางวัน</td>
+              </tr>
+              <tr>
+                <td>เลนส์สีเหลือง (Yellow)</td>
+                <td>กลางวัน</td>
+                <td>~70%</td>
+                <td>❌</td>
+                <td>นักเกมเมอร์ตอนกลางวัน <div class="badge-caution">⚠ ง่วงกลางวัน</div></td>
+              </tr>
+              <tr>
+                <td>Max Evening Lenses (Amber)</td>
+                <td>หลังพระอาทิตย์ตก</td>
+                <td>✅ 100%</td>
+                <td>❌</td>
+                <td>ดูทีวี, ทำงาน ยังคมชัด <div class="badge-recommended">✓ แนะนำ</div></td>
+              </tr>
+              <tr class="col-msl">
+                <td><strong>Max Sleep Lenses (MSL)</strong></td>
+                <td>2–3 ชม. ก่อนนอน</td>
+                <td>✅ 100%</td>
+                <td>✅ 100%</td>
+                <td>นอนไม่หลับ, ต้องการ Deep Sleep <div class="badge-recommended">✓ แนะนำสูงสุด</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- DR STEVEN RECOMMENDATION -->
+      <div class="dr-recommend">
+        <div class="dr-rec-avatar">👁️</div>
+        <div class="dr-rec-body">
+          <div class="dr-rec-label">💬 คำแนะนำจาก Ploychompoo Parsuraphun — Optometrist, Optical X</div>
+          <p class="dr-rec-quote">
+            "สำหรับใครที่อยากนอนหลับสบายแต่ยังติดโทรศัพท์ก่อนนอน
+            ผมขอแนะนำให้ใช้เลนส์ Max Sleep ตัวนี้ครับ
+            เพราะเรากำลังทำให้ <strong>เมลาโทนินหลั่งออกมาตามปกติ</strong>
+            ถึงแม้คุณจะยังเล่นโทรศัพท์อยู่ก็ตาม"
+          </p>
+          <p class="dr-rec-quote">
+            "แสงที่ผ่านเลนส์สีแดงเข้มเข้าสู่ตาของคุณไม่มีส่วนประกอบของสีน้ำเงินหรือสีเขียวอีกแล้ว
+            สมองจึง<strong>เข้าใจว่าตอนนี้เป็นเวลากลางคืน</strong>
+            และเปิดให้ต่อมไพเนียลหลั่งเมลาโทนินได้ตามธรรมชาติ
+            มีงานวิจัยรองรับอย่างชัดเจนครับ"
+          </p>
+          <div class="dr-rec-cite">
+            อ้างอิง: Ostrin et al., TVST 2021 · van der Lely et al., SLEEP Advances 2020 · Shechter et al., J Psychiatr Res 2018
+          </div>
+        </div>
+      </div>
+
+      <!-- DARK MODE SECTION -->
+      <h2 class="section-title">เคล็ดลับเสริม: เปิด Dark Mode ช่วยให้เมลาโทนินหลั่งได้ดีกว่า White Mode</h2>
+
+      <p>
+        นอกจากสวมเลนส์ตัดแสงแล้ว ยังมีสิ่งที่ทำได้ง่ายๆ อีกอย่างหนึ่งในโทรศัพท์ของคุณ
+        นั่นก็คือ <strong>เปิด Dark Mode</strong> — พื้นหลังสีดำ ตัวอักษรสีขาว
+        ซึ่งมีหลักฐานทางวิทยาศาสตร์รองรับว่าช่วยลดการกด Melatonin ได้จริง
+      </p>
+
+      <!-- DARK MODE RESEARCH BOX -->
+      <div class="research-box">
+        <div class="research-icon">🔬</div>
+        <div>
+          <div class="research-label">งานวิจัย — Optometry and Vision Science / PubMed (2020)</div>
+          <p>
+            Algebrahim et al. วัด Melatonin Suppression Value (MSV) จากสมาร์ทโฟน 64 รุ่น พบว่า
+            <strong>Night Mode ที่ตั้งค่าอุณหภูมิสีอุ่นที่สุด (warmest setting) ลด MSV ได้สูงถึง 93%</strong>
+            เมื่อเทียบกับหน้าจอปกติ — ยืนยันว่าการลด brightness และเปลี่ยนสีหน้าจอให้เข้มขึ้น
+            ส่งผลโดยตรงต่อระดับ Melatonin ในร่างกาย
+          </p>
+          <cite>— Algebrahim et al., Optometry and Vision Science, 2020 (PubMed: 32168244)</cite>
+        </div>
+      </div>
+
+      <!-- DARK MODE vs WHITE MODE COMPARISON TABLE -->
+      <div class="darkmode-compare">
+        <div class="darkmode-header">
+          <span>📱</span>
+          <strong>Dark Mode vs White Mode — ผลต่อ Melatonin ก่อนนอน</strong>
+        </div>
+        <div class="table-wrapper">
+          <table class="darkmode-table">
+            <thead>
+              <tr>
+                <th>โหมดหน้าจอ</th>
+                <th>ความสว่าง (Luminance)</th>
+                <th>Blue Light ที่ผ่านเข้าตา</th>
+                <th>ผลต่อ Melatonin</th>
+                <th>เหมาะช่วงเวลา</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>⬜ White Mode (ปกติ)</td>
+                <td class="cell-bad">สูง (200–400 cd/m²)</td>
+                <td class="cell-bad">มาก</td>
+                <td class="cell-bad">กด Melatonin อย่างรุนแรง</td>
+                <td>กลางวันเท่านั้น</td>
+              </tr>
+              <tr>
+                <td>🌙 Night Mode (สีเหลือง)</td>
+                <td class="cell-ok">ลดลง (~30–50%)</td>
+                <td class="cell-ok">ลดลงบางส่วน</td>
+                <td class="cell-ok">ลด MSV ได้ 93% (warmest) แต่ยังมีสีน้ำเงินหลงเหลือ</td>
+                <td>กลางคืน — ดีกว่าไม่ทำ</td>
+              </tr>
+              <tr class="row-best">
+                <td>⬛ Dark Mode + Brightness ต่ำ</td>
+                <td class="cell-good">ต่ำมาก (10–50 cd/m²)</td>
+                <td class="cell-good">น้อยมาก</td>
+                <td class="cell-good">กด Melatonin น้อยที่สุด<br>ให้ Melatonin ขึ้นได้ตามปกติ</td>
+                <td>✅ แนะนำก่อนนอน</td>
+              </tr>
+              <tr class="row-best" style="background:#fff2e8 !important;">
+                <td>🔴 Dark Mode + เลนส์ Max Sleep</td>
+                <td class="cell-best">ต่ำมาก + Blue/Green ถูกตัด 100%</td>
+                <td class="cell-best">ศูนย์ (ไม่มีเลย)</td>
+                <td class="cell-best">🏆 ประสิทธิภาพสูงสุด<br>สมองคิดว่าอยู่ในห้องมืดสนิท</td>
+                <td>✅✅ ดีที่สุด</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- DARK MODE TIPS -->
+      <div class="darkmode-tips">
+        <div class="dt-title">📋 วิธีตั้งค่าโทรศัพท์ก่อนนอนให้ได้ผลสูงสุด</div>
+        <div class="dt-grid">
+          <div class="dt-item">
+            <div class="dt-num">1</div>
+            <div>
+              <strong>เปิด Dark Mode</strong><br>
+              <span>Settings → Display → Dark Mode<br>ลด Blue Light จาก background ได้ทันที</span>
+            </div>
+          </div>
+          <div class="dt-item">
+            <div class="dt-num">2</div>
+            <div>
+              <strong>ลด Brightness ให้ต่ำที่สุด</strong><br>
+              <span>ลด Brightness &lt; 30% — ยิ่งมืดยิ่งดี งานวิจัยพบว่า <em>ระดับแสงส่งผลมากกว่าสี</em></span>
+            </div>
+          </div>
+          <div class="dt-item">
+            <div class="dt-num">3</div>
+            <div>
+              <strong>เปิด Night Mode / Warm Color</strong><br>
+              <span>เพิ่มความอุ่นของหน้าจอ (Color Temperature) ลด Blue Peak ลงอีก</span>
+            </div>
+          </div>
+          <div class="dt-item dt-item-highlight">
+            <div class="dt-num dt-num-gold">4</div>
+            <div>
+              <strong>สวมเลนส์ Max Sleep ทับ</strong><br>
+              <span>ทำทุกข้อข้างต้นแล้ว + ใส่เลนส์สีแดงเข้ม = ตัดแสงสีน้ำเงิน+เขียวได้ 100% สมองเข้าใจว่าเป็นกลางคืนแน่นอน</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESEARCH SECTION -->
+      <h2 class="section-title">หลักฐานจากวงการวิทยาศาสตร์</h2>
+      <p>
+        รวบรวมงานวิจัยระดับนานาชาติที่สนับสนุนประสิทธิภาพของเลนส์ย้อมสีสำหรับการนอนหลับ
+      </p>
+
+      <div class="science-cards">
+
+        <div class="science-card">
+          <div class="science-card-badge" style="background:var(--amber);">RCT<br>2018</div>
+          <div>
+            <div class="science-card-title">Shechter et al. — Journal of Psychiatric Research ⭐</div>
+            <p>การสวม <strong>เลนส์สี Amber</strong> 2 ชั่วโมงก่อนนอน เป็นเวลา 1 สัปดาห์ ช่วยพัฒนา total sleep time, คุณภาพ และความลึกของการนอนในผู้ที่มีอาการ insomnia อย่างมีนัยสำคัญ (p &lt; 0.05)</p>
+            <span class="science-card-ref">ClinicalTrials.gov: NCT02698800</span>
+          </div>
+        </div>
+
+        <div class="science-card">
+          <div class="science-card-badge" style="background:#2a7a5a;">29<br>งาน</div>
+          <div>
+            <div class="science-card-title">Hester et al. — Chronobiology International (2021)</div>
+            <p>Systematic Review จาก <strong>29 งานวิจัย</strong> พบหลักฐานชัดเจนว่าแว่น blue-blocking ลด sleep onset latency ในผู้มีปัญหาการนอน, นาฬิกาชีวิตผิดปกติ และคนทำงานกะ</p>
+          </div>
+        </div>
+
+        <div class="science-card">
+          <div class="science-card-badge" style="background:#1a5c8a;">16<br>งาน</div>
+          <div>
+            <div class="science-card-title">Glickman et al. — TVST / ARVO Journals (2025)</div>
+            <p>ทบทวน 16 งานวิจัยภาคสนาม พบว่า <strong>ทุกงานมีผลลัพธ์อย่างน้อย 1 ด้านที่ดีขึ้น</strong> และยืนยันว่าแว่นที่กรองแค่บางส่วนจะไม่ได้ผลเท่าแว่นที่ตัด 100%</p>
+          </div>
+        </div>
+
+        <div class="science-card">
+          <div class="science-card-badge" style="background:#c46020;">💡<br>Red</div>
+          <div>
+            <div class="science-card-title">Life Journal (2025) — Red vs Blue LED</div>
+            <p>แสงสีน้ำเงินยัง suppress melatonin ต่อเนื่อง (7.5 pg/mL) ในขณะที่ <strong>แสงสีแดง/ส้มทำให้ melatonin ฟื้นตัวกลับสู่ระดับปกติ (26.0 pg/mL)</strong></p>
+          </div>
+        </div>
+
+        <div class="science-card" style="background:#f8f4f0; border-color:#ddd5c8;">
+          <div style="font-size:20px; flex-shrink:0;">⚖️</div>
+          <div>
+            <div class="science-card-title" style="color:#5a4a3a; font-size:13px;">หมายเหตุความโปร่งใส</div>
+            <p style="color:#5a4a3a; font-size:13px;">Meta-analysis ล่าสุดจาก Frontiers in Neurology (2025) ระบุว่าผลของแว่น BBG มีแนวโน้มดี แต่ยังต้องการงานวิจัยขนาดใหญ่กว่านี้เพื่อยืนยัน ผลอาจแตกต่างกันตามแต่ละบุคคล</p>
+          </div>
+        </div>
+
+      </div><!-- /science-cards -->
+
+      <!-- TESTIMONIALS -->
+      <div class="testimonials">
+        <h2 class="section-title">เสียงจากลูกค้าจริงๆ</h2>
+        <div class="testimonial-row">
+          <div class="testimonial-card">
+            <p>ผมมีอาการตื่นกลางดึกและหลับไม่ลึก หลังจากคุณหมอแนะนำ ตอนนี้สามารถง่วงนอนหลับได้เองโดยไม่พึ่งยาอีกเลย</p>
+            <div class="testimonial-name">— คุณไม้ ⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card">
+            <p>หลังอายุ 50+ นอนไม่หลับมากขึ้นมาก หลังจากใส่แว่นตัวนี้ ง่วงนอนเร็วขึ้น และหลับได้ยาวกว่าเดิมครับ</p>
+            <div class="testimonial-name">— คุณบุ๊ง ⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q&A -->
+      <div class="qa-section">
+        <h2>❓ คำถามที่พบบ่อย</h2>
+
+        <div class="qa-item open">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <div class="qa-question-text"><div class="q-num">1</div>แว่นตัดแสงต่างจากแว่นกรองแสงยังไง?</div>
+            <span class="qa-chevron">▾</span>
+          </div>
+          <div class="qa-answer">
+            <p><strong>"กรอง"</strong> = แสงสีน้ำเงินบางส่วนยังผ่านเข้าตาได้ (30–70%) เหมาะกลางวัน<br>
+            <strong>"ตัด"</strong> = แสงสีน้ำเงินและสีเขียวไม่ผ่านเข้าตาเลย (100%) เหมาะกลางคืน<br>
+            ความต่างนี้สำคัญมาก เพราะแสงแค่นิดเดียวก็เพียงพอที่จะกดการหลั่งเมลาโทนินได้</p>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <div class="qa-question-text"><div class="q-num">2</div>ต้องใส่กี่ชั่วโมงก่อนนอน?</div>
+            <span class="qa-chevron">▾</span>
+          </div>
+          <div class="qa-answer">
+            <p>แนะนำให้ใส่ตั้งแต่หลัง <strong>17:00 น. (5 โมงเย็น)</strong> สำหรับคนที่อยากนอนเร็วหรือนอนก่อน 21:00 น.
+            หรืออย่างน้อย <strong>2–3 ชั่วโมงก่อนนอน</strong> เพื่อให้ร่างกายมีเวลาสะสมเมลาโทนินได้เต็มที่</p>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <div class="qa-question-text"><div class="q-num">3</div>โหมด Night Mode หรือ Dark Mode บนโทรศัพท์พอไหม?</div>
+            <span class="qa-chevron">▾</span>
+          </div>
+          <div class="qa-answer">
+            <p>ไม่เพียงพอครับ โหมดดังกล่าวช่วยลดความสว่างหน้าจอ แต่ <strong>ไม่ได้ตัดแสงสีน้ำเงินออก</strong>
+            แสงสีน้ำเงินยังคงถูกปล่อยออกมาจากหน้าจอในปริมาณที่เพียงพอต่อการกดการทำงานของเมลาโทนิน</p>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <div class="qa-question-text"><div class="q-num">4</div>ใส่แล้วมองเห็นสีเพี้ยนไหม?</div>
+            <span class="qa-chevron">▾</span>
+          </div>
+          <div class="qa-answer">
+            <p>Max Sleep Lenses (MSL) มีสีส้ม-แดงเข้ม ทำให้สีที่เห็นเพี้ยนบ้าง แต่ตาจะปรับตัวได้เร็ว
+            ส่วน Max Evening Lenses (MES) สีอำพันอ่อนกว่า ภาพคมชัดกว่า เหมาะสำหรับคนที่ยังต้องทำกิจกรรมหลังทุ่ม</p>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <div class="qa-question-text"><div class="q-num">5</div>ทำเป็นเลนส์สายตาได้ไหม?</div>
+            <span class="qa-chevron">▾</span>
+          </div>
+          <div class="qa-answer">
+            <p>ได้ครับ! เราทำได้ทั้ง Single Vision (เลนส์เดี่ยว) และ Progressive Lens (เลนส์โปรเกรสซีฟ)
+            สำหรับผู้ที่มีสายตาสั้น ยาว หรือสายตาเอียงด้วย สอบถามเพิ่มเติมได้ที่ร้านได้เลย</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- IMAGE 5 -->
+      <div class="img-placeholder">
+        <div class="img-box">
+          <div class="img-icon">📸</div>
+          <strong>👉 แนะนำใส่รูปตรงนี้ (สุดท้าย)</strong>
+          <span>ภาพลูกค้าใส่แว่น Max Sleep กำลังอ่านหนังสือหรือใช้โทรศัพท์บนเตียงอย่างผ่อนคลาย<br>บรรยากาศห้องนอนอบอุ่น โทนสีส้ม/ไฟหรี่ — สื่อถึงการนอนหลับที่ดี</span>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- AUTHOR -->
+      <div class="author-card">
+        <div class="author-avatar">👁️</div>
+        <div class="author-name">Ploychompoo Parsuraphun</div>
+        <div class="author-title">Optometrist | Optical X</div>
+        <div class="author-badge">⭐ Google 5.0 | Optical X</div>
+        <p style="font-size:12px;color:#5a6474;margin-top:8px;line-height:1.6;">ผู้เชี่ยวชาญด้านสุขภาพตาและงานวิจัยเลนส์</p>
+        <hr style="margin:12px 0;border:none;border-top:1px solid #e8e2d9;">
+        <div class="author-avatar">🔬</div>
+        <div class="author-name">Suraphun Parsuraphun</div>
+        <div class="author-title">Optician Lens Specialist | Optical X</div>
+        <p style="font-size:12px;color:#5a6474;margin-top:8px;line-height:1.6;">ผู้เชี่ยวชาญด้านเลนส์และการย้อมสี</p>
+      </div>
+
+      <!-- GLOSSY / GLOSSARY -->
+      <div class="glossary-card">
+        <h3>📖 คำศัพท์ที่ควรรู้</h3>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">เมลาโทนิน (Melatonin)</span>
+          <span class="glossary-def">ฮอร์โมนง่วงนอนที่สมองผลิต จะหลั่งออกมาเมื่อไม่มีแสงสีน้ำเงินรบกวน ทำให้เรารู้สึกง่วงตามธรรมชาติ</span>
+        </div>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">แสงสีน้ำเงิน (Blue Light) <span class="glossary-wavelength">455–490 nm</span></span>
+          <span class="glossary-def">คลื่นแสงจากหน้าจอที่กดการหลั่งเมลาโทนินมากที่สุด ทำให้สมองยัง "ตื่น" อยู่แม้ดึกมากแล้ว</span>
+        </div>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">แสงสีเขียว (Green Light) <span class="glossary-wavelength">490–550 nm</span></span>
+          <span class="glossary-def">มีในหน้าจอสมาร์ทโฟนรุ่นใหม่ทุกรุ่น งานวิจัยพบว่ากด melatonin ได้เช่นกัน จึงต้องตัดด้วย</span>
+        </div>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">ipRGCs <span class="glossary-wavelength">460–480 nm</span></span>
+          <span class="glossary-def">เซลล์ในจอตาที่มีโปรตีน Melanopsin ไวต่อแสงสีน้ำเงินเป็นพิเศษ ส่งสัญญาณตรงไปยังนาฬิกาชีวิต (SCN) ของสมอง เป็นกลไกหลักที่แสงโทรศัพท์รบกวนการนอน</span>
+        </div>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">Circadian Rhythm</span>
+          <span class="glossary-def">นาฬิกาชีวิตภายในร่างกาย ควบคุมรอบการตื่น-นอนในแต่ละวัน แสงสีน้ำเงินสามารถรบกวนได้โดยตรง</span>
+        </div>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">Deep Sleep (หลับลึก)</span>
+          <span class="glossary-def">ช่วงการนอนหลับที่ร่างกายซ่อมแซมตัวเองได้ดีที่สุด เมลาโทนินเต็มที่ทำให้เข้าถึงช่วงนี้ได้เร็วขึ้น</span>
+        </div>
+
+        <div class="glossary-entry">
+          <span class="glossary-term">Spectrometer</span>
+          <span class="glossary-def">เครื่องวัดคลื่นแสง ใช้ยืนยันว่าเลนส์ตัดแสงช่วงคลื่นใดได้จริง (ใช้ที่ ม.ธรรมศาสตร์)</span>
+        </div>
+      </div>
+
+      <!-- RESEARCH REFS -->
+      <div style="background:white; border:1px solid var(--border); border-radius:16px; padding:20px;">
+        <h3 style="font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--navy); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--border);">📋 อ้างอิงงานวิจัย</h3>
+        <ol style="padding-left:16px; font-size:12px; color:var(--text-muted); line-height:1.8; display:flex; flex-direction:column; gap:6px;">
+          <li>Brainard et al., <em>J. Neuroscience</em>, 2001</li>
+          <li>West et al., <em>J. Applied Physiology</em>, 2011</li>
+          <li>Woelders et al., <em>Current Biology</em>, 2018</li>
+          <li>Burkhart & Phelps, <em>Chronobiology Int.</em>, 2009</li>
+          <li>Schmid et al., <em>Brain Communications</em>, 2024</li>
+          <li>Shechter et al., <em>J. Psychiatric Research</em>, 2018</li>
+          <li>Hester et al., <em>Chronobiology Int.</em>, 2021</li>
+          <li>Glickman et al., <em>TVST/ARVO</em>, 2025 (mDFD)</li>
+          <li>Life Journal — Red vs Blue LED, 2025</li>
+          <li>Frontiers in Neurology Meta-analysis, 2025</li>
+        </ol>
+      </div>
+
+      <!-- TIP CARD -->
+      <div class="tip-card">
+        <h3>💡 วิธีใช้ให้ได้ผลสูงสุด</h3>
+        <ul class="tip-steps">
+          <li>ใส่แว่นหลัง 17:00 น. ทุกวัน ไม่ต้องรอง่วง</li>
+          <li>ปิดไฟหลักในบ้าน ใช้แสงโทนอุ่นแทน</li>
+          <li>หลีกเลี่ยงกาแฟหลัง 15:00 น.</li>
+          <li>ตั้งนาฬิกาเข้านอนเวลาเดิมทุกวัน</li>
+          <li>วัด Sleep Score ด้วย Smartwatch เพื่อดูความเปลี่ยนแปลง</li>
+        </ul>
+      </div>
+
+
+    </aside>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+
+    <div>
+      <a href="index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">
+        ศูนย์เลนส์โปรเกรสซีฟเฉพาะทาง<br>
+        ตรวจวัดสายตาโดยทัศนมาตร<br>
+        Riverside Plaza · ชั้น 2 · กรุงเทพฯ
+      </p>
+      <div class="ox-f-social">
+        <a href="https://lin.ee/E4GHWdJ" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.instagram.com/opticalxvision" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="ox-f-col-title">บริการ</p>
+      <ul class="ox-f-links">
+        <li><a href="services.html">บริการทั้งหมด</a></li>
+        <li><a href="programs.html">โปรแกรมตรวจสายตา</a></li>
+        <li><a href="https://lin.ee/E4GHWdJ">จองนัดหมาย</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="ox-f-col-title">เกี่ยวกับเรา</p>
+      <ul class="ox-f-links">
+        <li><a href="about.html">ประวัติของเรา</a></li>
+        <li><a href="articles.html">สาระสายตา</a></li>
+        <li><a href="tourist.html">For Visitors</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ที่ตั้ง</p>
+        <p class="ox-f-contact-val">
+          Riverside Plaza ชั้น 2<br>
+          257/6 ถ.เจริญนคร<br>
+          แขวงสำเหร่ เขตธนบุรี กทม. 10600
+        </p>
+      </div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ติดต่อ</p>
+        <p class="ox-f-contact-val">
+          <a href="tel:0929897447">092 989 7447</a><br>
+          <a href="https://lin.ee/E4GHWdJ">LINE: @opxrv</a><br>
+          <a href="mailto:opticalx.rv@gmail.com">opticalx.rv@gmail.com</a>
+        </p>
+      </div>
+      <div class="ox-f-hours">
+        <div class="ox-f-hours-row"><span>จ – อา</span><span>11:00 – 20:00</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ox-footer-bottom">
+    <p class="ox-f-copy">© 2025 Optical X Vision Care Center · All Rights Reserved</p>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>5.0 Google Rating</span>
+    </div>
+    <p class="ox-f-cert">Licensed Optometrist · Bangkok</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+  function toggleQA(el) {
+    const item = el.closest('.qa-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.qa-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+
+<script>
+/* ── Universal QA/FAQ Toggle v2 ── */
+(function(){
+  // Toggle function used by all patterns
+  function toggleItem(item){
+    if(!item) return;
+    var wasOpen = item.classList.contains('open');
+    // Close all siblings in same parent
+    var parent = item.parentElement;
+    if(parent){
+      parent.querySelectorAll('.qa-item.open').forEach(function(el){ el.classList.remove('open'); });
+    }
+    if(!wasOpen) item.classList.add('open');
+  }
+
+  // Pattern 1: Click on .qa-q or .qa-question
+  document.querySelectorAll('.qa-q, .qa-question').forEach(function(btn){
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleItem(btn.closest('.qa-item'));
+    });
+  });
+
+  // Pattern 2: Click on .qa-item itself (for items with onclick on the item)
+  document.querySelectorAll('.qa-item').forEach(function(item){
+    // Only add if no qa-q/qa-question child handles it
+    var hasQChild = item.querySelector('.qa-q, .qa-question');
+    if(!hasQChild){
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function(e){
+        toggleItem(item);
+      });
+    }
+  });
+
+  // Global fallback for onclick="toggleQA(this)"
+  window.toggleQA = function(el){
+    var item = el.closest ? el.closest('.qa-item') : el.parentElement;
+    toggleItem(item);
+  };
+})();
+</script>
+
+</body>
+</html>

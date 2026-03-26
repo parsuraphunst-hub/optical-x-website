@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: เมื่อ Addition เกิน 1.50–2.00 แว่น Progressive ตัวเดียวไม่พอ | Optical X Vision Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Serif+Thai:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf8f4;
+    --warm: #f5f0e8;
+    --accent: #c0392b;
+    --gold: #b8860b;
+    --gold-light: #e8d5a3;
+    --muted: #6b5e52;
+    --border: #d4c9b8;
+    --card-bg: #fff;
+    --tooltip-bg: #1a1410;
+    --green: #2d6a4f;
+    --blue-deep: #1a3a5c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', 'Noto Serif Thai', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--ink);
+    color: var(--gold-light);
+    text-align: center;
+    padding: 14px 20px 10px;
+    letter-spacing: 0.25em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    border-bottom: 1px solid #3a3028;
+  }
+  .masthead span { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 24px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(184,134,11,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 20%, rgba(192,57,43,0.10) 0%, transparent 55%);
+  }
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    margin-bottom: 26px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.18;
+    max-width: 760px;
+    margin: 0 auto 18px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-sub {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.05rem;
+    color: #c5b89a;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    font-weight: 300;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: #8a7d6e;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .hero-meta span::before { content: '— '; }
+  .hero-meta span::after { content: ' —'; }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 52px;
+    padding: 56px 0 80px;
+    align-items: start;
+  }
+  @media(max-width: 860px){
+    .content-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ── ARTICLE BODY ── */
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 42px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    position: relative;
+  }
+  .article-body h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 60px; height: 2px;
+    background: var(--accent);
+  }
+  .article-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--blue-deep);
+    margin: 28px 0 10px;
+  }
+  .article-body p {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.01rem;
+    color: #2e2820;
+    margin-bottom: 18px;
+    line-height: 1.9;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 4px solid var(--accent);
+    background: var(--warm);
+    padding: 22px 28px;
+    margin: 32px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem;
+    font-style: italic;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── CASE CALLOUT BOX ── */
+  .case-box {
+    background: var(--blue-deep);
+    color: #e8eef5;
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-box::before {
+    content: 'CASE';
+    position: absolute;
+    top: -8px; right: 20px;
+    font-size: 5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+  .case-box h3 {
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+  .case-box p {
+    color: #c8d8ea;
+    font-size: 0.97rem;
+    margin-bottom: 10px;
+  }
+  .case-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .case-badge {
+    background: rgba(184,134,11,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── LENS COMPARE IMAGE ── */
+  .lens-image-wrap {
+    margin: 36px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .lens-image-wrap img { width: 100%; display: block; }
+  .lens-image-caption {
+    background: var(--warm);
+    padding: 14px 20px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── TOOLTIP TERMS ── */
+  .term {
+    position: relative;
+    border-bottom: 1px dashed var(--accent);
+    cursor: help;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tooltip-bg);
+    color: #f0e8da;
+    font-size: 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.5;
+    padding: 12px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    max-width: 260px;
+    white-space: normal;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+  .term .tip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--tooltip-bg);
+  }
+  .term:hover .tip, .term:focus .tip { display: block; }
+
+  /* ── WARNING BOX ── */
+  .warning-box {
+    background: #fff8e1;
+    border: 1px solid #f0c040;
+    border-left: 4px solid #e6a817;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .warning-box .icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+  .warning-box p { margin: 0; font-size: 0.95rem; font-family: 'Noto Serif Thai', serif; color: #5a4400; }
+
+  /* ── SYMPTOM CHECKLIST ── */
+  .symptom-list { list-style: none; margin: 18px 0 28px; }
+  .symptom-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 0.97rem;
+  }
+  .symptom-list li:last-child { border-bottom: none; }
+  .symptom-list li .dot {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 3px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.65rem; font-weight: 700;
+  }
+
+  /* ── Q&A ── */
+  .qa-section { margin: 48px 0; }
+  .qa-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .qa-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  .qa-question {
+    background: var(--warm);
+    padding: 18px 22px;
+    font-family: 'Noto Serif Thai', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    gap: 12px;
+  }
+  .qa-question .q-icon {
+    width: 26px; height: 26px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .qa-question .toggle {
+    font-size: 1.2rem; color: var(--muted); transition: transform 0.25s; flex-shrink: 0;
+  }
+  .qa-item.open .toggle { transform: rotate(45deg); }
+  .qa-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .qa-item.open .qa-answer { max-height: 400px; }
+  .qa-answer-inner {
+    padding: 18px 22px 22px;
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 0.97rem;
+    color: #2e2820;
+    line-height: 1.85;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 32px; }
+  
+  /* Glossy Card */
+  .glossy-card {
+    background: linear-gradient(135deg, #1a1410 0%, #2d2318 40%, #1a1410 100%);
+    border-radius: 16px;
+    padding: 32px 28px;
+    color: white;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .glossy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.06), transparent);
+    border-radius: 16px 16px 0 0;
+    pointer-events: none;
+  }
+  .glossy-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,134,11,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .glossy-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .glossy-card .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .glossy-card .stat-row:last-of-type { border-bottom: none; }
+  .glossy-card .stat-label { font-size: 0.78rem; color: #9a8870; font-family: 'DM Sans', sans-serif; }
+  .glossy-card .stat-val { font-size: 0.92rem; color: #e8d5a3; font-weight: 500; text-align: right; max-width: 55%; }
+
+  /* Sidebar tooltip card */
+  .side-tip-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .side-tip-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 14px;
+    color: var(--blue-deep);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .side-tip-card h4 .dot { color: var(--accent); }
+  .side-tip-card ul { list-style: none; }
+  .side-tip-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ebe3;
+    font-size: 0.88rem;
+    font-family: 'Noto Serif Thai', serif;
+    color: var(--muted);
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .side-tip-card ul li:last-child { border-bottom: none; }
+  .side-tip-card ul li::before { content: '›'; color: var(--accent); font-size: 1.1rem; flex-shrink: 0; }
+
+  /* Credit box */
+  .credit-box {
+    background: linear-gradient(135deg, #e8f4f0 0%, #d4ece4 100%);
+    border: 1px solid #a8d5c2;
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .credit-box h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--green); margin-bottom: 10px; }
+  .credit-box p { font-size: 0.82rem; color: #3a6b56; font-family: 'DM Sans', sans-serif; line-height: 1.6; margin: 0; }
+  .credit-box a { color: var(--green); font-weight: 600; word-break: break-all; }
+
+  /* ── LENS COMPARISON TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin: 28px 0;
+    font-size: 0.9rem;
+  }
+  .compare-table th {
+    background: var(--ink);
+    color: var(--gold-light);
+    padding: 14px 16px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .compare-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Noto Serif Thai', serif;
+    vertical-align: top;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: var(--warm); }
+  .compare-table .check { color: var(--green); font-weight: 700; font-size: 1rem; }
+  .compare-table .cross { color: #bbb; }
+
+  /* ── FOOTER ── */
+  .article-footer {
+    background: var(--ink);
+    color: #7a6d60;
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 0.82rem;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.9;
+    margin-top: 60px;
+  }
+  .article-footer strong { color: var(--gold-light); }
+  .article-footer a { color: var(--gold); }
+
+  /* ── Divider ornament ── */
+  .ornament {
+    text-align: center;
+    margin: 38px 0;
+    color: var(--border);
+    letter-spacing: 0.5em;
+    font-size: 1rem;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero-tag { animation-delay: 0.1s; }
+  .hero h1  { animation-delay: 0.22s; }
+  .hero-sub { animation-delay: 0.34s; }
+  .hero-meta{ animation-delay: 0.46s; }
+
+/* ── OX NAV ── */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.ox-mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 890;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(12px);
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px;
+  padding: 80px 24px 40px;
+  overflow-y: auto;
+}
+.ox-mobile-nav.open { display: flex; }
+.ox-mobile-nav a {
+  font-size: 1.1rem; color: #2C2416; text-decoration: none;
+  padding: 10px 0; font-weight: 500;
+}
+.ox-mobile-nav a.sub { font-size: 0.9rem; color: #8B7355; padding: 6px 0; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: inline-block; margin-top: 16px;
+  background: #C8A96E; color: #fff !important;
+  padding: 14px 32px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── OX FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top > div:last-child { text-align: right; }
+.ox-footer-top > div:last-child .ox-f-hours-row { justify-content: flex-end; }
+.ox-footer-top > div:last-child .ox-f-contact-val a { justify-content: flex-end; }
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+
+/* ── MOBILE OVERFLOW FIX ── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; padding-top: 64px; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; }
+pre, code { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { min-width: 80px; white-space: nowrap; font-size: 0.85rem; padding: 8px 10px; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  section, .section, .page-wrap, .content, .article-body, article,
+  [class*="wrap"], [class*="container"], [class*="content"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero, .hero-inner, [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem !important; word-break: keep-all; }
+  h2 { font-size: 1.1rem !important; }
+  .ox-footer-top { padding: 32px 16px 24px !important; }
+}
+
+
+/* ── Universal QA Accordion Fix ── */
+.qa-q, .qa-question { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qa-a, .qa-answer { max-height: 0 !important; overflow: hidden !important; display: block !important; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px !important; }
+.qa-item.open > .qa-a,
+.qa-item.open > .qa-answer,
+.qa-item.open .qa-a,
+.qa-item.open .qa-answer { max-height: 3000px !important; padding: 4px 24px 20px 66px !important; }
+.qa-item.open .qa-toggle,
+.qa-item.open .qa-icon { transform: rotate(45deg); }
+.qa-item.open .chevron { transform: rotate(180deg); }
+@media (max-width: 600px) {
+  .qa-item.open > .qa-a,
+  .qa-item.open > .qa-answer,
+  .qa-item.open .qa-a,
+  .qa-item.open .qa-answer { padding: 4px 16px 16px 16px !important; }
+}
+}
+
+</style>
+</head>
+<body>
+
+
+<nav class="ox-nav" id="oxNav">
+
+  <a href="../index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+
+    <li>
+      <a href="../services.html">บริการ</a>
+    </li>
+
+    <li>
+      <a href="../programs.html">โปรแกรม</a>
+    </li>
+
+    <li>
+      <a href="../articles.html">สาระสายตา</a>
+    </li>
+
+    <li>
+      <a href="../about.html">รู้จักเรา</a>
+    </li>
+
+    <li>
+      <a href="../services.html">Promotion</a>
+    </li>
+
+    <li>
+      <a href="../tourist.html">For Visitors</a>
+    </li>
+
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="../services.html">บริการ</a>
+  <a href="../programs.html">โปรแกรม</a>
+  <a href="../articles.html">สาระสายตา</a>
+  <a href="../about.html">รู้จักเรา</a>
+  <a href="../services.html">Promotion</a>
+  <a href="../tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>Optical X</span> Vision Care Center · Progressive Lens Specialist · Bangkok, Thailand
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Case Study · Real Patient Review</div>
+  <h1>เมื่อ Progressive Lens <em>ไม่พอแล้ว</em><br>สำหรับงาน 6+ ชั่วโมง</h1>
+  <p class="hero-sub">รีวิวเคสจริง: คุณ Mrs. N — เมื่อ Addition เกิน 1.50 ถึง 2.00 แว่น Progressive ตัวเดียวไม่พออีกต่อไป</p>
+  <div class="hero-meta">
+    <span>by Suraphun Parsuraphun & Ploychompoo Parsuraphun — Optical X</span>
+    <span>Progressive Lens Case</span>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="content-grid">
+
+    <!-- ═══════════════════════════════════
+         MAIN ARTICLE
+    ════════════════════════════════════ -->
+    <main class="article-body">
+
+      <h2>บทนำ: ปัญหาที่เริ่มจากคอมพิวเตอร์</h2>
+      <p>
+        ไม่ใช่ทุกครั้งที่สายตาเปลี่ยน — บางที ปัญหาอยู่ที่ <span class="term">Design ของเลนส์<span class="tip">Progressive lens มีหลาย design: General, Office, Workspace, Computer lens — แต่ละแบบถูกออกแบบมาสำหรับช่วงระยะมองที่ต่างกัน</span></span> ที่ไม่ถูก Optimize สำหรับการใช้งานจริงต่างหาก
+      </p>
+      <p>
+        บทความนี้นำเสนอเคสจริงจากผู้ใช้ที่ใช้ Progressive Lens มาตลอด แต่เมื่อ Addition เพิ่มจาก 1.50 ขึ้นไปถึง 2.00 — เธอเริ่มปวดคออย่างหนักเพราะต้องเงยหน้าตลอด สัญญาณเตือนก็เริ่มปรากฏ
+      </p>
+
+      <!-- CASE BOX -->
+      <div class="case-box">
+        <h3>📋 ข้อมูลเคส: Mrs. N</h3>
+        <p>ผู้ใช้แว่น Progressive ที่มาพบด้วยอาการ <strong>ปวดคอ</strong> เพราะต้องเงยหน้ามองผ่านโซนล่างของเลนส์ตลอด — เมื่อ Addition สูงถึง 1.50–2.00 แว่น Progressive ตัวเดียวไม่พอแล้ว</p>
+        <div class="case-row">
+          <span class="case-badge">Add +1.50 → +2.00</span>
+          <span class="case-badge">General Progressive</span>
+          <span class="case-badge">ทำงาน 6+ ชม./วัน</span>
+          <span class="case-badge">ปวดคอจากการเงยหน้า</span>
+          <span class="case-badge">ไม่มีปัญหาขับรถ</span>
+        </div>
+      </div>
+
+      <h2>อาการที่พบ: สัญญาณที่ร่างกายส่งมา</h2>
+      <p>เมื่อ Mrs. N กลับมาพบครั้งที่สอง เธอ complain เรื่อง <strong>ปวดคอ</strong> เพราะต้องเงยหน้าขึ้นตลอดเวลาเพื่อมองผ่านโซนล่างของเลนส์ — ซึ่งผมได้ <strong>เตือนล่วงหน้าไว้แล้ว 1 ปีก่อน</strong> ว่าเมื่อ Addition สูงขึ้น อาการเหล่านี้จะตามมา:</p>
+
+      <!-- video removed to reduce file size -->
+
+      <ul class="symptom-list">
+        <li><span class="dot">1</span><span>ภาพหน้าจอคอมพิวเตอร์ <strong>ไม่ค่อยชัด</strong> ต้องปรับระยะตาบ่อยขึ้น</span></li>
+        <li><span class="dot">2</span><span>ต้อง <strong>เงยหน้าขึ้นสูงกว่าเดิม</strong> เพื่อหา Focus Point ที่ชัด</span></li>
+        <li><span class="dot">3</span><span><strong>ปวดคอ-บ่า</strong> หลังทำงานหน้าจอนาน เนื่องจากท่าทางผิดปกติสะสม</span></li>
+        <li><span class="dot">4</span><span>การมองระยะไกล (ขับรถ, Google Maps) <strong>ยังปกติดี</strong> — ปัญหาจำกัดเฉพาะระยะ Near/Intermediate</span></li>
+      </ul>
+
+      <div class="warning-box">
+        <span class="icon">⚠️</span>
+        <p>
+          <strong>Note สำคัญ:</strong> อาการ "ต้องเงยหน้าขึ้นมากขึ้น" เป็นสัญญาณคลาสสิกว่า <span class="term">Near Zone<span class="tip">บริเวณ Lower portion ของ Progressive lens ที่ถูกออกแบบไว้สำหรับมองระยะใกล้ เช่น หนังสือหรือมือถือ มี Power ที่สูงที่สุดในเลนส์</span></span> ของ Progressive กำลัง "ไม่พอแล้ว" สำหรับระยะการทำงานในชีวิตจริง
+        </p>
+      </div>
+
+      <h2>การวิเคราะห์: ทำไมถึงเกิดขึ้น?</h2>
+      <p>
+        ผมจับวัดสายตาใหม่ทันที — ผลปรากฏว่า <strong>ค่าสายตาเพิ่มขึ้นนิดหน่อย</strong> แต่ยังไม่เข้า Band ที่ต้องตัดแว่นตัวใหม่ โจทย์จริงไม่ใช่ค่าสายตา แต่คือ <em>ขนาดและคุณภาพของ Near Zone</em>
+      </p>
+
+      <div class="pull-quote">
+        <p>"ปัญหาของ General Progressive คือ Near Zone มักแคบเกินไปสำหรับคนที่ต้องอ่าน Spreadsheet ทั้งวัน — ตาต้องเบี่ยงหาโซนอยู่ตลอด ทำให้กล้ามเนื้อคอ-บ่าทำงานหนักโดยไม่รู้ตัว"</p>
+      </div>
+
+      <p>
+        เมื่อ <span class="term">Addition Power<span class="tip">ค่า Add คือกำลังเลนส์ที่เพิ่มขึ้นสำหรับการมองระยะใกล้ใน Progressive lens เช่น Add +1.50, +1.75, +2.00 — ยิ่งสูง ยิ่งช่วยมองใกล้ได้ดีขึ้น แต่ก็ทำให้ Near Zone แคบลง</span></span> ของ General Progressive เพิ่มขึ้นจาก Add 1.50 ถึง 2.00 — พื้นที่ Near Zone ที่มีอยู่แล้วไม่กว้างมากก็จะยิ่งแคบลงไปอีก ผลคือต้องเงยหน้าขึ้นสูงกว่าเดิมเพื่อหาจุด Focus ทำให้ปวดคออย่างหนัก และการมอง Spreadsheet แบบ Multi-column กลายเป็นเรื่องที่ตาต้องทำงานหนัก
+      </p>
+
+      <!-- LENS ANALYSIS IMAGE -->
+      <h2>ภาพจาก Lens Analysis: เห็นชัดด้วยตาเปล่า</h2>
+      <p>
+        ภาพ Visionix PowerMap แสดงให้เห็นความแตกต่างได้ชัดเจนมาก ระหว่าง <strong>Zeiss OfficeLens Superb Room</strong> และ <strong>Zeiss Individual 2 Balanced</strong>:
+      </p>
+
+      <figure style="margin:2rem 0;text-align:center">
+        <img src="../images/art-workspace-lens-analysis.jpg" alt="การวิเคราะห์เลนส์ Zeiss OfficeLens เปรียบเทียบกับ General Progressive — OfficeLens มี Near Zone กว้างกว่า" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+        <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">Lens Analysis: OfficeLens มี Near Zone และ Intermediate Zone กว้างกว่า Individual 2 อย่างชัดเจน<br><em>ภาพ: © Evershine Optical Singapore</em></figcaption>
+      </figure>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Zone</th>
+            <th>General Progressive (Zeiss Individual 2)</th>
+            <th>Office Lens (Zeiss OfficeLens)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Distance Zone</strong></td>
+            <td><span class="check">✓</span> กว้าง, ใช้ได้ดี</td>
+            <td><span class="cross">△</span> แคบลง (Tradeoff)</td>
+          </tr>
+          <tr>
+            <td><strong>Intermediate Zone</strong><br><small>(Monitor ~60–80cm)</small></td>
+            <td><span class="cross">△</span> ปานกลาง</td>
+            <td><span class="check">✓✓</span> กว้างมาก</td>
+          </tr>
+          <tr>
+            <td><strong>Near Zone</strong><br><small>(Desk, Spreadsheet)</small></td>
+            <td><span class="cross">△</span> แคบ, ต้องเงยคอ</td>
+            <td><span class="check">✓✓</span> กว้าง, สบายตา</td>
+          </tr>
+          <tr>
+            <td><strong>FF (Fitting Factor)</strong></td>
+            <td>2.8 (สูง = distortion มากกว่า)</td>
+            <td>2.0 (ต่ำ = distortion น้อยกว่า)</td>
+          </tr>
+          <tr>
+            <td><strong>Swaying/Waiving Effect</strong></td>
+            <td>มีเห็นได้ชัดขณะขยับหัว</td>
+            <td>น้อยมาก สบายตากว่า</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ornament">✦ ✦ ✦</div>
+
+      <h2>ทางออก: Shamir Computer &amp; Workspace Lens</h2>
+      <p>
+        ผมแนะนำให้ Mrs. N ทดลอง <span class="term">Shamir Computer &amp; Workspace Lens<span class="tip">เลนส์ Progressive สำหรับงาน Office โดยเฉพาะ มี 2 รุ่นหลัก: "Computer" เน้น Monitor Distance และ "Workspace" ครอบคลุม Near + Intermediate ได้กว้างขึ้น</span></span> ทั้ง 2 รุ่น:
+      </p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.5rem 0;">
+        <figure style="margin:0;text-align:center">
+          <img src="../images/computer_sml.jpg" alt="Shamir Computer Lens — เน้นระยะ Monitor 60–80 cm" style="width:100%;border-radius:10px" loading="lazy">
+          <figcaption style="font-size:.82rem;color:#888;margin-top:.4rem"><strong>Shamir Computer</strong> — เน้นระยะ Monitor (~60–80 cm)</figcaption>
+        </figure>
+        <figure style="margin:0;text-align:center">
+          <img src="../images/workspace_sml.jpg" alt="Shamir Workspace Lens — ครอบคลุม Desk + Monitor + ห้องทำงาน 1–2 เมตร" style="width:100%;border-radius:10px" loading="lazy">
+          <figcaption style="font-size:.82rem;color:#888;margin-top:.4rem"><strong>Shamir Workspace</strong> — ครอบคลุม Desk + Monitor + ห้อง (1–2 ม.)</figcaption>
+        </figure>
+      </div>
+
+      <ul class="symptom-list">
+        <li><span class="dot">A</span><span><strong>Shamir Computer:</strong> เน้นระยะ Monitor เป็นหลัก (~60–80 cm) เหมาะกับงานที่จ้องหน้าจอเดียวนาน ๆ</span></li>
+        <li><span class="dot">B</span><span><strong>Shamir Workspace:</strong> ครอบคลุมระยะ Desk + Monitor + ห้องทำงาน (1–2 เมตร) กว้างกว่า — <strong>Mrs. N เลือกรุ่นนี้</strong></span></li>
+      </ul>
+
+      <p>
+        เหตุที่ Mrs. N ชอบ <strong>Workspace มากกว่า</strong> เนื่องจาก <span class="term">Waiving/Swaying Effect<span class="tip">อาการภาพ "โยก" หรือ "เบี้ยว" เมื่อขยับหัวหรือเดิน เป็นผลมาจาก Peripheral Distortion ของ Progressive lens ยิ่ง FF สูง ยิ่งรู้สึกโยกมาก</span></span> ต่ำมาก ทำให้สวมใส่สบาย ไม่เวียนศีรษะ และพื้นที่มองเห็น Spreadsheet กว้างกว่าเดิมอย่างมีนัยสำคัญ
+      </p>
+
+      <div class="pull-quote">
+        <p>"ผมบอก Mrs. N ตั้งแต่แรกว่า — ถ้าวันไหนทำงานนาน อาจต้องพิจารณา Office Lens ไว้สักตัว และวันนั้นก็มาถึงแล้ว"</p>
+      </div>
+
+      <h2>บทสรุป: Progressive Lens ยังดีอยู่ แต่ต้องรู้ขอบเขตมัน</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.5rem 0;">
+        <figure style="margin:0;text-align:center">
+          <img src="../images/Mrs.N%201.jpg" alt="Mrs. N — ลูกค้าที่เพิ่ม Office Lens เป็นแว่นตัวที่สองสำหรับทำงาน" style="width:100%;border-radius:12px" loading="lazy">
+        </figure>
+        <figure style="margin:0;text-align:center">
+          <img src="../images/Mrs.N%202.jpg" alt="Mrs. N — หลังเพิ่ม Office Lens ทำงานสบายขึ้น ไม่ปวดคออีกแล้ว" style="width:100%;border-radius:12px" loading="lazy">
+        </figure>
+      </div>
+
+      <p>
+        Mrs. N ยังใช้ General Progressive เดิมสำหรับชีวิตประจำวัน ขับรถ เดิน ดู Maps — ไม่มีปัญหาอะไรเลย แต่เพิ่ม Office Lens ตัวที่สองสำหรับนั่งทำงานโดยเฉพาะ ผลลัพธ์คือ คอไม่ปวดอีกแล้ว ภาพ Spreadsheet กว้างขึ้นชัดขึ้น และทำงานได้นานขึ้นโดยไม่เมื่อยตา
+      </p>
+      <p>
+        ถ้าคุณมีอาการเหมือนกัน — เงยคอมากขึ้น, ปวดบ่า, ภาพคอมแคบลง — นั่นไม่ใช่สายตาเสียเสมอไป บางทีแค่ต้องการ <em>เครื่องมือที่ถูกออกแบบมาสำหรับงานนั้นโดยเฉพาะ</em>
+
+      </p>
+
+      <!-- ═════════ Q&A ═════════ -->
+      <h2>Q&amp;A: คำถามที่ถามบ่อย</h2>
+      <div class="qa-section" id="qa">
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <span class="q-icon">Q</span>
+            <span>ฉันใช้ Progressive อยู่ — ต้องตัด Office Lens เพิ่มอีกตัวเลยไหม?</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <div class="qa-answer-inner">
+              ไม่จำเป็นสำหรับทุกคน ถ้าคุณทำงานหน้าจอน้อยกว่า 4–5 ชั่วโมงต่อวัน General Progressive มักเพียงพอ แต่ถ้าคุณทำงานกับ Spreadsheet, Coding หรือหน้าจอนาน 6+ ชั่วโมง และมีอาการปวดคอ หรือต้องเงยหน้าขึ้นมากขึ้น — นั่นเป็นสัญญาณว่าคุ้มค่าที่จะพิจารณา Office Lens เพิ่ม
+            </div>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <span class="q-icon">Q</span>
+            <span>ความแตกต่างระหว่าง Shamir Computer กับ Shamir Workspace คืออะไร?</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <div class="qa-answer-inner">
+              <strong>Shamir Computer</strong> ถูก Optimize สำหรับระยะ Monitor (~50–80 ซม.) เน้นความชัดของหน้าจอ เหมาะกับงาน Single Monitor นั่งอยู่กับที่<br><br>
+              <strong>Shamir Workspace</strong> ครอบคลุมระยะที่กว้างกว่า ตั้งแต่งาน Desk ระยะใกล้จนถึงห้องทำงาน ~1.5–2 เมตร เหมาะกับผู้ที่ต้องมองทั้ง Documents บนโต๊ะ + Monitor + พูดคุยกับเพื่อนร่วมงานในห้อง
+            </div>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <span class="q-icon">Q</span>
+            <span>ถ้าตัด Office Lens แล้ว จะใช้ขับรถได้ไหม?</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <div class="qa-answer-inner">
+              <strong>ไม่แนะนำ</strong> เป็นอย่างยิ่ง Office Lens ถูกออกแบบมาสำหรับระยะใกล้-กลางเท่านั้น Distance Zone แทบไม่มี หรือมีน้อยมาก การขับรถด้วย Office Lens อาจทำให้มองป้ายถนน ระยะไกลไม่ชัด และเกิดอันตรายได้ ควรเปลี่ยนกลับเป็น General Progressive เมื่อต้องขับรถ
+            </div>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <span class="q-icon">Q</span>
+            <span>FF (Fitting Factor) ที่ต่ำกว่า หมายความว่าอะไร?</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <div class="qa-answer-inner">
+              FF หรือ Fitting Factor คือค่าที่บอกระดับของ Peripheral Distortion ในเลนส์ Progressive ยิ่งต่ำ = Zone ที่ใช้งานได้กว้างขึ้น และ Distortion ขอบเลนส์น้อยลง<br><br>
+              ในภาพที่เห็น OfficeLens มี FF 2.0 ขณะที่ Zeiss Individual 2 มี FF 2.8 — นั่นหมายความว่า OfficeLens มีพื้นที่ Distortion น้อยกว่า ทำให้ตาสบายกว่าเมื่อต้องจ้องนาน ๆ
+            </div>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <span class="q-icon">Q</span>
+            <span>ราคา Office Lens กับ General Progressive ต่างกันมากไหม?</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <div class="qa-answer-inner">
+              ราคาแตกต่างกันตาม Brand และ Design ที่เลือก Office Lens ส่วนใหญ่จะ <em>ถูกกว่า</em> General Progressive ระดับ Premium เล็กน้อย เนื่องจาก Design ซับซ้อนน้อยกว่า (ไม่ต้องสร้าง Full Distance Zone) ขอให้ทางร้านแนะนำตามความต้องการและงบประมาณของคุณได้เลยครับ
+            </div>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question" onclick="toggleQA(this)">
+            <span class="q-icon">Q</span>
+            <span>ควรนำแว่นเก่ามาให้ตรวจไหม หรือแค่แจ้งค่าสายตา?</span>
+            <span class="toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <div class="qa-answer-inner">
+              แนะนำให้นำแว่นเก่ามาด้วยเสมอครับ เพราะนอกจากค่าสายตา ทาง Optical X ยังใช้ Visionix PowerMap วัดและวิเคราะห์ Design ของเลนส์เก่าที่คุณใช้อยู่ เพื่อให้เห็นว่าปัญหาอยู่ที่ไหน และแนะนำเลนส์ที่ถูกต้องได้ตรงจุดกว่า ซึ่งเป็นวิธีเดียวกับที่ใช้ในเคสนี้
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end qa -->
+
+    </main>
+
+    <!-- ═══════════════════════════════════
+         SIDEBAR
+    ════════════════════════════════════ -->
+    <aside class="sidebar">
+
+      <!-- Glossy Summary Card -->
+      <div class="glossy-card">
+        <h4>📊 Case Summary</h4>
+        <div class="stat-row">
+          <span class="stat-label">ผู้ป่วย</span>
+          <span class="stat-val">Mrs. N, สายตา Add 1.50–2.00</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">ปัญหาหลัก</span>
+          <span class="stat-val">ภาพคอมพิวเตอร์แคบ, ปวดคอ</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">เลนส์เดิม</span>
+          <span class="stat-val">General Progressive Add 1.50</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">เลนส์ที่เลือก</span>
+          <span class="stat-val">Shamir Workspace (Office Lens)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">เหตุผลที่เลือก</span>
+          <span class="stat-val">Near Zone กว้าง, Waiving ต่ำ</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">ผลลัพธ์</span>
+          <span class="stat-val">ไม่ปวดคอ, ทำงานได้นานขึ้น</span>
+        </div>
+      </div>
+
+      <!-- Tooltip Glossary Card -->
+      <div class="side-tip-card">
+        <h4><span class="dot">●</span> คำศัพท์ที่ควรรู้</h4>
+        <ul>
+          <li><strong>Addition (Add)</strong> — กำลังเลนส์เพิ่มสำหรับมองใกล้ใน Progressive</li>
+          <li><strong>Near Zone</strong> — โซนล่างของ Progressive สำหรับอ่านหนังสือ/มือถือ</li>
+          <li><strong>Intermediate Zone</strong> — โซนกลาง สำหรับ Monitor/คอมพิวเตอร์</li>
+          <li><strong>FF (Fitting Factor)</strong> — ค่า Distortion ยิ่งต่ำยิ่งดี สบายตากว่า</li>
+          <li><strong>Waiving Effect</strong> — อาการภาพโยกขณะขยับหัว ใน Progressive</li>
+          <li><strong>Office Lens</strong> — Progressive แบบพิเศษ เน้น Near+Intermediate</li>
+          <li><strong>Workspace Lens</strong> — Office Lens ที่ขยาย Range ถึง 2 เมตร</li>
+        </ul>
+      </div>
+
+      <!-- Warning Checklist -->
+      <div class="side-tip-card">
+        <h4><span class="dot">●</span> สัญญาณเตือนที่ควรรู้</h4>
+        <ul>
+          <li>ต้องเงยหน้าขึ้นมากกว่าเดิมขณะดูคอม</li>
+          <li>ปวดคอ/บ่าหลังทำงาน 2–3 ชั่วโมง</li>
+          <li>ภาพ Spreadsheet แถวข้างโบลัวร์</li>
+          <li>มองระยะไกลปกติ แต่ระยะใกล้แย่ลง</li>
+          <li>ต้องเลื่อนหน้าจอออกให้ไกลขึ้น</li>
+        </ul>
+      </div>
+
+      <!-- Credit Box -->
+      <div class="credit-box">
+        <h4>🙏 ขอบคุณ &amp; เครดิต</h4>
+        <p>
+          บทความนี้อ้างอิงและขอบคุณบทความต้นฉบับจาก<br>
+          <strong>Evershine Optical Singapore</strong><br>
+          ซึ่งได้เขียนและแบ่งปัน Case Study ที่มีประโยชน์อย่างมาก<br><br>
+          <a href="https://evershineoptical.com.sg/2014/04/19/officelens-vs-general-progressive-lens-case-study/" target="_blank" rel="noopener">
+            evershineoptical.com.sg — OfficeLens vs General Progressive Lens Case Study
+          </a>
+        </p>
+      </div>
+
+    </aside>
+
+  </div><!-- end content-grid -->
+</div><!-- end page-wrap -->
+
+<!-- FOOTER -->
+
+
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+
+    <div>
+      <a href="../index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">
+        ศูนย์เลนส์โปรเกรสซีฟเฉพาะทาง<br>
+        ตรวจวัดสายตาโดยทัศนมาตร<br>
+        Riverside Plaza · ชั้น 2 · กรุงเทพฯ
+      </p>
+      <div class="ox-f-social">
+        <a href="https://lin.ee/E4GHWdJ" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.instagram.com/opticalxvision" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ที่ตั้ง</p>
+        <p class="ox-f-contact-val">
+          Riverside Plaza ชั้น 2<br>
+          257/6 ถ.เจริญนคร<br>
+          แขวงสำเหร่ เขตธนบุรี กทม. 10600
+        </p>
+      </div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ติดต่อ</p>
+        <p class="ox-f-contact-val">
+          <a href="tel:0929897447">092 989 7447</a><br>
+          <a href="https://lin.ee/E4GHWdJ">LINE: @opxrv</a><br>
+          <a href="mailto:opticalx.rv@gmail.com">opticalx.rv@gmail.com</a>
+        </p>
+      </div>
+      <div class="ox-f-hours">
+        <div class="ox-f-hours-row"><span>จ – อา</span><span>11:00 – 20:00</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ox-footer-bottom">
+    <p class="ox-f-copy">© 2025 Optical X Vision Care Center · All Rights Reserved</p>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>5.0 Google Rating</span>
+    </div>
+    <p class="ox-f-cert">Licensed Optometrist · Bangkok</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+function toggleQA(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+
+<script>
+/* ── Universal QA/FAQ Toggle v2 ── */
+(function(){
+  // Toggle function used by all patterns
+  function toggleItem(item){
+    if(!item) return;
+    var wasOpen = item.classList.contains('open');
+    // Close all siblings in same parent
+    var parent = item.parentElement;
+    if(parent){
+      parent.querySelectorAll('.qa-item.open').forEach(function(el){ el.classList.remove('open'); });
+    }
+    if(!wasOpen) item.classList.add('open');
+  }
+
+  // Pattern 1: Click on .qa-q or .qa-question
+  document.querySelectorAll('.qa-q, .qa-question').forEach(function(btn){
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleItem(btn.closest('.qa-item'));
+    });
+  });
+
+  // Pattern 2: Click on .qa-item itself (for items with onclick on the item)
+  document.querySelectorAll('.qa-item').forEach(function(item){
+    // Only add if no qa-q/qa-question child handles it
+    var hasQChild = item.querySelector('.qa-q, .qa-question');
+    if(!hasQChild){
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function(e){
+        toggleItem(item);
+      });
+    }
+  });
+
+  // Global fallback for onclick="toggleQA(this)"
+  window.toggleQA = function(el){
+    var item = el.closest ? el.closest('.qa-item') : el.parentElement;
+    toggleItem(item);
+  };
+})();
+</script>
+
+</body>
+</html>

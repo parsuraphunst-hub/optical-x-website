@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บริการและนโยบาย — Optical X Vision Care Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sarabun:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --ink-light: #3d3d5c;
+    --cream: #faf9f6;
+    --warm-white: #f5f3ee;
+    --gold: #b8924a;
+    --gold-light: #d4a96a;
+    --gold-pale: #f5ead6;
+    --teal: #2a7c7c;
+    --teal-light: #3a9999;
+    --teal-pale: #e8f4f4;
+    --muted: #6a6a7a;
+    --border: #e2ddd6;
+    --shadow: 0 4px 24px rgba(26,26,46,0.08);
+    --font-number: 'Instrument Sans', -apple-system, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--ink);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .site-header .brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .site-header .tagline {
+    font-family: 'Sarabun', sans-serif;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ─── LAYOUT ─── */
+  .layout {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* ─── MAIN CONTENT ─── */
+  .main-content { min-width: 0; }
+
+  .section-block {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+
+  .section-eyebrow {
+    font-family: var(--font-number);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--gold-pale);
+    line-height: 1.4;
+  }
+
+  .section-title .icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+  }
+
+  /* ─── SERVICE LIST ─── */
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .service-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .service-list li:hover { background: var(--teal-pale); }
+  .service-list li::before {
+    content: '◆';
+    color: var(--teal);
+    font-size: 0.5rem;
+    margin-top: 0.55rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── FEE ALERT BOX ─── */
+  .alert-box {
+    background: linear-gradient(135deg, #fff9f0, #fdf3e3);
+    border: 1.5px solid var(--gold);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.88rem;
+    color: #7a5a20;
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
+  .alert-box .alert-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+  /* ─── FEE SPLIT ─── */
+  .fee-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .fee-card {
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .fee-card.free {
+    background: linear-gradient(135deg, #e8f5e9, #f1faf2);
+    border: 1.5px solid #81c784;
+  }
+  .fee-card.paid {
+    background: linear-gradient(135deg, #fff3e0, #fff8f0);
+    border: 1.5px solid #ffb74d;
+  }
+  .fee-card .fee-label {
+    font-family: var(--font-number);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fee-card.free .fee-label { color: #388e3c; }
+  .fee-card.paid .fee-label { color: #e65100; }
+  .fee-card .fee-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .fee-card.free .fee-head { color: #2e7d32; }
+  .fee-card.paid .fee-head { color: #bf360c; }
+  .fee-card .fee-body { font-size: 0.85rem; color: var(--ink-light); line-height: 1.6; }
+
+  /* ─── PRICING CARDS ─── */
+  .pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .price-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0 1.2rem;
+    align-items: start;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    transition: all 0.25s;
+    background: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--teal);
+    border-radius: 4px 0 0 4px;
+    transition: width 0.25s;
+  }
+  .price-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--teal-light); }
+  .price-card:hover::before { width: 6px; }
+  .price-badge {
+    background: white;
+    color: var(--teal);
+    font-family: var(--font-number);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.25em 0.75em;
+    border-radius: 8px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 2px;
+    letter-spacing: 0.03em;
+    border: 2px solid var(--teal);
+    min-width: 5.5rem;
+    text-align: center;
+  }
+  .price-card .price-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+  .price-card .price-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  .price-card .price-body { font-size: 0.88rem; color: var(--ink-light); line-height: 1.6; }
+  .price-duration {
+    font-family: var(--font-number);
+    font-size: 0.72rem;
+    color: var(--teal);
+    background: var(--teal-pale);
+    padding: 0.25em 0.65em;
+    border-radius: 6px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 2px;
+  }
+
+  /* ─── WARRANTY ─── */
+  .warranty-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .warranty-box {
+    border-radius: 12px;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+  }
+  .warranty-box.primary { background: linear-gradient(135deg, #f0f7ff, #e8f4f8); border-color: #90caf9; }
+  .warranty-box.secondary { background: linear-gradient(135deg, #fafafa, #f5f5f5); border-color: #e0e0e0; }
+  .warranty-box .wb-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .warranty-box.primary .wb-title { color: #1565c0; }
+  .warranty-box.secondary .wb-title { color: #424242; }
+  .warranty-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .warranty-list li {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .warranty-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .risk-note {
+    background: #fff8f8;
+    border: 1px solid #ffcdd2;
+    border-left: 3px solid #e53935;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.82rem;
+    color: #b71c1c;
+    margin-top: 0.8rem;
+    line-height: 1.6;
+  }
+
+  /* ─── TOOLTIP ─── */
+  .glossary-term {
+    border-bottom: 2px dotted var(--teal);
+    cursor: help;
+    color: var(--teal);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+  }
+  .glossary-term .tooltip-box {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: white;
+    font-size: 0.78rem;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    width: 220px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 200;
+    white-space: normal;
+  }
+  .glossary-term .tooltip-box::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+  .glossary-term:hover .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+    bottom: calc(100% + 12px);
+  }
+
+  /* ─── Q&A ─── */
+  .qa-list { display: flex; flex-direction: column; gap: 0.8rem; }
+  .qa-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    transition: box-shadow 0.2s;
+  }
+  .qa-item:hover { box-shadow: var(--shadow); }
+  .qa-item[open] { border-color: var(--teal); }
+  .qa-question {
+    width: 100%;
+    background: var(--warm-white);
+    border: none;
+    text-align: left;
+    padding: 1rem 1.2rem;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.2s;
+    list-style: none;
+    min-height: 56px;
+  }
+  .qa-question::-webkit-details-marker { display: none; }
+  .qa-question::marker { display: none; }
+  .qa-question:hover { background: var(--gold-pale); }
+  .qa-item[open] > .qa-question { background: var(--teal-pale); }
+  .qa-question .q-icon {
+    font-family: var(--font-number);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    background: var(--teal);
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .qa-question .q-arrow {
+    color: var(--teal);
+    font-size: 0.9rem;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .qa-item[open] .q-arrow { transform: rotate(180deg); }
+  .qa-answer {
+    display: block;
+    padding: 1rem 1.2rem 1.1rem;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 1.8;
+    border-top: 1px solid var(--border);
+    background: white;
+    animation: fadeIn 0.2s ease;
+  }
+  .qa-answer strong { color: var(--ink); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar { position: sticky; top: 75px; }
+
+  .glossary-sidebar {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .glossary-header {
+    background: var(--ink);
+    color: white;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .glossary-header .g-icon { font-size: 1.1rem; }
+  .glossary-header .g-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .glossary-header .g-sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.5);
+    font-family: var(--font-number);
+    letter-spacing: 0.1em;
+    margin-left: auto;
+    text-transform: uppercase;
+  }
+  .glossary-search {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .glossary-search input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.45rem 0.8rem;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--warm-white);
+  }
+  .glossary-search input:focus { border-color: var(--teal); }
+  .glossary-items { max-height: 520px; overflow-y: auto; padding: 0.5rem 0; }
+  .glossary-items::-webkit-scrollbar { width: 4px; }
+  .glossary-items::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .glossary-entry {
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid #f0ede8;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .glossary-entry:last-child { border-bottom: none; }
+  .glossary-entry:hover { background: var(--teal-pale); }
+  .glossary-entry.active { background: var(--gold-pale); }
+  .ge-term {
+    font-family: var(--font-number);
+    font-size: 0.75rem;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+  }
+  .ge-label {
+    font-size: 0.82rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+  .ge-def {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+    display: none;
+  }
+  .glossary-entry.active .ge-def { display: block; color: var(--ink-light); }
+
+  /* ─── SERVICE CARDS ─── */
+  .service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+  .svc-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .svc-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .svc-card--highlight {
+    background: var(--ink);
+    border-color: var(--gold);
+    align-items: center;
+  }
+  .svc-card--highlight:hover { box-shadow: 0 6px 30px rgba(184,146,74,0.25); }
+  .svc-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .svc-svg { width: 30px; height: 30px; }
+  .svc-content { flex: 1; min-width: 0; }
+  .svc-en {
+    font-family: var(--font-number);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+  .svc-th {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .service-cards { grid-template-columns: 1fr; }
+    .svc-card { padding: 0.85rem 0.9rem; gap: 0.75rem; }
+    .svc-icon-wrap { width: 44px; height: 44px; }
+    .svc-svg { width: 26px; height: 26px; }
+    .svc-en { font-size: 0.68rem; }
+    .svc-th { font-size: 0.85rem; }
+  }
+
+  /* EN mode: svc-en becomes description label style */
+  #lang-en:checked ~ * .svc-en {
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-family: 'Sarabun', sans-serif;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+  #lang-en:checked ~ * .svc-th .txt-en {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+  }
+
+  /* ─── APPOINTMENT CARDS ─── */
+  .appt-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  .appt-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+    transition: background 0.2s;
+  }
+  .appt-card:hover { background: var(--teal-pale); }
+  .appt-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .appt-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+  .appt-sub {
+    font-family: var(--font-number);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .appt-body {
+    font-size: 0.87rem;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+
+  /* ─── FOOTER NOTE ─── */
+  .footer-note {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
+    font-family: var(--font-number);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── MOBILE TOOLTIP POPUP ─── */
+  .tooltip-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 500;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .tooltip-popup-overlay.visible { display: flex; }
+  .tooltip-popup {
+    background: white;
+    border-radius: 20px 20px 0 0;
+    padding: 1.5rem 1.5rem 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.2);
+    animation: slideUp 0.28s cubic-bezier(0.34,1.2,0.64,1);
+  }
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .tooltip-popup .tp-handle {
+    width: 40px; height: 4px;
+    background: var(--border);
+    border-radius: 99px;
+    margin: 0 auto 1.1rem;
+  }
+  .tooltip-popup .tp-term {
+    font-family: var(--font-number);
+    font-size: 0.72rem;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .tooltip-popup .tp-body {
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+  .tooltip-popup .tp-close {
+    display: block;
+    margin-top: 1.2rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--teal-pale);
+    color: var(--teal);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* ─── MOBILE GLOSSARY FAB + DRAWER ─── */
+  .glossary-fab {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.2rem;
+    z-index: 400;
+    background: var(--ink);
+    color: var(--gold-light);
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.1rem;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    gap: 0.5rem;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.2s;
+  }
+  .glossary-fab:active { transform: scale(0.95) !important; }
+
+  .glossary-drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 450;
+    align-items: flex-end;
+  }
+  .glossary-drawer-overlay.visible { display: flex; }
+  .glossary-drawer {
+    background: white;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.28s cubic-bezier(0.34,1.2,0.64,1);
+  }
+  .glossary-drawer .gd-header {
+    background: var(--ink);
+    border-radius: 20px 20px 0 0;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+  .glossary-drawer .gd-handle {
+    width: 40px; height: 4px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 99px;
+    margin: 0 auto 0.7rem;
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    top: 0.6rem;
+  }
+  .glossary-drawer .gd-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+  .glossary-drawer .gd-close {
+    margin-left: auto;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .glossary-drawer .gd-search {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .glossary-drawer .gd-search input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 1rem;
+    color: var(--ink);
+    outline: none;
+    background: var(--warm-white);
+  }
+  .glossary-drawer .gd-items {
+    overflow-y: auto;
+    flex: 1;
+    padding: 0.5rem 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .glossary-drawer .gd-entry {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #f0ede8;
+    cursor: pointer;
+  }
+  .glossary-drawer .gd-entry:last-child { border-bottom: none; }
+  .glossary-drawer .gd-entry.active { background: var(--gold-pale); }
+  .glossary-drawer .gd-term {
+    font-family: var(--font-number);
+    font-size: 0.72rem;
+    color: var(--teal);
+    margin-bottom: 0.15rem;
+  }
+  .glossary-drawer .gd-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .glossary-drawer .gd-def {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    display: none;
+  }
+  .glossary-drawer .gd-entry.active .gd-def { display: block; }
+
+  /* ─── RESPONSIVE: TABLET ─── */
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+      padding: 1.5rem 1rem;
+      gap: 0;
+    }
+    .sidebar { display: none; } /* hidden on mobile — replaced by FAB + drawer */
+    .glossary-fab { display: flex; }
+  }
+
+  /* ─── RESPONSIVE: MOBILE ─── */
+  @media (max-width: 600px) {
+    body { font-size: 15px; }
+
+    /* Header */
+    .site-header { padding: 0 1rem; height: 52px; }
+    .site-header .tagline { display: none; }
+    .site-header .brand { font-size: 1rem; }
+
+    /* Hero */
+    .hero { padding: 2.5rem 1.2rem 2.2rem; }
+    .hero h1 { font-size: 1.55rem; }
+    .hero p { font-size: 0.9rem; }
+    .hero-label { font-size: 0.62rem; }
+
+    /* Layout */
+    .layout { padding: 1.2rem 0.9rem; }
+
+    /* Sections */
+    .section-block {
+      padding: 1.4rem 1.1rem;
+      border-radius: 14px;
+      margin-bottom: 1.2rem;
+    }
+    .section-title { font-size: 1.15rem; }
+
+    /* Service list */
+    .service-list li { font-size: 0.9rem; padding: 0.5rem 0.5rem; }
+
+    /* Fee split */
+    .fee-split { grid-template-columns: 1fr; gap: 0.75rem; }
+    .fee-card { padding: 1rem; }
+    .fee-card .fee-head { font-size: 1rem; }
+    .fee-card .fee-body { font-size: 0.84rem; }
+
+    /* Price cards */
+    .price-card {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 1rem 1.1rem 1rem 1.3rem;
+    }
+    .price-card .price-title { font-size: 0.97rem; }
+    .price-card .price-body { font-size: 0.84rem; }
+    .price-badge { font-size: 1rem; width: fit-content; }
+    .price-duration { width: fit-content; }
+
+    /* Warranty */
+    .warranty-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+    .warranty-box { padding: 1rem; }
+    .warranty-list li { font-size: 0.84rem; }
+    .risk-note { font-size: 0.82rem; }
+
+    /* Tooltip — disable hover on mobile (handled by tap) */
+    .glossary-term .tooltip-box { display: none !important; }
+    .glossary-term { cursor: pointer; }
+
+    /* Q&A */
+    .qa-question { font-size: 0.9rem; padding: 0.9rem 1rem; min-height: 52px; }
+    .qa-answer { font-size: 0.88rem; padding: 0.9rem 1rem 1rem; }
+    .q-icon { font-size: 0.72rem; padding: 0.2em 0.45em; }
+
+    /* Appt cards */
+    .appt-card { padding: 0.9rem 1rem; gap: 0.8rem; }
+    .appt-icon { font-size: 1.3rem; }
+    .appt-title { font-size: 0.9rem; }
+    .appt-body { font-size: 0.84rem; }
+
+    /* Footer */
+    .footer-note { padding: 1.5rem 1rem 3rem; font-size: 0.72rem; }
+  }
+
+  /* Extra small */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 1.35rem; }
+    .section-block { padding: 1.2rem 0.9rem; }
+  }
+  /* ─── LANGUAGE TOGGLE ─── */
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+  .lang-btn:hover { background: rgba(255,255,255,0.22); }
+  .lang-en-label { display: none; }
+  .lang-th-label { display: inline; }
+
+  /* Thai mode (default): show .th, hide .en */
+  .txt-en { display: none; }
+  .txt-th { display: inline; }
+  .blk-en { display: none; }
+  .blk-th { display: block; }
+  .flex-en { display: none; }
+  .flex-th { display: flex; }
+
+  /* English mode: checkbox checked */
+  #lang-en:checked ~ * .lang-en-label { display: inline; }
+  #lang-en:checked ~ * .lang-th-label { display: none; }
+  #lang-en:checked ~ * .txt-en { display: inline; }
+  #lang-en:checked ~ * .txt-th { display: none; }
+  #lang-en:checked ~ * .blk-en { display: block; }
+  #lang-en:checked ~ * .blk-th { display: none; }
+  #lang-en:checked ~ * .flex-en { display: flex; }
+  #lang-en:checked ~ * .flex-th { display: none; }
+
+
+
+/* ══════════════════════════════════════════
+   OPTICAL X — UNIFIED NAV & FOOTER
+   ══════════════════════════════════════════ */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+
+
+/* Book button */
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* Hamburger */
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Mobile nav */
+/* Mobile nav — dropdown panel */
+.ox-mobile-nav {
+  display: block;
+  position: fixed; top: 64px; left: 0; right: 0; z-index: 880;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  box-shadow: 0 8px 32px rgba(44,36,22,0.10);
+  padding: 0 24px;
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1),
+              padding 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.ox-mobile-nav.open {
+  max-height: 480px;
+  padding: 16px 24px 20px;
+}
+.ox-mobile-nav a {
+  display: block; font-size: 1rem; color: #2C2416;
+  text-decoration: none; padding: 11px 0;
+  border-bottom: 1px solid rgba(232,217,191,0.5);
+  font-weight: 500; transition: color 0.15s;
+}
+.ox-mobile-nav a:last-of-type { border-bottom: none; }
+.ox-mobile-nav a:hover { color: #B8934A; }
+.ox-mobile-nav a.sub { font-size: 0.88rem; color: #6B5740; padding: 7px 0 7px 12px; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: block; margin-top: 12px; margin-bottom: 4px;
+  background: #C8A96E; color: #fff !important;
+  padding: 12px 24px; border-radius: 8px;
+  font-weight: 600; text-decoration: none;
+  text-align: center; border-bottom: none !important;
+}
+.ox-btn-book-m:hover { background: #B8934A !important; }
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+.ox-footer-top > div:last-child { text-align: right; }
+.ox-footer-top > div:last-child .ox-f-hours-row { justify-content: flex-end; }
+.ox-footer-top > div:last-child .ox-f-contact-val a { justify-content: flex-end; }
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+</style>
+</head>
+<body style="padding-top:64px">
+<nav class="ox-nav" id="oxNav">
+
+  <a href="index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+
+    <li>
+      <a href="services.html">บริการ</a>
+    </li>
+
+    <li>
+      <a href="programs.html">โปรแกรม</a>
+    </li>
+
+    <li>
+      <a href="articles.html">สาระสายตา</a>
+    </li>
+
+        <li>
+      <a href="about.html">รู้จักเรา</a>
+    </li>
+
+    <li>
+      <a href="promotion.html">Promotion</a>
+    </li>
+
+        <li>
+      <a href="tourist.html">For Visitors</a>
+    </li>
+
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="services.html">บริการ</a>
+  <a href="programs.html">โปรแกรม</a>
+  <a href="articles.html">สาระสายตา</a>
+  <a href="about.html">รู้จักเรา</a>
+  <a href="promotion.html">Promotion</a>
+    <a href="tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+
+
+
+<!-- LANGUAGE TOGGLE (CSS-only, no JS) -->
+<input type="checkbox" id="lang-en" style="display:none;">
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- SECTION 1: SERVICES -->
+    <section class="section-block">
+      <div class="section-eyebrow">01 · Clinical Optometric Services</div>
+      <h2 class="section-title"><span class="icon">🔬</span><span class="txt-th">ขอบเขตการให้บริการทางทัศนมาตร</span><span class="txt-en">Clinical Optometric Services</span></h2>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">
+        <span class="txt-th">เรามุ่งมั่นให้บริการตรวจดูแลสุขภาพตาด้วยมาตรฐานวิชาชีพ โดยเครื่องมือที่ทันสมัย ครอบคลุมรายการดังนี้</span>
+        <span class="txt-en">We are committed to professional eye care with modern equipment, covering the following services.</span>
+      </p>
+
+      <div class="service-cards">
+
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:linear-gradient(135deg,#e8f4f4,#d0ecec);">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="svc-svg">
+              <ellipse cx="24" cy="24" rx="16" ry="11" stroke="#2a7c7c" stroke-width="2.5" fill="none"/>
+              <circle cx="24" cy="24" r="5" stroke="#2a7c7c" stroke-width="2.5" fill="none"/>
+              <circle cx="24" cy="24" r="2" fill="#2a7c7c"/>
+              <line x1="8" y1="24" x2="4" y2="24" stroke="#2a7c7c" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="44" y1="24" x2="40" y2="24" stroke="#2a7c7c" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc-content">
+            <div class="svc-en">Comprehensive Eye Examination</div>
+            <div class="svc-th"><span class="txt-th">การตรวจวัดสายตาและสุขภาพตาแบบองค์รวม</span><span class="txt-en">Comprehensive assessment of vision and overall eye health.</span></div>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:linear-gradient(135deg,#fef3e2,#fde9c8);">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="svc-svg">
+              <path d="M24 10 C14 10 8 24 8 24 C8 24 14 38 24 38 C34 38 40 24 40 24 C40 24 34 10 24 10Z" stroke="#b8924a" stroke-width="2.5" fill="none"/>
+              <circle cx="24" cy="24" r="6" stroke="#b8924a" stroke-width="2.5" fill="none"/>
+              <path d="M38 10 L42 6" stroke="#b8924a" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M38 38 L42 42" stroke="#b8924a" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="2.5" fill="#b8924a"/>
+            </svg>
+          </div>
+          <div class="svc-content">
+            <div class="svc-en">Primary Eye Care</div>
+            <div class="svc-th"><span class="txt-th">คัดกรองโรคตาเบื้องต้น — ต้อกระจก, จอประสาทตาเสื่อม</span><span class="txt-en">Screening for early eye diseases — Cataract, Macular Degeneration.</span></div>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:linear-gradient(135deg,#e8eeff,#d8e4ff);">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="svc-svg">
+              <circle cx="16" cy="24" r="8" stroke="#4a6ab8" stroke-width="2.5" fill="none"/>
+              <circle cx="32" cy="24" r="8" stroke="#4a6ab8" stroke-width="2.5" fill="none"/>
+              <path d="M24 20 C24 20 24 24 24 28" stroke="#4a6ab8" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+              <circle cx="16" cy="24" r="2.5" fill="#4a6ab8"/>
+              <circle cx="32" cy="24" r="2.5" fill="#4a6ab8"/>
+            </svg>
+          </div>
+          <div class="svc-content">
+            <div class="svc-en">Binocular Vision Assessment</div>
+            <div class="svc-th"><span class="txt-th">ประเมินระบบการทำงานร่วมกันของตาทั้งสองข้าง</span><span class="txt-en">Evaluating how both eyes work together for depth and coordinated vision.</span></div>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:linear-gradient(135deg,#fce4ec,#f8d0dc);">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="svc-svg">
+              <circle cx="24" cy="18" r="8" stroke="#c2185b" stroke-width="2.5" fill="none"/>
+              <path d="M12 40 C12 33 36 33 36 40" stroke="#c2185b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="24" cy="18" r="3" fill="#c2185b"/>
+              <path d="M30 10 L34 7" stroke="#c2185b" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="35" cy="6" r="2" fill="#c2185b" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="svc-content">
+            <div class="svc-en">Pediatric Optometry</div>
+            <div class="svc-th"><span class="txt-th">ตรวจสายตาเด็ก — ตาบอดสี, ภาวะตาขี้เกียจ</span><span class="txt-en">Pediatric vision testing — Color Blindness, Amblyopia (Lazy Eye).</span></div>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon-wrap" style="background:linear-gradient(135deg,#e8f5e9,#d4efd6);">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="svc-svg">
+              <circle cx="24" cy="24" r="10" stroke="#388e3c" stroke-width="2.5" fill="none"/>
+              <circle cx="24" cy="24" r="5" stroke="#388e3c" stroke-width="2" fill="none" stroke-dasharray="3 2"/>
+              <path d="M14 24 Q14 16 24 14" stroke="#388e3c" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="24" cy="24" r="2" fill="#388e3c"/>
+              <path d="M31 17 L35 13" stroke="#388e3c" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc-content">
+            <div class="svc-en">Contact Lens Fitting</div>
+            <div class="svc-th"><span class="txt-th">ตรวจความพร้อมของสุขภาพตาเพื่อประกอบคอนแทคเลนส์</span><span class="txt-en">Ocular health assessment and fitting for contact lenses.</span></div>
+          </div>
+        </div>
+
+        <div class="svc-card" style="background:linear-gradient(135deg,#f5f0ff,#ede8fa);border-color:#b39ddb;border-left:3px solid #7c4dff;">
+          <div class="svc-icon-wrap" style="background:white;border:1.5px solid #d1c4e9;">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="svc-svg">
+              <rect x="8" y="20" width="32" height="14" rx="7" stroke="#7c4dff" stroke-width="2.5" fill="none"/>
+              <line x1="20" y1="20" x2="20" y2="34" stroke="#7c4dff" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <line x1="28" y1="20" x2="28" y2="34" stroke="#7c4dff" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <path d="M16 20 C16 14 32 14 32 20" stroke="#7c4dff" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="14" cy="27" r="3" fill="#7c4dff" opacity="0.5"/>
+              <circle cx="34" cy="27" r="3" fill="#7c4dff" opacity="0.5"/>
+              <circle cx="24" cy="27" r="3.5" fill="#7c4dff"/>
+            </svg>
+          </div>
+          <div class="svc-content">
+            <div style="display:flex;align-items:center;gap:0.45rem;margin-bottom:0.55rem;">
+              <span style="font-family:'Instrument Sans',sans-serif;font-size:0.72rem;font-weight:700;color:#4527a0;letter-spacing:0.05em;">Presbyopia Management</span>
+              <span style="font-size:0.6rem;background:#7c4dff;color:white;padding:0.15em 0.5em;border-radius:4px;letter-spacing:0.08em;font-family:'Instrument Sans',sans-serif;font-weight:700;white-space:nowrap;">SPECIALTY</span>
+            </div>
+            <div style="display:flex;gap:0.6rem;">
+              <div style="flex:1;background:white;border:1px solid #d1c4e9;border-radius:8px;padding:0.55rem 0.7rem;">
+                <div style="font-size:0.65rem;font-family:'Instrument Sans',sans-serif;color:#9e9eb8;letter-spacing:0.1em;margin-bottom:0.2rem;">SOLUTION 01</div>
+                <div style="font-size:0.88rem;font-weight:700;color:#311b92;margin-bottom:0.15rem;"><span class="txt-th">เลนส์โปรเกรสซีฟ</span><span class="txt-en">Progressive Lens</span></div>
+                <div style="font-size:0.75rem;color:#6a5acd;line-height:1.5;"><span class="txt-th">มองได้ทุกระยะในเลนส์เดียว</span><span class="txt-en">All distances in one lens</span></div>
+              </div>
+              <div style="flex:1;background:white;border:1px solid #d1c4e9;border-radius:8px;padding:0.55rem 0.7rem;">
+                <div style="font-size:0.65rem;font-family:'Instrument Sans',sans-serif;color:#9e9eb8;letter-spacing:0.1em;margin-bottom:0.2rem;">SOLUTION 02</div>
+                <div style="font-size:0.88rem;font-weight:700;color:#311b92;margin-bottom:0.15rem;">Multifocal CL</div>
+                <div style="font-size:0.75rem;color:#6a5acd;line-height:1.5;"><span class="txt-th">แก้สายตาโดยไม่สวมแว่น</span><span class="txt-en">Vision correction without glasses</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: FEES -->
+    <section class="section-block">
+      <div class="section-eyebrow">02 · Consultation Fee Policy</div>
+      <h2 class="section-title"><span class="icon">💳</span><span class="txt-th">นโยบายค่าธรรมเนียมการตรวจ</span><span class="txt-en">Consultation Fee Policy</span></h2>
+
+      <div class="alert-box">
+        <span class="alert-icon">⚠️</span>
+        <div><span class="txt-th">การตรวจวัดสายตาเป็น <strong>Medical Procedure</strong> ที่ต้องอาศัยทักษะวิชาชีพ เครื่องมือเฉพาะทาง และระยะเวลาในการวินิจฉัย โปรดทราบนโยบายค่าบริการก่อนรับบริการ</span><span class="txt-en">An eye examination is a <strong>Medical Procedure</strong> requiring professional expertise, specialised equipment, and diagnostic time. Please review our fee policy before your visit.</span></div>
+      </div>
+
+      <div class="fee-split">
+        <div class="fee-card free">
+          <div class="fee-label">✓ Exemption Condition</div>
+          <div class="fee-head"><span class="txt-th">ยกเว้นค่าธรรมเนียม</span><span class="txt-en">Exam Fee Waived</span></div>
+          <div class="fee-body"><span class="txt-th">ทางร้านยินดี <strong>Waive</strong> ค่าบริการตรวจวัดให้ทันที เมื่อท่าน<strong>สั่งตัดแว่นตา</strong>กับทางร้านภายในวันที่รับบริการ</span><span class="txt-en">The examination fee is <strong>waived</strong> when you order prescription eyewear with us on the same day as your exam.</span></div>
+        </div>
+        <div class="fee-card paid">
+          <div class="fee-label">฿ Professional Fee Charge</div>
+          <div class="fee-head"><span class="txt-th">ชำระค่าธรรมเนียมวิชาชีพ</span><span class="txt-en">Professional Fee Applies</span></div>
+          <div class="fee-body"><span class="txt-th">หากท่านเข้ารับการตรวจแล้ว <strong>ไม่มีประสงค์จะสั่งตัดแว่น</strong> (อาทิ ค่าสายตาคงที่, ต้องการใบรับรองค่าสายตา, หรือยังไม่พึงพอใจในสินค้า) จะเรียกเก็บ <strong>Professional Fee</strong> ตามอัตราด้านล่าง</span><span class="txt-en">If you choose not to order glasses after your exam (e.g. prescription check only, or certificate needed), a <strong>Professional Fee</strong> applies per the rates below.</span></div>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <div class="price-badge">฿500</div>
+          <div>
+            <div class="price-title">Basic Refraction</div>
+            <div class="price-sub"><span class="txt-th">การตรวจหาค่าสายตาพื้นฐาน</span><span class="txt-en">Basic Vision Refraction</span></div>
+            <div class="price-body"><span class="txt-th">ตรวจวัดค่าสายตา (สั้น / ยาว / เอียง) โดย Refraction มาตรฐาน</span><span class="txt-en">Measures refractive error (myopia, hyperopia, astigmatism) using standard refraction.</span></div>
+          </div>
+          <div class="price-duration"><span class="txt-th">⏱ 20 นาที</span><span class="txt-en">⏱ 20 min</span></div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-badge">฿1,200</div>
+          <div>
+            <div class="price-title">Comprehensive Exam</div>
+            <div class="price-sub"><span class="txt-th">ตรวจสายตา + ตรวจสุขภาพตา</span><span class="txt-en">Refraction + Eye Health Check</span></div>
+            <div class="price-body"><span class="txt-th">เพิ่มการตรวจสุขภาพตา (ต้อกระจก / จอประสาทตา) ด้วย Slit Lamp</span><span class="txt-en">Adds anterior &amp; posterior eye health screening (Cataract, Retina) with Slit Lamp biomicroscopy.</span></div>
+          </div>
+          <div class="price-duration"><span class="txt-th">⏱ 30 นาที</span><span class="txt-en">⏱ 30 min</span></div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-badge">฿1,500</div>
+          <div>
+            <div class="price-title">Progressive Lens Exam</div>
+            <div class="price-sub"><span class="txt-th">ตรวจละเอียดเพื่อประกอบเลนส์โปรเกรสซีฟ</span><span class="txt-en">Progressive Lens Fitting Exam</span></div>
+            <div class="price-body"><span class="txt-th">การตรวจละเอียดเพื่อประกอบเลนส์โปรเกรสซีฟ รวมถึง Fitting Point &amp; Design Selection</span><span class="txt-en">Detailed exam for progressive lens fitting, including Fitting Point measurement &amp; lens design selection.</span></div>
+          </div>
+          <div class="price-duration"><span class="txt-th">⏱ 40 นาที</span><span class="txt-en">⏱ 40 min</span></div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-badge">฿2,000</div>
+          <div>
+            <div class="price-title">Specialty / Multifocal CL</div>
+            <div class="price-sub"><span class="txt-th">ฟิตติ้งคอนแทคเลนส์ Multifocal</span><span class="txt-en">Multifocal Contact Lens Fitting</span></div>
+            <div class="price-body"><span class="txt-th">การฟิตติ้ง Multifocal Contact Lens และทดลองค่าสายตาของคอนแทคเลนส์</span><span class="txt-en">Fitting &amp; trial of Multifocal Contact Lenses for presbyopia correction without glasses.</span></div>
+          </div>
+          <div class="price-duration"><span class="txt-th">⏱ 60 นาที</span><span class="txt-en">⏱ 60 min</span></div>
+        </div>
+
+      </div>
+
+      <p style="margin-top:1.2rem; font-size:0.82rem; color:var(--muted); font-style:italic; line-height:1.7;">
+        <span class="txt-th">หมายเหตุ: ทัศนมาตรและ lens specialists จะเป็นผู้ประเมินระดับการตรวจที่เหมาะสม ทางร้าน<strong style="color:var(--ink)">สงวนสิทธิ์ในการงดให้คำแนะนำชนิดเลนส์จนกว่าผลการตรวจจะสมบูรณ์</strong></span><span class="txt-en">Note: Our optometrist and lens specialists will determine the appropriate examination level. Lens recommendations and pricing are provided <strong style="color:var(--ink)">only after a complete examination</strong>.</span>
+      </p>
+
+      <!-- SESSION TIME POLICY -->
+      <div style="margin-top:1.4rem;background:linear-gradient(135deg,#f8f6ff,#f0eeff);border:1.5px solid #b39ddb;border-left:4px solid #7c4dff;border-radius:12px;padding:1.1rem 1.3rem;">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#6a1b9a;margin-bottom:0.5rem;">⏳ Session Time Policy</div>
+        <p style="font-size:0.9rem;font-weight:700;color:#311b92;margin-bottom:0.5rem;line-height:1.5;"><span class="txt-th">ระยะเวลาการให้บริการตามที่กำหนดในแต่ละ tier</span><span class="txt-en">Each service tier has a designated session duration.</span></p>
+        <p style="font-size:0.87rem;color:#4a4a6a;line-height:1.75;margin-bottom:0.6rem;"><span class="txt-th">เพื่อคุณภาพการบริการที่ดีที่สุด ทางร้านจัดสรรเวลาให้แต่ละ session ตามระดับการตรวจที่เลือก หากการให้บริการใช้เวลาเกินกว่าที่กำหนดอย่างมีนัยสำคัญ ทางร้านขอสงวนสิทธิ์ในการพิจารณา<strong>เรียกเก็บค่าบริการเพิ่มเติม (Extended Session Fee)</strong> ตามความเหมาะสม</span><span class="txt-en">To ensure quality service for all patients, each session is allocated a fixed time. If a session significantly exceeds the allotted time, an <strong>Extended Session Fee</strong> may apply at our discretion.</span></p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.3rem;">
+          <span style="font-size:0.78rem;background:white;border:1px solid #b39ddb;border-radius:6px;padding:0.25em 0.7em;color:#4a148c;font-family:'Instrument Sans',sans-serif;"><span class="txt-th">Basic · 20 นาที</span><span class="txt-en">Basic · 20 min</span></span>
+          <span style="font-size:0.78rem;background:white;border:1px solid #b39ddb;border-radius:6px;padding:0.25em 0.7em;color:#4a148c;font-family:'Instrument Sans',sans-serif;"><span class="txt-th">Comprehensive · 30 นาที</span><span class="txt-en">Comprehensive · 30 min</span></span>
+          <span style="font-size:0.78rem;background:white;border:1px solid #b39ddb;border-radius:6px;padding:0.25em 0.7em;color:#4a148c;font-family:'Instrument Sans',sans-serif;"><span class="txt-th">Progressive · 40 นาที</span><span class="txt-en">Progressive · 40 min</span></span>
+          <span style="font-size:0.78rem;background:white;border:1px solid #b39ddb;border-radius:6px;padding:0.25em 0.7em;color:#4a148c;font-family:'Instrument Sans',sans-serif;"><span class="txt-th">Multifocal CL · 60 นาที</span><span class="txt-en">Multifocal CL · 60 min</span></span>
+        </div>
+        <p style="font-size:0.78rem;color:#9e9eb8;margin-top:0.75rem;font-style:italic;line-height:1.6;"><span class="txt-th">* ทีมงานจะแจ้งให้ท่านทราบล่วงหน้าก่อนการขยายเวลาทุกครั้ง และตกลงร่วมกันก่อนดำเนินการต่อ</span><span class="txt-en">* Our team will always notify you before any session extension and proceed only with your agreement.</span></p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: APPOINTMENT -->
+    <section class="section-block">
+      <div class="section-eyebrow">03 · Appointment &amp; Service Protocol</div>
+      <h2 class="section-title"><span class="icon">📅</span><span class="txt-th">การนัดหมายและการให้บริการ</span><span class="txt-en">Appointment &amp; Service Policy</span></h2>
+
+      <div class="alert-box" style="background:linear-gradient(135deg,#f0fff4,#e8f8ee);border-color:#81c784;border-left-color:#388e3c;color:#1b5e20;">
+        <span class="alert-icon">🚶</span>
+        <div><span class="txt-th"><strong>Walk-in ยินดีต้อนรับเสมอครับ</strong> — ไม่ว่าจะแวะมารับแว่น ดัดแว่น ปรับแต่ง หรือสอบถามข้อมูล ทางร้านยินดีให้บริการทุกท่าน อย่างไรก็ตาม หากต้องการ<strong>นัดตรวจสายตา</strong> การจองล่วงหน้าจะทำให้ท่านได้รับประโยชน์สูงสุด<br><br>⭐ <strong>ลูกค้าที่จองคิวล่วงหน้าจะได้รับสิทธิ์ First Priority</strong> — Walk-in ที่มาพร้อมกันจะได้รับบริการหลังจากลูกค้าที่นัดไว้ก่อน</span><span class="txt-en"><strong>Walk-ins are always welcome</strong> — whether to pick up glasses, have an adjustment, or ask questions. However, for an <strong>eye examination</strong>, booking in advance gives you the best experience.<br><br>⭐ <strong>Booked appointments receive First Priority</strong> — if a walk-in arrives at the same time as a booked patient, the booked patient is seen first.</span></div>
+      </div>
+
+      <div class="appt-grid">
+
+        <div class="appt-card">
+          <div class="appt-icon">🎯</div>
+          <div>
+            <div class="appt-title">Dedicated Time &amp; Clinical Precision</div>
+            <div class="appt-sub"><span class="txt-th">เวลาและการดูแลที่แม่นยำ</span><span class="txt-en">Focused, Uninterrupted Care</span></div>
+            <div class="appt-body"><span class="txt-th">การตรวจวัดสายตาเป็นขั้นตอนที่ละเอียดอ่อน ต้องใช้สมาธิและระยะเวลาที่เหมาะสม การนัดหมายช่วยให้ทัศนมาตรทุ่มเทเวลาดูแลเคสของท่านได้อย่าง <strong>Uninterrupted Consultation</strong></span><span class="txt-en">Eye examinations require full concentration. Booking ensures your optometrist can dedicate uninterrupted time to your case without queue pressure.</span></div>
+          </div>
+        </div>
+
+        <div class="appt-card">
+          <div class="appt-icon">🔒</div>
+          <div>
+            <div class="appt-title">Exclusive Privacy &amp; Comfort</div>
+            <div class="appt-sub"><span class="txt-th">ความเป็นส่วนตัวและความสะดวกสบาย</span><span class="txt-en">Your Own Private Session</span></div>
+            <div class="appt-body"><span class="txt-th">ทางร้านจัดสรรช่วงเวลาให้เป็น <strong>Private Session</strong> เพื่อจำกัดจำนวนผู้ใช้บริการ ลดความแออัด และเสียงรบกวน ให้บรรยากาศที่ผ่อนคลายตลอดการรับบริการ</span><span class="txt-en">We allocate each appointment as a <strong>Private Session</strong> — limiting the number of simultaneous patients for a calm, spacious, and focused experience.</span></div>
+          </div>
+        </div>
+
+        <div class="appt-card">
+          <div class="appt-icon">⚡</div>
+          <div>
+            <div class="appt-title">Efficiency</div>
+            <div class="appt-sub"><span class="txt-th">ความรวดเร็วและมีประสิทธิภาพ</span><span class="txt-en">Smooth &amp; Ready for You</span></div>
+            <div class="appt-body"><span class="txt-th">การนัดหมายล่วงหน้าช่วยให้ทีมงานเตรียมประวัติ เครื่องมือ และคัดเลือกกรอบแว่นที่เหมาะสมรอไว้ล่วงหน้า ทำให้กระบวนการรับบริการราบรื่น ไม่ต้องเสียเวลารอคอย</span><span class="txt-en">Booking ahead lets our team prepare your records, equipment, and pre-selected frames — so your visit is efficient with no unnecessary waiting.</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="margin-top:1.2rem;font-size:0.82rem;color:var(--muted);font-style:italic;line-height:1.7;text-align:center;">
+        <span class="txt-th">📞 จองคิวล่วงหน้าได้ที่ <strong style="color:var(--ink);">Line: @opxrv</strong> · โทร <strong style="color:var(--ink);">092 989 7447</strong> · หรือ DM ทาง Instagram</span><span class="txt-en">📞 Book via <strong style="color:var(--ink);">Line: @opxrv</strong> · Tel <strong style="color:var(--ink);">092 989 7447</strong> · or DM us on Instagram</span>
+      </p>
+    </section>
+
+    <!-- SECTION 4: WARRANTY -->
+    <section class="section-block">
+      <div class="section-eyebrow">04 · Warranty Terms &amp; Conditions</div>
+      <h2 class="section-title"><span class="icon">🛡️</span><span class="txt-th">เงื่อนไขการรับประกันสินค้า</span><span class="txt-en">Warranty Terms &amp; Conditions</span></h2>
+
+      <div class="warranty-grid">
+        <div class="warranty-box primary">
+          <div class="wb-title">🏪 <span class="txt-th">In-House Products — สินค้าที่ซื้อจากทางร้าน</span><span class="txt-en">In-House Products — Purchased from Optical X</span></div>
+          <ul class="warranty-list">
+            <li><strong>Warranty Period:</strong> <span class="txt-th">รับประกันคุณภาพสินค้า <strong>1 ปี (1 Year Warranty)</strong></span><span class="txt-en"><strong>1 Year</strong> from date of purchase.</span></li>
+            <li><strong>Coverage:</strong> <span class="txt-th">ครอบคลุมเฉพาะความบกพร่องจากกระบวนการผลิต (Manufacturing Defects) เท่านั้น</span><span class="txt-en">Covers <strong>Manufacturing Defects</strong> only — flaws originating from the production process.</span></li>
+            <li><strong>Free:</strong> <span class="txt-th">บริการดัดทรง ปรับแต่ง และทำความสะอาดตลอดอายุการใช้งาน</span><span class="txt-en">Complimentary frame adjustments, fitting, and cleaning for the lifetime of your glasses.</span></li>
+            <li><span class="txt-th">ฟรีค่าแรงอะไหล่ (ค่าอะไหล่พิจารณาเป็นรายกรณี)</span><span class="txt-en">Free labour for spare parts (parts cost assessed case by case).</span></li>
+          </ul>
+
+          <div style="margin-top:1rem;">
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#c62828;margin-bottom:0.6rem;">🚫 Warranty Exclusions</div>
+            <ul class="warranty-list">
+              <li><strong>Accidental Damage &amp; Mishandling</strong> — <span class="txt-th">อุบัติเหตุ, การนั่งทับ, ตกกระแทก, หรือการใช้งานผิดวัตถุประสงค์</span><span class="txt-en">Accidents, sitting on frames, impact damage, or misuse.</span></li>
+              <li><strong>Wear &amp; Tear</strong> — <span class="txt-th">รอยขีดข่วน (Scratches) บนผิวเลนส์หรือกรอบแว่นจากการใช้งานปกติหรือการดูแลรักษาผิดวิธี</span><span class="txt-en">Scratches on lens surface or frame from normal use or improper cleaning.</span></li>
+              <li><strong>Thermal &amp; Chemical Exposure</strong> — <span class="txt-th">ความเสียหายจากความร้อนสูง (เช่น วางในรถยนต์, ห้องซาวน่า) หรือสารเคมี (สเปรย์, น้ำหอม, แอลกอฮอล์) ที่ทำให้เกิด Coating Delamination</span><span class="txt-en">Damage from high heat (e.g. left in a car, sauna) or chemicals (hairspray, perfume, alcohol) causing Coating Delamination.</span></li>
+              <li><strong>Corrosion &amp; Neglect</strong> — <span class="txt-th">ความเสียหายจากน้ำทะเล, ไอเค็ม, หรือเหงื่อที่มีความเป็นกรด (Acidic Sweat) จนทำให้สีลอก, โลหะผุกร่อน, หรือกลไก Spring ชำรุด</span><span class="txt-en">Damage from seawater, salt air, or Acidic Sweat due to neglected cleaning — leading to discolouration, metal corrosion, or spring mechanism failure.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="warranty-box secondary">
+          <div class="wb-title">🔧 <span class="txt-th">Outside Eyewear Service — แว่นตานอกร้าน</span><span class="txt-en">Outside Eyewear Service — Your Own Frame</span></div>
+          <p style="font-size:0.84rem;color:var(--ink-light);line-height:1.6;margin-bottom:0.8rem;"><span class="txt-th">ทางร้านยินดีให้บริการปรับแต่ง (Adjustment) หรือเปลี่ยนเลนส์ (Re-lensing) สำหรับกรอบแว่นที่ท่านนำมาเอง ภายใต้เงื่อนไข Waiver of Liability ดังนี้</span><span class="txt-en">We offer adjustment and re-lensing services for frames you bring in, subject to the following Waiver of Liability conditions.</span></p>
+          <ul class="warranty-list">
+            <li><strong>Service Charge:</strong> <span class="txt-th">มีค่าบริการสำหรับการซ่อมแซมหรือปรับแต่ง (แจ้งราคาก่อนดำเนินการ)</span><span class="txt-en">A service fee applies for repairs or adjustments. Price is confirmed before any work begins.</span></li>
+            <li><strong>Material Fatigue Risk:</strong> <span class="txt-th">แว่นตาที่ผ่านการใช้งานมักเกิดภาวะ Material Fatigue หรือการกัดกร่อนภายในที่มองไม่เห็น ทำให้มีความเสี่ยงสูงที่จะเกิดการแตกหักระหว่างการปรับแต่ง</span><span class="txt-en">Previously used frames often develop invisible Material Fatigue or internal corrosion, making them prone to breakage during adjustment.</span></li>
+          </ul>
+
+          <!-- FRAMES SERVICES PRICING -->
+          <div style="margin-top:1rem;">
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.7rem;">💰 Frames Services — Price List</div>
+            <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:0.45rem 0.4rem;color:var(--ink-light);line-height:1.5;"><span class="txt-th">ปรับแต่งกรอบแว่น* + ทำความสะอาด</span><span class="txt-en">Frame Adjustment* + Cleaning</span></td>
+                  <td style="padding:0.45rem 0.4rem;text-align:right;font-family:'Instrument Sans',sans-serif;font-weight:600;color:var(--teal);white-space:nowrap;">฿100</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:0.45rem 0.4rem;color:var(--ink-light);line-height:1.5;"><span class="txt-th">เปลี่ยนสกรู + ทำความสะอาด</span><span class="txt-en">Screw Replacement + Cleaning</span></td>
+                  <td style="padding:0.45rem 0.4rem;text-align:right;font-family:'Instrument Sans',sans-serif;font-weight:600;color:var(--teal);white-space:nowrap;">฿100</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:0.45rem 0.4rem;color:var(--ink-light);line-height:1.5;"><span class="txt-th">เปลี่ยนแป้นรองจมูก + ทำความสะอาด</span><span class="txt-en">Nose Pads Replacement + Cleaning</span></td>
+                  <td style="padding:0.45rem 0.4rem;text-align:right;font-family:'Instrument Sans',sans-serif;font-weight:600;color:var(--teal);white-space:nowrap;">฿100<span style="font-size:0.72rem;color:var(--muted);font-weight:400;"> /pair</span></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:0.45rem 0.4rem;color:var(--ink-light);line-height:1.5;"><span class="txt-th">กล่องแว่นตา</span><span class="txt-en">Eyeglasses Case</span></td>
+                  <td style="padding:0.45rem 0.4rem;text-align:right;font-family:'Instrument Sans',sans-serif;font-weight:600;color:var(--teal);white-space:nowrap;">฿100</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:0.45rem 0.4rem;color:var(--ink-light);line-height:1.5;"><span class="txt-th">น้ำยาล้างเลนส์พรีเมี่ยม</span><span class="txt-en">Premium Optical Lens Cleaner</span></td>
+                  <td style="padding:0.45rem 0.4rem;text-align:right;font-family:'Instrument Sans',sans-serif;font-weight:600;color:var(--teal);white-space:nowrap;">฿180</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.45rem 0.4rem;color:var(--ink-light);line-height:1.5;"><span class="txt-th">ผ้าเช็ดเลนส์ ZEISS Anti Fog</span><span class="txt-en">ZEISS Anti Fog Lens Cleaning Cloth</span></td>
+                  <td style="padding:0.45rem 0.4rem;text-align:right;font-family:'Instrument Sans',sans-serif;font-weight:600;color:var(--teal);white-space:nowrap;">฿290</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.74rem;color:var(--muted);margin-top:0.6rem;line-height:1.6;font-style:italic;">
+              <span class="txt-th">* ทางร้านไม่รับผิดชอบต่อความเสียหายที่อาจเกิดขึ้นจากการปรับแต่งกรอบแว่น เนื่องจากมีความเสี่ยงในการแตกหักขึ้นอยู่กับสภาพกรอบ · อาจมีค่าใช้จ่ายเพิ่มเติมสำหรับกรอบพิเศษหรืออะไหล่</span><span class="txt-en">* We do not take responsibility for damage during frame adjustment — breakage risk depends on frame condition. Additional charges may apply for special frames or spare parts.</span>
+            </p>
+          </div>
+
+          <div class="risk-note">
+            ⚠️ <strong>Agreement — Acceptance of Risk:</strong> <span class="txt-th">ลูกค้าจำเป็นต้องยอมรับความเสี่ยง ทางร้านขอสงวนสิทธิ์ <strong>"ไม่รับผิดชอบชดใช้ค่าเสียหายใดๆ" (No Compensation)</strong> หากเกิดความเสียหายในระหว่างการปฏิบัติงาน</span><span class="txt-en">The customer must accept all risk. Optical X accepts <strong>no liability or compensation</strong> for any damage that may occur during the service.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Q&A -->
+    <section class="section-block">
+      <div class="section-eyebrow">05 · FAQ</div>
+      <h2 class="section-title"><span class="icon">💬</span><span class="txt-th">คำถามที่พบบ่อย</span><span class="txt-en">Frequently Asked Questions</span></h2>
+
+      <div class="qa-list">
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q1</span> &nbsp;<span class="txt-th">ต้องจ่ายค่าตรวจเสมอไปหรือเปล่า?</span><span class="txt-en">Do I always have to pay for the examination?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th"><strong>ไม่เสมอไปครับ</strong> — หากท่าน<strong>สั่งตัดแว่นตา</strong>กับทางร้านในวันที่รับบริการ ค่าตรวจจะถูก <strong>ยกเว้นให้ทันที</strong> ค่าธรรมเนียมจะเกิดขึ้นก็ต่อเมื่อท่านไม่ประสงค์สั่งตัดแว่นหลังจากการตรวจเท่านั้น</span><span class="txt-en"><strong>Not always.</strong> If you order prescription eyewear from us on the same day as your exam, the exam fee is <strong>waived immediately</strong>. A fee only applies if you choose not to purchase.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q2</span> &nbsp;<span class="txt-th">ตรวจเสร็จแล้วขอแค่ "ใบค่าสายตา" ได้ไหม?</span><span class="txt-en">Can I just get a prescription certificate after my exam?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">ได้ครับ — แต่จะมี<strong>ค่าบริการวิชาชีพ</strong>ตามอัตราที่กำหนด เริ่มต้น <strong>฿500</strong> (Basic 20 นาที), <strong>฿1,200</strong> (Comprehensive 30 นาที), <strong>฿1,500</strong> (Progressive 40 นาที) และ <strong>฿2,000</strong> (Multifocal CL 60 นาที)</span><span class="txt-en">Yes — a <strong>Professional Fee</strong> applies: <strong>฿500</strong> (Basic Refraction 20 min), <strong>฿1,200</strong> (Comprehensive Exam 30 min), <strong>฿1,500</strong> (Progressive Exam 40 min), <strong>฿2,000</strong> (Multifocal CL 60 min), since our team uses dedicated time and specialist equipment.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q3</span> &nbsp;<span class="txt-th">Walk-in ได้เลยไหม หรือต้องนัดก่อน?</span><span class="txt-en">Can I walk in, or do I need an appointment?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th"><strong>Walk-in ยินดีต้อนรับครับ</strong> — ไม่ว่าจะแวะมารับแว่น ดัดปรับ หรือสอบถาม ทีมงานพร้อมให้บริการเสมอ<br><br>อย่างไรก็ตาม <strong>ลูกค้าที่จองคิวล่วงหน้าจะได้รับสิทธิ์ First Priority</strong> เสมอ จองได้ที่ <strong>Line: @opxrv</strong> · โทร <strong>092 989 7447</strong></span><span class="txt-en"><strong>Walk-ins are welcome</strong> for collections, adjustments, or enquiries. However, <strong>booked patients always receive First Priority</strong> — if a walk-in arrives at the same time, the booked patient is seen first.<br><br>Book via <strong>Line: @opxrv</strong> · Tel <strong>092 989 7447</strong> · or Instagram DM</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q4</span> &nbsp;<span class="txt-th">ฉันอายุ 44 ปี อ่านหนังสือไม่ชัด ควรตรวจแบบไหน?</span><span class="txt-en">I'm 44 and struggling to read. Which exam should I choose?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">อาการที่ท่านอธิบายน่าจะเป็น <strong>สายตายาวตามวัย (Presbyopia)</strong> แนะนำให้เลือก <strong>Progressive Lens Exam (฿1,500)</strong> ซึ่งครอบคลุมการวัดทั้งค่าสายตาระยะไกล-ใกล้ และ Fitting Point ที่แม่นยำ — ทัศนมาตรจะประเมินอีกครั้งเมื่อท่านมาถึงร้าน</span><span class="txt-en">This sounds like <strong>Presbyopia</strong>, common from age 40+. We recommend the <strong>Progressive Lens Exam (฿1,500)</strong>, which covers both distance and near vision measurement, plus precise Fitting Point assessment — our optometrist will confirm the right level when you arrive.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q5</span> &nbsp;<span class="txt-th">เลนส์โปรเกรสซีฟกับคอนแทคเลนส์ Multifocal ต่างกันอย่างไร?</span><span class="txt-en">What is the difference between Progressive Lenses and Multifocal Contact Lenses?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">ทั้งสองแก้ปัญหาสายตายาวตามวัยเหมือนกัน แต่ต่างกันที่รูปแบบ:<br><br>• <strong>Progressive Lens</strong> = เลนส์แว่น มีโซนสายตาหลายระยะในอันเดียว ไม่มีเส้นแบ่ง<br>• <strong>Multifocal Contact Lens</strong> = คอนแทคเลนส์ เหมาะสำหรับผู้ที่ไม่ต้องการสวมแว่น</span><span class="txt-en">Both correct presbyopia but in different forms:<br><br>• <strong>Progressive Lens</strong> — spectacle lens with multiple vision zones (distance, intermediate, near) in one lens. No visible line. Ideal for all-day use.<br>• <strong>Multifocal Contact Lens</strong> — contact lens for those who prefer no glasses. Requires detailed fitting for the brain to adapt to each vision zone.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q6</span> &nbsp;<span class="txt-th">ถ้านำแว่นต่างร้านมาดัด ทางร้านรับผิดชอบหากแตกหักไหม?</span><span class="txt-en">If I bring in glasses from another store for adjustment, are you liable if they break?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">ทางร้าน<strong>ไม่รับผิดชอบค่าเสียหาย (No Compensation)</strong> เนื่องจากแว่นที่ผ่านการใช้งานมักเกิดภาวะ <strong>Material Fatigue</strong> ที่มองไม่เห็น ลูกค้าต้องยอมรับความเสี่ยงก่อนรับบริการ</span><span class="txt-en">Optical X accepts <strong>no liability (No Compensation)</strong> in this case. Used frames may have invisible <strong>Material Fatigue</strong> or internal corrosion — making adjustment high-risk. Customers must accept this risk before we proceed. We will always inform you and confirm pricing beforehand.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q7</span> &nbsp;<span class="txt-th">ราคาเลนส์จะทราบก่อนตรวจได้ไหม?</span><span class="txt-en">Can I know the lens price before my exam?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">ทางร้านขอสงวนสิทธิ์ในการ<strong>แนะนำชนิดเลนส์และประเมินราคาหลังจากทราบผลการตรวจวัดเท่านั้น</strong> เนื่องจากราคาเลนส์ขึ้นอยู่กับค่าสายตา ชนิดเลนส์ที่เหมาะสม และความต้องการของผู้ใช้แต่ละราย</span><span class="txt-en">We only provide <strong>lens recommendations and pricing after completing your examination</strong>. Lens cost depends on your prescription strength, lens type, and specific needs — an accurate quote requires your exam results first.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q8</span> &nbsp;<span class="txt-th">ให้บริการเป็นภาษาอังกฤษได้ไหม?</span><span class="txt-en">Do you offer services in English?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">ได้ครับ — Optical X ให้บริการเป็น<strong>ทั้งภาษาไทยและภาษาอังกฤษ (Bilingual EN/TH)</strong> ทัศนมาตรสามารถอธิบายผลการตรวจและให้คำแนะนำเป็นภาษาอังกฤษได้อย่างเต็มที่</span><span class="txt-en">Yes — Optical X provides <strong>full bilingual service (EN/TH)</strong>. Our optometrist can conduct your entire exam, explain all results, and give recommendations in English. Ideal for expats and international visitors.</span>
+          </div>
+        </details>
+
+        <details class="qa-item">
+          <summary class="qa-question">
+            <span><span class="q-icon">Q9</span> &nbsp;<span class="txt-th">ถ้าใช้เวลาตรวจนานเกินที่กำหนด จะมีค่าใช้จ่ายเพิ่มไหม?</span><span class="txt-en">What if my appointment runs over the scheduled time?</span></span>
+            <span class="q-arrow">▾</span>
+          </summary>
+          <div class="qa-answer">
+            <span class="txt-th">แต่ละ session มีระยะเวลาที่กำหนดตาม tier (20–60 นาที) หากจำเป็นต้องขยายเวลา <strong>ทีมงานจะแจ้งให้ท่านทราบก่อนเสมอ</strong> และตกลงร่วมกันก่อนดำเนินการต่อ — จะไม่มีการเรียกเก็บค่าใช้จ่ายเพิ่มโดยไม่แจ้งล่วงหน้า</span><span class="txt-en">Each session has a set duration per tier (20–60 min). If an extension is needed, <strong>our team will always inform you first</strong> and proceed only with your agreement. No additional charges will be made without prior notice.</span>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+  </main><!-- /main-content -->
+
+  <!-- SIDEBAR GLOSSARY -->
+  <aside class="sidebar">
+    <div class="glossary-sidebar">
+      <div class="glossary-header">
+        <span class="g-icon">📖</span>
+        <span class="g-title">Glossary</span>
+        <span class="g-sub">คลิกเพื่อดูคำอธิบาย</span>
+      </div>
+      <div class="glossary-search">
+        <input type="text" id="glossarySearch" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterGlossary(this.value)">
+      </div>
+      <div class="glossary-items" id="glossaryItems">
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="presbyopia" data-label="สายตายาวตามวัย / Presbyopia">
+          <div class="ge-term">Presbyopia</div>
+          <div class="ge-label">สายตายาวตามวัย</div>
+          <div class="ge-def">สภาวะตามธรรมชาติในผู้อายุ 40+ ปี ที่เลนส์ตาสูญเสียความยืดหยุ่น ทำให้มองระยะใกล้ไม่ชัด แก้ไขได้ด้วยแว่นอ่านหนังสือหรือเลนส์โปรเกรสซีฟ</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="progressive" data-label="เลนส์โปรเกรสซีฟ / Progressive Lens">
+          <div class="ge-term">Progressive Lens</div>
+          <div class="ge-label">เลนส์โปรเกรสซีฟ</div>
+          <div class="ge-def">เลนส์แว่นตาที่ผสมค่าสายตาไกล กลาง และใกล้ในอันเดียวกัน โดยไม่มีเส้นแบ่งที่มองเห็นได้ ต้องใช้เวลาปรับตัวเล็กน้อย แต่ให้ภาพที่เป็นธรรมชาติกว่าแว่นสองชั้น</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="refraction" data-label="การตรวจวัดค่าสายตา / Refraction">
+          <div class="ge-term">Refraction</div>
+          <div class="ge-label">การตรวจวัดค่าสายตา</div>
+          <div class="ge-def">กระบวนการวัดค่าสายตา (สั้น/ยาว/เอียง) โดยใช้เครื่อง Auto Refractor และกล่องเลนส์ทดสอบ เพื่อหาค่าที่แม่นยำสำหรับการทำแว่น</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="slitlamp" data-label="กล้องจุลทรรศน์ตา / Slit Lamp">
+          <div class="ge-term">Slit Lamp</div>
+          <div class="ge-label">กล้องจุลทรรศน์ตา</div>
+          <div class="ge-def">อุปกรณ์ตรวจตาด้วยแสงความเข้มสูง ช่วยให้ผู้ตรวจมองเห็นโครงสร้างของตาในระดับจุลภาค ใช้ตรวจกระจกตา เลนส์ตา วุ้นตา และจอประสาทตา</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="binocular" data-label="Binocular Vision">
+          <div class="ge-term">Binocular Vision</div>
+          <div class="ge-label">การมองเห็นแบบสองตา</div>
+          <div class="ge-def">ความสามารถของสมองในการรวมภาพจากตาสองข้างให้เป็นภาพเดียว ทำให้เกิดการมองเห็น 3 มิติและตัดสินระยะได้แม่นยำ</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="multifocal" data-label="Multifocal Contact Lens">
+          <div class="ge-term">Multifocal CL</div>
+          <div class="ge-label">คอนแทคเลนส์หลายระยะ</div>
+          <div class="ge-def">คอนแทคเลนส์สำหรับผู้มีสายตายาวตามวัย มีโซนสายตาหลายระยะในเลนส์เดียว ต้องผ่านกระบวนการ fitting เพื่อให้สมองปรับตัวได้เหมาะสม</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="cataract" data-label="ต้อกระจก / Cataract">
+          <div class="ge-term">Cataract</div>
+          <div class="ge-label">ต้อกระจก</div>
+          <div class="ge-def">ภาวะที่เลนส์ตาขุ่นมัวตามอายุ ทำให้การมองเห็นพร่า มีแสงจ้า และสีซีด สามารถผ่าตัดเปลี่ยนเลนส์เทียมได้</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="macular" data-label="จอประสาทตาเสื่อม / Macular Degeneration">
+          <div class="ge-term">Macular Degeneration</div>
+          <div class="ge-label">จอประสาทตาเสื่อม</div>
+          <div class="ge-def">การเสื่อมสภาพของจุดรับภาพกลางจอตา (Macula) ทำให้ภาพตรงกลางพร่า บิดเบี้ยว หรือมีจุดดำ พบบ่อยในผู้สูงอายุ</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="amblyopia" data-label="ภาวะตาขี้เกียจ / Amblyopia">
+          <div class="ge-term">Amblyopia</div>
+          <div class="ge-label">ภาวะตาขี้เกียจ</div>
+          <div class="ge-def">ภาวะที่ตาข้างหนึ่งมีการมองเห็นอ่อนแอกว่าอีกข้าง โดยไม่มีสาเหตุจากโรคตา สมองเลือกรับภาพจากตาข้างที่ดีกว่า สามารถรักษาได้ในเด็กหากพบเร็ว</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="fitting" data-label="Fitting Point">
+          <div class="ge-term">Fitting Point</div>
+          <div class="ge-label">จุดประกอบตลับเลนส์</div>
+          <div class="ge-def">จุดอ้างอิงบนเลนส์โปรเกรสซีฟที่ต้องตรงกับตำแหน่งรูม่านตาของผู้สวมใส่ การวัดที่ผิดพลาดแม้เพียงเล็กน้อยอาจทำให้มองเห็นไม่ชัดหรือเวียนศีรษะได้</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="colorblind" data-label="ตาบอดสี / Color Blindness">
+          <div class="ge-term">Color Blindness</div>
+          <div class="ge-label">ตาบอดสี</div>
+          <div class="ge-def">ภาวะบกพร่องในการแยกแยะสี โดยเฉพาะสีแดง-เขียว พบในประชากรชาย ~8% มีผลต่อการเรียน อาชีพบางประเภท และการขับรถ</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="waiver" data-label="Waiver of Liability">
+          <div class="ge-term">Waiver of Liability</div>
+          <div class="ge-label">การสละสิทธิ์เรียกร้อง</div>
+          <div class="ge-def">การที่ลูกค้ายอมรับและสละสิทธิ์เรียกร้องค่าเสียหายที่อาจเกิดขึ้นจากการให้บริการ โดยรับทราบความเสี่ยงก่อนดำเนินการ</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="manufacturing" data-label="Manufacturing Defects">
+          <div class="ge-term">Manufacturing Defects</div>
+          <div class="ge-label">ความบกพร่องจากการผลิต</div>
+          <div class="ge-def">ความบกพร่องที่เกิดจากขั้นตอนการผลิตหรือวัสดุที่ไม่ได้มาตรฐาน ซึ่งไม่ได้เกิดจากการใช้งานของผู้บริโภค ครอบคลุมโดยการรับประกัน</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="coating" data-label="Coating Delamination">
+          <div class="ge-term">Coating Delamination</div>
+          <div class="ge-label">สารเคลือบเลนส์ลอก/ร่อน</div>
+          <div class="ge-def">อาการที่สารเคลือบผิวเลนส์ (Anti-Reflection, UV, Blue-Cut) เกิดการลอกหรือร่อน มักเกิดจากการสัมผัสความร้อนสูงหรือสารเคมี ไม่อยู่ในการรับประกัน</div>
+        </div>
+
+        <div class="glossary-entry" onclick="toggleEntry(this)" data-term="fatigue" data-label="Material Fatigue">
+          <div class="ge-term">Material Fatigue</div>
+          <div class="ge-label">ความล้าของวัสดุ</div>
+          <div class="ge-def">การเสื่อมสภาพของโครงสร้างวัสดุเมื่อผ่านการใช้งานหรือแรงกดซ้ำๆ ทำให้วัสดุเปราะหักง่ายกว่าปกติ แม้ใช้แรงกดเพียงเล็กน้อย</div>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+</div><!-- /layout -->
+
+<div class="footer-note">
+  © Optical X Vision Care Center · Riverside Plaza, 2F, Bangkok · opticalxvision.com<br>
+  ทางร้านขอสงวนสิทธิ์ในการเปลี่ยนแปลงเงื่อนไขโดยไม่ต้องแจ้งล่วงหน้า
+</div>
+
+<!-- MOBILE TOOLTIP POPUP -->
+<div class="tooltip-popup-overlay" id="tooltipOverlay" onclick="closeTooltipPopup(event)">
+  <div class="tooltip-popup" id="tooltipPopup">
+    <div class="tp-handle"></div>
+    <div class="tp-term" id="tooltipTerm"></div>
+    <div class="tp-body" id="tooltipBody"></div>
+    <button class="tp-close" onclick="closeTooltipPopup()">ปิด ✕</button>
+  </div>
+</div>
+
+<!-- MOBILE GLOSSARY FAB -->
+<button class="glossary-fab" id="glossaryFab" onclick="openGlossaryDrawer()">
+  📖 &nbsp;Glossary
+</button>
+
+<!-- MOBILE GLOSSARY DRAWER -->
+<div class="glossary-drawer-overlay" id="glossaryDrawerOverlay" onclick="closeGlossaryDrawer(event)">
+  <div class="glossary-drawer">
+    <div class="gd-header">
+      <span style="font-size:1.1rem">📖</span>
+      <span class="gd-title">Glossary</span>
+      <button class="gd-close" onclick="closeGlossaryDrawer()">✕</button>
+    </div>
+    <div class="gd-search">
+      <input type="text" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterDrawer(this.value)">
+    </div>
+    <div class="gd-items" id="drawerItems">
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="presbyopia สายตายาวตามวัย">
+        <div class="gd-term">Presbyopia</div>
+        <div class="gd-label">สายตายาวตามวัย</div>
+        <div class="gd-def">สภาวะตามธรรมชาติในผู้อายุ 40+ ปี ที่เลนส์ตาสูญเสียความยืดหยุ่น ทำให้มองระยะใกล้ไม่ชัด แก้ไขได้ด้วยแว่นอ่านหนังสือหรือเลนส์โปรเกรสซีฟ</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="progressive lens เลนส์โปรเกรสซีฟ">
+        <div class="gd-term">Progressive Lens</div>
+        <div class="gd-label">เลนส์โปรเกรสซีฟ</div>
+        <div class="gd-def">เลนส์แว่นตาที่ผสมค่าสายตาไกล กลาง และใกล้ในอันเดียวกัน โดยไม่มีเส้นแบ่งที่มองเห็นได้ ต้องใช้เวลาปรับตัวเล็กน้อย แต่ให้ภาพที่เป็นธรรมชาติกว่าแว่นสองชั้น</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="refraction ตรวจวัดค่าสายตา">
+        <div class="gd-term">Refraction</div>
+        <div class="gd-label">การตรวจวัดค่าสายตา</div>
+        <div class="gd-def">กระบวนการวัดค่าสายตา (สั้น/ยาว/เอียง) โดยใช้เครื่อง Auto Refractor และกล่องเลนส์ทดสอบ เพื่อหาค่าที่แม่นยำสำหรับการทำแว่น</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="slit lamp กล้องจุลทรรศน์ตา">
+        <div class="gd-term">Slit Lamp</div>
+        <div class="gd-label">กล้องจุลทรรศน์ตา</div>
+        <div class="gd-def">อุปกรณ์ตรวจตาด้วยแสงความเข้มสูง ช่วยให้ผู้ตรวจมองเห็นโครงสร้างของตาในระดับจุลภาค ใช้ตรวจกระจกตา เลนส์ตา วุ้นตา และจอประสาทตา</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="binocular vision การมองเห็นสองตา">
+        <div class="gd-term">Binocular Vision</div>
+        <div class="gd-label">การมองเห็นแบบสองตา</div>
+        <div class="gd-def">ความสามารถของสมองในการรวมภาพจากตาสองข้างให้เป็นภาพเดียว ทำให้เกิดการมองเห็น 3 มิติและตัดสินระยะได้แม่นยำ</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="multifocal contact lens คอนแทคเลนส์หลายระยะ">
+        <div class="gd-term">Multifocal CL</div>
+        <div class="gd-label">คอนแทคเลนส์หลายระยะ</div>
+        <div class="gd-def">คอนแทคเลนส์สำหรับผู้มีสายตายาวตามวัย มีโซนสายตาหลายระยะในเลนส์เดียว ต้องผ่านกระบวนการ fitting เพื่อให้สมองปรับตัวได้เหมาะสม</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="cataract ต้อกระจก">
+        <div class="gd-term">Cataract</div>
+        <div class="gd-label">ต้อกระจก</div>
+        <div class="gd-def">ภาวะที่เลนส์ตาขุ่นมัวตามอายุ ทำให้การมองเห็นพร่า มีแสงจ้า และสีซีด สามารถผ่าตัดเปลี่ยนเลนส์เทียมได้</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="macular degeneration จอประสาทตาเสื่อม">
+        <div class="gd-term">Macular Degeneration</div>
+        <div class="gd-label">จอประสาทตาเสื่อม</div>
+        <div class="gd-def">การเสื่อมสภาพของจุดรับภาพกลางจอตา (Macula) ทำให้ภาพตรงกลางพร่า บิดเบี้ยว หรือมีจุดดำ พบบ่อยในผู้สูงอายุ</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="amblyopia ตาขี้เกียจ lazy eye">
+        <div class="gd-term">Amblyopia</div>
+        <div class="gd-label">ภาวะตาขี้เกียจ</div>
+        <div class="gd-def">ภาวะที่ตาข้างหนึ่งมีการมองเห็นอ่อนแอกว่าอีกข้าง โดยไม่มีสาเหตุจากโรคตา สมองเลือกรับภาพจากตาข้างที่ดีกว่า สามารถรักษาได้ในเด็กหากพบเร็ว</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="fitting point จุดประกอบตลับเลนส์">
+        <div class="gd-term">Fitting Point</div>
+        <div class="gd-label">จุดประกอบตลับเลนส์</div>
+        <div class="gd-def">จุดอ้างอิงบนเลนส์โปรเกรสซีฟที่ต้องตรงกับตำแหน่งรูม่านตาของผู้สวมใส่ การวัดที่ผิดพลาดแม้เพียงเล็กน้อยอาจทำให้มองเห็นไม่ชัดหรือเวียนศีรษะได้</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="color blindness ตาบอดสี">
+        <div class="gd-term">Color Blindness</div>
+        <div class="gd-label">ตาบอดสี</div>
+        <div class="gd-def">ภาวะบกพร่องในการแยกแยะสี โดยเฉพาะสีแดง-เขียว พบในประชากรชาย ~8% มีผลต่อการเรียน อาชีพบางประเภท และการขับรถ</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="waiver of liability การสละสิทธิ์เรียกร้อง">
+        <div class="gd-term">Waiver of Liability</div>
+        <div class="gd-label">การสละสิทธิ์เรียกร้อง</div>
+        <div class="gd-def">การที่ลูกค้ายอมรับและสละสิทธิ์เรียกร้องค่าเสียหายที่อาจเกิดขึ้นจากการให้บริการ โดยรับทราบความเสี่ยงก่อนดำเนินการ</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="manufacturing defects ความบกพร่องจากการผลิต">
+        <div class="gd-term">Manufacturing Defects</div>
+        <div class="gd-label">ความบกพร่องจากการผลิต</div>
+        <div class="gd-def">ความบกพร่องที่เกิดจากขั้นตอนการผลิตหรือวัสดุที่ไม่ได้มาตรฐาน ซึ่งไม่ได้เกิดจากการใช้งานของผู้บริโภค ครอบคลุมโดยการรับประกัน</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="coating delamination สารเคลือบเลนส์ลอก">
+        <div class="gd-term">Coating Delamination</div>
+        <div class="gd-label">สารเคลือบเลนส์ลอก/ร่อน</div>
+        <div class="gd-def">อาการที่สารเคลือบผิวเลนส์ (Anti-Reflection, UV, Blue-Cut) เกิดการลอกหรือร่อน มักเกิดจากความร้อนสูงหรือสารเคมี ไม่อยู่ในการรับประกัน</div>
+      </div>
+      <div class="gd-entry" onclick="toggleDrawerEntry(this)" data-search="material fatigue ความล้าของวัสดุ">
+        <div class="gd-term">Material Fatigue</div>
+        <div class="gd-label">ความล้าของวัสดุ</div>
+        <div class="gd-def">การเสื่อมสภาพของโครงสร้างวัสดุเมื่อผ่านการใช้งานซ้ำๆ ทำให้วัสดุเปราะหักง่ายกว่าปกติแม้แรงกดเพียงเล็กน้อย</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ─── Q&A ───
+  function toggleQA(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.qa-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.qa-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    if (!isOpen) {
+      answer.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // ─── SIDEBAR GLOSSARY (desktop) ───
+  function toggleEntry(el) {
+    const isActive = el.classList.contains('active');
+    document.querySelectorAll('.glossary-entry').forEach(e => e.classList.remove('active'));
+    if (!isActive) el.classList.add('active');
+  }
+
+  function filterGlossary(val) {
+    const q = val.toLowerCase().trim();
+    document.querySelectorAll('.glossary-entry').forEach(entry => {
+      const text = (entry.dataset.label + ' ' + entry.dataset.term + ' ' + entry.querySelector('.ge-def').textContent).toLowerCase();
+      entry.style.display = text.includes(q) ? '' : 'none';
+    });
+  }
+
+  // ─── MOBILE TOOLTIP (tap) ───
+  const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
+
+  document.querySelectorAll('.glossary-term').forEach(term => {
+    term.addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      e.stopPropagation();
+      const box = this.querySelector('.tooltip-box');
+      if (!box) return;
+      document.getElementById('tooltipTerm').textContent = this.childNodes[0].textContent.trim();
+      document.getElementById('tooltipBody').textContent = box.textContent.trim();
+      document.getElementById('tooltipOverlay').classList.add('visible');
+    });
+  });
+
+  function closeTooltipPopup(e) {
+    if (!e || e.target === document.getElementById('tooltipOverlay')) {
+      document.getElementById('tooltipOverlay').classList.remove('visible');
+    }
+  }
+
+  // ─── MOBILE GLOSSARY DRAWER ───
+  function openGlossaryDrawer() {
+    document.getElementById('glossaryDrawerOverlay').classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGlossaryDrawer(e) {
+    if (!e || e.target === document.getElementById('glossaryDrawerOverlay')) {
+      document.getElementById('glossaryDrawerOverlay').classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function toggleDrawerEntry(el) {
+    const isActive = el.classList.contains('active');
+    document.querySelectorAll('.gd-entry').forEach(e => e.classList.remove('active'));
+    if (!isActive) el.classList.add('active');
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function filterDrawer(val) {
+    const q = val.toLowerCase().trim();
+    document.querySelectorAll('.gd-entry').forEach(entry => {
+      const text = (entry.dataset.search + ' ' + entry.querySelector('.gd-def').textContent).toLowerCase();
+      entry.style.display = text.includes(q) ? '' : 'none';
+    });
+  }
+
+  // Hide FAB when scrolling down, show when scrolling up
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const fab = document.getElementById('glossaryFab');
+    if (!fab) return;
+    const y = window.scrollY;
+    fab.style.transform = y > lastY && y > 100 ? 'translateY(120px)' : 'translateY(0)';
+    lastY = y;
+  }, { passive: true });
+</script>
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+
+    <div>
+      <a href="index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">
+        ศูนย์เลนส์โปรเกรสซีฟเฉพาะทาง<br>
+        ตรวจวัดสายตาโดยทัศนมาตร<br>
+        Riverside Plaza · ชั้น 2 · กรุงเทพฯ
+      </p>
+      <div class="ox-f-social">
+        <a href="https://lin.ee/E4GHWdJ" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.facebook.com/opticalxvision" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/opticalxvision" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ที่ตั้ง</p>
+        <p class="ox-f-contact-val">
+          Riverside Plaza ชั้น 2<br>
+          257/6 ถ.เจริญนคร<br>
+          แขวงสำเหร่ เขตธนบุรี กทม. 10600
+        </p>
+      </div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ติดต่อ</p>
+        <p class="ox-f-contact-val">
+          <a href="tel:0929897447">092 989 7447</a><br>
+          <a href="https://lin.ee/E4GHWdJ">LINE: @opxrv</a><br>
+          <a href="mailto:opticalx.rv@gmail.com">opticalx.rv@gmail.com</a>
+        </p>
+      </div>
+      <div class="ox-f-hours">
+        <div class="ox-f-hours-row"><span>จ – อา</span><span>11:00 – 20:00</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ox-footer-bottom">
+    <p class="ox-f-copy">© 2025 Optical X Vision Care Center · All Rights Reserved</p>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>5.0 Google Rating</span>
+    </div>
+    <p class="ox-f-cert">Licensed Optometrist · Bangkok</p>
+  </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 ปีของเลนส์ป้องกันแสงสีน้ำเงิน: เริ่มต้นยังไง มาถึงไหน? | Optical X</title>
+<meta name="description" content="ประวัติศาสตร์ 10 ปีของเลนส์กรองแสงสีน้ำเงิน — จากการค้นพบทางวิทยาศาสตร์ ถึงการตลาดที่ทำให้คนสับสน ไทม์ไลน์เต็มของเทคโนโลยี UV420 Blue Filter และ AR Coating">
+<meta property="og:title" content="10 ปีของเลนส์ป้องกันแสงสีน้ำเงิน: เริ่มต้นยังไง มาถึงไหน?">
+<meta property="og:description" content="ประวัติศาสตร์ 10 ปีของเลนส์กรองแสงสีน้ำเงิน จากการค้นพบวิทยาศาสตร์ ถึงการตลาดที่ทำให้คนสับสน">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Serif+Thai:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b3e;
+    --deep-blue: #1a2f6b;
+    --sky: #3b7dd8;
+    --violet: #6a3fae;
+    --amber: #f5a623;
+    --gold: #e8c84a;
+    --coral: #e05c4b;
+    --mint: #2ecfa4;
+    --cream: #faf7f2;
+    --warm-white: #fffef9;
+    --mid-gray: #8a8fa8;
+    --dark-text: #1a1c2e;
+    --sidebar-w: 270px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--warm-white);
+    color: var(--dark-text);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 55%, #1e3a8a 100%);
+    padding: 80px 40px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59,125,216,.35), transparent);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    color: var(--gold);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .8rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    max-width: 760px;
+    margin: 0 auto 18px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    color: rgba(255,255,255,.7);
+    max-width: 600px;
+    margin: 0 auto 28px;
+    font-size: 1.05rem;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-size: .85rem;
+    color: rgba(255,255,255,.55);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta strong { color: rgba(255,255,255,.85); }
+
+  /* ── LAYOUT ── */
+  .page-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .main-content { flex: 1; min-width: 0; }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    position: sticky;
+    top: 24px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59,125,216,.3) transparent;
+  }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(59,125,216,.3); border-radius: 4px; }
+
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #e8eaf4;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 16px rgba(13,27,62,.05);
+  }
+  .sidebar-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--sky);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eef1fa;
+  }
+
+  /* TOC */
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 2px; }
+  .toc-list a {
+    text-decoration: none;
+    color: #4a5070;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    transition: all .2s;
+  }
+  .toc-list a:hover, .toc-list a.active {
+    background: #eef4ff;
+    color: var(--sky);
+  }
+  .toc-list a .num {
+    background: var(--sky);
+    color: #fff;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .65rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Glossary in sidebar */
+  .gloss-item { margin-bottom: 12px; }
+  .gloss-term {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: .85rem;
+    color: var(--violet);
+  }
+  .gloss-def {
+    font-size: .82rem;
+    color: #5a5f7a;
+    line-height: 1.55;
+    margin-top: 2px;
+  }
+
+  /* ── ARTICLE SECTIONS ── */
+  .article-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 28px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--sky);
+    margin-bottom: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 2px;
+    background: var(--sky);
+  }
+
+  h2 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--deep-blue);
+    margin: 28px 0 12px;
+  }
+
+  p { margin-bottom: 18px; }
+
+  /* Tooltip glossary terms */
+  .term {
+    color: var(--violet);
+    font-weight: 600;
+    cursor: help;
+    border-bottom: 1px dashed var(--violet);
+    position: relative;
+    display: inline;
+  }
+  .term .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy);
+    color: #e8ecff;
+    font-size: .82rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: 10px;
+    width: 240px;
+    z-index: 100;
+    pointer-events: none;
+    transition: opacity .2s;
+    box-shadow: 0 8px 24px rgba(0,0,0,.3);
+  }
+  .term .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--navy);
+  }
+  .term:hover .tooltip { visibility: visible; opacity: 1; }
+
+  /* Callout boxes */
+  .callout {
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 28px 0;
+    display: flex;
+    gap: 16px;
+  }
+  .callout-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .callout-body h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .callout-body p { margin: 0; font-size: .95rem; }
+
+  .callout-blue { background: #eef5ff; border-left: 4px solid var(--sky); }
+  .callout-blue .callout-body h4 { color: var(--deep-blue); }
+  .callout-amber { background: #fff8ea; border-left: 4px solid var(--amber); }
+  .callout-amber .callout-body h4 { color: #a06b00; }
+  .callout-red { background: #fff0ee; border-left: 4px solid var(--coral); }
+  .callout-red .callout-body h4 { color: #b83824; }
+  .callout-mint { background: #edfbf5; border-left: 4px solid var(--mint); }
+  .callout-mint .callout-body h4 { color: #197a5a; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sky), var(--violet));
+  }
+  .tl-item { position: relative; margin-bottom: 28px; }
+  .tl-dot {
+    position: absolute;
+    left: -26px; top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--sky);
+    border: 3px solid var(--warm-white);
+    box-shadow: 0 0 0 2px var(--sky);
+  }
+  .tl-year {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--sky);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 4px;
+  }
+  .tl-head { font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .tl-body { font-size: .92rem; color: #4a5070; line-height: 1.6; }
+
+  /* Comparison table */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 28px 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,.07);
+    font-size: .9rem;
+  }
+  .compare-table thead tr {
+    background: var(--navy);
+    color: #fff;
+  }
+  .compare-table thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .82rem;
+    letter-spacing: .05em;
+    font-weight: 600;
+  }
+  .compare-table tbody tr:nth-child(even) { background: #f6f8ff; }
+  .compare-table tbody tr:nth-child(odd) { background: #fff; }
+  .compare-table tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e8eaf4;
+    line-height: 1.5;
+  }
+  .compare-table tbody td:first-child { font-weight: 600; color: var(--deep-blue); }
+  .check { color: var(--mint); font-size: 1.1rem; }
+  .cross { color: var(--coral); font-size: 1.1rem; }
+  .partial { color: var(--amber); font-size: 1rem; }
+
+  /* Q&A */
+  .qa-item {
+    background: #fff;
+    border: 1px solid #e4e8f4;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,.04);
+  }
+  .qa-question {
+    padding: 18px 22px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--navy);
+    user-select: none;
+    transition: background .2s;
+  }
+  .qa-question:hover { background: #f6f9ff; }
+  .qa-q-icon {
+    background: var(--sky);
+    color: #fff;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .9rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .qa-arrow {
+    margin-left: auto;
+    transition: transform .3s;
+    color: var(--mid-gray);
+    font-size: .8rem;
+    padding-top: 4px;
+  }
+  .qa-answer {
+    padding: 0 22px 0 64px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, padding .3s;
+  }
+  .qa-answer.open { max-height: 600px; padding: 4px 22px 20px 64px; }
+  .qa-answer p { font-size: .93rem; color: #4a5070; margin-bottom: 10px; }
+  .qa-question.active { background: #f0f6ff; }
+  .qa-question.active .qa-arrow { transform: rotate(180deg); }
+
+  /* Research cite box */
+  .research-box {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f8f0ff 100%);
+    border: 1px solid #d0d8ff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 24px 0;
+    font-size: .88rem;
+    color: #3a3f6a;
+  }
+  .research-box .r-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--violet);
+    margin-bottom: 6px;
+  }
+  .research-box a { color: var(--violet); text-decoration: underline; }
+
+  /* Summary section */
+  .summary-section {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 60px 0 0;
+    color: #fff;
+  }
+  .summary-section h2 { color: #fff; margin-bottom: 24px; }
+  .sum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .sum-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px;
+    padding: 22px 18px;
+  }
+  .sum-card-title { font-weight: 700; font-size: .95rem; color: var(--gold); margin-bottom: 8px; }
+  .sum-card-body { font-size: .85rem; color: rgba(255,255,255,.72); line-height: 1.6; }
+
+  /* Author */
+  .author-bar {
+    background: #f6f8ff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 60px;
+  }
+  .author-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--violet));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .author-name { font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+  .author-role { font-size: .85rem; color: var(--mid-gray); }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    text-align: center;
+    padding: 28px;
+    color: rgba(255,255,255,.4);
+    font-size: .82rem;
+  }
+  footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; position: static; max-height: none; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 50px 20px 48px; }
+    .page-wrapper { padding: 28px 16px 60px; }
+    .summary-section { padding: 28px 20px; }
+  }
+
+/* ── OX NAV ── */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.ox-mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 890;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(12px);
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px;
+  padding: 80px 24px 40px;
+  overflow-y: auto;
+}
+.ox-mobile-nav.open { display: flex; }
+.ox-mobile-nav a {
+  font-size: 1.1rem; color: #2C2416; text-decoration: none;
+  padding: 10px 0; font-weight: 500;
+}
+.ox-mobile-nav a.sub { font-size: 0.9rem; color: #8B7355; padding: 6px 0; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: inline-block; margin-top: 16px;
+  background: #C8A96E; color: #fff !important;
+  padding: 14px 32px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── OX FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top > div:last-child { text-align: right; }
+.ox-footer-top > div:last-child .ox-f-hours-row { justify-content: flex-end; }
+.ox-footer-top > div:last-child .ox-f-contact-val a { justify-content: flex-end; }
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+/* ── MOBILE OVERFLOW FIX ── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; padding-top: 64px; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; }
+pre, code { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { min-width: 80px; white-space: nowrap; font-size: 0.85rem; padding: 8px 10px; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  section, .section, .page-wrap, .content, .article-body, article,
+  [class*="wrap"], [class*="container"], [class*="content"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero, .hero-inner, [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem !important; word-break: keep-all; }
+  h2 { font-size: 1.1rem !important; }
+  .ox-footer-top { padding: 32px 16px 24px !important; }
+}
+
+/* ── Universal QA Accordion Fix ── */
+.qa-q, .qa-question { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qa-a, .qa-answer { max-height: 0 !important; overflow: hidden !important; display: block !important; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px !important; }
+.qa-item.open > .qa-a,
+.qa-item.open > .qa-answer,
+.qa-item.open .qa-a,
+.qa-item.open .qa-answer { max-height: 3000px !important; padding: 4px 24px 20px 66px !important; }
+.qa-item.open .qa-toggle,
+.qa-item.open .qa-icon { transform: rotate(45deg); }
+.qa-item.open .chevron { transform: rotate(180deg); }
+@media (max-width: 600px) {
+  .qa-item.open > .qa-a,
+  .qa-item.open > .qa-answer,
+  .qa-item.open .qa-a,
+  .qa-item.open .qa-answer { padding: 4px 16px 16px 16px !important; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="ox-nav" id="oxNav">
+  <a href="../index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+    <li><a href="../services.html">บริการ</a></li>
+    <li><a href="../programs.html">โปรแกรม</a></li>
+    <li><a href="../articles.html">สาระสายตา</a></li>
+    <li><a href="../about.html">รู้จักเรา</a></li>
+    <li><a href="../services.html">Promotion</a></li>
+    <li><a href="../tourist.html">For Visitors</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="../services.html">บริการ</a>
+  <a href="../programs.html">โปรแกรม</a>
+  <a href="../articles.html">สาระสายตา</a>
+  <a href="../about.html">รู้จักเรา</a>
+  <a href="../services.html">Promotion</a>
+  <a href="../tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+
+<!-- HERO -->
+<header class="hero">
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge">ประวัติศาสตร์ · เลนส์กรองแสงสีน้ำเงิน</div>
+    <h1>10 ปีของเลนส์ป้องกันแสงสีน้ำเงิน<br><span>เริ่มต้นยังไง มาถึงไหน?</span></h1>
+    <p class="hero-sub">เรื่องนี้เริ่มขึ้นจากการค้นพบทางวิทยาศาสตร์ที่ดี แต่จบลงด้วยการตลาดที่ทำให้คนสับสน — ลองดูไทม์ไลน์กัน</p>
+    <div class="hero-meta">
+      <span>✍️ <strong>Suraphun Parsuraphun — Optician Lens Specialist &nbsp;|&nbsp; Ploychompoo Parsuraphun — Optometrist</strong></span>
+      <span>📅 <strong>มีนาคม 2026</strong></span>
+      <span>⏱ <strong>อ่าน ~8 นาที</strong></span>
+    </div>
+    <div style="margin-top:10px;font-size:.82rem;color:rgba(255,255,255,.5);">Optical X Vision Care Center · Riverside Plaza · Progressive Lens Specialist</div>
+  </div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">📋 สารบัญ</div>
+      <ul class="toc-list">
+        <li><a href="#timeline"><span class="num">1</span> ไทม์ไลน์ 10 ปี</a></li>
+        <li><a href="#compare"><span class="num">2</span> ตารางเปรียบเทียบ 4 กลุ่ม</a></li>
+        <li><a href="#key-summary"><span class="num">3</span> สรุปสำคัญ</a></li>
+        <li><a href="#qa"><span class="num">4</span> Q&A ถาม-ตอบ</a></li>
+        <li><a href="#references"><span class="num">5</span> อ้างอิง</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">📖 คำศัพท์สำคัญ</div>
+      <div class="gloss-item">
+        <div class="gloss-term">UV420</div>
+        <div class="gloss-def">เทคโนโลยี Mitsui ที่ฝัง chromophore ในเนื้อวัสดุเลนส์ ตัดแสง 400–420 nm ได้ ~94%</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">Blue Filter</div>
+        <div class="gloss-def">การดูดซับแสง HEV (430–465 nm) ด้วย coating หรือ in-material ทำให้เลนส์เหลือง</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">AR Coating</div>
+        <div class="gloss-def">Anti-Reflection coating บนผิวเลนส์ สะท้อน/ตัดแสงสีน้ำเงิน</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">HEV</div>
+        <div class="gloss-def">High-Energy Visible light — แสงที่มีพลังงานสูง (380–500 nm) จากจอและดวงอาทิตย์</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">RPE cells</div>
+        <div class="gloss-def">Retinal Pigment Epithelium — เซลล์จอตาที่มีความสำคัญต่อการมองเห็น</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">Chromophore</div>
+        <div class="gloss-def">สารที่ดูดซับแสงคลื่นแม่เหล็กไฟฟ้าบางช่วง</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">In-Material</div>
+        <div class="gloss-def">ฝังเทคโนโลยีไว้ภายในเนื้อวัสดุเลนส์ เมื่อสร้างเลนส์</div>
+      </div>
+      <div class="gloss-item">
+        <div class="gloss-term">mDFD</div>
+        <div class="gloss-def">Modified Direct Foveolar Damage — ความเสี่ยงจากแสง blue-violet</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">📌 ผู้เขียน</div>
+      <div style="font-size:.9rem;color:#4a5070;line-height:1.7;">
+        <strong style="color:var(--navy);">Suraphun Parsuraphun</strong><br>
+        Optician Lens Specialist, Optical X
+      </div>
+      <div style="font-size:.9rem;color:#4a5070;line-height:1.7;margin-top:10px;">
+        <strong style="color:var(--navy);">Ploychompoo Parsuraphun</strong><br>
+        Optometrist, Optical X
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <div class="article-section" id="timeline">
+      <div class="section-label">ไทม์ไลน์</div>
+      <h2>10 ปี: จากวิทยาศาสตร์สู่การตลาด</h2>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2011–2012</div>
+          <div class="tl-head">🔬 งานวิจัยเริ่มต้น</div>
+          <div class="tl-body">
+            Essilor ร่วมกับ Paris Vision Institute ค้นพบว่าแสง blue-violet ที่ช่วง 415–455 nm ทำให้เซลล์จอตา (RPE cells) ตายในห้องทดลอง งานวิจัยนี้กลายเป็นรากฐานของเลนส์บลูทั้งอุตสาหกรรม
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2013</div>
+          <div class="tl-head">🚀 Essilor เปิดตัว Crizal Prevencia</div>
+          <div class="tl-body">
+            Crizal Prevencia เป็นเลนส์ AR ที่สะท้อนแสง blue-violet 415–455 nm ออก ~20% ตัดสินใจใช้ coating สะท้อนแสง (ไม่ใช่ดูดซับ) ดังนั้นเลนส์ยังใสอยู่ แต่ reflective สีม่วง-น้ำเงิน
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2013–2014</div>
+          <div class="tl-head">🏭 Zeiss, Hoya และ Nikon ตามมา — ยุค AR Coating เหลือง</div>
+          <div class="tl-body">
+            <strong>Zeiss DuraVision BlueProtect</strong> — AR coating บนผิวเลนส์ ตัดแสง 380–450 nm เลนส์มีสีเหลืองอมน้ำตาลจาก residual tint<br><br>
+            <strong>Hoya BlueControl</strong> — AR coating บนผิวเลนส์ ตัดแสงได้ประมาณ 10% ของ HEV blue light เลนส์มีสีเหลืองอมน้ำตาลชัดเจน — ผู้ใช้ยุคแรกหลายคนรายงานว่าต้องปรับตัวหลายวัน เพราะโทนสีเปลี่ยนไปมาก<br><br>
+            <strong>Nikon SeeCoat Blue UV</strong> — AR coating บนผิวเลนส์เช่นกัน ตัดแสง 380–550 nm ได้ในระดับหนึ่ง เลนส์อมเหลือง เช่นเดียวกับ Prevencia และ BlueControl — เป็นกลุ่ม AR Coating สีเหลือง ไม่ใช่ UV420<br><br>
+            <span style="color:#8a8fa8;font-style:italic;">หมายเหตุ: เลนส์บลูยุคแรก (2013–2016) ทุกรายมีสีเหลืองเข้มกว่าปัจจุบันมาก เพราะยังไม่มีเทคนิค neutralize tint ทั้งหมดในยุคนั้นใช้ coating AR บนผิว ไม่ใช่การดูดซับในเนื้อวัสดุ</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2015–2018</div>
+          <div class="tl-head">📱 ยุคบูมของ "Blue Light Glasses"</div>
+          <div class="tl-body">
+            สมาร์ทโฟนระเบิดตลาด คนใช้หน้าจอมากขึ้นอย่างก้าวกระโดด แบรนด์แว่นทั้งหลายพากันออกเลนส์ "สำหรับจอ" ซึ่งหลายตัวเป็นแค่ coating ราคาถูกที่ตัดแสงได้น้อยมาก บางตัวตัดได้แค่ 3–12% เท่านั้น ผู้บริโภคเริ่มสับสน
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2018–2020</div>
+          <div class="tl-head">🇯🇵 UV420cut™ In-Material Technology — ยุคเลนส์ใสกันแดด</div>
+          <div class="tl-body">
+            Mitsui Chemicals (ญี่ปุ่น) พัฒนา UV420cut™ monomer technology ที่ฝัง chromophore ไว้ในเนื้อวัสดุเลนส์โดยตรง ตัดแสง HEV ช่วง 400–420 nm ได้ถึง 94% เลนส์ดูค่อนข้างใสเพราะตาแทบไม่รับรู้สีในช่วงนี้ แต่ยังคงมี base tint อ่อนๆ จากเนื้อวัสดุ (ไม่ใสสนิทเท่าเลนส์ธรรมดา)<br><br>
+            <strong>บริษัทที่ใช้เทคโนโลยี UV420cut™ ของ Mitsui:</strong><br>
+            • <strong>Tokai → Lutina</strong> — in-material UV420, ตัด HEV 94%, เนื้อวัสดุอมเหลืองอ่อนๆ<br>
+            • <strong>Essilor → Crizal Blue UV Capture</strong> — in-material UV420, เพิ่ม colouring agent neutralize สีเหลือง จึงดูใสกว่า Lutina เล็กน้อย แต่ยังมี residual tint<br>
+            • <strong>Nikon → Pure Blue UV</strong> — in-material UV420cut™ ในกลุ่มเดียวกัน เลนส์ดูค่อนข้างใส (ไม่ใช่ SeeCoat Blue UV)<br><br>
+            เป้าหมายหลักของเลนส์กลุ่มนี้คือป้องกันแดดกลางแจ้ง / ลดความเสี่ยง AMD ระยะยาว ไม่ใช่กันแสงจอคอม
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2021–ปัจจุบัน</div>
+          <div class="tl-head">⚡ Zeiss BlueGuard & In-Material Blue Filter</div>
+          <div class="tl-body">
+            Zeiss เปลี่ยนมาใช้ BlueGuard ที่ฝัง filter ใน lens material ตัดแสง 400–460 nm ได้ถึง 40% — นี่คือเลนส์ที่ใส่สำหรับทั้งในออฟฟิศและกลางแจ้ง แต่ยังคงมีสีเหลืองเล็กน้อยในเลนส์
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="article-section" id="compare">
+      <div class="section-label">เปรียบเทียบ</div>
+      <h2>4 กลุ่มเลนส์: เทคโนโลยี, nm ที่ตัด, สีเลนส์</h2>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>กลุ่ม</th>
+              <th>เทคโนโลยี</th>
+              <th>nm ที่ตัด</th>
+              <th>สีเลนส์</th>
+              <th>ตัวอย่างเลนส์</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🔴 AR Coating รุ่นเก่า (สีเหลือง)</td>
+              <td>Reflective/Absorb coating บนผิว</td>
+              <td>380–455 nm (ตัดได้ 10–20%)</td>
+              <td>เหลืองอมน้ำตาล ชัดเจน</td>
+              <td>Crizal Prevencia, Hoya BlueControl, Zeiss BlueProtect, Nikon SeeCoat Blue UV</td>
+            </tr>
+            <tr>
+              <td>🔵 UV420 In-Material</td>
+              <td>Mitsui UV420cut™ ในเนื้อวัสดุ</td>
+              <td>400–420 nm (ตัดได้ ~94%)</td>
+              <td>ใสอ่อนๆ มี base tint จากวัสดุ</td>
+              <td>Tokai Lutina, Crizal Blue UV Capture, Nikon Pure Blue UV</td>
+            </tr>
+            <tr>
+              <td>🟡 Blue Filter In-Material</td>
+              <td>Chromophore ดูดซับ 430–460 nm</td>
+              <td>430–465 nm (ตัดได้ 35–98%)</td>
+              <td>เหลือง — ยิ่งตัดได้มาก ยิ่งเหลืองเข้ม</td>
+              <td>GUNNAR Amber, BluTech Indoor</td>
+            </tr>
+            <tr>
+              <td>💜 UV420 + Blue Filter รวม</td>
+              <td>UV420 material + Blue Filter layer</td>
+              <td>400–465 nm (ครอบคลุมทั้งคู่)</td>
+              <td>เหลืองอ่อน — น้อยกว่า Blue Filter บริสุทธิ์</td>
+              <td>Zeiss BlueGuard, Hoya Recharge UV+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="article-section" id="key-summary">
+      <div class="section-label">สรุป</div>
+      <h2>สิ่งสำคัญที่ต้องจำ</h2>
+
+      <div class="callout callout-blue">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <h4>เทคโนโลยี 2 กลุ่มหลักมีเป้าหมายต่างกันสิ้นเชิง</h4>
+          <p><strong>Blue Filter Lens (เหลือง)</strong> เน้นตัดแสงหน้าจอ 445–460 nm</p>
+          <p><strong>UV420 In-Material</strong> เน้นตัดแสงดวงอาทิตย์ 400–420 nm</p>
+          <p><strong>Nikon SeeCoat Blue UV</strong> เป็นกลุ่ม AR Coating เหลือง ไม่ใช่ UV420 — ชื่อ "Blue UV" ทำให้หลายคนเข้าใจผิด</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-section" id="qa">
+      <div class="section-label">ถาม-ตอบ</div>
+      <h2>คำถาม-คำตอบ 5 ข้อ</h2>
+
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div style="flex:1;">AR Coating กับ In-Material ต่างกันยังไง?</div>
+          <div class="qa-arrow">▼</div>
+        </div>
+        <div class="qa-answer">
+          <p><strong>AR Coating (Reflective/Absorb)</strong> ถูกทาเป็นชั้นบนผิวเลนส์ บางตัวสะท้อนแสง (Crizal Prevencia) บางตัวดูดซับ ตัดแสงได้น้อยกว่า in-material (10–20% ระดับ)</p>
+          <p><strong>In-Material</strong> ฝังเทคโนโลยีไว้ในเนื้อวัสดุตั้งแต่เริ่มสร้างเลนส์ ทำให้ตัดแสงได้มากกว่า (90%+ ใน UV420) และเนื่องจากเป็นส่วนหนึ่งของวัสดุ จึงไม่หลุดลอกแม้ใช้นาน</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div style="flex:1;">Nikon SeeCoat Blue UV เป็น UV420 ไหม?</div>
+          <div class="qa-arrow">▼</div>
+        </div>
+        <div class="qa-answer">
+          <p><strong>ไม่ใช่</strong> — Nikon SeeCoat Blue UV เป็น AR Coating บนผิวเลนส์ (reflective/absorb) ไม่ใช่ in-material UV420 ชื่อ "Blue UV" ทำให้สับสน Nikon มีเลนส์อีกตัวชื่อ <strong>Pure Blue UV</strong> ที่เป็น in-material UV420cut™ ที่ดีกว่า</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div style="flex:1;">เลนส์ไหนเหมาะสำหรับกันแสงจอคอม?</div>
+          <div class="qa-arrow">▼</div>
+        </div>
+        <div class="qa-answer">
+          <p><strong>Blue Filter Lens (เหลือง)</strong> เหมาะสำหรับกันแสงจอ เพราะตัดแสง 430–465 nm ซึ่งเป็นช่วงที่จอปล่อยมากที่สุด ตัวอย่าง: GUNNAR Amber, BluTech Indoor, Hoya BlueControl</p>
+          <p><strong>UV420</strong> ดีกว่าสำหรับการรักษา/ป้องกันแดด เพราะตัดแสง 400–420 nm จากดวงอาทิตย์ ไม่ใช่จากจอ</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div style="flex:1;">UV420 เหมาะกับใครมากที่สุด?</div>
+          <div class="qa-arrow">▼</div>
+        </div>
+        <div class="qa-answer">
+          <p>UV420 เหมาะกับคนที่:</p>
+          <p>• ใช้เวลากลางแจ้งมาก (โดยเฉพาะในแดดแรม)</p>
+          <p>• ห่วงความเสี่ยง AMD (Age-related Macular Degeneration) ระยะยาว</p>
+          <p>• ต้องการเลนส์ที่ใสและไม่มีโทนสี</p>
+          <p>• ทำงานจอคอมแล้วเล่นกลางแจ้ง (ต้องการความสมดุล)</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div style="flex:1;">Zeiss BlueGuard ดียังไง?</div>
+          <div class="qa-arrow">▼</div>
+        </div>
+        <div class="qa-answer">
+          <p>Zeiss BlueGuard ดีในแง่ที่เป็นเลนส์ <strong>hybrid</strong> (UV420 + Blue Filter รวม) ได้ 2 อย่าง:</p>
+          <p>• ตัดแสง 400–460 nm (ครอบคลุมทั้งจอและแดด)</p>
+          <p>• สีเลนส์เหลืองอ่อนกว่า pure Blue Filter (เพราะมี UV420 ที่ใสกว่า)</p>
+          <p>ข้อเสีย: ราคาแพงกว่า และยังมีสีเหลืองเล็กน้อยอยู่ดี</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-section" id="references">
+      <div class="section-label">อ้างอิง</div>
+      <h2>รายการอ้างอิง</h2>
+
+      <div class="research-box">
+        <div class="r-label">แหล่งข้อมูล</div>
+        <p style="margin-bottom:8px;"><strong>1. Hoya BlueControl yellow tint</strong><br>Optician Online (2014) review วัดจริงพบ "yellow brownish tint is noticeable on first wearing" และ Optiboard forum O.D. discussion (2015) ยืนยัน BlueControl ตัดได้ 10% เทียบกับ Prevencia 20% ทั้งคู่มีเหลือง</p>
+
+        <p style="margin-bottom:8px;"><strong>2. Nikon SeeCoat Blue UV ≠ UV420</strong><br>Nikon Lenswear official page ระบุเป็น surface coating "filtered and reflected" ไม่ใช่ in-material absorber — Nikon Pure Blue UV ต่างหากที่ใช้ "Light Purification Technology" in-material ตาม UV420cut™</p>
+
+        <p style="margin-bottom:8px;"><strong>3. Nikon Pure Blue UV</strong><br>Nikon Lenswear (2022) ระบุ "Pure Blue UV technology is developed based on UV420, which can block high-energy blue light from 400–420 nm" และตัดได้ 35% ในช่วง 380–500 nm</p>
+
+        <p style="margin-bottom:8px;"><strong>4. Essilor Crizal Blue UV Capture (in-material)</strong><br>Malaya Optical clinical note (2023) ระบุ "Blue UV Capture is new molecular technology material used to build the lens, is inside the lens, while blue filter is only coating on surface" — ยืนยัน in-material UV420 group</p>
+
+        <p style="margin-bottom:0;"><strong>5. Mitsui UV420cut™ หลัก</strong><br>Mitsui Chemicals, Inc. UV420cut™ Technology Leaflet (2023). jp.mitsuichemicals.com/en/special/visioncare/uv420cut/</p>
+      </div>
+    </div>
+
+    <!-- AUTHOR BIO -->
+    <div class="author-bar">
+      <div class="author-avatar">✍️</div>
+      <div>
+        <div class="author-name">Suraphun Parsuraphun & Ploychompoo Parsuraphun</div>
+        <div class="author-role">Optician & Optometrist, Optical X Vision Care Center</div>
+        <div style="font-size:.82rem;color:#8a8fa8;margin-top:6px;">ข้อมูลจากประสบการณ์ 20+ ปีในอุตสาหกรรมแว่นตา และอ้างอิงเอกสารที่ตรวจยืนยันแล้ว</div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- OX FOOTER -->
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+    <div>
+      <a href="../index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">Progressive Lens Specialist · Vision Care Excellence<br>Riverside Plaza, Chiang Mai</p>
+      <div class="ox-f-social">
+        <a href="https://facebook.com/opticalx" target="_blank" rel="noopener">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://line.me/ti/p/E4GHWdJ" target="_blank" rel="noopener">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 10h2v5h-2v-5zm3 0h2v5h-2v-5zm3 0h2v5h-2v-5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ox-f-col-title">Links</div>
+      <ul class="ox-f-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../articles.html">Articles</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <div class="ox-f-col-title" style="margin-top:24px;">Contact</div>
+      <div class="ox-f-contact-item">
+        <div class="ox-f-contact-label">Phone</div>
+        <div class="ox-f-contact-val"><a href="tel:+66000000000">+66 (0) 53-000-000</a></div>
+      </div>
+      <div class="ox-f-contact-item">
+        <div class="ox-f-contact-label">Hours</div>
+        <div class="ox-f-hours">
+          <div class="ox-f-hours-row"><span>Mon–Fri</span> <span>10:00–18:00</span></div>
+          <div class="ox-f-hours-row"><span>Sat</span> <span>10:00–17:00</span></div>
+          <div class="ox-f-hours-row"><span>Sun</span> <span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ox-footer-bottom">
+    <div class="ox-f-copy">&copy; 2026 Optical X Vision Care Center. All rights reserved.</div>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>4.9/5 Google Reviews</span>
+    </div>
+    <div class="ox-f-cert">ISO Certified · Optical Specialist</div>
+  </div>
+</footer>
+
+<!-- Q&A INTERACTION SCRIPT -->
+<script>
+(function(){
+  var qaItems = document.querySelectorAll('.qa-item');
+  qaItems.forEach(function(item){
+    var question = item.querySelector('.qa-question');
+    var answer = item.querySelector('.qa-answer');
+    if(question && answer){
+      question.addEventListener('click', function(){
+        var isOpen = answer.classList.contains('open');
+        qaItems.forEach(function(qi){ qi.classList.remove('open'); qi.querySelector('.qa-answer').classList.remove('open'); qi.querySelector('.qa-question').classList.remove('active'); });
+        if(!isOpen){
+          item.classList.add('open');
+          answer.classList.add('open');
+          question.classList.add('active');
+        }
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

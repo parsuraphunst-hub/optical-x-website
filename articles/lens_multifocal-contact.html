@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สายตายาวใส่คอนแทคเลนส์ได้ด้วยนะ — คอนแทคสำหรับคนสายตายาว | Optical X</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:      #0a9396;
+  --td:        #005f73;
+  --tl:        #94d2bd;
+  --tp:        #e9f5f5;
+  --gold:      #e9c46a;
+  --text:      #1c2b2b;
+  --muted:     #5a6a6a;
+  --bg:        #f7fafa;
+  --white:     #ffffff;
+  --shad:      0 4px 24px rgba(0,95,115,0.09);
+  --r:         16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Sarabun',sans-serif;font-size:17px;line-height:1.85;color:var(--text);background:var(--bg);}
+
+/* HERO */
+.hero{background:linear-gradient(140deg,#003d4f 0%,var(--td) 45%,var(--teal) 100%);color:#fff;padding:56px 24px 68px;text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(148,210,189,0.15) 0%,transparent 60%);pointer-events:none;}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'Kanit',sans-serif;font-size:clamp(24px,5.5vw,46px);font-weight:700;line-height:1.25;margin-bottom:16px;}
+.hero h1 em{font-style:normal;color:var(--tl);}
+.hero-sub{font-size:16.5px;opacity:.85;max-width:500px;margin:0 auto 26px;}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;font-size:13px;opacity:.7;}
+.hero-meta span{display:flex;align-items:center;gap:5px;}
+
+/* LAYOUT */
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+.grid{display:grid;grid-template-columns:1fr 286px;gap:34px;align-items:start;margin-top:-34px;padding-bottom:80px;}
+.article{background:var(--white);border-radius:var(--r);padding:42px 38px;box-shadow:var(--shad);}
+.sec{margin-bottom:46px;}
+
+/* TYPE */
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:7px;}
+h2{font-family:'Kanit',sans-serif;font-size:clamp(20px,3.5vw,25px);font-weight:700;color:var(--td);line-height:1.3;margin-bottom:14px;}
+h3{font-family:'Kanit',sans-serif;font-size:18px;font-weight:600;color:var(--td);margin:26px 0 9px;}
+p{margin-bottom:15px;color:#253535;}
+p:last-child{margin-bottom:0;}
+strong{color:var(--td);}
+hr.div{border:none;border-top:2px solid var(--tp);margin:42px 0;}
+
+/* ── CASE STUDY CARD ── */
+.case{border-radius:16px;overflow:hidden;margin:24px 0;box-shadow:0 6px 28px rgba(0,0,0,.08);}
+.case-header{padding:18px 26px;display:flex;align-items:center;gap:14px;}
+.case-a .case-header{background:linear-gradient(135deg,#3d1a00,#7a3500);}
+.case-b .case-header{background:linear-gradient(135deg,#003d52,#005f73);}
+.case-badge{background:rgba(255,255,255,.18);color:white;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:50px;white-space:nowrap;}
+.case-title{color:white;font-family:'Kanit',sans-serif;font-size:17px;font-weight:700;line-height:1.3;}
+.case-body{background:white;padding:24px 26px;}
+.case-body p{font-size:15.5px;}
+
+/* timeline inside case */
+.timeline{margin:18px 0;display:flex;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:16px;position:relative;}
+.tl-item:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;bottom:-4px;width:2px;background:var(--tl);}
+.tl-dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;margin-top:2px;}
+.dot-warn{background:#fff0e0;border:2px solid #f4a261;color:#b05000;}
+.dot-bad {background:#fff0f0;border:2px solid #e07070;color:#c03030;}
+.dot-good{background:#e8faf5;border:2px solid var(--tl);color:var(--td);}
+.tl-content{padding-bottom:20px;}
+.tl-content h4{font-size:15px;font-weight:700;color:var(--td);margin-bottom:3px;}
+.tl-content p{font-size:14.5px;color:var(--muted);margin:0;}
+
+/* VA bar */
+.va-row{display:flex;align-items:center;gap:12px;margin:8px 0;}
+.va-label{font-size:13px;font-weight:700;color:var(--muted);width:90px;flex-shrink:0;}
+.va-bar-wrap{flex:1;background:#f0f4f4;border-radius:50px;height:18px;overflow:hidden;}
+.va-bar{height:100%;border-radius:50px;transition:width .6s;}
+.va-bad {background:linear-gradient(90deg,#e07070,#f4a261);}
+.va-ok  {background:linear-gradient(90deg,var(--gold),#f4a261);}
+.va-good{background:linear-gradient(90deg,var(--tl),var(--teal));}
+.va-val{font-size:13px;font-weight:700;width:34px;flex-shrink:0;}
+
+.case-result{background:linear-gradient(135deg,var(--tp),#d4eeea);border-radius:12px;padding:16px 20px;margin-top:16px;border-left:4px solid var(--teal);}
+.case-result strong{color:var(--td);display:block;margin-bottom:4px;font-size:15px;}
+.case-result p{font-size:14.5px;color:#1e3a3a;margin:0;}
+
+/* ── PUPIL DIAGRAM ── */
+.pupil-section{background:linear-gradient(135deg,#0a1a1a,#0e2a2a);border-radius:16px;padding:28px 26px;margin:28px 0;color:white;}
+.pupil-section h3{color:var(--tl);margin-top:0;}
+.pupil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
+.pupil-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 14px;text-align:center;}
+.pupil-card h5{font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px;opacity:.7;}
+/* SVG eye diagram */
+.eye-svg{display:block;margin:0 auto 12px;}
+.pupil-card p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55;margin:0;}
+.pupil-card .zone-label{font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;display:inline-block;margin-top:8px;}
+.zone-far  {background:rgba(148,210,189,.2);color:var(--tl);}
+.zone-near {background:rgba(233,196,106,.2);color:var(--gold);}
+.zone-both {background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);}
+.pupil-note{margin-top:16px;background:rgba(255,255,255,.06);border-radius:10px;padding:14px 18px;font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;}
+.pupil-note strong{color:var(--tl);}
+
+/* TRADEOFF */
+.tradeoff{border-radius:16px;overflow:hidden;margin:24px 0;box-shadow:0 4px 20px rgba(0,0,0,.07);}
+.tradeoff-head{background:var(--td);color:white;padding:14px 22px;font-family:'Kanit',sans-serif;font-size:16px;font-weight:700;}
+.tradeoff-body{display:grid;grid-template-columns:1fr 1fr;}
+.tc{padding:20px 18px;}
+.tc:first-child{background:#fff4f4;border-right:2px solid #ffe0e0;}
+.tc:last-child{background:#f0faf8;}
+.tc h5{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.tc:first-child h5{color:#c03030;}
+.tc:last-child h5{color:var(--teal);}
+.tc ul{list-style:none;}
+.tc ul li{font-size:14.5px;padding:5px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.04);line-height:1.5;}
+.tc ul li:last-child{border:none;}
+.tc:first-child ul li::before{content:'✗';color:#d04040;font-weight:700;flex-shrink:0;}
+.tc:last-child ul li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.tradeoff-verdict{background:var(--td);color:white;padding:12px 22px;font-size:14.5px;font-weight:600;text-align:center;}
+
+/* 90% */
+.ninety{background:white;border:2px solid var(--gold);border-radius:16px;padding:28px 24px 22px;margin:24px 0;position:relative;}
+.ninety-badge{position:absolute;top:-13px;left:22px;background:var(--gold);color:#5a3800;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:3px 12px;border-radius:50px;}
+.ninety p{font-size:15.5px;color:#3a3000;}
+.ninety-frame{font-family:'Kanit',sans-serif;font-size:19px;font-weight:700;color:var(--td);text-align:center;margin:14px 0 12px;background:var(--tp);border-radius:10px;padding:14px;}
+
+/* HIGHLIGHT */
+.hl{background:linear-gradient(135deg,var(--tp),#d8eeea);border:1.5px solid var(--tl);border-radius:14px;padding:18px 22px;margin:20px 0;}
+.warn-box{background:#fff8e6;border:1.5px solid var(--gold);border-radius:14px;padding:18px 22px;margin:20px 0;}
+
+/* FIT COMPARE */
+.fit-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;}
+.fit-col{border-radius:12px;padding:16px 14px;text-align:center;}
+.fit-normal{background:var(--tp);border:1.5px solid var(--tl);}
+.fit-multi{background:#fff8e6;border:1.5px solid var(--gold);}
+.fit-col .fi{font-size:26px;margin-bottom:7px;}
+.fit-col h5{font-family:'Kanit',sans-serif;font-size:13.5px;font-weight:700;margin-bottom:7px;color:var(--td);}
+.fit-multi h5{color:#b05800;}
+.fit-col p{font-size:13px;color:var(--muted);line-height:1.6;margin:0;}
+
+/* STEPS */
+.steps{margin:18px 0;}
+.step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;}
+.sn{width:34px;height:34px;background:var(--teal);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;margin-top:2px;}
+.sb h4{font-size:15.5px;font-weight:700;color:var(--td);margin-bottom:3px;}
+.sb p{margin:0;font-size:14px;color:var(--muted);}
+
+/* PRICE */
+.price-box{border:2px solid var(--teal);border-radius:16px;overflow:hidden;margin:26px 0;box-shadow:0 8px 28px rgba(10,147,150,.10);}
+.price-head{background:linear-gradient(135deg,var(--td),var(--teal));color:white;padding:15px 24px;font-family:'Kanit',sans-serif;font-size:17px;font-weight:700;}
+.price-body{padding:20px 24px;}
+.price-num{font-family:'Kanit',sans-serif;font-size:44px;font-weight:700;color:var(--teal);line-height:1;margin-bottom:4px;}
+.price-note{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.plist{list-style:none;}
+.plist li{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #f0f4f4;font-size:14.5px;}
+.plist li:last-child{border:none;}
+.plist .ck{color:var(--teal);font-size:16px;flex-shrink:0;margin-top:1px;}
+
+/* RESEARCH */
+.research{background:linear-gradient(135deg,#f2faf9,#e2f0ed);border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0;}
+.research .rl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:5px;}
+.research p{color:#1e3a3a;font-size:14px;}
+.research cite{font-style:italic;color:var(--muted);font-size:12.5px;display:block;margin-top:5px;}
+
+/* IMG PLACEHOLDER */
+.img-ph{background:linear-gradient(135deg,#e8f4f4,#d4ecec);border:2px dashed var(--teal);border-radius:12px;padding:24px 18px;text-align:center;margin:22px 0;color:var(--td);}
+.img-ph strong{display:block;font-size:14px;margin-bottom:4px;}
+.img-ph p{font-size:13px;color:var(--muted);margin:0;}
+.article-img{width:100%;border-radius:14px;display:block;margin:22px 0;box-shadow:0 4px 20px rgba(0,0,0,.10);}
+.article-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0;}
+.article-img-pair img{width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.09);}
+@media(max-width:540px){.article-img-pair{grid-template-columns:1fr;}}
+
+/* Q&A */
+.qa-item{border:1.5px solid #e4eeee;border-radius:12px;margin-bottom:11px;overflow:hidden;transition:border-color .2s;}
+.qa-item.open,.qa-item:hover{border-color:var(--tl);}
+.qa-q{display:flex;align-items:center;gap:11px;padding:14px 18px;cursor:pointer;font-weight:600;font-size:15px;color:var(--td);user-select:none;}
+.qi{width:26px;height:26px;background:var(--tp);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;color:var(--teal);flex-shrink:0;}
+.qt{flex:1;}
+.qa-tog{color:var(--teal);font-size:19px;transition:transform .22s;flex-shrink:0;}
+.qa-item.open .qa-tog{transform:rotate(45deg);}
+.qa-a{display:none;padding:0 18px 16px 55px;font-size:15px;color:#2c4040;line-height:1.8;}
+.qa-item.open .qa-a{display:block;}
+
+/* TOOLTIP */
+.tip{border-bottom:2px dotted var(--teal);cursor:help;color:var(--td);font-weight:600;position:relative;display:inline;}
+.tip .tipbox{display:none;position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:var(--td);color:white;padding:8px 12px;border-radius:9px;font-size:12.5px;font-weight:400;width:210px;line-height:1.5;z-index:100;box-shadow:0 4px 14px rgba(0,0,0,.22);}
+.tip .tipbox::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--td);}
+.tip:hover .tipbox{display:block;}
+
+/* AUTHOR */
+.author{display:flex;align-items:center;gap:15px;background:var(--tp);border-radius:14px;padding:18px 22px;margin-top:42px;}
+.author-av{width:50px;height:50px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.author-info h4{font-size:15px;font-weight:700;color:var(--td);margin-bottom:2px;}
+.author-info p{font-size:13px;color:var(--muted);margin:0;}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:24px;display:flex;flex-direction:column;gap:20px;}
+.sb-card{background:var(--white);border-radius:var(--r);padding:20px;box-shadow:var(--shad);}
+.sb-card h3{font-family:'Kanit',sans-serif;font-size:14.5px;font-weight:700;color:var(--td);margin:0 0 13px;padding-bottom:9px;border-bottom:2px solid var(--tp);display:flex;align-items:center;gap:7px;}
+.toc{list-style:none;}
+.toc li a{display:flex;align-items:center;gap:7px;padding:6px 0;font-size:13px;color:var(--muted);text-decoration:none;border-bottom:1px solid #f0f4f4;transition:color .18s;}
+.toc li:last-child a{border:none;}
+.toc li a:hover{color:var(--teal);}
+.toc-dot{width:6px;height:6px;background:var(--tl);border-radius:50%;flex-shrink:0;}
+.glist{list-style:none;}
+.glist li{padding:8px 0;border-bottom:1px solid var(--tp);font-size:13px;}
+.glist li:last-child{border:none;}
+.gterm{font-weight:700;color:var(--td);font-size:12.5px;margin-bottom:2px;}
+.gdef{color:var(--muted);font-size:12px;line-height:1.5;}
+.cta-card{background:linear-gradient(135deg,var(--td),var(--teal));color:white;text-align:center;}
+.cta-card h3{color:white;border-color:rgba(255,255,255,.2);}
+.cta-card p{font-size:13px;opacity:.88;margin-bottom:12px;}
+.btn-cta{display:block;background:white;color:var(--td);padding:10px 16px;border-radius:50px;font-weight:800;font-size:14px;text-decoration:none;transition:transform .14s;}
+.btn-cta:hover{transform:translateY(-2px);}
+.cta-note{font-size:11.5px;opacity:.6;margin:7px 0 0;}
+.ref-list p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:7px;}
+
+/* ── COMPARISON TABLE ── */
+.cmp-wrap{overflow-x:auto;margin:24px 0;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,.09);}
+.cmp-table{width:100%;border-collapse:collapse;font-size:14px;background:white;}
+.cmp-table thead tr{background:#f4f8f8;}
+.cmp-table th,.cmp-table td{padding:13px 14px;text-align:center;border-bottom:1px solid #eef2f2;vertical-align:middle;}
+.cmp-table td.cmp-label{text-align:left;font-weight:700;color:var(--td);font-size:13px;background:#f9fcfc;white-space:nowrap;border-right:2px solid #e8f0f0;}
+.cmp-table th:first-child{background:#f0f6f6;}
+
+/* column colours */
+.cmp-maxim{background:rgba(233,196,106,.06);}
+.cmp-bio  {background:rgba(10,147,150,.05);}
+.cmp-acuvue{background:rgba(0,95,115,.04);}
+thead .cmp-maxim{background:rgba(233,196,106,.15);}
+thead .cmp-bio  {background:rgba(10,147,150,.12);}
+thead .cmp-acuvue{background:rgba(0,95,115,.10);}
+
+/* brand pills */
+.cmp-brand-pill{display:inline-block;padding:3px 12px;border-radius:50px;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px;}
+.maxim-pill{background:var(--gold);color:#5a3800;}
+.bio-pill  {background:var(--teal);color:white;}
+.acuvue-pill{background:var(--td);color:white;}
+.cmp-brand-name{font-family:'Kanit',sans-serif;font-size:13px;font-weight:700;color:var(--td);line-height:1.35;margin-bottom:4px;}
+.cmp-type-tag{font-size:11px;color:var(--muted);background:#f0f4f4;border-radius:50px;padding:2px 10px;display:inline-block;}
+
+/* drops & o2 */
+.drop-fade,.o2-fade{opacity:.25;}
+.o2s{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:1px;}
+.o2-fade{color:var(--muted);}
+.uv-yes{background:#e8faf5;color:var(--teal);font-weight:800;font-size:12px;padding:3px 10px;border-radius:50px;}
+.cmp-no{color:#c03030;font-size:13px;font-weight:700;}
+
+/* pros/cons */
+.cmp-pros-row td,.cmp-cons-row td{vertical-align:top;}
+.cmp-list{list-style:none;text-align:left;padding:0;}
+.cmp-list li{font-size:13px;padding:3px 0;line-height:1.5;display:flex;gap:6px;align-items:flex-start;}
+.cmp-good li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.cmp-bad  li::before{content:'–';color:#c06030;font-weight:700;flex-shrink:0;}
+
+/* price row */
+.cmp-price-row td{background:inherit;}
+.cmp-price{font-family:'Kanit',sans-serif;font-size:22px;font-weight:700;color:var(--td);}
+.cmp-bio .cmp-price{color:var(--teal);}
+.cmp-price-note{font-size:11.5px;color:var(--muted);}
+
+/* WHO IS IT FOR */
+.cmp-reco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
+.cmp-reco{border-radius:12px;padding:14px 16px;}
+.maxim-reco{background:#fffbec;border:1.5px solid var(--gold);}
+.bio-reco  {background:#edfaf7;border:1.5px solid var(--tl);}
+.acuvue-reco{background:#edf3f8;border:1.5px solid #7aadcc;}
+.cmp-reco-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+.maxim-reco .cmp-reco-label{color:#b07000;}
+.bio-reco   .cmp-reco-label{color:var(--teal);}
+.acuvue-reco .cmp-reco-label{color:var(--td);}
+.cmp-reco p{font-size:13px;color:#2c4040;line-height:1.6;margin:0;}
+
+@media(max-width:680px){
+  .cmp-reco-grid{grid-template-columns:1fr;}
+  .cmp-table th,.cmp-table td{padding:10px 8px;font-size:12.5px;}
+  .cmp-table td.cmp-label{font-size:12px;}
+  .cmp-price{font-size:18px;}
+}
+/* ── QUICK CHECK ── */
+.qc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0;}
+.qc-card{background:#f7fbfb;border:1.5px solid #c8e8e8;border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;}
+.qc-num{font-family:'Kanit',sans-serif;font-size:11px;font-weight:800;color:var(--tl);letter-spacing:2px;}
+.qc-icon{font-size:28px;line-height:1;}
+.qc-title{font-family:'Kanit',sans-serif;font-size:15px;font-weight:700;color:var(--td);border-bottom:1px solid #daeaea;padding-bottom:8px;margin-bottom:4px;}
+.qc-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:7px;}
+.qc-list li{font-size:13.5px;color:#2c4040;line-height:1.5;display:flex;gap:7px;align-items:flex-start;}
+.qc-ok{color:var(--teal);font-weight:800;flex-shrink:0;}
+.qc-note{color:var(--gold);font-weight:800;flex-shrink:0;font-size:13px;}
+.qc-list li:has(.qc-note){color:var(--muted);font-size:12.5px;}
+.qc-cta{background:linear-gradient(135deg,var(--td),var(--teal));border-radius:14px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:6px;}
+.qc-cta-left{color:white;line-height:1.7;font-size:14px;}
+.qc-cta-left strong{font-size:15px;display:block;margin-bottom:2px;}
+.qc-btn{background:white;color:var(--td);font-family:'Kanit',sans-serif;font-weight:700;font-size:14px;padding:10px 22px;border-radius:50px;text-decoration:none;white-space:nowrap;transition:opacity .2s;flex-shrink:0;}
+.qc-btn:hover{opacity:.85;}
+@media(max-width:720px){.qc-grid{grid-template-columns:1fr;}.qc-cta{flex-direction:column;text-align:center;}}
+/* ── ELIGIBILITY ── */
+.elig-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.elig-card{border-radius:16px;padding:20px 22px;}
+.elig-yes{background:#edfaf4;border:2px solid #4caf7d;}
+.elig-no {background:#fff4f2;border:2px solid #e07060;}
+.elig-head{font-family:'Kanit',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.08);}
+.elig-yes .elig-head{color:#1a7a45;}
+.elig-no  .elig-head{color:#b03020;}
+.elig-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;}
+.elig-list li{display:flex;gap:10px;align-items:flex-start;}
+.elig-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.elig-list strong{display:block;font-size:13.5px;color:var(--td);margin-bottom:2px;}
+.elig-list p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:0;}
+.elig-note{background:linear-gradient(135deg,#fff9e6,#fff3cc);border:1.5px solid var(--gold);border-radius:12px;padding:14px 18px;font-size:14px;color:#5a3800;line-height:1.65;margin-top:6px;}
+@media(max-width:680px){.elig-grid{grid-template-columns:1fr;}}
+/* performance bars in compare table */
+.perf-bar-wrap{background:#f0f4f4;border-radius:50px;height:10px;overflow:hidden;margin-bottom:4px;}
+.perf-bar{height:100%;border-radius:50px;}
+.perf-full{background:linear-gradient(90deg,var(--tl),var(--teal));}
+.perf-good{background:linear-gradient(90deg,#a8d8b0,#4caf7d);}
+.perf-mid {background:linear-gradient(90deg,#f4d488,var(--gold));}
+.perf-best{background:linear-gradient(90deg,#7ec8e3,#0077a8);}
+.perf-score{font-size:12px;font-weight:700;color:var(--td);}
+.perf-best-score{color:#0077a8;}
+footer{background:var(--td);color:rgba(255,255,255,.6);text-align:center;padding:26px 20px;font-size:13px;}
+footer a{color:var(--tl);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .grid{grid-template-columns:1fr;margin-top:-22px;}
+  .sidebar{position:static;}
+  .article{padding:26px 20px;}
+  .hero{padding:40px 18px 56px;}
+  .hero-meta{flex-direction:column;align-items:center;gap:7px;}
+  h2{font-size:20px;}
+  .pupil-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:540px){
+  body{font-size:16px;}
+  .article{padding:20px 15px;}
+  .pupil-grid{grid-template-columns:1fr;}
+  .tradeoff-body{grid-template-columns:1fr;}
+  .tc:first-child{border-right:none;border-bottom:2px solid #ffe0e0;}
+  .fit-compare{grid-template-columns:1fr;}
+  .price-num{font-size:38px;}
+  .price-body{padding:16px;}
+  .author{flex-direction:column;text-align:center;}
+  .qa-a{padding-left:18px;}
+  .case-header{padding:14px 18px;}
+  .case-body{padding:18px;}
+}
+
+/* ── OX NAV ── */
+.ox-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 32px;
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #E8D9BF;
+  transition: box-shadow 0.3s, background 0.3s;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-nav.scrolled { box-shadow: 0 2px 20px rgba(200,169,110,0.12); }
+
+.ox-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: #2C2416; text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.ox-brand-x { color: #C8A96E; font-style: normal; }
+
+.ox-nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; margin: 0; padding: 0;
+}
+.ox-nav-links > li { position: relative; }
+.ox-nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: 0.84rem; font-weight: 500;
+  color: #5A4A32; text-decoration: none;
+  border-radius: 6px; transition: all 0.2s;
+}
+.ox-nav-links > li > a:hover { color: #B8934A; background: rgba(200,169,110,0.08); }
+
+.ox-btn-book {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #C8A96E; color: #fff !important;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  text-decoration: none; border: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.ox-btn-book:hover { background: #B8934A; transform: translateY(-1px); }
+.ox-btn-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.ox-ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.ox-ham span { width: 22px; height: 2px; background: #2C2416; border-radius: 2px; transition: all 0.3s; }
+.ox-ham.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ox-ham.open span:nth-child(2) { opacity: 0; }
+.ox-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.ox-mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 890;
+  background: rgba(253,250,245,0.98); backdrop-filter: blur(12px);
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 6px;
+  padding: 80px 24px 40px;
+  overflow-y: auto;
+}
+.ox-mobile-nav.open { display: flex; }
+.ox-mobile-nav a {
+  font-size: 1.1rem; color: #2C2416; text-decoration: none;
+  padding: 10px 0; font-weight: 500;
+}
+.ox-mobile-nav a.sub { font-size: 0.9rem; color: #8B7355; padding: 6px 0; }
+.ox-mobile-nav a.visitors { color: #4A7C75; font-weight: 600; }
+.ox-btn-book-m {
+  display: inline-block; margin-top: 16px;
+  background: #C8A96E; color: #fff !important;
+  padding: 14px 32px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ox-nav-links { display: none !important; }
+  .ox-ham { display: flex !important; }
+  .ox-btn-book { display: none !important; }
+}
+
+/* ── OX FOOTER ── */
+.ox-footer {
+  background: #1e2a1e;
+  background: linear-gradient(180deg, #2C2416 0%, #1a1a14 100%);
+  color: #e8e0d0; padding: 0;
+  font-family: 'Sarabun', sans-serif;
+}
+.ox-footer-top > div:last-child { text-align: right; }
+.ox-footer-top > div:last-child .ox-f-hours-row { justify-content: flex-end; }
+.ox-footer-top > div:last-child .ox-f-contact-val a { justify-content: flex-end; }
+.ox-footer-top {
+  max-width: 1160px; margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .ox-footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 560px) {
+  .ox-footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+}
+.ox-f-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-decoration: none; display: inline-block; margin-bottom: 12px;
+}
+.ox-f-brand em { color: #C8A96E; font-style: normal; }
+.ox-f-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+.ox-f-social { display: flex; gap: 10px; }
+.ox-f-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.ox-f-social a:hover { background: #C8A96E; color: #fff; }
+.ox-f-social svg { width: 16px; height: 16px; }
+.ox-f-col-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: #C8A96E; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.ox-f-links { list-style: none; padding: 0; margin: 0; }
+.ox-f-links li { margin-bottom: 8px; }
+.ox-f-links a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s;
+}
+.ox-f-links a:hover { color: #C8A96E; }
+.ox-f-contact-item { margin-bottom: 16px; }
+.ox-f-contact-label { font-size: 0.72rem; font-weight: 600; color: #C8A96E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.ox-f-contact-val { font-size: 0.84rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.ox-f-contact-val a { color: rgba(255,255,255,0.65); text-decoration: none; }
+.ox-f-contact-val a:hover { color: #C8A96E; }
+.ox-f-hours {
+  background: rgba(255,255,255,0.06); border-radius: 8px;
+  padding: 10px 14px; margin-top: 8px;
+}
+.ox-f-hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: rgba(255,255,255,0.7);
+}
+.ox-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 1160px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+@media (max-width: 560px) { .ox-footer-bottom { flex-direction: column; text-align: center; padding: 20px; } }
+.ox-f-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+.ox-f-rating { display: flex; align-items: center; gap: 8px; }
+.ox-f-rating-stars { color: #C8A96E; font-size: 0.85rem; letter-spacing: 2px; }
+.ox-f-rating span { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.ox-f-cert { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+
+/* ── MOBILE OVERFLOW FIX ── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; padding-top: 64px; }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+table { width: 100%; border-collapse: collapse; }
+pre, code { overflow-x: auto; max-width: 100%; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  th, td { min-width: 80px; white-space: nowrap; font-size: 0.85rem; padding: 8px 10px; }
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.25rem !important; }
+  section, .section, .page-wrap, .content, .article-body, article,
+  [class*="wrap"], [class*="container"], [class*="content"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero, .hero-inner, [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem !important; word-break: keep-all; }
+  h2 { font-size: 1.1rem !important; }
+  .ox-footer-top { padding: 32px 16px 24px !important; }
+}
+
+
+/* ── Universal QA Accordion Fix ── */
+.qa-q, .qa-question { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.qa-a, .qa-answer { max-height: 0 !important; overflow: hidden !important; display: block !important; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px !important; }
+.qa-item.open > .qa-a,
+.qa-item.open > .qa-answer,
+.qa-item.open .qa-a,
+.qa-item.open .qa-answer { max-height: 3000px !important; padding: 4px 24px 20px 66px !important; }
+.qa-item.open .qa-toggle,
+.qa-item.open .qa-icon { transform: rotate(45deg); }
+.qa-item.open .chevron { transform: rotate(180deg); }
+@media (max-width: 600px) {
+  .qa-item.open > .qa-a,
+  .qa-item.open > .qa-answer,
+  .qa-item.open .qa-a,
+  .qa-item.open .qa-answer { padding: 4px 16px 16px 16px !important; }
+}
+}
+
+</style>
+</head>
+<body>
+
+
+<nav class="ox-nav" id="oxNav">
+
+  <a href="../index.html" class="ox-brand">
+    OPTICAL&nbsp;<em class="ox-brand-x">X</em>
+  </a>
+
+  <ul class="ox-nav-links">
+
+    <li>
+      <a href="../services.html">บริการ</a>
+    </li>
+
+    <li>
+      <a href="../programs.html">โปรแกรม</a>
+    </li>
+
+    <li>
+      <a href="../articles.html">สาระสายตา</a>
+    </li>
+
+    <li>
+      <a href="../about.html">รู้จักเรา</a>
+    </li>
+
+    <li>
+      <a href="../services.html">Promotion</a>
+    </li>
+
+    <li>
+      <a href="../tourist.html">For Visitors</a>
+    </li>
+
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0;">
+    <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 1v4M11 1v4M2 7h12"/>
+      </svg>
+      จองตรวจวัดสายตา
+    </a>
+    <button class="ox-ham" id="oxHam" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="ox-mobile-nav" id="oxMobileNav">
+  <a href="../services.html">บริการ</a>
+  <a href="../programs.html">โปรแกรม</a>
+  <a href="../articles.html">สาระสายตา</a>
+  <a href="../about.html">รู้จักเรา</a>
+  <a href="../services.html">Promotion</a>
+  <a href="../tourist.html">For Visitors</a>
+  <a href="https://lin.ee/E4GHWdJ" class="ox-btn-book-m">จองตรวจวัดสายตา →</a>
+</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('oxNav');
+  var ham=document.getElementById('oxHam');
+  var mob=document.getElementById('oxMobileNav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+  if(ham&&mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  if(mob){
+    mob.querySelectorAll('a:not(.sub):not(.visitors):not(.ox-btn-book-m)').forEach(function(a){
+      a.addEventListener('click',function(){
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pill">✦ คำตอบที่คนส่วนใหญ่ยังไม่รู้</div>
+  <h1>สายตายาว<em>ใส่คอนแทคเลนส์ได้ด้วยนะ</em></h1>
+  <p class="hero-sub">มีคอนแทคเลนส์สำหรับคนสายตายาวโดยเฉพาะ — มองได้ทั้งไกลและใกล้ในเลนส์เดียว ไม่ต้องพกแว่นอ่านอีกต่อไป</p>
+  <div class="hero-meta">
+    <span>🕐 อ่าน 5–6 นาที</span>
+    <span>✍️ Ploychompoo Parsuraphun, Optometrist</span>
+    <span>🔬 อ้างอิงงานวิจัยนานาชาติ</span>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="grid">
+
+<!-- ═══════════ ARTICLE ═══════════ -->
+<main class="article">
+
+  <!-- ── QUICK CHECK ── -->
+  <section class="sec" id="quickcheck">
+    <figure style="margin:0 0 2rem;text-align:center">
+      <img src="../images/art-presbyopia-reading-difficulty.jpg" alt="สายตายาว — อาการมองใกล้ไม่ชัด อ่านหนังสือลำบาก" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+    </figure>
+
+    <div class="eyebrow">เช็คก่อนอ่านต่อ</div>
+    <h2>คอนแทคมัลติโฟคอลเหมาะกับคุณไหม?</h2>
+    <p>ก่อนไปถึงเรื่องเทคโนโลยีและ case study — ลองเช็ค 3 ข้อนี้ก่อนครับ</p>
+
+    <div class="qc-grid">
+
+      <div class="qc-card">
+        <div class="qc-num">01</div>
+        <div class="qc-icon">👁️</div>
+        <div class="qc-title">ค่าสายตาอยู่ในเกณฑ์</div>
+        <ul class="qc-list">
+          <li><span class="qc-ok">✓</span> สายตาสั้นไม่เกิน <strong>–9.00 D</strong></li>
+          <li><span class="qc-ok">✓</span> สายตาเอียงไม่เกิน <strong>–0.75 D</strong></li>
+          <li><span class="qc-ok">✓</span> มีสายตายาวตามอายุ <strong>(อายุ 40+)</strong></li>
+        </ul>
+      </div>
+
+      <div class="qc-card">
+        <div class="qc-num">02</div>
+        <div class="qc-icon">🧠</div>
+        <div class="qc-title">เคยใส่คอนแทคมาก่อน</div>
+        <ul class="qc-list">
+          <li><span class="qc-ok">✓</span> มีประสบการณ์ใส่คอนแทคเลนส์ชนิดอื่นมาแล้ว</li>
+          <li><span class="qc-ok">✓</span> สมองคุ้นเคยกับการมองผ่านคอนแทคแล้ว</li>
+          <li><span class="qc-note">※</span> มือใหม่ใส่คอนแทคได้เช่นกัน — แต่ต้องใช้เวลา adapt นานกว่า</li>
+        </ul>
+      </div>
+
+      <div class="qc-card">
+        <div class="qc-num">03</div>
+        <div class="qc-icon">⚖️</div>
+        <div class="qc-title">ยอมรับ Trade-off ได้</div>
+        <ul class="qc-list">
+          <li><span class="qc-ok">✓</span> ความคมชัดประมาณ <strong>85–90%</strong> ของแว่น</li>
+          <li><span class="qc-ok">✓</span> แลกกับการไม่ต้องพกแว่นอ่านเลย</li>
+          <li><span class="qc-note">※</span> ถ้าต้องการ 100% — แว่น Progressive เหมาะกว่า</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="qc-cta">
+      <div class="qc-cta-left">
+        <strong>ไม่แน่ใจว่าตัวเองเข้าเกณฑ์ไหม?</strong><br>
+        <span>โทรปรึกษาก่อนได้เลยครับ ฟรี ไม่มีค่าใช้จ่าย</span>
+      </div>
+      <a href="tel:0925540734" class="qc-btn">📞 092-554-0734</a>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── CASE A ── -->
+
+  <section class="sec" id="case-a">
+    <div class="eyebrow">เรื่องจริง — กรณีที่ 1</div>
+    <h2>คนสายตาสั้น –9.00 ที่ค่อยๆ ลดสายตาตัวเองจนมองไกลแทบไม่เห็น</h2>
+
+    <div class="case case-a">
+      <div class="case-header">
+        <span class="case-badge">Case A</span>
+        <span class="case-title">ผู้ชาย อายุ 50 ปี • สายตาสั้นมาก • ทำงานหน้าจอคอมพิวเตอร์ทั้งวัน</span>
+      </div>
+      <div class="case-body">
+        <p>พี่เขาใส่คอนแทคเลนส์มาตลอดชีวิต ค่าสายตาจริงคือ <strong>–9.00 D</strong> ทั้งสองข้าง
+        พอเลย 40 เริ่มอ่านจอคอมพิวเตอร์ไม่ชัด — อย่างที่รู้กันว่าสายตายาวตามอายุเริ่มมาแล้วครับ</p>
+
+        <p>แต่เพราะ<strong>ไม่ถนัดใส่แว่นเลย</strong> ไม่อยากพกแว่นอ่านทับ วิธีแก้ปัญหาของพี่เขาคือ…
+        <em>ลดค่าคอนแทคตัวเองลงมาเรื่อยๆ</em> เพื่อให้จอคอมชัดขึ้น</p>
+
+        <!-- TODO: เพิ่มรูป — ทำคอมพิวเตอร์สะดวก เหมือนก่อนมีสายตายาว -->
+
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot dot-good">30</div>
+            <div class="tl-content">
+              <h4>อายุ 30 — ก่อนสายตายาวตามอายุ</h4>
+              <p>ใส่คอนแทค <strong>–9.00 D</strong> ค่าสายตาจริง มองได้ทุกระยะ ไม่มีปัญหาอะไร</p>
+              <div class="va-row"><span class="va-label">VA ไกล</span><div class="va-bar-wrap"><div class="va-bar va-good" style="width:100%"></div></div><span class="va-val" style="color:var(--teal);">1.0</span></div>
+              <div class="va-row" style="margin-top:4px;"><span class="va-label">VA ใกล้</span><div class="va-bar-wrap"><div class="va-bar va-good" style="width:100%"></div></div><span class="va-val" style="color:var(--teal);">1.0</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot dot-warn">40</div>
+            <div class="tl-content">
+              <h4>อายุ 40 — เริ่มลดค่าสายตาครั้งแรก</h4>
+              <p>สายตายาวเริ่มมา อ่านจอไม่ชัด จึงลดจาก –9.00 เหลือ <strong>–8.50</strong> เพื่ออ่านได้ มองไกลลดลงนิดหน่อย พอทนได้</p>
+              <div class="va-row"><span class="va-label">VA ไกล</span><div class="va-bar-wrap"><div class="va-bar va-ok" style="width:70%"></div></div><span class="va-val" style="color:#c06000;">0.7</span></div>
+              <div class="va-row" style="margin-top:4px;"><span class="va-label">VA ใกล้</span><div class="va-bar-wrap"><div class="va-bar va-ok" style="width:90%"></div></div><span class="va-val" style="color:#7aaa00;">0.9</span></div>
+              <p style="margin-top:6px;font-size:13.5px;color:#a05000;">↗ มองใกล้กลับมาดีขึ้น แต่แลกด้วยการมองไกลที่แย่ลง</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot dot-bad">50</div>
+            <div class="tl-content">
+              <h4>อายุ 50 — ลดอีกครั้ง เพราะสายตายาวเพิ่มขึ้นอีก</h4>
+              <p>Add Power ที่ต้องการสูงขึ้น ต้องลดต่ออีก จาก –8.50 เหลือ <strong>–8.00</strong> เพื่ออ่านจอได้ แต่คราวนี้มองไกลแย่มาก</p>
+              <div class="va-row"><span class="va-label">VA ไกล</span><div class="va-bar-wrap"><div class="va-bar va-bad" style="width:40%"></div></div><span class="va-val" style="color:#c03030;">0.4</span></div>
+              <div class="va-row" style="margin-top:4px;"><span class="va-label">VA ใกล้</span><div class="va-bar-wrap"><div class="va-bar va-ok" style="width:90%"></div></div><span class="va-val" style="color:#7aaa00;">0.9</span></div>
+              <p style="margin-top:6px;font-size:13.5px;color:#c03030;">⚠️ ขับรถกลางคืนอันตราย ป้ายถนนพร่ามัว แต่ไม่มีทางออก ก็เลยทำต่อ</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot dot-good">✓</div>
+            <div class="tl-content">
+              <h4>หลัง Fitting มัลติโฟคอลที่ Optical X</h4>
+              <p>กลับมาใส่ค่าสายตาจริง <strong>–9.00 D</strong> พร้อม Add Power ที่เหมาะสม — ได้ทั้งสองระยะพร้อมกัน</p>
+              <div class="va-row"><span class="va-label">VA ไกล</span><div class="va-bar-wrap"><div class="va-bar va-good" style="width:90%"></div></div><span class="va-val" style="color:var(--teal);">0.9</span></div>
+              <div class="va-row" style="margin-top:4px;"><span class="va-label">VA ใกล้</span><div class="va-bar-wrap"><div class="va-bar va-good" style="width:90%"></div></div><span class="va-val" style="color:var(--teal);">0.9</span></div>
+              <p style="margin-top:6px;font-size:13.5px;color:var(--teal);">✓ ไม่ต้องเลือกอีกต่อไป ได้ทั้งไกลและใกล้ในเลนส์เดียว</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="case-result">
+          <strong>💬 สิ่งที่เขาพูดหลังลองใส่ครั้งแรก</strong>
+          <p>ตอนแรกไม่เข้าใจว่า "มัลติโฟคอล" คืออะไร จนผมบอกว่า <em>"คอนแทคเลนส์โปรเกรสซีฟ"</em>
+          — แม้ทางวิชาการจะไม่ถูกต้องเปะ แต่ทำให้เขาเข้าใจทันทีครับ
+          ผลที่ได้คือมองไกลชัดขึ้นจาก VA 0.4 เป็น 0.9 และอ่านจอคอมได้โดยไม่ต้องแลกอีกต่อไป</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── CASE B ── -->
+  <section class="sec" id="case-b">
+    <div class="eyebrow">เรื่องจริง — กรณีที่ 2</div>
+    <h2>คนสายตาดีที่ต้องพกแว่นอ่านติดตัวตลอดเวลา</h2>
+
+    <div class="case case-b">
+      <div class="case-header">
+        <span class="case-badge">Case B</span>
+        <span class="case-title">ผู้หญิง อายุ 47 ปี • สายตาสั้นปกติ • ทำงานในวงการ Creative</span>
+      </div>
+      <div class="case-body">
+        <p>น้องเขาใส่คอนแทคเลนส์มาตั้งแต่มัธยม ค่าสายตา <strong>–3.50 D</strong>
+        มองไกลชัดดีมาก <span class="tip">VA<span class="tipbox">Visual Acuity — ความคมชัดในการมองเห็น วัดเป็นเลขทศนิยม 1.0 = มองได้ชัดตามมาตรฐาน</span></span> 0.9–1.0
+        แต่พออายุเลย 45 ทุกครั้งที่ต้องอ่านโทรศัพท์ ดูเอกสาร หรืออ่านราคาในเมนู…</p>
+
+        <p><strong>ต้องหยิบแว่นอ่านหนังสือออกมาสวมทุกครั้ง</strong></p>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot dot-warn">😓</div>
+            <div class="tl-content">
+              <h4>พกแว่นอ่านอยู่ในกระเป๋าตลอดเวลา</h4>
+              <p>ประชุม ต้องหยิบแว่น อ่านเมนู ต้องหยิบแว่น โทรศัพท์ดัง ต้องหยิบแว่นก่อนรับ</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dot-bad">😤</div>
+            <div class="tl-content">
+              <h4>ลืมแว่นไว้ที่บ้านวันหนึ่ง</h4>
+              <p>อ่านเอกสารในห้องประชุมไม่ออกทั้งวัน — นั่นคือวันที่เธอตัดสินใจว่าต้องหาทางออกที่ดีกว่านี้</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dot-good">✓</div>
+            <div class="tl-content">
+              <h4>หลัง Fitting มัลติโฟคอลที่ Optical X</h4>
+              <p>ใส่คอนแทคอันเดียว ไม่มีแว่นอ่าน ไม่มีแว่นสำรอง อ่านโทรศัพท์ได้ คุยกับลูกค้าได้ มองไกลชัดเหมือนเดิม</p>
+              <div class="va-row"><span class="va-label">VA ไกล</span><div class="va-bar-wrap"><div class="va-bar va-good" style="width:90%"></div></div><span class="va-val" style="color:var(--teal);">0.9</span></div>
+              <div class="va-row" style="margin-top:4px;"><span class="va-label">มองใกล้</span><div class="va-bar-wrap"><div class="va-bar va-good" style="width:88%"></div></div><span class="va-val" style="color:var(--teal);">ใส่ได้เลย</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-result">
+          <strong>💬 สิ่งที่เธอพูดหลัง 1 สัปดาห์</strong>
+          <p>"ไม่ได้แค่สะดวกขึ้น — มันทำให้ฉันรู้สึกเป็นตัวเองอีกครั้ง
+          ไม่ต้องคอยกังวลว่าแว่นอยู่ที่ไหน ไม่ต้องแก่แบบนั้นอีกต่อไป"</p>
+        </div>
+
+        <div class="article-img-pair">
+          <!-- TODO: เพิ่มรูปคู่ — กลับไปอายุ 18 / อ่านไลน์สบาย -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── TECH: PUPIL ZONE ── -->
+  <section class="sec" id="tech">
+    <div class="eyebrow">คอนแทคเลนส์สายตายาว — ทำงานยังไง?</div>
+    <h2>มีคอนแทคเลนส์สำหรับคนสายตายาวด้วยนะ — นี่คือหลักการที่ทำให้มันทำงานได้</h2>
+
+    <figure style="margin:2rem 0;text-align:center">
+      <img src="../images/art-multifocal-lens-design.jpg" alt="Concentric zone design diagram of multifocal contact lens" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+      <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">การออกแบบ Concentric Zone ของคอนแทคเลนส์มัลติโฟคอล</figcaption>
+    </figure>
+
+    <p>
+      คอนแทคเลนส์สำหรับคนสายตายาว หรือที่เรียกว่า <strong>มัลติโฟคอล</strong> ใช้หลักการที่ชาญฉลาดมากครับ —
+      เลนส์มี <strong>หลาย Zone ซ้อนกันเป็นวงกลม</strong> แบบเดียวกับหัวเป้า
+      โซนกลางสำหรับมองใกล้ โซนนอกสำหรับมองไกล
+      และสิ่งที่เลือกว่าคุณจะ "ใช้โซนไหน" ในแต่ละช่วงเวลาคือ…
+      <strong>ขนาดรูม่านตา</strong>
+    </p>
+
+    <div class="pupil-section">
+      <h3>👁️ รูม่านตากับ Zone ของเลนส์</h3>
+      <p style="color:rgba(255,255,255,.75);font-size:15px;margin-bottom:4px;">ขนาดรูม่านตาเปลี่ยนตามแสง — และนั่นคือกลไกที่ทำให้มัลติโฟคอลทำงานได้</p>
+
+      <div class="pupil-grid">
+
+        <!-- BRIGHT LIGHT -->
+        <div class="pupil-card">
+          <h5>☀️ แสงสว่างมาก</h5>
+          <svg class="eye-svg" width="90" height="90" viewBox="0 0 90 90">
+            <!-- iris -->
+            <circle cx="45" cy="45" r="40" fill="#5a8a6a" opacity=".9"/>
+            <!-- pupil small -->
+            <circle cx="45" cy="45" r="12" fill="#0a0a0a"/>
+            <!-- zone far ring (visible because pupil small) -->
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#94d2bd" stroke-width="3" stroke-dasharray="6 3" opacity=".6"/>
+            <!-- near zone label -->
+            <circle cx="45" cy="45" r="12" fill="none" stroke="#e9c46a" stroke-width="2" opacity=".8"/>
+            <text x="45" y="49" text-anchor="middle" fill="#e9c46a" font-size="8" font-weight="bold">ใกล้</text>
+          </svg>
+          <p>รูม่านตาหดเล็ก<br>ตาอยู่ใน <strong style="color:#e9c46a;">Zone มองใกล้</strong><br>อ่านหนังสือชัด ✓</p>
+          <span class="zone-label zone-near">Near Zone Active</span>
+        </div>
+
+        <!-- NORMAL LIGHT -->
+        <div class="pupil-card">
+          <h5>🌤️ แสงปกติ</h5>
+          <svg class="eye-svg" width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="40" fill="#5a8a6a" opacity=".9"/>
+            <!-- pupil medium -->
+            <circle cx="45" cy="45" r="22" fill="#0a0a0a"/>
+            <!-- both zones visible -->
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#94d2bd" stroke-width="3" stroke-dasharray="6 3" opacity=".6"/>
+            <circle cx="45" cy="45" r="14" fill="none" stroke="#e9c46a" stroke-width="2" opacity=".7"/>
+            <text x="45" y="49" text-anchor="middle" fill="white" font-size="7.5" font-weight="bold">ทั้งคู่</text>
+          </svg>
+          <p>รูม่านตาขนาดกลาง<br>สมองเลือก Zone<br>ตามสิ่งที่มอง ✓</p>
+          <span class="zone-label zone-both">Brain Selects Zone</span>
+        </div>
+
+        <!-- DIM LIGHT -->
+        <div class="pupil-card">
+          <h5>🌙 แสงน้อย / กลางคืน</h5>
+          <svg class="eye-svg" width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="40" fill="#3a5a4a" opacity=".9"/>
+            <!-- pupil large -->
+            <circle cx="45" cy="45" r="34" fill="#0a0a0a"/>
+            <!-- far zone ring mostly covered -->
+            <circle cx="45" cy="45" r="38" fill="none" stroke="#94d2bd" stroke-width="3" stroke-dasharray="6 3" opacity=".5"/>
+            <text x="45" y="49" text-anchor="middle" fill="#94d2bd" font-size="7.5" font-weight="bold">ไกล</text>
+          </svg>
+          <p>รูม่านตาขยายใหญ่<br>ตาอยู่ใน <strong style="color:#94d2bd;">Zone มองไกล</strong><br>อ่านใกล้ลำบากขึ้น</p>
+          <span class="zone-label zone-far">Far Zone Active</span>
+        </div>
+
+      </div>
+
+      <div class="pupil-note">
+        <strong>สมองทำงานเองโดยอัตโนมัติ</strong> — คุณไม่ต้องคิดว่า "ตอนนี้กำลังใช้ Zone ไหน"
+        เหมือนกับที่คุณไม่ต้องคิดว่ากล้ามเนื้อตาใช้แรงเท่าไหรเวลาโฟกัส
+        ระบบ Binocular Vision ของตาสองข้างจะทำงานร่วมกันและเลือก Zone ที่เหมาะสมที่สุดในแต่ละขณะครับ
+      </div>
+    </div>
+
+    <figure style="margin:2rem 0;text-align:center">
+      <img src="../images/art-multifocal-contact-photo.jpg" alt="Contact lens physical photo showing multifocal design" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+      <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">คอนแทคเลนส์มัลติโฟคอล Acuvue Multifocal</figcaption>
+    </figure>
+
+    <h3>จุดอ่อนที่ต้องรู้ก่อน</h3>
+
+    <div class="warn-box">
+      <p><strong>⚠️ แสงน้อย/กลางคืน — มองใกล้ลำบากขึ้น</strong><br>
+      เพราะรูม่านตาขยาย ตาจะอยู่ใน Zone มองไกลเป็นหลัก การอ่านโทรศัพท์ในห้องมืดอาจชัดน้อยกว่าปกติ
+      แต่ในชีวิตประจำวัน คนส่วนใหญ่ไม่ค่อยอ่านอะไรในที่มืดสนิทอยู่แล้วครับ</p>
+    </div>
+    <div class="warn-box">
+      <p><strong>⚠️ แสงจ้ามาก — มองไกลอาจลดลงเล็กน้อย</strong><br>
+      ถ้าแสงสว่างมากเกินไป รูม่านตาหดเล็กมาก ตาจะอยู่ใน Zone มองใกล้นานกว่าปกติ
+      บางคนอาจรู้สึกได้ในสภาวะกลางแจ้งแดดจัด แต่สมองจะปรับตัวเองได้ครับ</p>
+    </div>
+    <div class="warn-box">
+      <p><strong>⚠️ สายตาเอียงซ่อนอยู่ — ลด Effectiveness ลง</strong><br>
+      ถ้ามี <span class="tip">สายตาเอียง (Astigmatism)<span class="tipbox">ภาวะที่กระจกตาโค้งไม่สม่ำเสมอ ทำให้ภาพเบลอทุกระยะ ไม่ใช่แค่ระยะใดระยะหนึ่ง</span></span>
+      ซ่อนอยู่เกิน –0.75 D จะลด Effectiveness ของมัลติโฟคอลลงอย่างมีนัยสำคัญ
+      นี่คือหนึ่งในสิ่งที่ต้องตรวจให้ชัดก่อน Fitting ครับ</p>
+    </div>
+
+    <div class="research">
+      <div class="rl">🔬 งานวิจัยรองรับ</div>
+      <p>การศึกษาจาก Yonsei University (2024) พบว่าคอนแทคมัลติโฟคอลไม่กระทบ Contrast Sensitivity แม้ในสภาพแสงน้อย (Mesopic conditions) <strong>ในกลุ่มผู้ที่ผ่านเกณฑ์การ Fitting ที่ถูกต้อง</strong></p>
+      <cite>Kim et al., Scientific Reports / Nature (2024) — Yonsei University College of Medicine</cite>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── 90% TRADEOFF ── -->
+  <section class="sec" id="tradeoff">
+    <div class="eyebrow">พูดตรงๆ ก่อนตัดสินใจ</div>
+    <h2>ผมบอกทุกคนเรื่องนี้ก่อน Fitting เสมอ</h2>
+
+    <div class="ninety">
+      <div class="ninety-badge">⚠️ ต้องรู้ก่อนตัดสินใจ</div>
+      <p>คอนแทคเลนส์มัลติโฟคอลให้ความคมชัด<strong> ประมาณ 85–90% เมื่อเทียบกับแว่นที่ใส่ค่าเต็ม</strong>
+      และอาจลดลงอีกในกรณีที่มีสายตาเอียงซ่อนอยู่</p>
+      <div class="ninety-frame">"85–90% ของความคมชัด<br>แลกกับ 100% ของอิสรภาพ"</div>
+      <p>ถ้าต้องการ 100% สมบูรณ์แบบ — แว่น Progressive คือทางออกครับ
+      แต่ถ้าอยากใส่คอนแทคอันเดียวแล้วใช้ชีวิตได้คล่อง นั่นคือสิ่งที่ตัวนี้ทำได้</p>
+    </div>
+
+    <!-- TODO: เพิ่มรูป — เงื่อนไขการทดลองคอนแทคเลนส์มัลติโฟคอล -->
+
+    <div class="tradeoff">
+      <div class="tradeoff-head">⚖️ เปรียบเทียบตรงๆ กับสิ่งที่คุณทำอยู่</div>
+      <div class="tradeoff-body">
+        <div class="tc">
+          <h5>สิ่งที่เสียอยู่ตอนนี้</h5>
+          <ul>
+            <li>ลดค่าสายตา → VA ไกลแค่ 0.4–0.7</li>
+            <li>พกแว่นอ่านทับ → ลืมแว่นก็อ่านไม่ออก</li>
+            <li>ขับรถกลางคืนอันตราย</li>
+            <li>ตาล้าเร็วจากการ compensate ตลอดวัน</li>
+          </ul>
+        </div>
+        <div class="tc">
+          <h5>มัลติโฟคอลให้</h5>
+          <ul>
+            <li>VA ไกล 0.9 ด้วยค่าสายตาถูกต้อง</li>
+            <li>มองใกล้ได้ในเลนส์เดียว ไม่ต้องพกแว่น</li>
+            <li>ขับรถปลอดภัยขึ้น Binocular Vision ยังทำงาน</li>
+            <li>85–90% ของความคมชัดแว่น — แลกกับอิสรภาพ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tradeoff-verdict">สำหรับกรณีของพี่เขา: จาก VA 0.4 → 0.9 คือการได้กลับมาใช้ชีวิตปกติ</div>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── FITTING ── -->
+  <section class="sec" id="fitting">
+    <div class="eyebrow">กระบวนการ Fitting</div>
+    <h2>ทำไมต้องมีค่า Fitting 1,500 บาท?</h2>
+
+    <div class="fit-compare">
+      <div class="fit-col fit-normal">
+        <div class="fi">🕶️</div>
+        <h5>ตรวจสายตาทำแว่นปกติ</h5>
+        <p>เสียบเลนส์ทดสอบในกรอบแว่น เปลี่ยนค่าได้ภายในวินาที ไม่ต้องแตะตาเลย</p>
+      </div>
+      <div class="fit-col fit-multi">
+        <div class="fi">👁️</div>
+        <h5>Fitting คอนแทคมัลติโฟคอล</h5>
+        <p>ต้องใส่คอนแทคเข้าตาจริง รอเลนส์นิ่งบนกระจกตา แล้วค่อยวัดผล</p>
+      </div>
+    </div>
+
+    <p>มัลติโฟคอลทำงานผ่านสมองและรูม่านตาของคุณ — ถ้าแค่เสียบในกรอบแว่นทดลอง
+    ระยะห่างจากเลนส์ถึงกระจกตาต่างกัน รูม่านตาไม่เหมือนกัน
+    <strong>ผลที่ได้จะไม่ตรงกับความเป็นจริงเลยครับ</strong></p>
+
+    <p>และนั่นคือเหตุผลที่ผมลงทุนซื้อ <strong>Trial Set มัลติโฟคอลมากกว่า 60 คู่</strong>
+    ไว้ให้ลูกค้าลองก่อนซื้อทุกราย เพราะสายตาแต่ละคนไม่เหมือนกัน</p>
+
+    <div class="steps">
+      <div class="step"><div class="sn">1</div><div class="sb"><h4>Full Refraction — วัดสายตาเต็มรูปแบบ</h4><p>วัดค่าสั้น เอียง และ Add Power ที่แม่นยำ ในห้องตรวจ 6 เมตรมาตรฐาน ไม่ใช่เครื่องอัตโนมัติ</p></div></div>
+      <div class="step"><div class="sn">2</div><div class="sb"><h4>ทดสอบ Dominant Eye</h4><p>ใช้เทคนิคเฉพาะทาง (Hole-in-card, Miles test) เพื่อกำหนด Add Power ที่ตาแต่ละข้างควรได้รับ</p></div></div>
+      <div class="step"><div class="sn">3</div><div class="sb"><h4>ใส่ Trial Lens เข้าตาจริง — รอ 5–10 นาที</h4><p>รอให้เลนส์นิ่งบนกระจกตาก่อนถึงจะอ่านผลได้ นี่คือขั้นตอนที่ต่างจากการตรวจแว่นสิ้นเชิง</p></div></div>
+      <div class="step"><div class="sn">4</div><div class="sb"><h4>ทดสอบในสภาพจริง — โทรศัพท์ ป้าย ระยะต่างๆ</h4><p>ดูว่าสมองของคุณ Lock-in กับ Zone ได้ดีแค่ไหน ในแสงต่างๆ ไม่ใช่แค่ในห้องสว่างเดียว</p></div></div>
+      <div class="step"><div class="sn">5</div><div class="sb"><h4>Fine-tune จนสมองยอมรับ</h4><p>บางรายต้องปรับ Add Power หรือ Dominant Eye แล้วใส่ใหม่ 2–3 รอบ ต้องใช้ประสบการณ์จริงครับ</p></div></div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 ทำไมร้านส่วนใหญ่ในไทยไม่ทำ?</strong><br>
+      ต้องมีครบ 3 อย่าง: <strong>① Trial Set 60+ คู่</strong> (ลงทุนสูง)
+      + <strong>② ห้องตรวจ 6 เมตรมาตรฐาน</strong>
+      + <strong>③ นักทัศนมาตรที่มีประสบการณ์ Fitting มัลติโฟคอลมากกว่า 7 ปี</strong>
+    </div>
+
+    <div class="price-box">
+      <div class="price-head">💎 ค่าบริการ Multifocal Fitting — Optical X</div>
+      <div class="price-body">
+        <div class="price-num">฿1,500</div>
+        <div class="price-note">ทดลองค่าสายตาจริงก่อนซื้อ • ไม่ซื้อก็ได้ถ้าไม่พอใจ</div>
+        <ul class="plist">
+          <li><span class="ck">✔</span> Full Refraction ในห้องตรวจ 6 เมตรมาตรฐาน</li>
+          <li><span class="ck">✔</span> ทดสอบ Dominant Eye ด้วยเทคนิคเฉพาะทาง</li>
+          <li><span class="ck">✔</span> ใส่ Trial Lens เข้าตาจริง ไม่ใช่กรอบแว่นทดลอง</li>
+          <li><span class="ck">✔</span> Fine-tune จนสมองยอมรับ ก่อนตัดสินใจซื้อ</li>
+          <li><span class="ck">✔</span> คุ้มกว่าซื้อผิดค่า ทิ้งทั้งกล่อง (15 คู่ ~1,600 บาท)</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure style="margin:2rem 0;text-align:center">
+      <img src="../images/art-contact-lens-01.jpg" alt="Contact lens fitting service illustration" style="width:100%;max-width:680px;border-radius:12px" loading="lazy">
+      <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">บริการ Fitting คอนแทคเลนส์มัลติโฟคอล ค่า 1,500 บาท</figcaption>
+    </figure>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="sec" id="compare">
+    <div class="eyebrow">เปรียบเทียบสินค้า — ข้อมูลจากสถิติร้าน</div>
+    <h2>คอนแทคมัลติโฟคอล 3 ตัวเลือก — ต่างกันยังไง?</h2>
+    <p>ข้อมูลด้านล่างรวบรวมจากสถิติลูกค้าจริงของร้าน ไม่ใช่ข้อมูลจากบริษัท
+    แต่ละคนมีความต้องการต่างกัน ผมจึงสต็อก Trial Set ทั้ง 3 ตัวไว้ให้ทดลองก่อนตัดสินใจเสมอครับ</p>
+
+    <!-- desktop table -->
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th class="cmp-label"></th>
+            <th class="cmp-maxim">
+              <div class="cmp-brand-pill maxim-pill">Maxim</div>
+              <div class="cmp-brand-name">Maxim Soft 1 Day<br>Multifocal</div>
+              <div class="cmp-type-tag">รายวัน</div>
+            </th>
+            <th class="cmp-bio">
+              <div class="cmp-brand-pill bio-pill">Biotrue</div>
+              <div class="cmp-brand-name">Biotrue ONEday<br>for Presbyopia</div>
+              <div class="cmp-type-tag">รายวัน</div>
+            </th>
+            <th class="cmp-acuvue">
+              <div class="cmp-brand-pill acuvue-pill">Acuvue</div>
+              <div class="cmp-brand-name">1-Day Acuvue Moist<br>Multifocal</div>
+              <div class="cmp-type-tag">รายวัน</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cmp-label">ค่าความชื้น</td>
+            <td class="cmp-maxim"><span class="drops">💧💧💧<span class="drop-fade">💧💧</span></span></td>
+            <td class="cmp-bio"><span class="drops">💧💧💧💧<span class="drop-fade">💧</span></span></td>
+            <td class="cmp-acuvue"><span class="drops">💧💧💧<span class="drop-fade">💧💧</span></span></td>
+          </tr>
+          <tr>
+            <td class="cmp-label">ออกซิเจน</td>
+            <td class="cmp-maxim"><span class="o2s">O₂O₂O₂O₂O₂</span></td>
+            <td class="cmp-bio"><span class="o2s">O₂O₂O₂<span class="o2-fade">O₂O₂</span></span></td>
+            <td class="cmp-acuvue"><span class="o2s">O₂O₂O₂<span class="o2-fade">O₂O₂</span></span></td>
+          </tr>
+          <tr>
+            <td class="cmp-label">การตั้งทรง</td>
+            <td class="cmp-maxim">⭐⭐⭐⭐⭐</td>
+            <td class="cmp-bio">⭐⭐⭐⭐⭐</td>
+            <td class="cmp-acuvue">⭐⭐<span style="opacity:.3">⭐⭐⭐</span></td>
+          </tr>
+          <tr>
+            <td class="cmp-label">UV Blocking</td>
+            <td class="cmp-maxim"><span class="uv-yes">YES</span></td>
+            <td class="cmp-bio"><span class="uv-yes">YES</span></td>
+            <td class="cmp-acuvue"><span class="uv-yes">YES</span></td>
+          </tr>
+          <tr>
+            <td class="cmp-label">ประสิทธิภาพ<br>มองไกล *</td>
+            <td class="cmp-maxim">
+              <div class="perf-bar-wrap"><div class="perf-bar perf-full" style="width:100%"></div></div>
+              <div class="perf-score">10 / 10</div>
+            </td>
+            <td class="cmp-bio">
+              <div class="perf-bar-wrap"><div class="perf-bar perf-full" style="width:100%"></div></div>
+              <div class="perf-score">10 / 10</div>
+            </td>
+            <td class="cmp-acuvue">
+              <div class="perf-bar-wrap"><div class="perf-bar perf-good" style="width:80%"></div></div>
+              <div class="perf-score">8 / 10</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="cmp-label">ประสิทธิภาพ<br>มองใกล้ *</td>
+            <td class="cmp-maxim">
+              <div class="perf-bar-wrap"><div class="perf-bar perf-good" style="width:80%"></div></div>
+              <div class="perf-score">8 / 10</div>
+            </td>
+            <td class="cmp-bio">
+              <div class="perf-bar-wrap"><div class="perf-bar perf-mid" style="width:70%"></div></div>
+              <div class="perf-score">7 / 10</div>
+            </td>
+            <td class="cmp-acuvue">
+              <div class="perf-bar-wrap"><div class="perf-bar perf-best" style="width:100%"></div></div>
+              <div class="perf-score perf-best-score">10 / 10 ★</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="cmp-label">รองรับสายตาเอียง</td>
+            <td class="cmp-maxim"><span class="cmp-no">✗ ไม่รองรับ</span></td>
+            <td class="cmp-bio"><span class="cmp-no">✗ ไม่รองรับ</span></td>
+            <td class="cmp-acuvue"><span class="cmp-no">✗ ไม่รองรับ</span></td>
+          </tr>
+          <tr>
+            <td class="cmp-label">รองรับสายตาสั้นถึง</td>
+            <td class="cmp-maxim">–6.00 D</td>
+            <td class="cmp-bio"><strong style="color:var(--teal);">–9.00 D</strong></td>
+            <td class="cmp-acuvue"><strong style="color:var(--teal);">–9.00 D</strong></td>
+          </tr>
+          <tr>
+            <td class="cmp-label">จำนวนโครงสร้าง</td>
+            <td class="cmp-maxim">2 โครงสร้าง</td>
+            <td class="cmp-bio">2 โครงสร้าง</td>
+            <td class="cmp-acuvue">3 โครงสร้าง</td>
+          </tr>
+          <tr class="cmp-pros-row">
+            <td class="cmp-label">จุดเด่น</td>
+            <td class="cmp-maxim">
+              <ul class="cmp-list cmp-good">
+                <li>เหมาะกับคนเพิ่งมีสายตายาว</li>
+                <li>ใส่ง่ายสำหรับมือใหม่</li>
+                <li>ตั้งทรงดีที่สุด</li>
+              </ul>
+            </td>
+            <td class="cmp-bio">
+              <ul class="cmp-list cmp-good">
+                <li>รองรับสายตาสั้นได้ถึง –9.00 D</li>
+                <li>เหมาะกับคน European eye</li>
+                <li>ระยะการใช้งาน 40–50 cm</li>
+              </ul>
+            </td>
+            <td class="cmp-acuvue">
+              <ul class="cmp-list cmp-good">
+                <li>มี 3 โครงสร้าง</li>
+                <li>รองรับสายตาสั้นได้ถึง –9.00 D</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="cmp-cons-row">
+            <td class="cmp-label">ข้อจำกัด</td>
+            <td class="cmp-maxim">
+              <ul class="cmp-list cmp-bad">
+                <li>ครอบคลุมสายตาสั้นถึง –6.00 D เท่านั้น</li>
+              </ul>
+            </td>
+            <td class="cmp-bio">
+              <ul class="cmp-list cmp-bad">
+                <li>เหมาะกับคนสายตาสั้นเยอะ</li>
+              </ul>
+            </td>
+            <td class="cmp-acuvue">
+              <ul class="cmp-list cmp-bad">
+                <li>ใส่เนื้อเลนส์ค่อนข้างยวบ</li>
+                <li>ต้องใช้น้ำตาเทียมเพิ่ม</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="cmp-price-row">
+            <td class="cmp-label">ราคา</td>
+            <td class="cmp-maxim">
+              <div class="cmp-price">฿1,500</div>
+              <div class="cmp-price-note">ต่อ 1 กล่อง (15 คู่)</div>
+            </td>
+            <td class="cmp-bio">
+              <div class="cmp-price">฿1,400</div>
+              <div class="cmp-price-note">ต่อ 1 กล่อง (15 คู่)</div>
+            </td>
+            <td class="cmp-acuvue">
+              <div class="cmp-price">฿1,900</div>
+              <div class="cmp-price-note">ต่อ 1 กล่อง (15 คู่)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- WHO IS IT FOR -->
+    <div class="cmp-reco-grid">
+      <div class="cmp-reco maxim-reco">
+        <div class="cmp-reco-label">Maxim เหมาะกับ</div>
+        <p>คนที่เพิ่งเริ่มมีสายตายาว สั้นไม่เกิน –6.00 D อยากเริ่มต้นใส่มัลติโฟคอลครั้งแรก</p>
+      </div>
+      <div class="cmp-reco bio-reco">
+        <div class="cmp-reco-label">Biotrue เหมาะกับ</div>
+        <p>คนสายตาสั้นมาก (ถึง –9.00 D) หรือต้องการระยะการใช้งานใกล้ที่แม่นยำ 40–50 cm</p>
+      </div>
+      <div class="cmp-reco acuvue-reco">
+        <div class="cmp-reco-label">Acuvue เหมาะกับ</div>
+        <p>คนที่ต้องการ 3 โครงสร้าง (ไกล/กลาง/ใกล้) แต่ต้องใช้น้ำตาเทียมช่วย</p>
+      </div>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin-top:14px;line-height:1.7;">
+    * ค่าประสิทธิภาพมองไกลและมองใกล้เป็นค่าเฉลี่ยจากสถิติลูกค้าของร้าน
+    <strong style="color:#c06030;">ผลลัพธ์อาจแตกต่างกันในแต่ละบุคคล</strong> ขึ้นอยู่กับค่าสายตา, ขนาดรูม่านตา,
+    และการตอบสนองของสมองต่อโครงสร้างเลนส์แต่ละแบบ
+    การทดลองใส่จริงก่อนซื้อจึงเป็นสิ่งสำคัญที่สุดครับ</p>
+
+    <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.7;">
+    ** รีวิวนี้เป็นการเก็บสถิติจากลูกค้าของร้านที่ได้ทำการใช้งานจริง โดยไม่มีค่าสายตาเอียงร่วมด้วย
+    ข้อมูลนี้ไม่มี Bias ต่อผลิตภัณฑ์ใด อย่างไรก็ตามแต่ละบุคคล sensitivity ต่อโครงสร้างแต่ละตัวมีผลไม่เหมือนกัน
+    ร้านจึงแนะนำให้ตรวจวัดสายตาอย่างละเอียดและทดลองเลนส์ เพื่อหาสายตาที่ดีที่สุดสำหรับแต่ละบุคคล</p>
+  </section>
+
+  <hr class="div">
+
+  <!-- ── ELIGIBILITY ── -->
+  <section class="sec" id="eligibility">
+    <div class="eyebrow">เงื่อนไขการใส่</div>
+    <h2>คุณเหมาะกับคอนแทคมัลติโฟคอลไหม?</h2>
+    <p>ไม่ใช่ทุกคนที่จะได้ผลลัพธ์ดีเท่ากัน ก่อนตัดสินใจ Fitting ลองเช็คเงื่อนไขเหล่านี้ก่อนครับ</p>
+
+    <!-- ELIGIBLE -->
+    <div class="elig-grid">
+
+      <div class="elig-card elig-yes">
+        <div class="elig-head">✅ เหมาะกับมัลติโฟคอล</div>
+        <ul class="elig-list">
+          <li>
+            <span class="elig-icon">👁️</span>
+            <div>
+              <strong>สายตาสั้นไม่เกิน –9.00 D</strong>
+              <p>ครอบคลุมได้ถึง –9.00 D (Biotrue / Acuvue) หรือ –6.00 D (Maxim)</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">👁️</span>
+            <div>
+              <strong>สายตาเอียงไม่เกิน –0.75 D</strong>
+              <p>เอียงน้อยกว่านี้ สมองชดเชยได้เอง ผลลัพธ์ยังดี</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">🧠</span>
+            <div>
+              <strong>ยอมรับความคมชัด 85–90% ได้</strong>
+              <p>ไม่ได้ต้องการ 100% สมบูรณ์แบบในทุกระยะ แลกกับความสะดวกในชีวิตประจำวัน</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">💧</span>
+            <div>
+              <strong>น้ำตาพอเพียง ไม่แห้งมาก</strong>
+              <p>ตาไม่แห้งเรื้อรัง หรือถ้าแห้งเล็กน้อย สามารถใช้น้ำตาเทียมช่วยได้</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">⏰</span>
+            <div>
+              <strong>ใส่คอนแทคได้ไม่เกิน 10–12 ชั่วโมงต่อวัน</strong>
+              <p>คอนแทครายวันควรถอดก่อนนอนทุกครั้ง</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">🏃</span>
+            <div>
+              <strong>ไลฟ์สไตล์ที่ได้ประโยชน์ชัดที่สุด</strong>
+              <p>ทำงานออฟฟิศ ประชุม เล่นกอล์ฟ ท่องเที่ยว ขับรถ — กิจกรรมที่ต้องใช้สายตาหลายระยะในวันเดียวกัน</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="elig-card elig-no">
+        <div class="elig-head">⚠️ อาจไม่เหมาะกับมัลติโฟคอล</div>
+        <ul class="elig-list">
+          <li>
+            <span class="elig-icon">🔴</span>
+            <div>
+              <strong>สายตาเอียงมากกว่า –0.75 D</strong>
+              <p>ค่าเอียงสูงทำให้โครงสร้างเลนส์ทำงานไม่เต็มประสิทธิภาพ ความคมชัดลดลงอย่างเห็นได้ชัด</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">🔴</span>
+            <div>
+              <strong>มีโรคตาที่มีผลต่อรูม่านตา</strong>
+              <p>เช่น ต้อหิน, โรคม่านตาอักเสบ, ผลข้างเคียงจากยาที่ทำให้รูม่านตาทำงานผิดปกติ</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">🔴</span>
+            <div>
+              <strong>ตาแห้งเรื้อรังระดับรุนแรง</strong>
+              <p>Dry Eye Syndrome ระดับ 3–4 ทำให้ทนใส่คอนแทคได้ไม่นาน</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">🔴</span>
+            <div>
+              <strong>ต้องการความแม่นยำ 100% ตลอดเวลา</strong>
+              <p>เช่น งานที่ต้องอ่านตัวเลขละเอียดมาก, ช่างเครื่องจักร, นักพิมพ์ดีด — แว่น Progressive เหมาะกว่า</p>
+            </div>
+          </li>
+          <li>
+            <span class="elig-icon">🔴</span>
+            <div>
+              <strong>ขับรถกลางคืนเป็นหลัก</strong>
+              <p>แสงน้อยทำให้รูม่านตาขยาย Zone ใกล้ครอบงำ — มองไกลในความมืดจะลดลง</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="elig-note">
+      <strong>💡 ไม่แน่ใจ?</strong> นั่นคือเหตุผลที่เรามีค่า Fitting ฿1,500 ครับ —
+      ทุกท่านจะได้ทดลองใส่จริงและเห็นผลด้วยตัวเองก่อนตัดสินใจซื้อ
+    </div>
+
+  </section>
+
+  <hr class="div">
+
+  <!-- ── Q&A ── -->
+  <section class="sec" id="qa">
+    <div class="eyebrow">คำถามที่พบบ่อย</div>
+    <h2>Q&amp;A</h2>
+
+    <div class="qa-item open">
+      <div class="qa-q" onclick="tog(this)"><div class="qi">Q</div><div class="qt">ผมลดค่าสายตาอยู่แล้ว จะใช้มัลติโฟคอลได้ไหม?</div><div class="qa-tog">+</div></div>
+      <div class="qa-a">ได้ครับ และนี่คือกลุ่มที่ได้ประโยชน์ชัดที่สุด เพราะแทนที่จะใส่ค่าลดมาแล้วมองไกลพร่า คุณจะได้ใส่ค่าจริงพร้อม Add Power ที่เหมาะสม — ได้ทั้งไกลและใกล้พร้อมกัน เหมือนกรณีของพี่เขาที่ VA กลับมาจาก 0.4 เป็น 0.9 ครับ</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="tog(this)"><div class="qi">Q</div><div class="qt">แสงน้อยแล้วอ่านหนังสือไม่ได้จริงไหม?</div><div class="qa-tog">+</div></div>
+      <div class="qa-a">จริงครับ แต่ต้องชัดว่า "แสงน้อยมากๆ" ถึงจะรู้สึกชัด เช่น อ่านโทรศัพท์ในห้องมืดสนิท
+      ในชีวิตประจำวันทั่วไปอย่างห้องอาหาร ออฟฟิศ หรือในรถ ไม่มีปัญหาครับ
+      ถ้าคุณต้องอ่านในที่มืดมากเป็นประจำ ต้องพิจารณาว่า Trade-off นี้โอเคสำหรับคุณไหม</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="tog(this)"><div class="qi">Q</div><div class="qt">ซื้อตามค่าแว่นแล้วลองเองได้ไหม?</div><div class="qa-tog">+</div></div>
+      <div class="qa-a">ไม่แนะนำเลยครับ ค่าคอนแทคมัลติโฟคอลไม่ใช่ค่าเดียวกับแว่น
+      และ Add Power ที่ดีบนแว่นอาจไม่ดีบนคอนแทค เพราะระยะห่างจากเลนส์ถึงกระจกตาต่างกัน
+      คอนแทค 1 กล่องมี 15 คู่ราคา ~1,600 บาท ถ้าผิดค่าต้องทิ้งทั้งกล่อง
+      ค่า Fitting 1,500 บาทถูกกว่าการเดาและซื้อผิด 1–2 กล่องแน่นอนครับ</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="tog(this)"><div class="qi">Q</div><div class="qt">เกณฑ์ใส่ได้มีอะไรบ้าง?</div><div class="qa-tog">+</div></div>
+      <div class="qa-a">3 ข้อครับ: <strong>(1) สายตาเอียงไม่เกิน –0.75 D</strong> ถ้าเกินจะลด Effectiveness ลงมาก
+      <strong>(2) สายตาสั้นไม่เกิน –9.00 D</strong> ช่วงกว้าง คนสั้นมากอย่างกรณีพี่เขาก็ใส่ได้
+      <strong>(3) ยอมรับความคมชัด 85–90% ของแว่น</strong> นี่คือข้อสำคัญที่สุด ถ้าต้องการ 100% ต้องพิจารณาใหม่ครับ</div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="tog(this)"><div class="qi">Q</div><div class="qt">ต้องปรับตัวนานแค่ไหน?</div><div class="qa-tog">+</div></div>
+      <div class="qa-a">โดยทั่วไป 1–2 สัปดาห์สมองจะปรับตัวได้เต็มที่ครับ ช่วงแรกอาจรู้สึกว่าภาพ "ไม่ค่อยนิ่ง" นิดหน่อย
+      นั่นคือสมองกำลัง Learn ว่าจะใช้ Zone ไหนเมื่อไหร่ พอ Lock-in แล้วส่วนใหญ่จะรู้สึกเป็นธรรมชาติมากครับ</div>
+    </div>
+
+  </section>
+
+  <!-- AUTHOR -->
+  <div class="author">
+    <div class="author-av">👁️</div>
+    <div class="author-info">
+      <h4>Ploychompoo Parsuraphun, Optometrist</h4>
+      <p>นักทัศนมาตร | เจ้าของ Optical X Vision Care Center, Riverside Plaza Bangkok<br>
+      Multifocal Contact Lens Fitting & Progressive Lens Specialist มากว่า 7 ปี</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════ SIDEBAR ═══════════ -->
+<aside class="sidebar">
+
+  <div class="sb-card">
+    <h3>📋 เนื้อหา</h3>
+    <ul class="toc">
+      <li><a href="#quickcheck"><span class="toc-dot"></span>เช็คก่อนอ่านต่อ</a></li>
+      <li><a href="#case-a"><span class="toc-dot"></span>Case A — ลดค่าสายตาตัวเอง</a></li>
+      <li><a href="#case-b"><span class="toc-dot"></span>Case B — พกแว่นอ่านทับ</a></li>
+      <li><a href="#tech"><span class="toc-dot"></span>คอนแทคสายตายาวทำงานยังไง?</a></li>
+      <li><a href="#tradeoff"><span class="toc-dot"></span>พูดตรงๆ เรื่อง 90%</a></li>
+      <li><a href="#fitting"><span class="toc-dot"></span>ทำไมต้องมีค่า Fitting</a></li>
+      <li><a href="#compare"><span class="toc-dot"></span>เปรียบเทียบ 3 สินค้า</a></li>
+      <li><a href="#eligibility"><span class="toc-dot"></span>เหมาะกับใคร?</a></li>
+      <li><a href="#qa"><span class="toc-dot"></span>Q&amp;A</a></li>
+    </ul>
+  </div>
+
+  <div class="sb-card">
+    <h3>📖 คำศัพท์</h3>
+    <ul class="glist">
+      <li><div class="gterm">VA (Visual Acuity)</div><div class="gdef">ความคมชัดในการมองเห็น 1.0 = ชัดตามมาตรฐาน, 0.4 = มองได้แค่ 40%</div></li>
+      <li><div class="gterm">Presbyopia</div><div class="gdef">สายตายาวตามอายุ เลนส์แก้วตาแข็งขึ้น โฟกัสใกล้ไม่ได้</div></li>
+      <li><div class="gterm">Add Power</div><div class="gdef">กำลังขยายพิเศษสำหรับมองใกล้ +0.75 ถึง +2.50 D</div></li>
+      <li><div class="gterm">Dominant Eye</div><div class="gdef">ตาข้างถนัด ต้องทดสอบด้วยเทคนิคเฉพาะ</div></li>
+      <li><div class="gterm">Binocular Vision</div><div class="gdef">การมองสองตาพร้อมกัน ทำให้รับรู้ระยะและความลึกได้</div></li>
+      <li><div class="gterm">Astigmatism</div><div class="gdef">สายตาเอียง กระจกตาโค้งไม่สม่ำเสมอ ถ้าเกิน 0.75D ลด Effectiveness มัลติโฟคอล</div></li>
+      <li><div class="gterm">Pupil Zone</div><div class="gdef">โซนในเลนส์ที่รูม่านตาเลือกใช้ตามขนาดที่เปลี่ยนไปตามแสง</div></li>
+    </ul>
+  </div>
+
+  <div class="sb-card cta-card">
+    <h3>🏥 นัดหมาย Optical X</h3>
+    <p>ทดลองใส่ Multifocal จริงก่อนตัดสินใจ พร้อม Full Refraction</p>
+    <a href="https://www.opticalxvision.com" class="btn-cta" target="_blank">นัดหมายออนไลน์</a>
+    <p class="cta-note">Riverside Plaza ชั้น 2 • Bangkok</p>
+  </div>
+
+  <div class="sb-card">
+    <h3>📚 อ้างอิง</h3>
+    <div class="ref-list">
+      <p>1. Efron et al. (2024). International trends multifocal CL 2000–2023. <em>PubMed.</em></p>
+      <p>2. Kim et al. (2024). Efficacy refractive multifocal CL. <em>Scientific Reports, Nature.</em> Yonsei Univ.</p>
+      <p>3. Fogt et al. (2022). Multifocal CL vs PAL. <em>Contact Lens & Anterior Eye.</em> Ohio State.</p>
+    </div>
+  </div>
+
+</aside>
+</div>
+</div>
+
+
+
+<footer class="ox-footer">
+  <div class="ox-footer-top">
+
+    <div>
+      <a href="../index.html" class="ox-f-brand">OPTICAL <em>X</em></a>
+      <p class="ox-f-tagline">
+        ศูนย์เลนส์โปรเกรสซีฟเฉพาะทาง<br>
+        ตรวจวัดสายตาโดยทัศนมาตร<br>
+        Riverside Plaza · ชั้น 2 · กรุงเทพฯ
+      </p>
+      <div class="ox-f-social">
+        <a href="https://lin.ee/E4GHWdJ" aria-label="LINE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a href="https://www.instagram.com/opticalxvision" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ที่ตั้ง</p>
+        <p class="ox-f-contact-val">
+          Riverside Plaza ชั้น 2<br>
+          257/6 ถ.เจริญนคร<br>
+          แขวงสำเหร่ เขตธนบุรี กทม. 10600
+        </p>
+      </div>
+      <div class="ox-f-contact-item">
+        <p class="ox-f-contact-label">ติดต่อ</p>
+        <p class="ox-f-contact-val">
+          <a href="tel:0929897447">092 989 7447</a><br>
+          <a href="https://lin.ee/E4GHWdJ">LINE: @opxrv</a><br>
+          <a href="mailto:opticalx.rv@gmail.com">opticalx.rv@gmail.com</a>
+        </p>
+      </div>
+      <div class="ox-f-hours">
+        <div class="ox-f-hours-row"><span>จ – อา</span><span>11:00 – 20:00</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ox-footer-bottom">
+    <p class="ox-f-copy">© 2025 Optical X Vision Care Center · All Rights Reserved</p>
+    <div class="ox-f-rating">
+      <div class="ox-f-rating-stars">★★★★★</div>
+      <span>5.0 Google Rating</span>
+    </div>
+    <p class="ox-f-cert">Licensed Optometrist · Bangkok</p>
+  </div>
+
+</footer>
+
+
+
+<script>
+function tog(el){el.closest('.qa-item').classList.toggle('open');}
+document.querySelectorAll('.toc a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.getElementById(a.getAttribute('href').slice(1));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+
+<script>
+/* ── Universal QA/FAQ Toggle v2 ── */
+(function(){
+  // Toggle function used by all patterns
+  function toggleItem(item){
+    if(!item) return;
+    var wasOpen = item.classList.contains('open');
+    // Close all siblings in same parent
+    var parent = item.parentElement;
+    if(parent){
+      parent.querySelectorAll('.qa-item.open').forEach(function(el){ el.classList.remove('open'); });
+    }
+    if(!wasOpen) item.classList.add('open');
+  }
+
+  // Pattern 1: Click on .qa-q or .qa-question
+  document.querySelectorAll('.qa-q, .qa-question').forEach(function(btn){
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleItem(btn.closest('.qa-item'));
+    });
+  });
+
+  // Pattern 2: Click on .qa-item itself (for items with onclick on the item)
+  document.querySelectorAll('.qa-item').forEach(function(item){
+    // Only add if no qa-q/qa-question child handles it
+    var hasQChild = item.querySelector('.qa-q, .qa-question');
+    if(!hasQChild){
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function(e){
+        toggleItem(item);
+      });
+    }
+  });
+
+  // Global fallback for onclick="toggleQA(this)"
+  window.toggleQA = function(el){
+    var item = el.closest ? el.closest('.qa-item') : el.parentElement;
+    toggleItem(item);
+  };
+})();
+</script>
+
+</body>
+</html>
