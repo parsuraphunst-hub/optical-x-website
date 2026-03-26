@@ -1871,7 +1871,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       <h2>คำถามที่ลูกค้าถามบ่อยที่สุด</h2>
 
       <div class="qa-item">
-        <div class="qa-question" onclick="toggleQA(this)">
+        <div class="qa-question">
           <div class="qa-q-icon">Q</div>
           ซื้อแว่นที่บอกว่า "กันแสงสีน้ำเงิน" แต่เลนส์ใส ไม่เหลือง ได้ผลจริงไหม?
           <span class="qa-arrow">▼</span>
@@ -1884,7 +1884,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       </div>
 
       <div class="qa-item">
-        <div class="qa-question" onclick="toggleQA(this)">
+        <div class="qa-question">
           <div class="qa-q-icon">Q</div>
           ใส่ UV420 ทำงานคอมทั้งวันได้ไหม?
           <span class="qa-arrow">▼</span>
@@ -1897,7 +1897,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       </div>
 
       <div class="qa-item">
-        <div class="qa-question" onclick="toggleQA(this)">
+        <div class="qa-question">
           <div class="qa-q-icon">Q</div>
           Crizal Prevencia กับ Crizal Blue UV Capture ต่างกันยังไง?
           <span class="qa-arrow">▼</span>
@@ -1910,7 +1910,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       </div>
 
       <div class="qa-item">
-        <div class="qa-question" onclick="toggleQA(this)">
+        <div class="qa-question">
           <div class="qa-q-icon">Q</div>
           OLED กับ LCD ปล่อยแสงสีน้ำเงินต่างกันไหม?
           <span class="qa-arrow">▼</span>
@@ -1924,7 +1924,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       </div>
 
       <div class="qa-item">
-        <div class="qa-question" onclick="toggleQA(this)">
+        <div class="qa-question">
           <div class="qa-q-icon">Q</div>
           เลนส์ตัดแสงสีน้ำเงิน ช่วยป้องกัน AMD (จอตาเสื่อม) ได้จริงไหม?
           <span class="qa-arrow">▼</span>
@@ -1938,7 +1938,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       </div>
 
       <div class="qa-item">
-        <div class="qa-question" onclick="toggleQA(this)">
+        <div class="qa-question">
           <div class="qa-q-icon">Q</div>
           แว่นที่บอกว่า "Blue Light Blocking" ที่ขายออนไลน์ราคาถูกได้ผลไหม?
           <span class="qa-arrow">▼</span>
@@ -2283,18 +2283,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
 
 
 
-<script>
-  // Q&A Toggle
-  function toggleQA(el) {
-    const answer = el.nextElementSibling;
-    const isOpen = answer.classList.contains('open');
-    document.querySelectorAll('.qa-answer.open').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.qa-question.active').forEach(q => q.classList.remove('active'));
-    if (!isOpen) {
-      answer.classList.add('open');
-      el.classList.add('active');
-    }
-  }
+<script>}
 
   // Sticky TOC highlight
   const sections = document.querySelectorAll('.article-section, .summary-section');
@@ -2349,7 +2338,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
     }
   });
 
-  // Global fallback for onclick="toggleQA(this)"
+  // Global fallback for
   window.toggleQA = function(el){
     var item = el.closest ? el.closest('.qa-item') : el.parentElement;
     toggleItem(item);

@@ -1346,7 +1346,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
     <h2 class="section-title">❓ คำถามที่พบบ่อย</h2>
 
     <div class="qa-item open">
-      <div class="qa-question" onclick="toggleQA(this)">
+      <div class="qa-question">
         <div class="qa-question-text"><div class="q-num">1</div>Crazing ซ่อมแซมได้ไหม?</div>
         <span class="qa-chevron">▾</span>
       </div>
@@ -1356,7 +1356,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
     </div>
 
     <div class="qa-item">
-      <div class="qa-question" onclick="toggleQA(this)">
+      <div class="qa-question">
         <div class="qa-question-text"><div class="q-num">2</div>แว่นกันแดดทุกประเภทเสี่ยง Crazing เหมือนกันไหม?</div>
         <span class="qa-chevron">▾</span>
       </div>
@@ -1366,7 +1366,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
     </div>
 
     <div class="qa-item">
-      <div class="qa-question" onclick="toggleQA(this)">
+      <div class="qa-question">
         <div class="qa-question-text"><div class="q-num">3</div>เลนส์ Polarized เหมาะกับใคร?</div>
         <span class="qa-chevron">▾</span>
       </div>
@@ -1376,7 +1376,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
     </div>
 
     <div class="qa-item">
-      <div class="qa-question" onclick="toggleQA(this)">
+      <div class="qa-question">
         <div class="qa-question-text"><div class="q-num">4</div>Base Curve คืออะไร ทำไมต้องสั่งผลิตพิเศษ?</div>
         <span class="qa-chevron">▾</span>
       </div>
@@ -1639,14 +1639,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
 
 
 
-<script>
-function toggleQA(el) {
-  const item = el.parentElement;
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.qa-item').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-</script>
+
 
 
 <script>
@@ -1685,7 +1678,7 @@ function toggleQA(el) {
     }
   });
 
-  // Global fallback for onclick="toggleQA(this)"
+  // Global fallback for
   window.toggleQA = function(el){
     var item = el.closest ? el.closest('.qa-item') : el.parentElement;
     toggleItem(item);

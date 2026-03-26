@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Case Study: เมื่อ Addition เกิน 1.50–2.00 แว่น Progressive ตัวเดียวไม่พอ | Optical X Vision Care</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Serif+Thai:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Serif+Thai:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #1a1410;
@@ -26,7 +26,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'DM Sans', 'Noto Serif Thai', serif;
+    font-family: 'Sarabun', sans-serif;
     background: var(--paper);
     color: var(--ink);
     line-height: 1.8;
@@ -1002,7 +1002,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       <div class="qa-section" id="qa">
 
         <div class="qa-item">
-          <div class="qa-question" onclick="toggleQA(this)">
+          <div class="qa-question">
             <span class="q-icon">Q</span>
             <span>ฉันใช้ Progressive อยู่ — ต้องตัด Office Lens เพิ่มอีกตัวเลยไหม?</span>
             <span class="toggle">+</span>
@@ -1015,7 +1015,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         </div>
 
         <div class="qa-item">
-          <div class="qa-question" onclick="toggleQA(this)">
+          <div class="qa-question">
             <span class="q-icon">Q</span>
             <span>ความแตกต่างระหว่าง Shamir Computer กับ Shamir Workspace คืออะไร?</span>
             <span class="toggle">+</span>
@@ -1029,7 +1029,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         </div>
 
         <div class="qa-item">
-          <div class="qa-question" onclick="toggleQA(this)">
+          <div class="qa-question">
             <span class="q-icon">Q</span>
             <span>ถ้าตัด Office Lens แล้ว จะใช้ขับรถได้ไหม?</span>
             <span class="toggle">+</span>
@@ -1042,7 +1042,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         </div>
 
         <div class="qa-item">
-          <div class="qa-question" onclick="toggleQA(this)">
+          <div class="qa-question">
             <span class="q-icon">Q</span>
             <span>FF (Fitting Factor) ที่ต่ำกว่า หมายความว่าอะไร?</span>
             <span class="toggle">+</span>
@@ -1056,7 +1056,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         </div>
 
         <div class="qa-item">
-          <div class="qa-question" onclick="toggleQA(this)">
+          <div class="qa-question">
             <span class="q-icon">Q</span>
             <span>ราคา Office Lens กับ General Progressive ต่างกันมากไหม?</span>
             <span class="toggle">+</span>
@@ -1069,7 +1069,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         </div>
 
         <div class="qa-item">
-          <div class="qa-question" onclick="toggleQA(this)">
+          <div class="qa-question">
             <span class="q-icon">Q</span>
             <span>ควรนำแว่นเก่ามาให้ตรวจไหม หรือแค่แจ้งค่าสายตา?</span>
             <span class="toggle">+</span>
@@ -1222,12 +1222,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
 
 
 
-<script>
-function toggleQA(el) {
-  const item = el.parentElement;
-  item.classList.toggle('open');
-}
-</script>
+
 
 <script>
 /* ── Universal QA/FAQ Toggle v2 ── */
@@ -1265,7 +1260,7 @@ function toggleQA(el) {
     }
   });
 
-  // Global fallback for onclick="toggleQA(this)"
+  // Global fallback for
   window.toggleQA = function(el){
     var item = el.closest ? el.closest('.qa-item') : el.parentElement;
     toggleItem(item);
