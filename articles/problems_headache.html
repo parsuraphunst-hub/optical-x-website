@@ -261,7 +261,25 @@
   .warning-box .warn-icon { font-size: 24px; flex-shrink: 0; }
   .warning-box p { margin: 0; color: #7a2a00; }
 
-  /* ─── TOOLTIP ─── */
+  /* ─── TOOLTIP (gloss pattern) ─── */
+  .gloss {
+    border-bottom: 2px dotted var(--teal);
+    cursor: pointer; color: var(--teal); font-weight: 600; position: relative;
+  }
+  .gloss .tip {
+    display: none; position: absolute; bottom: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%); background: var(--navy); color: white;
+    font-size: 13px; font-weight: 400; line-height: 1.55; padding: 12px 16px;
+    border-radius: 10px; width: min(260px, 88vw); white-space: normal;
+    z-index: 150; box-shadow: 0 6px 24px rgba(0,0,0,0.35); pointer-events: none;
+  }
+  .gloss .tip::after {
+    content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 7px solid transparent; border-top-color: var(--navy);
+  }
+  @media (hover: hover) { .gloss:hover .tip { display: block; } }
+
+  /* legacy tooltip-word support */
   .tooltip-word {
     color: var(--teal);
     font-weight: 600;
@@ -303,6 +321,57 @@
   .tooltip-word:focus .tooltip-box {
     visibility: visible; opacity: 1;
   }
+
+  /* ─── COLLAPSIBLE SIDEBAR WIDGETS ─── */
+  .sidebar-widget { background: #fff; border: 1px solid var(--warm-gray); border-radius: 14px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 2px 14px rgba(0,0,0,0.06); }
+  .sw-head{background:#f8f6f2;color:#2C2416;border-bottom:1px solid #e5e0d8; padding: 13px 18px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
+  }
+  .sw-head.teal{background:#e6f7f6;color:#0e7c7b}
+  .sw-head .sw-toggle { font-size: 18px; font-weight: 700; transition: transform 0.3s; }
+  .sidebar-widget.sw-open .sw-toggle { transform: rotate(45deg); }
+  .sw-body { display: block; }
+
+  .sw-body .toc-list { list-style: none; }
+  .sw-body .toc-list li a {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px 18px; border-bottom: 1px solid var(--warm-gray);
+    text-decoration: none; font-size: 14px; color: var(--text-body);
+    min-height: 48px; transition: all 0.2s; -webkit-tap-highlight-color: transparent;
+  }
+  .sw-body .toc-list li:last-child a { border-bottom: none; }
+  .sw-body .toc-list li a::before { content: '→'; color: var(--gold); font-size: 13px; flex-shrink: 0; }
+  @media (hover: hover) { .sw-body .toc-list li a:hover { color: var(--teal); padding-left: 24px; background: rgba(14,124,123,0.06); } }
+
+  .sw-body .glossary-list-compact { list-style: none; }
+  .sw-body .glossary-list-compact li { padding: 12px 18px; border-bottom: 1px solid var(--warm-gray); min-height: 48px; }
+  .sw-body .glossary-list-compact li:last-child { border-bottom: none; }
+  .gl-term { font-weight: 700; color: var(--teal); font-size: 13px; margin-bottom: 3px; }
+  .gl-def { color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+
+  .sw-body .author-card { padding: 16px 18px; }
+  .sw-body .author-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .sw-body .author-avatar-emoji { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; flex-shrink: 0; }
+  .sw-body .author-divider { border: none; border-top: 1px solid var(--warm-gray); margin: 12px 0; }
+  .sw-body .cta-btn { display: block; background: var(--gold); color: var(--navy); text-align: center; padding: 13px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; }
+  .sw-body .cta-btn:active { opacity: 0.85; }
+
+  /* ─── MOBILE GLOSSARY DRAWER ─── */
+  .gloss-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 250; }
+  .gloss-overlay.vis { display: block; }
+  .gloss-drawer {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: white; border-radius: 20px 20px 0 0;
+    padding: 20px 22px 48px; z-index: 260;
+    transform: translateY(100%); transition: transform 0.32s cubic-bezier(0.32,0.72,0,1);
+    max-height: 60vh; overflow-y: auto;
+  }
+  .gloss-drawer.vis { transform: translateY(0); }
+  .drawer-handle { width: 40px; height: 4px; background: #d1d5db; border-radius: 2px; margin: 0 auto 18px; }
+  .drawer-term { font-size: 18px; font-weight: 700; color: var(--teal); margin-bottom: 10px; }
+  .drawer-def { font-size: 16px; color: var(--text-body); line-height: 1.8; }
 
   /* ─── Q&A ─── */
   .qa-section { background: #fff; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
@@ -500,13 +569,23 @@
   .article-footer .brand { color: #fff; font-weight: 700; font-size: 16px; margin-bottom: 6px; }
 
   /* ─── RESPONSIVE ─── */
-  @media (max-width: 820px) {
+  @media (min-width: 861px) {
+    .sw-head { cursor: default; }
+    .sw-head .sw-toggle { display: none; }
+    .sw-body { display: block !important; }
+  }
+  @media (max-width: 860px) {
     .page-wrap { flex-direction: column; padding: 20px 14px 40px; }
-    .sidebar { width: 100%; position: static; max-height: none; overflow-y: visible; }
+    .sidebar { width: 100%; position: static; max-height: none; overflow-y: visible; order: -1; margin-bottom: 4px; }
+    .sidebar-widget { margin-bottom: 8px; border-radius: 10px; }
+    .sw-body { display: none; }
+    .sidebar-widget.sw-open .sw-body { display: block; }
+    .sidebar-card { display: none; }
     .section, .qa-section { padding: 22px 18px; }
     .body-map-section { padding: 22px 18px; }
     .authors-bar { padding: 18px; }
     .authors-divider { display: none; }
+    .gloss .tip { display: none !important; }
   }
   @media (max-width: 480px) {
     .type-grid { grid-template-columns: 1fr; }
@@ -732,6 +811,14 @@ pre, code { overflow-x: auto; max-width: 100%; }
 <!-- ─── HERO ─── -->
 
 
+<!-- GLOSSARY DRAWER (mobile) -->
+<div class="gloss-overlay" id="gOverlay" onclick="closeDrawer()"></div>
+<div class="gloss-drawer" id="gDrawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-term" id="dTerm"></div>
+  <div class="drawer-def"  id="dDef"></div>
+</div>
+
 <nav class="ox-nav" id="oxNav">
 
   <a href="../index.html" class="ox-brand">
@@ -864,7 +951,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       <div class="section-label">เริ่มต้นที่นี่</div>
       <h2>ปวดหัวทั้งที ไม่ได้แปลว่าปวดหัวเหมือนกันทุกคน</h2>
       <p>หลายคนปวดหัวบ่อย กินยาแก้ปวดบ้าง นอนหลับบ้าง แต่ก็ยังกลับมาปวดอีก อาจเป็นเพราะ <strong>ต้นเหตุอยู่ที่ตา ไม่ใช่ที่หัว</strong></p>
-      <p>งานวิจัยจาก International Headache Society (IHS) พบว่า อาการปวดหัวจากสายตาหรือที่เรียกว่า <span class="tooltip-word">HARE<span class="tooltip-box"><strong>HARE</strong> ย่อมาจาก Headache Associated with Refractive Errors คือปวดหัวที่เกิดจากค่าสายตาที่ยังไม่ได้รับการแก้ไข</span></span> มักเป็น<strong>อาการปวดบริเวณหน้าผากและรอบดวงตา</strong> มักแย่ลงช่วงบ่าย-เย็น และเป็นมากขึ้นเมื่อใช้สายตานาน</p>
+      <p>งานวิจัยจาก International Headache Society (IHS) พบว่า อาการปวดหัวจากสายตาหรือที่เรียกว่า <span class="gloss" data-term="HARE (Headache Associated with Refractive Errors)" data-def="ย่อมาจาก Headache Associated with Refractive Errors คือปวดหัวที่เกิดจากค่าสายตาที่ยังไม่ได้รับการแก้ไข" tabindex="0">HARE<span class="tip">🔍 <strong>HARE</strong><br>ย่อมาจาก Headache Associated with Refractive Errors คือปวดหัวจากค่าสายตาที่ยังไม่ได้แก้ไข</span></span> มักเป็น<strong>อาการปวดบริเวณหน้าผากและรอบดวงตา</strong> มักแย่ลงช่วงบ่าย-เย็น และเป็นมากขึ้นเมื่อใช้สายตานาน</p>
       <p>ในบทความนี้ เราจะแยกให้เห็นชัดๆ ว่า <strong>ปวดหัวแต่ละแบบบอกว่าสายตาคุณมีปัญหาอะไร</strong> เพื่อให้คุณเข้าใจตัวเองก่อนมาตรวจ</p>
 
       <figure style="margin:2rem 0;text-align:center">
@@ -937,7 +1024,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
           <div class="pain-badge badge-orange">🟠</div>
           <div class="pain-item-body">
             <h4>สายตายาว — ปวดหน้าผาก หัวตา และบริเวณรอบกระบอกตา</h4>
-            <p>คนสายตายาวต้อง<span class="tooltip-word" style="color:var(--gold-light);border-color:var(--gold-light);">Accommodate<span class="tooltip-box"><strong>Accommodation</strong> คือความสามารถของเลนส์ตาในการปรับความโค้งเพื่อโฟกัสวัตถุระยะต่างๆ ยิ่งต้องโฟกัสใกล้มาก ตาก็ยิ่งต้องทำงานหนัก</span></span> (ปรับโฟกัส) มากกว่าคนปกติตลอดเวลา <strong>แม้แต่การมองไกลก็ต้องออกแรง</strong> กล้ามเนื้อในดวงตาจึงล้าอย่างต่อเนื่อง นำไปสู่การปวดหัวหน้าผากและหัวตา มักเป็นมากขึ้นช่วงบ่าย</p>
+            <p>คนสายตายาวต้อง<span class="gloss" data-term="Accommodation (การปรับโฟกัส)" data-def="ความสามารถของเลนส์ตาในการปรับความโค้งเพื่อโฟกัสวัตถุระยะต่างๆ ยิ่งต้องโฟกัสใกล้มาก ตาก็ยิ่งต้องทำงานหนัก" tabindex="0" style="color:var(--gold-light);border-color:var(--gold-light);">Accommodate<span class="tip">🔍 <strong>Accommodation</strong><br>ความสามารถของเลนส์ตาในการปรับความโค้งเพื่อโฟกัสวัตถุระยะต่างๆ</span></span> (ปรับโฟกัส) มากกว่าคนปกติตลอดเวลา <strong>แม้แต่การมองไกลก็ต้องออกแรง</strong> กล้ามเนื้อในดวงตาจึงล้าอย่างต่อเนื่อง นำไปสู่การปวดหัวหน้าผากและหัวตา มักเป็นมากขึ้นช่วงบ่าย</p>
             <span class="location-tag">📍 หน้าผาก + หัวตา + รอบกระบอกตา</span>
           </div>
         </li>
@@ -1010,7 +1097,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         <figcaption style="font-size:.85rem;color:#888;margin-top:.5rem">พลังงานสำรองในการเพ่งลดลงตลอดวัน เมื่อได้รับแว่นที่ถูกต้องและไม่ได้แว่น</figcaption>
       </figure>
 
-      <p>การที่ตาโฟกัสหรือ <span class="tooltip-word">Accommodate<span class="tooltip-box"><strong>Accommodation</strong> คือการที่กล้ามเนื้อวงกลมในดวงตา (Ciliary muscle) หดตัวเพื่อเปลี่ยนความโค้งของเลนส์ตา ทำให้โฟกัสในระยะต่างๆ ได้ กระบวนการนี้ใช้ ATP เป็นเชื้อเพลิง</span></span> ไม่ใช่แค่กล้ามเนื้อทำงาน — แต่<strong>สมองต้องประมวลผลและใช้พลังงานในรูป ATP ไปด้วยพร้อมกัน</strong> งานวิจัยพบว่าสมองมนุษย์ใช้ ATP วันละกว่า 25 โมล ซึ่งนับเป็นอวัยวะที่กินพลังงานมากที่สุดในร่างกาย</p>
+      <p>การที่ตาโฟกัสหรือ <span class="gloss" data-term="Accommodation (การปรับโฟกัส)" data-def="การที่กล้ามเนื้อวงกลมในดวงตา (Ciliary muscle) หดตัวเพื่อเปลี่ยนความโค้งของเลนส์ตา ทำให้โฟกัสในระยะต่างๆ ได้ กระบวนการนี้ใช้ ATP เป็นเชื้อเพลิง" tabindex="0">Accommodate<span class="tip">🔍 <strong>Accommodation</strong><br>กล้ามเนื้อ Ciliary บีบให้เลนส์โป่งเพื่อโฟกัสระยะต่างๆ ใช้ ATP เป็นเชื้อเพลิง</span></span> ไม่ใช่แค่กล้ามเนื้อทำงาน — แต่<strong>สมองต้องประมวลผลและใช้พลังงานในรูป ATP ไปด้วยพร้อมกัน</strong> งานวิจัยพบว่าสมองมนุษย์ใช้ ATP วันละกว่า 25 โมล ซึ่งนับเป็นอวัยวะที่กินพลังงานมากที่สุดในร่างกาย</p>
 
       <!-- ══ INFOGRAPHIC: 3-column power stats ══ -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;">
@@ -1242,7 +1329,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
         </div>
       </div>
 
-      <p>นอกจากนี้ งานวิจัยด้าน Brain Fatigue ยังพบว่าการอดนอนทำให้ <span class="tooltip-word">Astrocyte<span class="tooltip-box"><strong>Astrocyte</strong> คือเซลล์ในสมองที่ทำหน้าที่ส่งกลูโคสไปเลี้ยงเซลล์ประสาท เมื่ออดนอน Astrocyte ทำงานได้ลดลง ทำให้การส่งพลังงานในสมองไม่มีประสิทธิภาพ</span></span> ทำงานลดลง ส่งผลให้การส่งกลูโคสเป็นเชื้อเพลิงให้เซลล์ประสาทในสมองไม่มีประสิทธิภาพเพียงพอ ยิ่งทำให้ threshold ของความปวดหัวต่ำลง ปวดง่ายขึ้น</p>
+      <p>นอกจากนี้ งานวิจัยด้าน Brain Fatigue ยังพบว่าการอดนอนทำให้ <span class="gloss" data-term="Astrocyte (เซลล์ส่งพลังงานในสมอง)" data-def="เซลล์ในสมองที่ทำหน้าที่ส่งกลูโคสไปเลี้ยงเซลล์ประสาท เมื่ออดนอน Astrocyte ทำงานได้ลดลง ทำให้การส่งพลังงานในสมองไม่มีประสิทธิภาพ" tabindex="0">Astrocyte<span class="tip">🔍 <strong>Astrocyte</strong><br>เซลล์ในสมองที่ส่งกลูโคสเลี้ยงเซลล์ประสาท อดนอนทำให้ทำงานบกพร่อง</span></span> ทำงานลดลง ส่งผลให้การส่งกลูโคสเป็นเชื้อเพลิงให้เซลล์ประสาทในสมองไม่มีประสิทธิภาพเพียงพอ ยิ่งทำให้ threshold ของความปวดหัวต่ำลง ปวดง่ายขึ้น</p>
 
       <div class="warning-box">
         <div class="warn-icon">😵</div>
@@ -1377,22 +1464,61 @@ pre, code { overflow-x: auto; max-width: 100%; }
   <!-- ═══ SIDEBAR ═══ -->
   <aside class="sidebar">
 
-    <!-- Table of Contents -->
-    <div class="sidebar-card">
-      <h3>สารบัญ</h3>
-      <ul class="toc-list">
-        <li><a href="#intro"><span class="num">1</span>ทำไมปวดหัวแตกต่างกัน</a></li>
-        <li><a href="#types"><span class="num">2</span>ปัญหาสายตา 4 ประเภท</a></li>
-        <li><a href="#locations"><span class="num">3</span>ปวดตรงไหน?</a></li>
-        <li><a href="#deepdive"><span class="num">4</span>ทำไมตาถึงทำให้ปวดหัว</a></li>
-        <li><a href="#whentosee"><span class="num">5</span>เมื่อไหร่ควรตรวจ</a></li>
-        <li><a href="#energy"><span class="num">6</span>พลังงานเพ่ง & การนอน</a></li>
-        <li><a href="#qa"><span class="num">Q</span>ถาม-ตอบ</a></li>
-        <li><a href="#conclusion"><span class="num">✓</span>สรุป</a></li>
-      </ul>
+    <!-- Collapsible TOC -->
+    <div class="sidebar-widget sw-open" id="w-toc">
+      <div class="sw-head" onclick="toggleW('w-toc')">📋 สารบัญ <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <ul class="toc-list">
+          <li><a href="#intro">ทำไมปวดหัวแตกต่างกัน</a></li>
+          <li><a href="#types">ปัญหาสายตา 4 ประเภท</a></li>
+          <li><a href="#locations">ปวดตรงไหน?</a></li>
+          <li><a href="#deepdive">ทำไมตาถึงทำให้ปวดหัว</a></li>
+          <li><a href="#whentosee">เมื่อไหร่ควรตรวจ</a></li>
+          <li><a href="#energy">พลังงานเพ่ง & การนอน</a></li>
+          <li><a href="#qa">ถาม-ตอบ</a></li>
+          <li><a href="#conclusion">สรุป</a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- CTA -->
+    <!-- Collapsible Glossary -->
+    <div class="sidebar-widget" id="w-gloss">
+      <div class="sw-head teal" onclick="toggleW('w-gloss')">📖 คำศัพท์สำคัญ <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <ul class="glossary-list-compact">
+          <li><div class="gl-term">HARE</div><div class="gl-def">Headache Associated with Refractive Errors — ปวดหัวจากค่าสายตาที่ยังไม่ได้แก้ไข</div></li>
+          <li><div class="gl-term">Myopia</div><div class="gl-def">สายตาสั้น — ลูกตายาวเกินไป แสงโฟกัสหน้าจอประสาทตา</div></li>
+          <li><div class="gl-term">Hyperopia</div><div class="gl-def">สายตายาว — ตาต้องออกแรงโฟกัสตลอดเวลา แม้แต่ระยะไกล</div></li>
+          <li><div class="gl-term">Astigmatism</div><div class="gl-def">สายตาเอียง — กระจกตาไม่กลมสนิท ภาพเบลอทั้งใกล้และไกล</div></li>
+          <li><div class="gl-term">Presbyopia</div><div class="gl-def">สายตายาวตามอายุ — เลนส์ตาแข็งขึ้น โฟกัสใกล้ยากขึ้น เริ่มหลัง 40 ปี</div></li>
+          <li><div class="gl-term">Accommodation</div><div class="gl-def">การปรับโฟกัสของตา — กล้ามเนื้อ Ciliary บีบให้เลนส์โป่ง</div></li>
+          <li><div class="gl-term">Accommodative Reserve</div><div class="gl-def">พลังงานสำรองในการเพ่ง — ยิ่งใช้มาก ยิ่งเหลือน้อย นำไปสู่ปวดหัว</div></li>
+          <li><div class="gl-term">Asthenopia</div><div class="gl-def">อาการตาล้า ปวดตา เคืองตา จากการใช้ตาหนัก</div></li>
+          <li><div class="gl-term">Visual Cortex</div><div class="gl-def">ศูนย์ประมวลผลการมองเห็นในสมอง ใช้กลูโคสสูงมาก</div></li>
+          <li><div class="gl-term">Ciliary Muscle</div><div class="gl-def">กล้ามเนื้อวงแหวนในดวงตาที่ควบคุมการโฟกัส ต้องนอนหลับเพื่อฟื้นตัว</div></li>
+          <li><div class="gl-term">Astrocyte</div><div class="gl-def">เซลล์ในสมองที่ส่งกลูโคสเลี้ยงเซลล์ประสาท อดนอนทำให้ทำงานบกพร่อง</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Collapsible Author -->
+    <div class="sidebar-widget" id="w-author">
+      <div class="sw-head" onclick="toggleW('w-author')">👤 ผู้เขียน <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <div class="author-card">
+          <div class="author-row">
+            <div class="author-avatar-emoji">👁</div>
+            <div><div class="author-name" style="color:var(--navy);">Suraphun Parsuraphun</div><div class="author-role" style="color:var(--text-muted);font-size:12px;">Optician Lens Specialist · Optical X</div></div>
+          </div>
+          <div class="author-row">
+            <div class="author-avatar-emoji">🔬</div>
+            <div><div class="author-name" style="color:var(--navy);">Ploychompoo Parsuraphun</div><div class="author-role" style="color:var(--text-muted);font-size:12px;">Optometrist · Optical X</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA (desktop only, kept as sidebar-card) -->
     <div class="sidebar-cta">
       <div class="cta-icon">👓</div>
       <h3>ตรวจวัดสายตา<br>ที่ Optical X</h3>
@@ -1400,90 +1526,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       <a href="https://opticalxvision.com" target="_blank">นัดตรวจวันนี้ →</a>
     </div>
 
-    <!-- Glossary -->
-    <div class="sidebar-card">
-      <h3>คำศัพท์ที่ควรรู้</h3>
-      <dl class="glossary-list">
-
-        <div class="glossary-term">
-          <dt>Myopia <span class="th-name">สายตาสั้น</span></dt>
-          <dd>มองไกลไม่ชัด เพราะลูกตายาวเกินไป ทำให้แสงโฟกัสหน้าจอประสาทตา</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Hyperopia <span class="th-name">สายตายาว</span></dt>
-          <dd>มองใกล้ไม่ชัด ตาต้องออกแรงโฟกัสตลอดเวลา แม้แต่ระยะไกล</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Astigmatism <span class="th-name">สายตาเอียง</span></dt>
-          <dd>กระจกตาไม่กลมสนิท ทำให้ภาพเบลอทั้งใกล้และไกล</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Presbyopia <span class="th-name">สายตายาวตามอายุ</span></dt>
-          <dd>เลนส์ตาแข็งขึ้นตามอายุ มักเริ่มอายุ 40+ โฟกัสใกล้ยากขึ้น</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Accommodation <span class="th-name">การปรับโฟกัส</span></dt>
-          <dd>ความสามารถของเลนส์ตาในการเปลี่ยนความโค้งเพื่อโฟกัสระยะต่างๆ</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>HARE</dt>
-          <dd>Headache Associated with Refractive Errors — ปวดหัวจากค่าสายตาที่ยังไม่ได้รับการแก้ไข</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Add Power <span class="th-name">ค่าเพิ่มสำหรับอ่านหนังสือ</span></dt>
-          <dd>ค่าสายตาส่วนเพิ่มสำหรับการมองใกล้ ใช้กับแว่นโปรเกรสซีฟ</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Progressive Lens <span class="th-name">เลนส์โปรเกรสซีฟ</span></dt>
-          <dd>เลนส์ที่รวมค่าสายตาหลายระยะในอันเดียว ไม่มีเส้นแบ่งที่มองเห็น</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Asthenopia <span class="th-name">อาการตาล้า</span></dt>
-          <dd>อาการปวดตา ตาล้า เคืองตา ที่เกิดจากการใช้ตาหนักหรือค่าสายตาไม่ถูกต้อง</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Visual Cortex <span class="th-name">ศูนย์ประมวลผลการมองเห็น</span></dt>
-          <dd>พื้นที่ในสมองส่วนหลังที่ประมวลผลภาพทั้งหมดที่ตารับเข้ามา เป็นหนึ่งในระบบที่ใช้พลังงาน (กลูโคส) สูงที่สุดในสมอง</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Glucose <span class="th-name">น้ำตาลกลูโคส</span></dt>
-          <dd>เชื้อเพลิงหลักของสมอง สมองใช้กลูโคสถึง 25% ของกลูโคสทั้งหมดในร่างกาย Visual Cortex ใช้มากเป็นพิเศษเมื่อต้องทำงาน</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Accommodative Reserve <span class="th-name">พลังงานสำรองการเพ่ง</span></dt>
-          <dd>ปริมาณกำลังเพ่งที่เหลืออยู่ในดวงตา ณ เวลานั้น ยิ่งใช้มาก ยิ่งเหลือน้อย นำไปสู่ความล้าและปวดหัว</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Ciliary Muscle <span class="th-name">กล้ามเนื้อวงแหวน</span></dt>
-          <dd>กล้ามเนื้อในดวงตาที่ทำหน้าที่บีบ-คลายเพื่อปรับความโค้งของเลนส์ตา ใช้พลังงาน ATP และต้องการการนอนหลับเพื่อฟื้นตัว</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>ATP <span class="th-name">หน่วยพลังงานชีวภาพ</span></dt>
-          <dd>Adenosine Triphosphate คือ "เงินสด" ของเซลล์ในร่างกาย ทุกกระบวนการทางกายภาพและประสาทต้องใช้ ATP เป็นเชื้อเพลิง</dd>
-        </div>
-
-        <div class="glossary-term">
-          <dt>Astrocyte <span class="th-name">เซลล์ส่งพลังงานในสมอง</span></dt>
-          <dd>เซลล์ในสมองที่ทำหน้าที่ส่งกลูโคสไปเลี้ยงเซลล์ประสาท อดนอนทำให้ Astrocyte ทำงานบกพร่อง ส่งผลให้ปวดหัวง่ายขึ้น</dd>
-        </div>
-
-      </dl>
-    </div>
-
-    <!-- Research Sources -->
+    <!-- Research Sources (desktop only) -->
     <div class="sidebar-card">
       <h3>อ้างอิง</h3>
       <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">
@@ -1559,15 +1602,40 @@ pre, code { overflow-x: auto; max-width: 100%; }
 
 
 <script>
+  /* Sidebar accordion (mobile only) */
+  function toggleW(id) {
+    if (window.innerWidth > 860) return;
+    document.getElementById(id).classList.toggle('sw-open');
+  }
 
-  // Smooth scroll offset for sticky header
+  /* Glossary drawer */
+  const overlay = document.getElementById('gOverlay');
+  const drawer  = document.getElementById('gDrawer');
+  function closeDrawer() {
+    overlay.classList.remove('vis');
+    drawer.classList.remove('vis');
+  }
+  document.querySelectorAll('.gloss').forEach(el => {
+    el.addEventListener('click', e => {
+      if (window.innerWidth > 860) return;
+      e.stopPropagation();
+      document.getElementById('dTerm').textContent = el.dataset.term || el.textContent.trim();
+      document.getElementById('dDef').textContent  = el.dataset.def  || '';
+      overlay.classList.add('vis');
+      drawer.classList.add('vis');
+    });
+  });
+  /* Swipe down to close drawer */
+  let ty = 0;
+  drawer.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive: true });
+  drawer.addEventListener('touchend',   e => { if (e.changedTouches[0].clientY - ty > 60) closeDrawer(); }, { passive: true });
+
+  /* Smooth scroll for TOC links */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
-      }
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 </script>
@@ -1615,6 +1683,10 @@ pre, code { overflow-x: auto; max-width: 100%; }
     toggleItem(item);
   };
 })();
+</script>
+<script>
+/* ── Universal QA Accordion CSS Fix ── */
+(function(){var s=document.createElement('style');s.textContent='.qa-q,.qa-question{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.qa-a,.qa-answer{max-height:0!important;overflow:hidden!important;display:block!important;transition:max-height .4s ease,padding .3s;padding:0 24px!important}.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{max-height:3000px!important;padding:4px 24px 20px!important}@media(max-width:600px){.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{padding:4px 16px 16px 16px!important}}';document.head.appendChild(s)})();
 </script>
 
 </body>

@@ -25,8 +25,8 @@
   --teal: #1D5B6B;
   --teal-light: #E5F2F5;
   --teal-mid: #2E7D8F;
-  --sidebar-bg: #141E24;
-  --sidebar-border: rgba(201,168,76,0.15);
+  --sidebar-bg: #FFF8E5;
+  --sidebar-border: rgba(201,168,76,0.25);
   --green: #2D6A4F;
   --green-light: #E8F5EE;
   --purple: #4A2C6E;
@@ -358,7 +358,7 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
   line-height: 1.2;
 }
 .toc a {
-  color: rgba(220,210,190,0.5);
+  color: rgba(59,44,26,0.6);
   text-decoration: none;
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 12px;
@@ -366,13 +366,13 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
   transition: color 0.2s;
   display: block;
 }
-.toc a:hover { color: var(--gold-light); }
+.toc a:hover { color: var(--dark); }
 
 /* Glossary */
 .glossary-card {
   margin-bottom: 18px;
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .glossary-card:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
 .gc-head {
@@ -385,7 +385,7 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
 .gc-term {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
-  color: var(--gold-light);
+  color: var(--dark);
   font-weight: 700;
   line-height: 1.3;
 }
@@ -404,7 +404,7 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
 .gc-def {
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 12px;
-  color: rgba(220,210,190,0.5);
+  color: var(--ink-light);
   line-height: 1.75;
 }
 .gc-eng {
@@ -427,14 +427,14 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
 .sidebar-cta h4 {
   font-family: 'Playfair Display', serif;
   font-size: 15px;
-  color: #fff;
+  color: var(--dark);
   margin-bottom: 8px;
   font-weight: 700;
 }
 .sidebar-cta p {
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 12px;
-  color: rgba(220,210,190,0.55);
+  color: var(--ink-light);
   line-height: 1.7;
   margin-bottom: 16px;
 }
@@ -457,7 +457,7 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
 .cta-note {
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 10px;
-  color: rgba(220,210,190,0.3);
+  color: var(--ink-light);
 }
 
 /* Key facts sidebar */
@@ -467,7 +467,7 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
   align-items: center;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .kf-item:last-child { border: none; }
 .kf-num {
@@ -483,7 +483,7 @@ aside::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radiu
 .kf-desc {
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 11.5px;
-  color: rgba(220,210,190,0.5);
+  color: var(--ink-light);
   line-height: 1.6;
 }
 
@@ -1369,9 +1369,48 @@ pre, code { overflow-x: auto; max-width: 100%; }
 }
 }
 
+
+/* ─── COLLAPSIBLE SIDEBAR WIDGETS ─── */
+.sidebar-widget{background:#fff;border:1px solid #e5e5e0;border-radius:12px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.sw-head{background:#064C84;color:#FFF8E5;border-bottom:none;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.sw-head.teal{background:#619BB0;color:#FFF8E5}
+.sw-head .sw-toggle{font-size:18px;font-weight:700;transition:transform .3s}
+.sidebar-widget.sw-open .sw-toggle{transform:rotate(45deg)}
+.sw-body{display:block}
+.sw-body .toc-list{list-style:none;padding:0;margin:0}
+.sw-body .toc-list li a{display:flex;align-items:center;gap:6px;padding:12px 18px;border-bottom:1px solid #e5e5e0;text-decoration:none;font-size:14px;color:#3a3a4a;min-height:48px;transition:all .2s}
+.sw-body .toc-list li:last-child a{border-bottom:none}
+.sw-body .toc-list li a::before{content:'→';color:var(--gold,#c9922a);font-size:13px;flex-shrink:0}
+.sw-body .glossary-list-compact{list-style:none;padding:0;margin:0}
+.sw-body .glossary-list-compact li{padding:12px 18px;border-bottom:1px solid #e5e5e0;min-height:48px}
+.sw-body .glossary-list-compact li:last-child{border-bottom:none}
+.sw-gl-term{font-weight:700;color:var(--teal,#0e7c7b);font-size:13px;margin-bottom:3px}
+.sw-gl-def{color:#6b7280;font-size:13px;line-height:1.5}
+.sw-author-card{padding:16px 18px}
+.sw-author-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.sw-author-ava{width:44px;height:44px;border-radius:50%;background:var(--navy,#0d1b2a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+.sw-author-divider{border:none;border-top:1px solid #e5e5e0;margin:12px 0}
+.sw-cta-btn{display:block;background:var(--gold,#c9922a);color:#fff;text-align:center;padding:13px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px}
+.gloss-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:250}
+.gloss-overlay.vis{display:block}
+.gloss-drawer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-radius:20px 20px 0 0;padding:20px 22px 48px;z-index:260;transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1);max-height:60vh;overflow-y:auto}
+.gloss-drawer.vis{transform:translateY(0)}
+.drawer-handle{width:40px;height:4px;background:#d1d5db;border-radius:2px;margin:0 auto 18px}
+.drawer-term{font-size:18px;font-weight:700;color:var(--teal,#0e7c7b);margin-bottom:10px}
+.drawer-def{font-size:16px;color:#333;line-height:1.8}
+.gloss{border-bottom:2px dotted var(--teal,#0e7c7b);cursor:pointer;color:var(--teal,#0e7c7b);font-weight:600;position:relative}
+.gloss .tip{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--navy,#0d1b2a);color:#fff;font-size:13px;font-weight:400;line-height:1.55;padding:12px 16px;border-radius:10px;width:min(260px,88vw);white-space:normal;z-index:150;box-shadow:0 6px 24px rgba(0,0,0,.35);pointer-events:none}
+.gloss .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:var(--navy,#0d1b2a)}
+@media(hover:hover){.gloss:hover .tip{display:block}}
+@media(min-width:861px){.sw-head{cursor:default}.sw-head .sw-toggle{display:none}.sw-body{display:block!important}}
+@media(max-width:860px){.sidebar,.sidebar-section{position:static!important;width:100%!important;order:-1;margin-bottom:4px;max-height:none!important;overflow-y:visible!important}.sidebar-widget{margin-bottom:8px;border-radius:10px}.sw-body{display:none}.sidebar-widget.sw-open .sw-body{display:block}.gloss .tip{display:none!important}}
+
 </style>
 </head>
 <body>
+<div class="gloss-overlay" id="gOverlay" onclick="closeDrawer()"></div>
+<div class="gloss-drawer" id="gDrawer"><div class="drawer-handle"></div><div class="drawer-term" id="dTerm"></div><div class="drawer-def" id="dDef"></div></div>
+
 
 <div class="reading-progress" id="readingProgress"></div>
 <!-- ══════════════════════════════════════════
@@ -2223,166 +2262,53 @@ pre, code { overflow-x: auto; max-width: 100%; }
 ══════════════════════════════════════════ -->
 <aside>
 
-  <div class="sidebar-section">
-    <div class="sidebar-label">สารบัญ · Timeline</div>
-    <ul class="toc">
-      <li><a href="#era-pre"><span class="toc-year">ก่อน ค.ศ. 1000</span>ยุคก่อนแว่น — เอสกิโม & นีโร</a></li>
-      <li><a href="#era-alhazen"><span class="toc-year">ค.ศ. 1011</span>Alhazen — บิดาแห่ง Optics</a></li>
-      <li><a href="#era-1286"><span class="toc-year">1286</span>แว่นตาอันแรก — ปีซ่า อิตาลี</a></li>
-      <li><a href="#era-1500"><span class="toc-year">1500s</span>วัสดุหลากหลาย แต่ยังไม่มั่นคง</a></li>
-      <li><a href="#era-1600"><span class="toc-year">1629–1665</span>หนังสือพิมพ์ฉบับแรก & สมาคมช่างแว่น</a></li>
-      <li><a href="#era-1727"><span class="toc-year">1727</span>Edward Scarlett & ขาแว่น</a></li>
-      <li><a href="#era-1784"><span class="toc-year">1784</span>Benjamin Franklin & Bifocal</a></li>
-      <li><a href="#era-1825"><span class="toc-year">1825</span>Sir George Airy & สายตาเอียง</a></li>
-      <li><a href="#era-1930"><span class="toc-year">1930s</span>RayBan Aviator</a></li>
-      <li><a href="#era-1940"><span class="toc-year">1940s</span>CR-39 เลนส์พลาสติก</a></li>
-      <li><a href="#era-1959"><span class="toc-year">1959</span>Varilux — Progressive Lens แรก</a></li>
-      <li><a href="#era-modern"><span class="toc-year">1960–ปัจจุบัน</span>Photochromic & Digital Age</a></li>
-      <li><a href="#era-future"><span class="toc-year">อนาคต</span>Smart Glasses & AI Vision</a></li>
-      <li><a href="#qa"><span class="toc-year">Q&A</span>ถามมา ตอบตรงๆ</a></li>
-    </ul>
-  </div>
-
-  <div class="sidebar-section">
-    <div class="sidebar-label">ตัวเลขน่าสนใจ</div>
-    <div class="key-facts">
-      <div class="kf-item">
-        <div class="kf-num">800+</div>
-        <div class="kf-desc">ปีที่แว่นตาถูกบันทึกครั้งแรก ณ ปีซ่า 1286</div>
-      </div>
-      <div class="kf-item">
-        <div class="kf-num">2.2B</div>
-        <div class="kf-desc">คนที่ยังไม่ได้รับการแก้ไขสายตา (WHO 2022)</div>
-      </div>
-      <div class="kf-item">
-        <div class="kf-num">8 ปี</div>
-        <div class="kf-desc">Maitenaz วิจัย Progressive Lens ก่อนสำเร็จ (1951–1959)</div>
-      </div>
-      <div class="kf-item">
-        <div class="kf-num">700M</div>
-        <div class="kf-desc">Varilux lenses ขายไปทั่วโลกตั้งแต่ปี 1959</div>
-      </div>
-      <div class="kf-item">
-        <div class="kf-num">50%</div>
-        <div class="kf-desc">ของประชากรโลกอาจสายตาสั้นภายในปี 2050</div>
-      </div>
-      <div class="kf-item">
-        <div class="kf-num">38x</div>
-        <div class="kf-desc">ครั้งที่ CR-39 ล้มเหลวก่อนสำเร็จครั้งที่ 39</div>
-      </div>
+  <div class="sidebar-widget sw-open" id="w-toc">
+    <div class="sw-head" onclick="toggleW('w-toc')">📋 สารบัญ <span class="sw-toggle">+</span></div>
+    <div class="sw-body">
+      <ul class="toc-list">
+        <li><a href="#era-pre">ก่อน ค.ศ. 1000 — ยุคก่อนแว่น</a></li>
+        <li><a href="#era-alhazen">ค.ศ. 1011 — Alhazen & Optics</a></li>
+        <li><a href="#era-1286">1286 — แว่นตาอันแรก ปีซ่า</a></li>
+        <li><a href="#era-1500">1500s — วัสดุหลากหลาย</a></li>
+        <li><a href="#era-1600">1629–1665 — หนังสือพิมพ์แรก</a></li>
+        <li><a href="#era-1727">1727 — Edward Scarlett</a></li>
+        <li><a href="#era-1784">1784 — Benjamin Franklin</a></li>
+        <li><a href="#era-1825">1825 — Sir George Airy</a></li>
+        <li><a href="#era-1930">1930s — RayBan Aviator</a></li>
+        <li><a href="#era-1940">1940s — CR-39</a></li>
+        <li><a href="#era-1959">1959 — Varilux</a></li>
+        <li><a href="#era-modern">1960–ปัจจุบัน — Photochromic</a></li>
+        <li><a href="#era-future">อนาคต — Smart Glasses</a></li>
+        <li><a href="#qa">Q&A — ถามมา ตอบตรงๆ</a></li>
+      </ul>
     </div>
   </div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-label">คำศัพท์แว่นตา · Glossary</div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Presbyopia</div>
-        <div class="gc-tag">สายตา</div>
-      </div>
-      <div class="gc-def">สายตายาวตามอายุ เลนส์แก้วตาแข็งขึ้นตามอายุ โฟกัสใกล้ลำบาก เริ่มที่ 40+ ทุกคนเป็น 100%</div>
-      <span class="gc-eng">Age-related loss of near focus</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Progressive Lens</div>
-        <div class="gc-tag">เลนส์</div>
-      </div>
-      <div class="gc-def">เลนส์โปรเกรสซีฟ มองได้ทุกระยะต่อเนื่องไร้รอยต่อ พัฒนาจาก Bifocal ของ Benjamin Franklin ปี 1784 สู่ Varilux ปี 1959</div>
-      <span class="gc-eng">No-line multifocal lens</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Astigmatism</div>
-        <div class="gc-tag">สายตา</div>
-      </div>
-      <div class="gc-def">สายตาเอียง กระจกตาไม่กลมสมมาตร ภาพเบลอทั้งใกล้และไกล แก้ด้วยเลนส์ทรงกระบอก (Cyl + Axis)</div>
-      <span class="gc-eng">Irregular corneal curvature</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Myopia</div>
-        <div class="gc-tag">สายตา</div>
-      </div>
-      <div class="gc-def">สายตาสั้น ลูกตายาวกว่าปกติ แสงโฟกัสก่อนถึง Retina มองไกลเบลอ แก้ด้วยเลนส์เว้า (Concave/Minus)</div>
-      <span class="gc-eng">Nearsightedness</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Hyperopia</div>
-        <div class="gc-tag">สายตา</div>
-      </div>
-      <div class="gc-def">สายตายาว ลูกตาสั้นกว่าปกติ แสงโฟกัสหลัง Retina มองใกล้เบลอ แก้ด้วยเลนส์นูน (Convex/Plus)</div>
-      <span class="gc-eng">Farsightedness</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">CR-39</div>
-        <div class="gc-tag">วัสดุ</div>
-      </div>
-      <div class="gc-def">Columbia Resin #39 เลนส์พลาสติกมาตรฐาน ทดลองล้มเหลว 38 ครั้งกว่าสำเร็จ ค่า Index 1.50 เป็นมาตรฐานอุตสาหกรรมตั้งแต่ 1940s</div>
-      <span class="gc-eng">Standard plastic ophthalmic lens</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Anti-Reflection (AR)</div>
-        <div class="gc-tag">เคลือบ</div>
-      </div>
-      <div class="gc-def">การเคลือบกันแสงสะท้อน (มัลติโค้ท) ลดแสงสะท้อนจากเลนส์ได้ถึง 99.5% ทำให้ภาพคมชัดขึ้นและตาไม่ล้า</div>
-      <span class="gc-eng">Multi-layer antireflection coating</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Photochromic</div>
-        <div class="gc-tag">เลนส์</div>
-      </div>
-      <div class="gc-def">เลนส์เปลี่ยนสี ตอบสนองต่อ UV กลางแจ้งเข้ม ในร่มใส ประดิษฐ์ตั้งแต่ปี 1960 แต่เวอร์ชันพลาสติกมาในยุค 1990s</div>
-      <span class="gc-eng">UV-responsive variable tint lens</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">PD (Pupillary Distance)</div>
-        <div class="gc-tag">การวัด</div>
-      </div>
-      <div class="gc-def">ระยะห่างระหว่างศูนย์กลางรูม่านตา วัดเป็นมิลลิเมตร สำคัญมากสำหรับ Progressive lens — ผิดแค่ 1 มม. อาจทำให้เวียนหัว</div>
-      <span class="gc-eng">Inter-pupillary distance measurement</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Refractive Index</div>
-        <div class="gc-tag">วัสดุ</div>
-      </div>
-      <div class="gc-def">ค่าดัชนีหักเหของเลนส์ ยิ่งสูงเลนส์ยิ่งบาง ค่าปกติ 1.50 (CR-39) ถึง 1.74 (High-index) สำหรับสายตาสูงใช้ 1.67–1.74</div>
-      <span class="gc-eng">Lens material density index</span>
-    </div>
-
-    <div class="glossary-card">
-      <div class="gc-head">
-        <div class="gc-term">Bifocal</div>
-        <div class="gc-tag">เลนส์</div>
-      </div>
-      <div class="gc-def">เลนส์สองระยะ มีเส้นแบ่งชัดเจน บนมองไกล ล่างมองใกล้ ประดิษฐ์โดย Benjamin Franklin ปี 1784 เป็นรุ่นพี่ของ Progressive</div>
-      <span class="gc-eng">Two-zone lens with visible line</span>
+  <div class="sidebar-widget" id="w-gloss">
+    <div class="sw-head teal" onclick="toggleW('w-gloss')">📖 คำศัพท์สำคัญ <span class="sw-toggle">+</span></div>
+    <div class="sw-body">
+      <ul class="glossary-list-compact">
+        <li><div class="sw-gl-term">Presbyopia</div><div class="sw-gl-def">สายตายาวตามอายุ เลนส์แก้วตาแข็งขึ้น</div></li>
+        <li><div class="sw-gl-term">Progressive Lens</div><div class="sw-gl-def">เลนส์โปรเกรสซีฟ มองได้ทุกระยะ</div></li>
+        <li><div class="sw-gl-term">Astigmatism</div><div class="sw-gl-def">สายตาเอียง กระจกตาไม่กลม</div></li>
+        <li><div class="sw-gl-term">Myopia</div><div class="sw-gl-def">สายตาสั้น มองไกลเบลอ</div></li>
+        <li><div class="sw-gl-term">Hyperopia</div><div class="sw-gl-def">สายตายาว มองใกล้เบลอ</div></li>
+        <li><div class="sw-gl-term">CR-39</div><div class="sw-gl-def">เลนส์พลาสติก Index 1.50</div></li>
+        <li><div class="sw-gl-term">Anti-Reflection</div><div class="sw-gl-def">เคลือบกันแสงสะท้อน</div></li>
+        <li><div class="sw-gl-term">Photochromic</div><div class="sw-gl-def">เลนส์เปลี่ยนสี UV</div></li>
+        <li><div class="sw-gl-term">PD</div><div class="sw-gl-def">ระยะห่างระหว่างรูม่านตา</div></li>
+        <li><div class="sw-gl-term">Bifocal</div><div class="sw-gl-def">เลนส์สองระยะ มีเส้นแบ่ง</div></li>
+      </ul>
     </div>
   </div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-cta">
-      <span class="cta-icon">👓</span>
-      <h4>ตรวจสายตา Progressive<br>ที่ Optical X</h4>
-      <p>ห้องตรวจ 6 เมตร · Trial Progressive Lens 60+ คู่ · ทดลองใส่ก่อนตัดสินใจ · ผู้เชี่ยวชาญ Progressive ระดับ Top ของไทย</p>
-      <a href="https://opticalxvision.com" class="cta-btn" target="_blank">นัดตรวจสายตา →</a>
-      <div class="cta-note">Riverside Plaza · ชั้น 2 · BTS สยาม</div>
+  <div class="sidebar-widget" id="w-author">
+    <div class="sw-head" onclick="toggleW('w-author')">👤 ผู้เขียน <span class="sw-toggle">+</span></div>
+    <div class="sw-body">
+      <div class="sw-author-card">
+        <div class="sw-author-row"><div class="sw-author-ava">👁</div><div><div style="font-weight:700;color:var(--navy,#0d1b2a);font-size:14px">Suraphun Parsuraphun</div><div style="font-size:12px;color:#6b7280">Optician Lens Specialist · Optical X</div></div></div>
+        <div class="sw-author-row"><div class="sw-author-ava">🔬</div><div><div style="font-weight:700;color:var(--navy,#0d1b2a);font-size:14px">Ploychompoo Parsuraphun</div><div style="font-size:12px;color:#6b7280">Optometrist · Optical X</div></div></div>
+      </div>
     </div>
   </div>
 
@@ -2505,6 +2431,21 @@ window.addEventListener('scroll', () => {
     toggleItem(item);
   };
 })();
+</script>
+
+<script>
+function toggleW(id){if(window.innerWidth>860)return;document.getElementById(id).classList.toggle('sw-open')}
+var overlay=document.getElementById('gOverlay'),drawer=document.getElementById('gDrawer');
+function closeDrawer(){overlay.classList.remove('vis');drawer.classList.remove('vis')}
+document.querySelectorAll('.gloss').forEach(function(el){el.addEventListener('click',function(e){if(window.innerWidth>860)return;e.stopPropagation();document.getElementById('dTerm').textContent=el.dataset.term||el.textContent.trim();document.getElementById('dDef').textContent=el.dataset.def||'';overlay.classList.add('vis');drawer.classList.add('vis')})});
+var ty=0;drawer.addEventListener('touchstart',function(e){ty=e.touches[0].clientY},{passive:true});drawer.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-ty>60)closeDrawer()},{passive:true});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+<script>
+(function(){function toggleItem(item){if(!item)return;var wasOpen=item.classList.contains('open');var parent=item.parentElement;if(parent){parent.querySelectorAll('.qa-item.open').forEach(function(el){el.classList.remove('open')})}if(!wasOpen)item.classList.add('open')}document.querySelectorAll('.qa-q,.qa-question').forEach(function(btn){btn.style.cursor='pointer';btn.addEventListener('click',function(e){e.stopPropagation();toggleItem(btn.closest('.qa-item'))})});document.querySelectorAll('.qa-item').forEach(function(item){if(!item.querySelector('.qa-q,.qa-question')){item.style.cursor='pointer';item.addEventListener('click',function(){toggleItem(item)})}});window.toggleQA=function(el){toggleItem(el.closest?el.closest('.qa-item'):el.parentElement)}})();
+</script>
+<script>
+(function(){var s=document.createElement('style');s.textContent='.qa-q,.qa-question{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.qa-a,.qa-answer{max-height:0!important;overflow:hidden!important;display:block!important;transition:max-height .4s ease,padding .3s;padding:0 24px!important}.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{max-height:3000px!important;padding:4px 24px 20px!important}@media(max-width:600px){.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{padding:4px 16px 16px 16px!important}}';document.head.appendChild(s)})();
 </script>
 
 </body>

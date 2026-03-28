@@ -2076,10 +2076,66 @@ pre, code { overflow-x: auto; max-width: 100%; }
 }
 }
 
+
+  /* ─── COLLAPSIBLE SIDEBAR WIDGETS ─── */
+  .sidebar-widget{background:#fff;border:1px solid #e5e5e0;border-radius:12px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+  .sw-head{background:#f8f6f2;color:#2C2416;border-bottom:1px solid #e5e0d8;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+  .sw-head.teal{background:#e6f7f6;color:#0e7c7b}
+  .sw-head .sw-toggle{font-size:18px;font-weight:700;transition:transform .3s}
+  .sidebar-widget.sw-open .sw-toggle{transform:rotate(45deg)}
+  .sw-body{display:block}
+  .sw-body .toc-list{list-style:none;padding:0;margin:0}
+  .sw-body .toc-list li a{display:flex;align-items:center;gap:6px;padding:12px 18px;border-bottom:1px solid #e5e5e0;text-decoration:none;font-size:14px;color:#3a3a4a;min-height:48px;transition:all .2s}
+  .sw-body .toc-list li:last-child a{border-bottom:none}
+  .sw-body .toc-list li a::before{content:'→';color:var(--gold,#c9922a);font-size:13px;flex-shrink:0}
+  .sw-body .glossary-list-compact{list-style:none;padding:0;margin:0}
+  .sw-body .glossary-list-compact li{padding:12px 18px;border-bottom:1px solid #e5e5e0;min-height:48px}
+  .sw-body .glossary-list-compact li:last-child{border-bottom:none}
+  .sw-gl-term{font-weight:700;color:var(--teal,#0e7c7b);font-size:13px;margin-bottom:3px}
+  .sw-gl-def{color:#6b7280;font-size:13px;line-height:1.5}
+  .sw-author-card{padding:16px 18px}
+  .sw-author-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+  .sw-author-ava{width:44px;height:44px;border-radius:50%;background:var(--navy,#0d1b2a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .sw-author-divider{border:none;border-top:1px solid #e5e5e0;margin:12px 0}
+  .sw-cta-btn{display:block;background:var(--gold,#c9922a);color:#fff;text-align:center;padding:13px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px}
+
+  /* ─── MOBILE GLOSSARY DRAWER ─── */
+  .gloss-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:250}
+  .gloss-overlay.vis{display:block}
+  .gloss-drawer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-radius:20px 20px 0 0;padding:20px 22px 48px;z-index:260;transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1);max-height:60vh;overflow-y:auto}
+  .gloss-drawer.vis{transform:translateY(0)}
+  .drawer-handle{width:40px;height:4px;background:#d1d5db;border-radius:2px;margin:0 auto 18px}
+  .drawer-term{font-size:18px;font-weight:700;color:var(--teal,#0e7c7b);margin-bottom:10px}
+  .drawer-def{font-size:16px;color:#333;line-height:1.8}
+
+  /* ─── GLOSS TOOLTIP ─── */
+  .gloss{border-bottom:2px dotted var(--teal,#0e7c7b);cursor:pointer;color:var(--teal,#0e7c7b);font-weight:600;position:relative}
+  .gloss .tip{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--navy,#0d1b2a);color:#fff;font-size:13px;font-weight:400;line-height:1.55;padding:12px 16px;border-radius:10px;width:min(260px,88vw);white-space:normal;z-index:150;box-shadow:0 6px 24px rgba(0,0,0,.35);pointer-events:none}
+  .gloss .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:var(--navy,#0d1b2a)}
+  @media(hover:hover){.gloss:hover .tip{display:block}}
+
+  @media(min-width:861px){
+    .sw-head{cursor:default}
+    .sw-head .sw-toggle{display:none}
+    .sw-body{display:block!important}
+  }
+  @media(max-width:860px){
+    .sidebar{position:static!important;width:100%!important;order:-1;margin-bottom:4px;max-height:none!important;overflow-y:visible!important}
+    .sidebar-widget{margin-bottom:8px;border-radius:10px}
+    .sw-body{display:none}
+    .sidebar-widget.sw-open .sw-body{display:block}
+    .gloss .tip{display:none!important}
+  }
 </style>
 </head>
 <body>
 
+<div class="gloss-overlay" id="gOverlay" onclick="closeDrawer()"></div>
+<div class="gloss-drawer" id="gDrawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-term" id="dTerm"></div>
+  <div class="drawer-def" id="dDef"></div>
+</div>
 <!-- ===== HERO ===== -->
 
 
@@ -2310,7 +2366,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
 
       <p>
         ทีนี้ ตัวละครสำคัญของเรื่องนี้ชื่อ
-        <span class="tooltip-word">เมลาโทนิน<span class="tooltip-popup">🔬 เมลาโทนิน (Melatonin) คือฮอร์โมนง่วงนอนที่สมองส่วน Pineal Gland ผลิต จะหลั่งออกมาเมื่อไม่มีแสงสีน้ำเงินรบกวน ทำให้เรารู้สึกง่วงตามธรรมชาติ</span></span>
+        <span class="gloss" data-term="เมลาโทนิน (Melatonin)" data-def="ฮอร์โมนง่วงนอนที่สมองส่วน Pineal Gland ผลิต จะหลั่งออกมาเมื่อไม่มีแสงสีน้ำเงินรบกวน ทำให้เรารู้สึกง่วงตามธรรมชาติ"><span class="tip"></span>เมลาโทนิน</span>
         ครับ คือ <strong>ฮอร์โมนง่วงนอน</strong> ที่สมองจะผลิตออกมาเมื่อรู้สึกว่า "มืดแล้ว"
       </p>
       <p>
@@ -2401,7 +2457,7 @@ pre, code { overflow-x: auto; max-width: 100%; }
       <h3 class="sub-title">เทียบกันชัดๆ — เลนส์สีไหนตัดแสงได้มากกว่า?</h3>
       <p>
         นักวิจัยใช้ค่า
-        <span class="tooltip-word">mDFD<span class="tooltip-popup">📐 mDFD (melanopic Daylight Factor Difference) คือค่าที่วัดว่าเลนส์ลดแสงที่กระตุ้น ipRGCs (เซลล์ควบคุมนาฬิกาชีวิต) ได้มากแค่ไหน ค่ายิ่งสูง ยิ่งช่วยการนอนได้มากกว่า</span></span>
+        <span class="gloss" data-term="mDFD (melanopic Daylight Factor Difference)" data-def="ค่าที่วัดว่าเลนส์ลดแสงที่กระตุ้น ipRGCs (เซลล์ควบคุมนาฬิกาชีวิต) ได้มากแค่ไหน ค่ายิ่งสูง ยิ่งช่วยการนอนได้มากกว่า"><span class="tip"></span>mDFD</span>
         วัดตรงๆ ว่าเลนส์สีไหนช่วยได้จริง ดูครับ:
       </p>
 
@@ -3267,89 +3323,60 @@ pre, code { overflow-x: auto; max-width: 100%; }
     <!-- SIDEBAR -->
     <aside class="sidebar">
 
+      <!-- TOC -->
+      <div class="sidebar-widget sw-open" id="w-toc">
+        <div class="sw-head" onclick="toggleW('w-toc')">📋 สารบัญ <span class="sw-toggle">+</span></div>
+        <div class="sw-body">
+          <ul class="toc-list">
+            <li><a href="#sec1">ย้อนไป 200,000 ปีก่อน</a></li>
+            <li><a href="#sec2">เมลาโทนิน — ตัวร้าย</a></li>
+            <li><a href="#sec3">คำตอบ: สีเลนส์</a></li>
+            <li><a href="#sec4">ลองเลนส์ Max Sleep</a></li>
+            <li><a href="#sec5">เทียบเลนส์ 4 แบบ</a></li>
+            <li><a href="#sec6">ราคา</a></li>
+            <li><a href="#sec7">สายตายาว 40+</a></li>
+            <li><a href="#sec8">ไม่ได้ทันทีสำหรับทุกคน</a></li>
+            <li><a href="#sec9">เทียบกันชัดๆ</a></li>
+            <li><a href="#sec10">Dark Mode ด้วย</a></li>
+            <li><a href="#sec11">งานวิจัยทั้งหมด</a></li>
+            <li><a href="#sec12">ลูกค้าบอกว่า...</a></li>
+            <li><a href="#sec13">คำถามที่พบบ่อย</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GLOSSARY -->
+      <div class="sidebar-widget" id="w-gloss">
+        <div class="sw-head teal" onclick="toggleW('w-gloss')">📖 คำศัพท์สำคัญ <span class="sw-toggle">+</span></div>
+        <div class="sw-body">
+          <ul class="glossary-list-compact">
+            <li><div class="sw-gl-term">เมลาโทนิน (Melatonin)</div><div class="sw-gl-def">ฮอร์โมนง่วงนอนที่สมองผลิต จะหลั่งออกมาเมื่อไม่มีแสงสีน้ำเงินรบกวน</div></li>
+            <li><div class="sw-gl-term">แสงสีน้ำเงิน (Blue Light)</div><div class="sw-gl-def">คลื่นแสงจากหน้าจอที่กดการหลั่งเมลาโทนินมากที่สุด</div></li>
+            <li><div class="sw-gl-term">ipRGCs</div><div class="sw-gl-def">เซลล์ในจอตาที่ไวต่อแสงสีน้ำเงินเป็นพิเศษ ส่งสัญญาณไปยังนาฬิกาชีวิต</div></li>
+            <li><div class="sw-gl-term">Circadian Rhythm</div><div class="sw-gl-def">นาฬิกาชีวิตภายในร่างกาย ควบคุมรอบการตื่น-นอนในแต่ละวัน</div></li>
+            <li><div class="sw-gl-term">Deep Sleep (หลับลึก)</div><div class="sw-gl-def">ช่วงการนอนหลับที่ร่างกายซ่อมแซมตัวเองได้ดีที่สุด</div></li>
+            <li><div class="sw-gl-term">mDFD</div><div class="sw-gl-def">ค่าที่วัดว่าเลนส์ลดแสงที่กระตุ้น ipRGCs ได้มากแค่ไหน</div></li>
+            <li><div class="sw-gl-term">Spectrometer</div><div class="sw-gl-def">เครื่องวัดคลื่นแสง ใช้ยืนยันว่าเลนส์ตัดแสงช่วงคลื่นใดได้จริง</div></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- AUTHOR -->
-      <div class="author-card">
-        <div class="author-avatar">👁️</div>
-        <div class="author-name">Ploychompoo Parsuraphun</div>
-        <div class="author-title">Optometrist | Optical X</div>
-        <div class="author-badge">⭐ Google 5.0 | Optical X</div>
-        <p style="font-size:12px;color:#5a6474;margin-top:8px;line-height:1.6;">ผู้เชี่ยวชาญด้านสุขภาพตาและงานวิจัยเลนส์</p>
-        <hr style="margin:12px 0;border:none;border-top:1px solid #e8e2d9;">
-        <div class="author-avatar">🔬</div>
-        <div class="author-name">Suraphun Parsuraphun</div>
-        <div class="author-title">Optician Lens Specialist | Optical X</div>
-        <p style="font-size:12px;color:#5a6474;margin-top:8px;line-height:1.6;">ผู้เชี่ยวชาญด้านเลนส์และการย้อมสี</p>
-      </div>
-
-      <!-- GLOSSY / GLOSSARY -->
-      <div class="glossary-card">
-        <h3>📖 คำศัพท์ที่ควรรู้</h3>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">เมลาโทนิน (Melatonin)</span>
-          <span class="glossary-def">ฮอร์โมนง่วงนอนที่สมองผลิต จะหลั่งออกมาเมื่อไม่มีแสงสีน้ำเงินรบกวน ทำให้เรารู้สึกง่วงตามธรรมชาติ</span>
-        </div>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">แสงสีน้ำเงิน (Blue Light) <span class="glossary-wavelength">455–490 nm</span></span>
-          <span class="glossary-def">คลื่นแสงจากหน้าจอที่กดการหลั่งเมลาโทนินมากที่สุด ทำให้สมองยัง "ตื่น" อยู่แม้ดึกมากแล้ว</span>
-        </div>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">แสงสีเขียว (Green Light) <span class="glossary-wavelength">490–550 nm</span></span>
-          <span class="glossary-def">มีในหน้าจอสมาร์ทโฟนรุ่นใหม่ทุกรุ่น งานวิจัยพบว่ากด melatonin ได้เช่นกัน จึงต้องตัดด้วย</span>
-        </div>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">ipRGCs <span class="glossary-wavelength">460–480 nm</span></span>
-          <span class="glossary-def">เซลล์ในจอตาที่มีโปรตีน Melanopsin ไวต่อแสงสีน้ำเงินเป็นพิเศษ ส่งสัญญาณตรงไปยังนาฬิกาชีวิต (SCN) ของสมอง เป็นกลไกหลักที่แสงโทรศัพท์รบกวนการนอน</span>
-        </div>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">Circadian Rhythm</span>
-          <span class="glossary-def">นาฬิกาชีวิตภายในร่างกาย ควบคุมรอบการตื่น-นอนในแต่ละวัน แสงสีน้ำเงินสามารถรบกวนได้โดยตรง</span>
-        </div>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">Deep Sleep (หลับลึก)</span>
-          <span class="glossary-def">ช่วงการนอนหลับที่ร่างกายซ่อมแซมตัวเองได้ดีที่สุด เมลาโทนินเต็มที่ทำให้เข้าถึงช่วงนี้ได้เร็วขึ้น</span>
-        </div>
-
-        <div class="glossary-entry">
-          <span class="glossary-term">Spectrometer</span>
-          <span class="glossary-def">เครื่องวัดคลื่นแสง ใช้ยืนยันว่าเลนส์ตัดแสงช่วงคลื่นใดได้จริง (ใช้ที่ ม.ธรรมศาสตร์)</span>
+      <div class="sidebar-widget" id="w-author">
+        <div class="sw-head" onclick="toggleW('w-author')">👤 ผู้เขียน <span class="sw-toggle">+</span></div>
+        <div class="sw-body">
+          <div class="sw-author-card">
+            <div class="sw-author-row">
+              <div class="sw-author-ava">👁</div>
+              <div><div class="author-name">Suraphun Parsuraphun</div><div class="author-role">Optician Lens Specialist · Optical X</div></div>
+            </div>
+            <div class="sw-author-row">
+              <div class="sw-author-ava">🔬</div>
+              <div><div class="author-name">Ploychompoo Parsuraphun</div><div class="author-role">Optometrist · Optical X</div></div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- RESEARCH REFS -->
-      <div style="background:white; border:1px solid var(--border); border-radius:16px; padding:20px;">
-        <h3 style="font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--navy); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--border);">📋 อ้างอิงงานวิจัย</h3>
-        <ol style="padding-left:16px; font-size:12px; color:var(--text-muted); line-height:1.8; display:flex; flex-direction:column; gap:6px;">
-          <li>Brainard et al., <em>J. Neuroscience</em>, 2001</li>
-          <li>West et al., <em>J. Applied Physiology</em>, 2011</li>
-          <li>Woelders et al., <em>Current Biology</em>, 2018</li>
-          <li>Burkhart & Phelps, <em>Chronobiology Int.</em>, 2009</li>
-          <li>Schmid et al., <em>Brain Communications</em>, 2024</li>
-          <li>Shechter et al., <em>J. Psychiatric Research</em>, 2018</li>
-          <li>Hester et al., <em>Chronobiology Int.</em>, 2021</li>
-          <li>Glickman et al., <em>TVST/ARVO</em>, 2025 (mDFD)</li>
-          <li>Life Journal — Red vs Blue LED, 2025</li>
-          <li>Frontiers in Neurology Meta-analysis, 2025</li>
-        </ol>
-      </div>
-
-      <!-- TIP CARD -->
-      <div class="tip-card">
-        <h3>💡 วิธีใช้ให้ได้ผลสูงสุด</h3>
-        <ul class="tip-steps">
-          <li>ใส่แว่นหลัง 17:00 น. ทุกวัน ไม่ต้องรอง่วง</li>
-          <li>ปิดไฟหลักในบ้าน ใช้แสงโทนอุ่นแทน</li>
-          <li>หลีกเลี่ยงกาแฟหลัง 15:00 น.</li>
-          <li>ตั้งนาฬิกาเข้านอนเวลาเดิมทุกวัน</li>
-          <li>วัด Sleep Score ด้วย Smartwatch เพื่อดูความเปลี่ยนแปลง</li>
-        </ul>
-      </div>
-
 
     </aside>
   </div>
@@ -3477,6 +3504,73 @@ pre, code { overflow-x: auto; max-width: 100%; }
     var item = el.closest ? el.closest('.qa-item') : el.parentElement;
     toggleItem(item);
   };
+})();
+</script>
+
+
+<script>
+/* Sidebar accordion (mobile only) */
+function toggleW(id){
+  if(window.innerWidth>860)return;
+  document.getElementById(id).classList.toggle('sw-open');
+}
+/* Glossary drawer */
+var overlay=document.getElementById('gOverlay');
+var drawer=document.getElementById('gDrawer');
+function closeDrawer(){overlay.classList.remove('vis');drawer.classList.remove('vis')}
+document.querySelectorAll('.gloss').forEach(function(el){
+  el.addEventListener('click',function(e){
+    if(window.innerWidth>860)return;
+    e.stopPropagation();
+    document.getElementById('dTerm').textContent=el.dataset.term||el.textContent.trim();
+    document.getElementById('dDef').textContent=el.dataset.def||'';
+    overlay.classList.add('vis');
+    drawer.classList.add('vis');
+  });
+});
+var ty=0;
+drawer.addEventListener('touchstart',function(e){ty=e.touches[0].clientY},{passive:true});
+drawer.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-ty>60)closeDrawer()},{passive:true});
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+
+<script>
+/* ── Universal QA/FAQ Toggle v2 ── */
+(function(){
+  function toggleItem(item){
+    if(!item)return;
+    var wasOpen=item.classList.contains('open');
+    var parent=item.parentElement;
+    if(parent){parent.querySelectorAll('.qa-item.open').forEach(function(el){el.classList.remove('open')})}
+    if(!wasOpen)item.classList.add('open');
+  }
+  document.querySelectorAll('.qa-q,.qa-question').forEach(function(btn){
+    btn.style.cursor='pointer';
+    btn.addEventListener('click',function(e){e.stopPropagation();toggleItem(btn.closest('.qa-item'))});
+  });
+  document.querySelectorAll('.qa-item').forEach(function(item){
+    if(!item.querySelector('.qa-q,.qa-question')){
+      item.style.cursor='pointer';
+      item.addEventListener('click',function(){toggleItem(item)});
+    }
+  });
+  window.toggleQA=function(el){toggleItem(el.closest?el.closest('.qa-item'):el.parentElement)};
+})();
+</script>
+
+<script>
+/* ── Universal QA Accordion CSS Fix ── */
+(function(){
+  var s=document.createElement('style');
+  s.textContent='.qa-q,.qa-question{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.qa-a,.qa-answer{max-height:0!important;overflow:hidden!important;display:block!important;transition:max-height .4s ease,padding .3s;padding:0 24px!important}.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{max-height:3000px!important;padding:4px 24px 20px!important}@media(max-width:600px){.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{padding:4px 16px 16px 16px!important}}';
+  document.head.appendChild(s);
 })();
 </script>
 

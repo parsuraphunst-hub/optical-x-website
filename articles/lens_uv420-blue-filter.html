@@ -858,12 +858,52 @@ pre, code { overflow-x: auto; max-width: 100%; }
 }
 }
 
+
+
+/* ── GOLD STANDARD SIDEBAR WIDGETS ── */
+.sidebar-widget{background:#fff;border:1px solid #e5e5e0;border-radius:12px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.sw-head{background:#f8f6f2;color:#2C2416;border-bottom:1px solid #e5e0d8;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.sw-head.teal{background:#e6f7f6;color:#0e7c7b}
+.sw-head .sw-toggle{font-size:18px;font-weight:700;transition:transform .3s}
+.sidebar-widget.sw-open .sw-toggle{transform:rotate(45deg)}
+.sw-body{display:block}
+.sw-body .toc-list{list-style:none;padding:0;margin:0}
+.sw-body .toc-list li a{display:flex;align-items:center;gap:6px;padding:12px 18px;border-bottom:1px solid #e5e5e0;text-decoration:none;font-size:14px;color:#3a3a4a;min-height:48px;transition:all .2s}
+.sw-body .toc-list li:last-child a{border-bottom:none}
+.sw-body .toc-list li a::before{content:'→';color:var(--gold,#c9922a);font-size:13px;flex-shrink:0}
+.sw-body .glossary-list-compact{list-style:none;padding:0;margin:0}
+.sw-body .glossary-list-compact li{padding:12px 18px;border-bottom:1px solid #e5e5e0;min-height:48px}
+.sw-body .glossary-list-compact li:last-child{border-bottom:none}
+.sw-gl-term{font-weight:700;color:var(--teal,#0e7c7b);font-size:13px;margin-bottom:3px}
+.sw-gl-def{color:#6b7280;font-size:13px;line-height:1.5}
+.sw-author-card{padding:16px 18px}
+.sw-author-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.sw-author-ava{width:44px;height:44px;border-radius:50%;background:var(--navy,#0d1b2a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+.sw-author-divider{border:none;border-top:1px solid #e5e5e0;margin:12px 0}
+.sw-cta-btn{display:block;background:var(--gold,#c9922a);color:#fff;text-align:center;padding:13px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px}
+.gloss-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:250}
+.gloss-overlay.vis{display:block}
+.gloss-drawer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-radius:20px 20px 0 0;padding:20px 22px 48px;z-index:260;transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,0,1);max-height:60vh;overflow-y:auto}
+.gloss-drawer.vis{transform:translateY(0)}
+.drawer-handle{width:40px;height:4px;background:#d1d5db;border-radius:2px;margin:0 auto 18px}
+.drawer-term{font-size:18px;font-weight:700;color:var(--teal,#0e7c7b);margin-bottom:10px}
+.drawer-def{font-size:16px;color:#333;line-height:1.8}
+.gloss{border-bottom:2px dotted var(--teal,#0e7c7b);cursor:pointer;color:var(--teal,#0e7c7b);font-weight:600;position:relative}
+.gloss .tip{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--navy,#0d1b2a);color:#fff;font-size:13px;font-weight:400;line-height:1.55;padding:12px 16px;border-radius:10px;width:min(260px,88vw);white-space:normal;z-index:150;box-shadow:0 6px 24px rgba(0,0,0,.35);pointer-events:none}
+.gloss .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:var(--navy,#0d1b2a)}
+@media(hover:hover){.gloss:hover .tip{display:block}}
+@media(min-width:861px){.sw-head{cursor:default}.sw-head .sw-toggle{display:none}.sw-body{display:block!important}}
+@media(max-width:860px){.sidebar{position:static!important;width:100%!important;order:-1;margin-bottom:4px;max-height:none!important;overflow-y:visible!important}.sidebar-widget{margin-bottom:8px;border-radius:10px}.sw-body{display:none}.sidebar-widget.sw-open .sw-body{display:block}.gloss .tip{display:none!important}}
+
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 
+
+<div class="gloss-overlay" id="gOverlay" onclick="closeDrawer()"></div>
+<div class="gloss-drawer" id="gDrawer"><div class="drawer-handle"></div><div class="drawer-term" id="dTerm"></div><div class="drawer-def" id="dDef"></div></div>
 
 <nav class="ox-nav" id="oxNav">
 
@@ -968,61 +1008,50 @@ pre, code { overflow-x: auto; max-width: 100%; }
   <!-- SIDEBAR -->
   <aside class="sidebar">
 
-    <div class="sidebar-card">
-      <div class="sidebar-title">📋 สารบัญ</div>
-      <ul class="toc-list">
-        <li><a href="#quick-compare"><span class="num">1</span> ตารางเปรียบเทียบ (ภาพรวม)</a></li>
-        <li><a href="#truth-first"><span class="num">2</span> ความจริงที่คุณต้องรู้ก่อน</a></li>
-        <li><a href="#intro"><span class="num">3</span> ทำไมคนถึงงงกัน?</a></li>
-        <li><a href="#spectrum"><span class="num">4</span> แสงสีน้ำเงินคืออะไร?</a></li>
-        <li><a href="#screens"><span class="num">5</span> จอต่างๆ ปล่อย nm อะไร?</a></li>
-        <li><a href="#history"><span class="num">6</span> ประวัติ 10 ปี (ฉบับย่อ)</a></li>
-        <li><a href="#two-types"><span class="num">7</span> เลนส์ไม่เหลือง ≠ กันแสงจอ</a></li>
-        <li><a href="#lutina"><span class="num">8</span> Lutina & UV420 คืออะไร</a></li>
-        <li><a href="#scenarios"><span class="num">9</span> เลือกใช้อะไร เมื่อไหร่?</a></li>
-        <li><a href="#qa"><span class="num">10</span> Q&amp;A ถาม-ตอบ</a></li>
-        <li><a href="#final-compare"><span class="num">11</span> สรุปปิดเกมส์ — ตารางเปรียบเทียบ</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-card">
-      <div class="sidebar-title">📖 คำศัพท์สำคัญ</div>
-
-      <div class="gloss-item">
-        <div class="gloss-term">HEV (High Energy Visible)</div>
-        <div class="gloss-def">แสงที่มองเห็นได้แต่มีพลังงานสูง ช่วง 380–500 nm มักเรียกว่า "แสงสีน้ำเงิน"</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">UV420 / Blue UV Capture</div>
-        <div class="gloss-def">เลนส์ที่ตัดแสงในช่วง 400–420 nm (แสงสีน้ำเงิน-ม่วง) ใกล้กับ UV zone เหมาะสำหรับกันแดดกลางแจ้ง</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">Blue Filter Lens (สีเหลือง)</div>
-        <div class="gloss-def">เลนส์ที่ตัดแสงช่วง 430–460 nm ด้วยการดูดซับในวัสดุ ให้สีเหลืองของเลนส์ เหมาะสำหรับใช้หน้าจอ</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">Lutein (ลูทีน)</div>
-        <div class="gloss-def">สารสีเหลืองในจอตา (macula) ทำหน้าที่กรองแสงพลังงานสูง ถ้าลดลงเสี่ยง AMD</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">AMD (Age-related Macular Degeneration)</div>
-        <div class="gloss-def">จอประสาทตาเสื่อมตามอายุ เกิดจากความเสียหายสะสมที่ macula โดยเฉพาะจากแสงพลังงานสูง</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">Oxidative Stress</div>
-        <div class="gloss-def">ความเสียหายจากอนุมูลอิสระในเซลล์ตา เกิดจากแสงพลังงานสูงที่โดนมาสะสมนาน</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">Melatonin</div>
-        <div class="gloss-def">ฮอร์โมนที่ช่วยควบคุมการนอนหลับ แสงสีน้ำเงิน ~480 nm กดการผลิต Melatonin ได้</div>
-      </div>
-      <div class="gloss-item">
-        <div class="gloss-term">nm (Nanometer)</div>
-        <div class="gloss-def">หน่วยวัดความยาวคลื่นแสง 1 nm = 1 พันล้านส่วนของเมตร แสงที่ตามองเห็น 380–780 nm</div>
+        <div class="sidebar-widget" id="w-toc">
+      <div class="sw-head" onclick="toggleW('w-toc')">📋 สารบัญ <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <ul class="toc-list">
+          <li><a href="#quick-compare"><span class="num">1</span> ตารางเปรียบเทียบ (ภาพรวม)</a></li>
+          <li><a href="#truth-first"><span class="num">2</span> ความจริงที่คุณต้องรู้ก่อน</a></li>
+          <li><a href="#intro"><span class="num">3</span> ทำไมคนถึงงงกัน?</a></li>
+          <li><a href="#spectrum"><span class="num">4</span> แสงสีน้ำเงินคืออะไร?</a></li>
+          <li><a href="#screens"><span class="num">5</span> จอต่างๆ ปล่อย nm อะไร?</a></li>
+          <li><a href="#history"><span class="num">6</span> ประวัติ 10 ปี (ฉบับย่อ)</a></li>
+          <li><a href="#two-types"><span class="num">7</span> เลนส์ไม่เหลือง ≠ กันแสงจอ</a></li>
+          <li><a href="#lutina"><span class="num">8</span> Lutina & UV420 คืออะไร</a></li>
+          <li><a href="#scenarios"><span class="num">9</span> เลือกใช้อะไร เมื่อไหร่?</a></li>
+          <li><a href="#qa"><span class="num">10</span> Q&A ถาม-ตอบ</a></li>
+          <li><a href="#final-compare"><span class="num">11</span> สรุปปิดเกมส์ — ตารางเปรียบเทียบ</a></li>
+        </ul>
       </div>
     </div>
 
+        <div class="sidebar-widget" id="w-gloss">
+      <div class="sw-head" onclick="toggleW('w-gloss')">📖 คำศัพท์สำคัญ <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <ul class="glossary-list-compact">
+          <li><div class="sw-gl-term">HEV (High Energy Visible)</div><div class="sw-gl-def">แสงที่มองเห็นได้แต่มีพลังงานสูง ช่วง 380–500 nm มักเรียกว่า "แสงสีน้ำเงิน"</div></li>
+          <li><div class="sw-gl-term">UV420 / Blue UV Capture</div><div class="sw-gl-def">เลนส์ที่ตัดแสงในช่วง 400–420 nm (แสงสีน้ำเงิน-ม่วง) ใกล้กับ UV zone เหมาะสำหรับกันแดดกลางแจ้ง</div></li>
+          <li><div class="sw-gl-term">Blue Filter Lens (สีเหลือง)</div><div class="sw-gl-def">เลนส์ที่ตัดแสงช่วง 430–460 nm ด้วยการดูดซับในวัสดุ ให้สีเหลืองของเลนส์ เหมาะสำหรับใช้หน้าจอ</div></li>
+          <li><div class="sw-gl-term">Lutein (ลูทีน)</div><div class="sw-gl-def">สารสีเหลืองในจอตา (macula) ทำหน้าที่กรองแสงพลังงานสูง ถ้าลดลงเสี่ยง AMD</div></li>
+          <li><div class="sw-gl-term">AMD (Age-related Macular Degeneration)</div><div class="sw-gl-def">จอประสาทตาเสื่อมตามอายุ เกิดจากความเสียหายสะสมที่ macula โดยเฉพาะจากแสงพลังงานสูง</div></li>
+          <li><div class="sw-gl-term">Oxidative Stress</div><div class="sw-gl-def">ความเสียหายจากอนุมูลอิสระในเซลล์ตา เกิดจากแสงพลังงานสูงที่โดนมาสะสมนาน</div></li>
+          <li><div class="sw-gl-term">Melatonin</div><div class="sw-gl-def">ฮอร์โมนที่ช่วยควบคุมการนอนหลับ แสงสีน้ำเงิน ~480 nm กดการผลิต Melatonin ได้</div></li>
+          <li><div class="sw-gl-term">nm (Nanometer)</div><div class="sw-gl-def">หน่วยวัดความยาวคลื่นแสง 1 nm = 1 พันล้านส่วนของเมตร แสงที่ตามองเห็น 380–780 nm</div></li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="sidebar-widget" id="w-author">
+      <div class="sw-head" onclick="toggleW('w-author')">👤 ผู้เขียน <span class="sw-toggle">+</span></div>
+      <div class="sw-body">
+        <div class="sw-author-card">
+          <div class="sw-author-row"><div class="sw-author-ava">👁</div><div><div style="font-weight:700;color:var(--navy,#0d1b2a);font-size:14px">Suraphun Parsuraphun</div><div style="font-size:12px;color:#6b7280">Optician Lens Specialist · Optical X</div></div></div>
+          <div class="sw-author-row"><div class="sw-author-ava">🔬</div><div><div style="font-weight:700;color:var(--navy,#0d1b2a);font-size:14px">Ploychompoo Parsuraphun</div><div style="font-size:12px;color:#6b7280">Optometrist · Optical X</div></div></div>
+        </div>
+      </div>
+    </div>
 
   </aside>
 
@@ -2344,6 +2373,22 @@ pre, code { overflow-x: auto; max-width: 100%; }
     toggleItem(item);
   };
 })();
+</script>
+
+
+<script>
+function toggleW(id){if(window.innerWidth>860)return;document.getElementById(id).classList.toggle('sw-open')}
+var overlay=document.getElementById('gOverlay'),drawer=document.getElementById('gDrawer');
+function closeDrawer(){overlay.classList.remove('vis');drawer.classList.remove('vis')}
+document.querySelectorAll('.gloss').forEach(function(el){el.addEventListener('click',function(e){if(window.innerWidth>860)return;e.stopPropagation();document.getElementById('dTerm').textContent=el.dataset.term||el.textContent.trim();document.getElementById('dDef').textContent=el.dataset.def||'';overlay.classList.add('vis');drawer.classList.add('vis')})});
+var ty=0;drawer.addEventListener('touchstart',function(e){ty=e.touches[0].clientY},{passive:true});drawer.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-ty>60)closeDrawer()},{passive:true});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+<script>
+(function(){function toggleItem(item){if(!item)return;var wasOpen=item.classList.contains('open');var parent=item.parentElement;if(parent){parent.querySelectorAll('.qa-item.open').forEach(function(el){el.classList.remove('open')})}if(!wasOpen)item.classList.add('open')}document.querySelectorAll('.qa-q,.qa-question').forEach(function(btn){btn.style.cursor='pointer';btn.addEventListener('click',function(e){e.stopPropagation();toggleItem(btn.closest('.qa-item'))})});document.querySelectorAll('.qa-item').forEach(function(item){if(!item.querySelector('.qa-q,.qa-question')){item.style.cursor='pointer';item.addEventListener('click',function(){toggleItem(item)})}});window.toggleQA=function(el){toggleItem(el.closest?el.closest('.qa-item'):el.parentElement)}})();
+</script>
+<script>
+(function(){var s=document.createElement('style');s.textContent='.qa-q,.qa-question{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.qa-a,.qa-answer{max-height:0!important;overflow:hidden!important;display:block!important;transition:max-height .4s ease,padding .3s;padding:0 24px!important}.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{max-height:3000px!important;padding:4px 24px 20px!important}@media(max-width:600px){.qa-item.open>.qa-a,.qa-item.open>.qa-answer,.qa-item.open .qa-a,.qa-item.open .qa-answer{padding:4px 16px 16px 16px!important}}';document.head.appendChild(s)})();
 </script>
 
 </body>
